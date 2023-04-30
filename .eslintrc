@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "as3mbus"
+  ],
+  "globals": {
+    "Phaser": "readonly",
+    "CONFIG": "readonly"
+  }
+}
