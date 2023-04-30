@@ -1,0 +1,21 @@
+import { SceneInfo } from 'Definition/SceneInfo';
+import ScreenUtilityController from 'Modules/ScreenUtilityController';
+import AudioController from 'Modules/AudioController';
+import LogHelper from 'Modules/helpers/LogHelper';
+
+export default class BootSceneController extends Phaser.Scene {
+  constructor() {
+    super({ key: SceneInfo.bootScene.key });
+  }
+
+  create = () => {
+    LogHelper.log('PROJECT NAME', PROJECT_NAME);
+    LogHelper.log('VERSION', PROJECT_VERSION);
+
+    if (CONFIG.DEBUG_MODE) this.scene.launch(SceneInfo.debugScene.key);
+
+    Promise.all([ScreenUtilityController.getInstance().init(this), AudioController.getInstance().init(this, CONFIG.IS_AUDIO_MUTED)])
+      .then(() => this.scene.launch(SceneInfo.loadingScene.key))
+      .catch((err) => console.log(err));
+  };
+}
