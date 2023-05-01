@@ -7,14 +7,14 @@ export default class RectFill extends Phaser.GameObjects.Graphics
      * @param {Phaser.Scene} scene
      * @param {Phaser.Types.GameObjects.Graphics.Options} options
      */
-    constructor(scene, options)
+    constructor(scene)
     {
-        super(scene, options);
+        super(scene);
         scene.add.existing(this);
     }
 
     /**
-     * @param {Phaser.GameObjects.Sprite} object
+     * @param {Phaser.GameObjects.Image} object
      * @param {number} width
      * @param {number} height
      * @param {boolean} isVertical
