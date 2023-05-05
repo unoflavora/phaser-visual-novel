@@ -6,4 +6,23 @@ export const UIAsset = {
     path: '/img/ui/cover_black.png',
     type: AssetType.STATIC,
   },
+  language_flag_id: {
+		key: "language_flag_id",
+		path: "/img/ui/selectLanguage/indonesia.png",
+		type: AssetType.STATIC
+	},
+	language_flag_en: {
+		key: "language_flag_en",
+		path: "/img/ui/selectLanguage/english.png",
+		type: AssetType.STATIC
+	}
 };
+
+export const BackgroundAsset = 
+{
+  background_netral_silver: {
+    key: "background_netral_silver",
+    path: "/img/background/background_netral_silver.jpg",
+    type: AssetType.STATIC,
+  }
+} 

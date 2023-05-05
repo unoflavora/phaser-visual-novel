@@ -1,4 +1,4 @@
-import { SceneInfo } from 'Definition/SceneInfo';
+import { SceneInfo } from 'Definitions/SceneInfo';
 import ScreenUtilityController from 'Modules/ScreenUtilityController';
 import AudioController from 'Modules/AudioController';
 import LogHelper from 'Modules/helpers/LogHelper';

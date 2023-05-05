@@ -17,7 +17,7 @@ const baseWebpackConfig = {
       Modules: path.resolve(__dirname, '../src/js/module'),
       Assets: path.resolve(__dirname, '../src/js/assetLibrary/'),
       ProjectData: path.resolve(__dirname, '../package.json'),
-      Definition: path.resolve(__dirname, '../src/js/def'),
+      Definitions: path.resolve(__dirname, '../src/js/def'),
     },
   },
   module: {

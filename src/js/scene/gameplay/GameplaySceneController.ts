@@ -1,6 +1,6 @@
 import GameplaySceneView 		from "./GameplaySceneView";
 import AudioController 			from "Modules/AudioController";
-import { SceneInfo } 			from "Definition/SceneInfo";
+import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
 
@@ -75,7 +75,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 		// this.miniGameController.init(this);
 
 		// this.pauseController = new PauseController(this);
-    // this.pauseController.init();
+   		// this.pauseController.init();
 
 		this.view = new GameplaySceneView(this);
 		this.view.create();		

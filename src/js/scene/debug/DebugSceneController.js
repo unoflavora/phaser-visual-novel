@@ -1,5 +1,5 @@
 import DebugSceneView from './DebugSceneView';
-import { SceneInfo } from 'Definition/SceneInfo';
+import { SceneInfo } from 'Definitions/SceneInfo';
 
 /**
  * @typedef DebugInfo
