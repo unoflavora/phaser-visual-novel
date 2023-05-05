@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const baseEnvConfig = require('../config/base.config.json');
 
 /**
@@ -13,6 +12,7 @@ const baseWebpackConfig = {
     app: path.resolve(__dirname, '../src/index.js'),
   },
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       Modules: path.resolve(__dirname, '../src/js/module'),
       Assets: path.resolve(__dirname, '../src/js/assetLibrary/'),
@@ -29,6 +29,10 @@ const baseWebpackConfig = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      }
       // {
       // 	test: [/\.vert$/, /\.frag$/],
       // 	use: "raw-loader",
