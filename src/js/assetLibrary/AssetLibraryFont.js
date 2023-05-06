@@ -15,3 +15,10 @@ export const FontAsset = {
         type: AssetType.FONT
     },
 };
+
+export const FontColors = 
+{
+    darkBrown : "#4B3B33",
+    lightBrown : "#92653B"
+}
+

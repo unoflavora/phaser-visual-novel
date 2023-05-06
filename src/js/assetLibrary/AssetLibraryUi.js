@@ -15,14 +15,15 @@ export const UIAsset = {
 		key: "language_flag_en",
 		path: "/img/ui/selectLanguage/english.png",
 		type: AssetType.STATIC
-	}
+	},
 };
 
 export const BackgroundAsset = 
 {
-  background_netral_silver: {
-    key: "background_netral_silver",
-    path: "/img/background/background_netral_silver.jpg",
+  background_main: 
+  {
+    key: "background_main",
+    path: "/img/background/background_main.png",
     type: AssetType.STATIC,
   }
 } 

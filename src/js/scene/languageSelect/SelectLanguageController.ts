@@ -8,8 +8,9 @@ export default class SelectLanguageController extends Phaser.Scene {
 
     // Controllers
     audioController : AudioController;
-
+    
     view : SelectLanguageView | undefined;
+
 
     constructor() 
     {
@@ -18,6 +19,7 @@ export default class SelectLanguageController extends Phaser.Scene {
         })
 
         this.audioController = AudioController.getInstance();
+
     }    
 
     async create() 

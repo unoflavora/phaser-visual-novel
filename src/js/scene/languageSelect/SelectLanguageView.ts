@@ -4,7 +4,7 @@ import Image from "Modules/gameobjects/Image";
 
 import { UIAsset } from "Assets/AssetLibraryUi";
 import { EventEmitter } from "events";
-import { FontAsset } from "Assets/AssetLibraryFont";
+import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import { LanguageEnum } from "Modules/GameData";
 import { assertUnreachable } from "Modules/helpers/TsHelper";
@@ -52,9 +52,10 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
 
         this.flagEn = new Image(this.scene, xPos - this.scene.scale.width * .15, yPos  * 2, UIAsset.language_flag_en.key)
 
-        var title = new Text( this.scene, xPos, yPos, "Select Language", {
-            fontFamily: FontAsset.adobe_caslon_pro_bold.key}
-        );
+        var title = new Text( this.scene, xPos, yPos * 1.2, "Select Language", {
+            fontFamily: FontAsset.adobe_caslon_pro_bold.key,
+            color: FontColors.lightBrown
+        });
 
         title.gameobject.setOrigin(.5)
 
@@ -69,7 +70,7 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
             this.scene,
             this.scene.scale.width * 0.5,
             this.scene.scale.height * 0.5,
-            BackgroundAsset.background_netral_silver.key
+            BackgroundAsset.background_main.key
         );
 
         this.objectContainer.add(background.gameobject);
@@ -78,7 +79,7 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
 
         this.setupFlag(this.flagEn, this.onEnglishClicked, "English");
 
-        this.setupFlag(this.flagId, this.onIndonesiaClicked, "Indonesia");
+        this.setupFlag(this.flagId, this.onIndonesiaClicked, "Indonesian");
     }
 
     onEnglishClicked = () => {
@@ -114,15 +115,17 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
         var textObj = new Text(
             this.scene,
             flag.gameobject.x,
-            flag.gameobject.y + flag.gameobject.displayHeight * .55,
+            flag.gameobject.y + flag.gameobject.displayHeight * .6,
             text,
             {
                 fontFamily: FontAsset.minion_variable_concept.key,
+                color: FontColors.lightBrown
+                
             }
         );
     
         textObj.gameobject.setOrigin(.5, 0);
-        textObj.gameobject.setFontSize(this.scene.scale.height * 0.05);
+        textObj.gameobject.setFontSize(this.scene.scale.height * 0.04);
         textObj.gameobject.setInteractive();
         textObj.gameobject.on('pointerdown', onClickCallback);
     }
