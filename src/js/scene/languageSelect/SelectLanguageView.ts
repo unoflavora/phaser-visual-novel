@@ -77,17 +77,9 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
 
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);     
 
-        this.setupFlag(this.flagEn, this.onEnglishClicked, "English");
+        this.setupFlag(this.flagEn, () => this.events.emit(this.eventKeys.OnEnglishClicked), "English");
 
-        this.setupFlag(this.flagId, this.onIndonesiaClicked, "Indonesian");
-    }
-
-    onEnglishClicked = () => {
-       this.events.emit(this.eventKeys.OnEnglishClicked);
-    }
-
-    onIndonesiaClicked = () => {
-       this.events.emit(this.eventKeys.OnIndonesiaClicked)
+        this.setupFlag(this.flagId, () => this.events.emit(this.eventKeys.OnIndonesiaClicked), "Indonesian");
     }
 
     registerOnLanguageClicked (language : LanguageEnum, callback : () => void)
@@ -110,7 +102,6 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
         flag.transform.setDisplayHeightToAspectRatio();
         flag.gameobject.setInteractive();
         flag.gameobject.on('pointerdown', onClickCallback);
-    
         
         var textObj = new Text(
             this.scene,
