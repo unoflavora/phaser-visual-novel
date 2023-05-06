@@ -19,7 +19,6 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
     objectContainer : Phaser.GameObjects.Container
     textContainer : Phaser.GameObjects.Container
     languageContainer : Phaser.GameObjects.Container
-    indonesiaContainer: Phaser.GameObjects.Container
     flagId : Image
     flagEn : Image
 
@@ -42,7 +41,6 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
         this.objectContainer = this.scene.add.container(0, 0);
         this.textContainer = this.scene.add.container(0, 0);        
         this.languageContainer = this.scene.add.container(0,0);
-        this.indonesiaContainer = this.scene.add.container(0,0);
     
         let xPos = this.scene.scale.width * 0.5;
 
