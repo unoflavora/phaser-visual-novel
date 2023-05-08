@@ -1,12 +1,10 @@
 import './css/index.css';
-import 'phaser/plugins/spine/dist/SpinePlugin';
+import Phaser from 'phaser'
 import { SceneInfo } from 'Definitions/SceneInfo';
-import './css/index.css';
 
 const isLandscape = window.innerWidth > window.innerHeight;
 
 const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-
 
 function smallResolution() {
     let smallerSide = isLandscape ? window.innerHeight : window.innerWidth;
@@ -28,20 +26,6 @@ function calculateScreen() {
     };
 }
 
-// TODO : communicate this convert landscape width and height to portrait with ratio 3:4
-function portraitConversion(config) {    
-    let width = config.width;
-    const height = config.height;
-    const isLandscape = width > height;
-
-    width = !isLandscape ? width : height * (16 / 10);
-
-    return {
-        width: toEven(width),
-        height: toEven(height),
-        zoom: config.zoom,
-    };
-}
 
 // TODO : keep ratio between 4:3 and 16:9
 function ratioConversion(config) {
@@ -82,13 +66,21 @@ const phaserConfig = {
     dom: {
         createContainer: true,
     },
+    input: {
+        mouse: {
+            target: "game"
+        },
+        touch: {
+            target: "game"
+        },
+    },
     render: {
         antiAlias: false,
         pixelArt: false,
         roundPixels: false,
     },
     plugins: {
-        scene: [{ key: 'SpinePlugin', plugin: window.SpinePlugin, mapping: 'spine' }],
+        global: [],
     },
     autoRound: false,
     // backgroundColor : "#ffffff",

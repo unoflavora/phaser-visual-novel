@@ -51,7 +51,7 @@ export default class MainSceneController extends Phaser.Scene {
     async startGame() {        
         var refreshToken = window.localStorage.getItem("refreshToken");
 
-        this.scene.launch(SceneInfo.languageSelectorScene.key);
+        this.scene.launch(SceneInfo.createPassword.key);
 
         return;
 

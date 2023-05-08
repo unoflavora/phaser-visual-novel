@@ -15,7 +15,6 @@ export default class LoadingSceneController extends Phaser.Scene {
       .then(this.loadLoadingResources)
       .then(this.setupLoading)
       .then(this.loadMainResouces)
-      .then(() => this.delay(1500))
       .then(() => {
         this.load.removeAllListeners();
         this.view.setLoadingValue(1);

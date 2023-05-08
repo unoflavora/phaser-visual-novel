@@ -1,4 +1,3 @@
-import "phaser/types/phaser";
 
 declare global {
 	const CONFIG: Config;

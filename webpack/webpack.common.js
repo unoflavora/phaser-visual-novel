@@ -29,10 +29,9 @@ const baseWebpackConfig = {
           loader: 'babel-loader',
         },
       },
-      {
-        test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
-      }
+      { test: /\.tsx?$/, loader: "ts-loader" },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      // { test: /\.js$/, loader: "source-map-loader" },
       // {
       // 	test: [/\.vert$/, /\.frag$/],
       // 	use: "raw-loader",

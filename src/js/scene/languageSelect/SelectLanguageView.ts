@@ -8,6 +8,7 @@ import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import { LanguageEnum } from "Modules/GameData";
 import { assertUnreachable } from "Modules/helpers/TsHelper";
+import Phaser from "phaser";
 
 export default class SelectLanguageView extends Phaser.GameObjects.Container {
 

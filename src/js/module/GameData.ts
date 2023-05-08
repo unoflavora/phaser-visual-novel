@@ -1,6 +1,6 @@
 export enum LanguageEnum { Indonesian, English }
 
-const gameData : GameData = {
+const GameData : GameData = {
     settings: 
     {
         lang: LanguageEnum.Indonesian
@@ -14,4 +14,4 @@ interface GameData {
     }
 }
 
-export default gameData;
+export default GameData;

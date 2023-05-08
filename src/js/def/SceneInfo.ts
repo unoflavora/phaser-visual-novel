@@ -4,6 +4,8 @@ import DebugSceneController from '../scene/debug/DebugSceneController';
 import GameplaySceneController from '../scene/gameplay/GameplaySceneController';
 import LoadingSceneController from '../scene/loading/LoadingSceneController';
 import MainSceneController from '../scene/MainSceneController';
+import HomeSceneController from '../scene/home/HomeSceneController';
+import CreatePasswordScene from '../scene/auth/CreatePasswordController';
 
 export const SceneInfo = {
   bootScene: {
@@ -29,5 +31,13 @@ export const SceneInfo = {
   languageSelectorScene : {
     key: 'SelectLanguageScene',
     module: SelectLanguageController,
+  },
+  homeScene: {
+    key: 'HomeScene',
+    module: HomeSceneController
+  },
+  createPassword: {
+    key: 'CreatePassword',
+    module: CreatePasswordScene
   }
 };
