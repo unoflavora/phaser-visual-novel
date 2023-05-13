@@ -5,7 +5,8 @@ import GameplaySceneController from '../scene/gameplay/GameplaySceneController';
 import LoadingSceneController from '../scene/loading/LoadingSceneController';
 import MainSceneController from '../scene/MainSceneController';
 import HomeSceneController from '../scene/home/HomeSceneController';
-import CreatePasswordScene from '../scene/auth/CreatePasswordController';
+import CreatePasswordController from '../scene/auth/createPassword/CreatePasswordController';
+import LoginSceneController from '../scene/auth/login/LoginSceneController';
 
 export const SceneInfo = {
   bootScene: {
@@ -38,6 +39,10 @@ export const SceneInfo = {
   },
   createPassword: {
     key: 'CreatePassword',
-    module: CreatePasswordScene
+    module: CreatePasswordController
+  },
+  loginScene: {
+    key: 'LoginScene',
+    module: LoginSceneController
   }
 };

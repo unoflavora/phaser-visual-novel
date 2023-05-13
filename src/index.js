@@ -55,6 +55,7 @@ const screenProfile = ratioConversion(calculateScreen());
 const phaserConfig = {
     type: renderType,
     parent: 'game',
+    fullscreenTarget: "game",
     scene: Object.values(SceneInfo).map((v) => v.module),
     scale: {
         mode: Phaser.Scale.FIT,

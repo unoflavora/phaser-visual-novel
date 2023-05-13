@@ -37,19 +37,19 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.gameTitle = new Image (this.scene, this.xPos, this.yPos * .55, UIAsset.game_title.key);
 
         this.startButton = new Button (this.scene,this.xPos, this.yPos * 1.25, UIAsset.button_frame_primary.key);
-        this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.ui.mainMenu.startGame);  
+        this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.text.mainMenu.startGame);  
         this.startButtonText.gameobject.setOrigin(.5)
 
         this.gameLogButton = new Button (this.scene, 0, 0, UIAsset.button_frame_secondary.key);
-        this.gameLogButtonText = new Text (this.scene,0,0, Localizations.ui.mainMenu.gameLog);
+        this.gameLogButtonText = new Text (this.scene,0,0, Localizations.text.mainMenu.gameLog);
         this.gameLogButtonText.gameobject.setOrigin(.5)
 
         this.settingButton = new Button ( this.scene, 0,0 , UIAsset.button_frame_secondary.key);
-        this.settingText = new Text(this.scene, 0,0, Localizations.ui.mainMenu.settings);
+        this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings);
         this.settingText.gameobject.setOrigin(.5)
         
         this.recommendText = new Text (
-            this.scene, 0, 0, Localizations.ui.mainMenu.recommendation, 
+            this.scene, 0, 0, Localizations.text.mainMenu.recommendation, 
             {
                 color: "#3D3D3D",
                 align: "center",

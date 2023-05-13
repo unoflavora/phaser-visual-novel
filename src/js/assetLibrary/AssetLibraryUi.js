@@ -68,17 +68,31 @@ export const UIAsset = {
     type: AssetType.STATIC
   },
 
-  // #region General
+  	// #region General
 	pause_button: {
 		key: "pause_button",
 		path: "/img/ui/general/pause_button.png",
 		type: AssetType.STATIC,
 	},
-	red_text_box: {
+	bg_text_box: {
 		key: "red_text_box",
-		path: "/img/ui/general/red_text_box.png",
+		path: "/img/ui/general/ui-textbox.png",
 		type: AssetType.STATIC,
 	},
+	// #endregion
+
+	// #region Login
+	popup_background: {
+		key: "popup_background",
+		path: "/img/ui/popups/ui-frame.png",
+		type: AssetType.STATIC,
+	},
+	icon_visibility: 
+	{
+		key: "icon_visibility",
+		path: "/img/ui/icons/ui-icon-visibility.png",
+		type: AssetType.STATIC
+	}
 };
 
 export const BackgroundAsset = 

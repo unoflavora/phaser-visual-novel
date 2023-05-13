@@ -17,5 +17,15 @@ export default class CreatePasswordController extends Phaser.Scene {
   create() {
     this.view = new CreatePasswordView(this);
     this.view.create();
+    this.view.addOnConfirmPasswordListeners((pass, confPass) => {
+      if(pass != confPass)
+      {
+        this.view.setErrorConfirmVisible(true);
+        return;
+      }
+      
+      this.view.setErrorConfirmVisible(false);
+      console.log("Password: " + pass);
+    })
   }
 }

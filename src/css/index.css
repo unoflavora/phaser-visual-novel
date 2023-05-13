@@ -27,8 +27,20 @@ html, body
   width: 100%; /*auto center functionality purpose*/
 }
 
+
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
+}
+
+div 
+{
+  transform-origin: center !important;
+}
+
+input 
+{
+  padding-top: .5rem !important;
+  padding-left: .5rem !important;
 }
 
 a, button, .myelements
