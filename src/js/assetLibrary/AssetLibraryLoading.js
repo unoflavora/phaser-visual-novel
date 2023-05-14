@@ -3,7 +3,7 @@ import { AssetType } from 'Modules/assetLoader';
 export const LoadingAsset = {
   loading_bg: {
     key: 'loading_bg',
-    path: '/img/loading/loading-bg.png',
+    path: '/img/background/background_netral_silver.jpg',
     type: AssetType.STATIC,
   },
 
@@ -18,4 +18,17 @@ export const LoadingAsset = {
     path: '/img/loading/loading-frame.png',
     type: AssetType.STATIC,
   },
+
+  background_main: {
+    key: "background_main",
+    path: "/img/background/background_main.png",
+    type: AssetType.STATIC,
+  },
+  
+  corporate_logo: {
+    key: "corporate_logo",
+		path: "/img/ui/T_Logo_Corporate.png",
+		type: AssetType.STATIC
+  }
+
 };

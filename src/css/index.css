@@ -17,16 +17,30 @@ html, body
 }
 
 #game {
-  /* display: flex;  */
+  display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: center;
   touch-action: manipulation;
   background-color: black;
+  height: 100%; /*claim entire screen for ios safari*/
+  width: 100%; /*auto center functionality purpose*/
 }
+
 
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
+}
+
+div 
+{
+  transform-origin: center !important;
+}
+
+input 
+{
+  padding-top: .5rem !important;
+  padding-left: .5rem !important;
 }
 
 a, button, .myelements

@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const baseEnvConfig = require('../config/base.config.json');
 
 /**
@@ -13,11 +12,12 @@ const baseWebpackConfig = {
     app: path.resolve(__dirname, '../src/index.js'),
   },
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       Modules: path.resolve(__dirname, '../src/js/module'),
       Assets: path.resolve(__dirname, '../src/js/assetLibrary/'),
       ProjectData: path.resolve(__dirname, '../package.json'),
-      Definition: path.resolve(__dirname, '../src/js/def'),
+      Definitions: path.resolve(__dirname, '../src/js/def'),
     },
   },
   module: {
@@ -29,6 +29,9 @@ const baseWebpackConfig = {
           loader: 'babel-loader',
         },
       },
+      { test: /\.tsx?$/, loader: "ts-loader" },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      // { test: /\.js$/, loader: "source-map-loader" },
       // {
       // 	test: [/\.vert$/, /\.frag$/],
       // 	use: "raw-loader",

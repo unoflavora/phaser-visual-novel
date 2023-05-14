@@ -1,3 +1,4 @@
+import { FontAsset } from 'Assets/AssetLibraryFont';
 import Transform from './transform/TextTransform';
 
 /**
@@ -18,7 +19,7 @@ export default class Text
         this.scene = scene;
 
         /** @public @readonly @type {Phaser.GameObjects.Text} */
-        this.gameobject = this.scene.add.text(x, y, text, style);
+        this.gameobject = this.scene.add.text(x, y, text, {...style, fontFamily: FontAsset.adobe_caslon_pro_bold.key});
 
         /** @public @readonly @type {Transform} */
         this.transform = new Transform(this.gameobject);

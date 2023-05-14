@@ -1,8 +1,8 @@
-import { SceneInfo } from 'Definition/SceneInfo';
+import { SceneInfo } from 'Definitions/SceneInfo';
 import { PhaserAssetLoadHelper, DomAssetLoadHelper } from 'Modules/assetLoader';
 import LogHelper from 'Modules/helpers/LogHelper';
 import LoadingSceneView from './LoadingSceneView';
-import { LoadingAsset, GameplayAsset, FontAsset, UIAsset } from 'Assets/index';
+import { LoadingAsset, GameplayAsset, FontAsset, UIAsset, BackgroundAsset, AudioAsset } from 'Assets/index';
 
 export default class LoadingSceneController extends Phaser.Scene {
   constructor() {
@@ -18,12 +18,14 @@ export default class LoadingSceneController extends Phaser.Scene {
       .then(() => {
         this.load.removeAllListeners();
         this.view.setLoadingValue(1);
-        this.scene.start(SceneInfo.gameplayScene.key);
+        this.scene.start(SceneInfo.mainScene.key);
       })
       .catch((error) => {
         LogHelper.log('ERROR', error);
       });
   };
+
+  delay = ms => new Promise(res => setTimeout(res, ms));
 
   /**
    * Load font
@@ -72,7 +74,9 @@ export default class LoadingSceneController extends Phaser.Scene {
   loadMainResouces = () => {
     return new Promise((resolve) => {
       PhaserAssetLoadHelper.LoadAssetLibrary(this, UIAsset);
+      PhaserAssetLoadHelper.LoadAssetLibrary(this, BackgroundAsset)
       PhaserAssetLoadHelper.LoadAssetLibrary(this, GameplayAsset);
+      PhaserAssetLoadHelper.LoadAssetLibrary(this, AudioAsset)
 
       this.load.once('complete', resolve);
       this.load.start();

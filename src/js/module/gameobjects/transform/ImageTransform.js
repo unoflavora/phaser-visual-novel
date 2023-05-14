@@ -34,6 +34,12 @@ export default class ImageTransform extends Transform
     get displayToOriginalHeightRatio()
     {return this.gameobject.displayHeight / this.gameobject.height;}
 
+    /** @return {x : Number, y: Number} */
+    get position()
+    {
+        return new {x : this.gameobject.x, y: this.gameobject.y}
+    }
+
     /**
      * Function to set display Width
      * @param {number} width

@@ -30,14 +30,14 @@ export default class Transform {
     this.gameobject = gameobject;
   }
 
-  /**
+    /**
    * @param {number} x
    * @param {number} y
    */
-  setPosition = (x, y) => {
-    this.gameobject.setPosition(x, y);
-    this.emitOnTransformUpdate();
-  };
+    setPosition = (x, y) => {
+      this.gameobject.setPosition(x, y);
+      this.emitOnTransformUpdate();
+    };
 
   emitOnTransformUpdate() {
     this.event.emit(this.eventName.onTransformUpdate, this.gameobject);
