@@ -1,6 +1,7 @@
 import './css/index.css';
 import Phaser from 'phaser'
 import { SceneInfo } from 'Definitions/SceneInfo';
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 
 const isLandscape = window.innerWidth > window.innerHeight;
 
@@ -81,7 +82,11 @@ const phaserConfig = {
         roundPixels: false,
     },
     plugins: {
-        global: [],
+        scene: [{
+            key: 'rexUI',
+            plugin: RexUIPlugin,
+            mapping: 'rexUI'
+        }],
     },
     autoRound: false,
     // backgroundColor : "#ffffff",

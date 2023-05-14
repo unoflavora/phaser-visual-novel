@@ -82,7 +82,7 @@ export default class Button
         /** @private @type {boolean} */
         this._isCursorInside = false;
 
-        this.gameobject.setInteractive();
+        this.gameobject.setInteractive({useHandCursor: true});
         this.setInteractive(true);
         this.setAudioActive(!!this._audioKey);
 

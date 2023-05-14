@@ -1,40 +1,58 @@
+import InputText from 'phaser3-rex-plugins/plugins/inputtext';
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import Text from 'Modules/gameobjects/Text';
 import Button from 'Modules/gameobjects/Button';
 import Image from 'Modules/gameobjects/Image';
+import RexInputText from 'Modules/extensions/text_extension';
+import Localizations from 'Modules/localization/LocalizationHelper';
 import { UIAsset } from 'Assets/AssetLibraryUi';
 import { FontAsset, FontColors } from 'Assets/AssetLibraryFont';
 import { BackgroundAsset } from 'Assets/AssetLibraryUi';
-import RexInputText from 'Modules/a3extension/extension/text_extension';
-import InputText from 'phaser3-rex-plugins/plugins/inputtext';
-import Localizations from 'Modules/localization/LocalizationHelper';
+import { createPasswordInput, createTextInput } from 'Modules/extensions/text_input';
+import Buttons from 'phaser3-rex-plugins/templates/ui/buttons/Buttons';
+import LoginSceneController from './LoginSceneController';
 
-export default class LoginView extends Phaser.GameObjects.Container  {
+export default class LoginView extends Phaser.GameObjects.Group  {
+
+    // Controllers
+    private controller: LoginSceneController;
 
     // UI OBJECTS
     private panel: Image;
-    private newPasswordText: Text;
-    private newPasswordBox: Image;
-    private confirmNewPasswordBox: Image;
-    private passwordMissMatchText: Text;
-    private updatePasswordButton: Button;
-    private updatePasswordButtonText: Text;
-    private confirmNewPasswordText: Text;
+    private corporateLogo: Image;
+    private usernameBg: Image;
+    private passwordBg: Image;
+    private passwordLabel: Text;
+    private wrongPasswordText: Text;
+    private loginText: Text;
+    private usernameLabel: Text;
+
+    // Interactables
+    private loginButton: Button;
+    private rememberMeCheckbox: Image;
+    private rememberMeText: Text;
+    private forgotPasswordText: Text;
 
     // DOM ELEMENTS
-    private passwordInput!: Phaser.GameObjects.DOMElement;
-    private confirmPasswordInput!: Phaser.GameObjects.DOMElement;
+    private usernameInput!: RexInputText;
+    private passwordInput!: RexInputText;
     
     // Variables
-    newPassword: string = "";
+    username: string = "";
     confirmPassword: string = "";
     textStyle =  {
         color: FontColors.darkBrown,
         fontStyle: "bold",
         fontSize: this.scene.scale.height * .02
     }
+    isRememberMe: boolean = false;
 
-    constructor(scene: Phaser.Scene) {
+    constructor(scene: LoginSceneController) {
         super(scene)
+
+        this.controller = scene;
+        this.setVisible(true);
+
 
         const background = new Image(
             this.scene,
@@ -44,136 +62,129 @@ export default class LoginView extends Phaser.GameObjects.Container  {
         );
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
 
+        this.corporateLogo = new Image(this.scene, this.scene.scale.width * .5 ,this.scene.scale.height * .15, UIAsset.game_title.key);
+
         this.panel = new Image(
             this.scene,
             this.scene.scale.width * 0.5,
-            this.scene.scale.height * 0.5,
+            this.scene.scale.height * 0.55,
             UIAsset.popup_background.key,
         );
         this.panel.transform.setDisplayWidth(this.scene.scale.width * 0.35, true);
 
-        this.confirmNewPasswordBox = new Image(this.scene,0,0, UIAsset.bg_text_box.key);
+        this.passwordBg = new Image(this.scene,0,0, UIAsset.bg_text_box.key);
+        this.passwordBg.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.7, true);
 
-        this.newPasswordBox = new Image (this.scene,0,0,UIAsset.bg_text_box.key);
-        this.newPasswordBox.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.7, true);
+        this.usernameBg = new Image (this.scene,0,0,UIAsset.bg_text_box.key);
+        this.usernameBg.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.7, true);
 
-        this.newPasswordText = new Text (this.scene,0,0,Localizations.text.mainMenu.login.password, {...this.textStyle});
+        this.usernameLabel = new Text (this.scene,0,0,Localizations.text.mainMenu.auth.username, {...this.textStyle});
 
-        this.confirmNewPasswordText = new Text(this.scene,0,0, Localizations.text.mainMenu.login.confirm_password, {...this.textStyle});
+        this.passwordLabel = new Text(this.scene,0,0, Localizations.text.mainMenu.auth.password, {...this.textStyle});
 
-        this.passwordMissMatchText = new Text(
+        this.wrongPasswordText = new Text(
             this.scene,0,0,
-            "Password and Confirm Password didn't match",
+            Localizations.text.mainMenu.auth.wrong_password,
             {
-                color: '#3F2506',
+                color: FontColors.red,
                 align: 'left',
                 font: '24px bold',
             },
         ); 
-            
-        this.updatePasswordButton = new Button(this.scene,0,0,UIAsset.button_frame_primary.key);
-        this.updatePasswordButtonText = new Text(this.scene,0,0,Localizations.text.mainMenu.login.confirm_password);
+             
+        this.loginButton = new Button(this.scene,0,0,UIAsset.button_frame_primary.key);
+        this.loginText = new Text(this.scene,0,0,Localizations.text.mainMenu.auth.login);
+
+        this.rememberMeCheckbox = new Image(this.scene, 0,0, UIAsset.checkbox.key);
+        this.rememberMeCheckbox.gameobject.setInteractive({ useHandCursor: true});
+        this.rememberMeCheckbox.gameobject.on('pointerdown', () => { this.onRememberMeClicked() })
+
+        this.rememberMeText = new Text(this.scene,0,0,Localizations.text.mainMenu.auth.remember_me, {...this.textStyle});
+        this.rememberMeText.gameobject.setInteractive({ useHandCursor: true});
+        this.rememberMeText.gameobject.on('pointerdown', () => { this.onRememberMeClicked() })
+
+        this.forgotPasswordText = new Text(this.scene,0,0,Localizations.text.mainMenu.auth.forgot_password, {...this.textStyle});
+        this.forgotPasswordText.gameobject.setInteractive({useHandCursor: true})
     }
 
+
     public create = () => {
-
-        const createNewPasswordTitle = new Text(
-            this.scene,
-            this.panel.gameobject.x,
-            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.315,
-            Localizations.text.mainMenu.login.create_password_title,
-            {
-                color: FontColors.darkBrown,
-                fontStyle: "bold",
-                fontSize: this.scene.scale.height * .035
-            }
-        );
-        createNewPasswordTitle.gameobject.setOrigin(0.5);
-
-        this.newPasswordText.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35,
-            createNewPasswordTitle.gameobject.y + createNewPasswordTitle.gameobject.displayHeight * 1.8)
-        this.newPasswordText.gameobject.setOrigin(0, 0.5);
-
-        this.newPasswordBox.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35,
-            this.newPasswordText.gameobject.y + this.newPasswordText.gameobject.displayHeight * 2)
-        this.newPasswordBox.gameobject.setOrigin(0, 0.5);
-
-        this.confirmNewPasswordText.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35,this.newPasswordBox.gameobject.y + this.newPasswordBox.gameobject.displayHeight * 1.25)
-        this.confirmNewPasswordText.gameobject.setOrigin(0, 0.5);
     
-        this.confirmNewPasswordBox.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35, this.confirmNewPasswordText.gameobject.y + this.confirmNewPasswordText.gameobject.displayHeight * 2)
-        this.confirmNewPasswordBox.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.7, true);
-        this.confirmNewPasswordBox.gameobject.setOrigin(0, 0.5);
+        this.usernameLabel.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35,this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.315,)
+        this.usernameLabel.gameobject.setOrigin(0, 0.5);
+        this.usernameBg.transform.setPosition(this.panel.gameobject.x,this.usernameLabel.gameobject.y + this.usernameLabel.gameobject.displayHeight * 2)
 
-        this.passwordMissMatchText.gameobject.setWordWrapWidth(this.newPasswordBox.gameobject.displayWidth)
-        this.passwordMissMatchText.transform.setPosition(this.confirmNewPasswordBox.gameobject.x,
-            this.confirmNewPasswordBox.gameobject.y + this.confirmNewPasswordBox.gameobject.displayHeight * 0.75)
-        this.passwordMissMatchText.gameobject.setFontFamily(FontAsset.adobe_caslon_pro_bold.key);
-        this.passwordMissMatchText.gameobject.setFontSize(this.panel.gameobject.displayHeight * 0.03);
-        this.passwordMissMatchText.gameobject.visible = false;
+
+        this.passwordLabel.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * 0.35,this.usernameBg.gameobject.y + this.usernameBg.gameobject.displayHeight * 1.25)
+        this.passwordLabel.gameobject.setOrigin(0, 0.5);
+        this.passwordBg.transform.setPosition(this.panel.gameobject.x, this.passwordLabel.gameobject.y + this.passwordLabel.gameobject.displayHeight * 2)
+        this.passwordBg.gameobject.setOrigin(0.5, 0.5);
+
+        this.wrongPasswordText.gameobject.setWordWrapWidth(this.usernameBg.gameobject.displayWidth)
+        this.wrongPasswordText.transform.setPosition(this.passwordBg.gameobject.x - this.passwordBg.gameobject.displayWidth * .5,
+            this.passwordBg.gameobject.y + this.passwordBg.gameobject.displayHeight * 0.75)
+        this.wrongPasswordText.gameobject.setFontFamily(FontAsset.adobe_caslon_pro_bold.key);
+        this.wrongPasswordText.gameobject.setFontSize(this.panel.gameobject.displayHeight * 0.03);
+        this.wrongPasswordText.gameobject.visible = false;
     
-
-        this.updatePasswordButton.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y + this.panel.gameobject.displayHeight * .35)
-        this.updatePasswordButton.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.45, true);
+        this.loginButton.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y + this.panel.gameobject.displayHeight * .35)
+        this.loginButton.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.45, true);
+        this.loginText.transform.setFontSize(this.loginButton.gameobject.displayHeight * 0.13);
+        
 
         // #region DOM Elements
         // DOM Elements should be declared on Phaser-Induced 'Create' Functions since it should be placed after UI Layouts.
-        this.passwordInput = this.createPasswordInput(this.scene, this.newPasswordBox, (inputText, e) => {
-            this.newPassword = inputText.text;
+        this.usernameInput = createTextInput(this.scene, this.usernameBg, (inputText, e) => {
+            this.username = inputText.text;
         });
         
-        this.confirmPasswordInput = this.createPasswordInput(this.scene, this.confirmNewPasswordBox, (inputText, e) => {
+        this.passwordInput = createPasswordInput(this.scene, this.passwordBg, (inputText, e) => {
             this.confirmPassword = inputText.text;
         });
 
-        this.updatePasswordButtonText.transform.setPosition(this.confirmPasswordInput.x, this.updatePasswordButton.gameobject.y)   
-        this.updatePasswordButtonText.gameobject.setOrigin(.5)
+        this.loginText.transform.setPosition(this.loginButton.gameobject.x, this.loginButton.gameobject.y)   
+        this.loginText.gameobject.setOrigin(.5)
         // #endregion
+
+        this.rememberMeCheckbox.transform.gameobject.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * .35, this.passwordBg.gameobject.y + this.passwordBg.gameobject.displayHeight * 1.75);
+        this.rememberMeCheckbox.gameobject.setOrigin(0, 0.5);
+
+        this.rememberMeText.transform.gameobject.setPosition(this.rememberMeCheckbox.gameobject.x + this.rememberMeCheckbox.gameobject.displayWidth * 1.5, this.rememberMeCheckbox.gameobject.y);
+        this.rememberMeText.gameobject.setOrigin(0.1, 0.5);
+
+        this.forgotPasswordText.transform.gameobject.setPosition(this.panel.gameobject.x + this.panel.gameobject.displayWidth * .35, this.rememberMeCheckbox.gameobject.y);
+        this.forgotPasswordText.gameobject.setOrigin(1, 0.5);        
     }
         
-    addOnConfirmPasswordListeners(updatePasswordAction: (password : string, confirmPassword: string) => void) {
-        this.updatePasswordButton.click.on(() => updatePasswordAction(this.newPassword, this.confirmPassword));
+    registerOnLoginListener(updatePasswordAction: (username : string, confirmPassword: string) => void) {
+        this.loginButton.click.on(() => updatePasswordAction(this.username, this.confirmPassword));
     }
 
     setErrorConfirmVisible(visible: boolean)
     {
-        this.passwordMissMatchText.gameobject.visible = visible;
+        this.wrongPasswordText.gameobject.visible = visible;
     }
 
-    // Create Password Input DOM Element using RexUI 
-    createPasswordInput(scene : Phaser.Scene, inputBackground : Image, onTextChange: (i: InputText, e: Event) => void) {
-        const input = new RexInputText(
-            scene,
-            inputBackground.gameobject.x + inputBackground.gameobject.displayWidth * 0.5,
-            inputBackground.gameobject.y,
-            inputBackground.gameobject.displayWidth,
-            inputBackground.gameobject.displayHeight,
-            {
-                type: 'password',
-                fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-                text: '',
-                fontSize: '1.7rem',
-                align: "left",
-                color: '#F6C167',
-                paddingRight: '1.25em',
-            },
-        ).on('textchange', onTextChange);
-        
-        input.setOrigin(0.5, 0.5);
+    registerOnForgotPasswordListener(onForgotPassword: () => void) {
+        this.forgotPasswordText.gameobject.on('pointerdown', () => onForgotPassword());
+    }
 
-        const visibilityButton = scene.add.dom(
-            inputBackground.gameobject.x + inputBackground.gameobject.displayWidth * .95, input.y, 
-            "i", "font-size: 1.15rem; color: #EFEBD9; cursor: pointer;")
-        visibilityButton.setClassName("fas fa-eye");
-        visibilityButton.setOrigin(1, 0.5);
-        visibilityButton.addListener('click');
-        visibilityButton.on("click", () => {
-            const type = input.node.attributes.getNamedItem("type")!.value;
-            input.node.setAttribute("type", type == "text" ? "password" : "text");
-            visibilityButton.setClassName(type == "text" ? "fas fa-eye" : "fas fa-eye-slash");
-        });
-        
+    setInputActive(isActive: boolean) {
+        this.usernameInput.setVisible(isActive);
+        this.passwordInput.setVisible(isActive);
+        this.passwordInput.visibilityButton?.setVisible(isActive);
+    }
     
-        return input;
-    }        
+    onRememberMeClicked(){
+        console.log("remember me clicked")
+        this.isRememberMe = !this.isRememberMe;
+        
+        if (this.isRememberMe) {
+            this.rememberMeCheckbox.gameobject.setTexture(UIAsset.checkbox_checked.key);
+        }
+        else {
+            this.rememberMeCheckbox.gameobject.setTexture(UIAsset.checkbox.key);
+        }
     }
+}
+    

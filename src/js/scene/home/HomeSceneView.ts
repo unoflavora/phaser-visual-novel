@@ -25,18 +25,23 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
 
     // Global Variables
     xPos = this.scene.scale.width * 0.5;
-    yPos = this.scene.scale.height * 0.25;        
+    yPos = this.scene.scale.height * 0.5;        
 
     constructor(scene : Phaser.Scene) {
         super(scene);
         scene.add.existing(this);
 
-        let background = new Image( this.scene, this.xPos, this.yPos, BackgroundAsset.background_main.key);
+        const background = new Image(
+            this.scene,
+            this.scene.scale.width * 0.5,
+            this.scene.scale.height * 0.5,
+            BackgroundAsset.background_main.key,
+        );
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
 
-        this.gameTitle = new Image (this.scene, this.xPos, this.yPos * .55, UIAsset.game_title.key);
+        this.gameTitle = new Image (this.scene, this.xPos, this.scene.scale.height * .25, UIAsset.game_title.key);
 
-        this.startButton = new Button (this.scene,this.xPos, this.yPos * 1.25, UIAsset.button_frame_primary.key);
+        this.startButton = new Button (this.scene,this.xPos, this.scene.scale.height * .45, UIAsset.button_frame_primary.key);
         this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.text.mainMenu.startGame);  
         this.startButtonText.gameobject.setOrigin(.5)
 
@@ -64,19 +69,19 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.gameTitle.transform.setDisplayWidth(this.scene.scale.width * 0.4, true);
 
         this.startButton.transform.setDisplayWidth(this.scene.scale.width * 0.2, true);
-        this.startButtonText.transform.setFontSize(this.startButton.gameobject.displayHeight * .2);
+        this.startButtonText.transform.setFontSize(this.startButton.gameobject.displayHeight * .15);
         
         let gameLogButtonPos = { x: this.startButton.gameobject.x, y: this.startButton.gameobject.y + this.startButton.gameobject.displayHeight * .7}
         this.gameLogButton.transform.setPosition(gameLogButtonPos.x, gameLogButtonPos.y);
         this.gameLogButton.transform.setDisplayWidth(this.scene.scale.width * .18, true);
-
         this.gameLogButtonText.transform.setPosition(this.gameLogButton.gameobject.x, this.gameLogButton.gameobject.y)
+        this.gameLogButtonText.transform.setFontSize(this.gameLogButton.gameobject.displayHeight * .12)
 
         let settingButtonPos = {x: this.gameLogButton.gameobject.x, y: this.gameLogButton.gameobject.y + this.gameLogButton.gameobject.displayHeight * .7}
         this.settingButton.transform.setPosition(settingButtonPos.x, settingButtonPos.y)
         this.settingButton.transform.setDisplayWidth(this.scene.scale.width * 0.18, true);
-
         this.settingText.transform.setPosition(this.settingButton.gameobject.x, this.settingButton.gameobject.y);
+        this.settingText.transform.setFontSize(this.settingButton.gameobject.displayHeight * .12);
 
         let recommendationPos = {x : this.settingButton.gameobject.x, y: this.settingButton.gameobject.y + this.settingButton.gameobject.displayHeight}
         this.recommendText.transform.setPosition (recommendationPos.x, recommendationPos.y)

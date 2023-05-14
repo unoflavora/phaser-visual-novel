@@ -9,6 +9,7 @@ import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import { LanguageEnum } from "Modules/GameData";
 import { assertUnreachable } from "Modules/helpers/TsHelper";
 import Phaser from "phaser";
+import Localizations from "Modules/localization/LocalizationHelper";
 
 export default class SelectLanguageView extends Phaser.GameObjects.Container {
 
@@ -51,7 +52,7 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
 
         this.flagEn = new Image(this.scene, xPos - this.scene.scale.width * .15, yPos  * 2, UIAsset.language_flag_en.key)
 
-        var title = new Text( this.scene, xPos, yPos * 1.2, "Select Language", {
+        var title = new Text( this.scene, xPos, yPos * 1.2, Localizations.text.select_language, {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
             color: FontColors.lightBrown
         });

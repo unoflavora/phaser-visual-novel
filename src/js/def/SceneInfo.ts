@@ -7,6 +7,7 @@ import MainSceneController from '../scene/MainSceneController';
 import HomeSceneController from '../scene/home/HomeSceneController';
 import CreatePasswordController from '../scene/auth/createPassword/CreatePasswordController';
 import LoginSceneController from '../scene/auth/login/LoginSceneController';
+import ForgotPasswordController from '../scene/auth/forgotPassword/ForgotPasswordController';
 
 export const SceneInfo = {
   bootScene: {
@@ -44,5 +45,10 @@ export const SceneInfo = {
   loginScene: {
     key: 'LoginScene',
     module: LoginSceneController
+  },
+  forgotPasswordScene: {
+    key: 'ForgotPasswordScene',
+    module: ForgotPasswordController
   }
+
 };

@@ -4,5 +4,9 @@ import IndonesianText from "./language/IndonesianText";
 
 export default class Localizations 
 {
-    static text = GameData.settings.lang == LanguageEnum.English ? EnglishText : IndonesianText;
+    static get text()
+    {        
+        return GameData.settings.lang == LanguageEnum.English ? EnglishText : IndonesianText;
+    }
+    
 }

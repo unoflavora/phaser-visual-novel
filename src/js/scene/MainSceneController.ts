@@ -1,7 +1,3 @@
-// import { GameData }     from "../gameplay/game/GameData";
-// import Main             from "./Main";
-// import PopUpController  from "./view/PopUpController";
-// import { PopUpType }    from "./view/PopUpMap";
 import { SceneInfo } from "Definitions/SceneInfo";
 
 export default class MainSceneController extends Phaser.Scene {

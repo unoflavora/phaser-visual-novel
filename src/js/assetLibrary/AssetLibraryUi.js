@@ -35,12 +35,26 @@ export const UIAsset = {
 	},
 	//#endregion 
 
-  cover_black: {
-    key: 'cover_black',
-    path: '/img/ui/cover_black.png',
-    type: AssetType.STATIC,
-  },
-  language_flag_id: {
+	//#region Login Authentication
+	checkbox: {
+		key: "checkbox",
+		path: "/img/ui/login/ui-button-checkbox.png",
+		type: AssetType.STATIC,
+	},
+	checkbox_checked: {
+		key: "checkbox_checked",
+		path: "/img/ui/login/ui-button-checkbox-checked.png",
+		type: AssetType.STATIC,
+	}
+,	//#endregion
+
+
+	cover_black: {
+		key: 'cover_black',
+		path: '/img/ui/cover_black.png',
+		type: AssetType.STATIC,
+	},
+	language_flag_id: {
 		key: "language_flag_id",
 		path: "/img/ui/selectLanguage/indonesia.png",
 		type: AssetType.STATIC
@@ -50,23 +64,28 @@ export const UIAsset = {
 		path: "/img/ui/selectLanguage/english.png",
 		type: AssetType.STATIC
 	},
-  game_title: {
-    key: "T_Logo_GameTitle",
+	game_title: {
+		key: "T_Logo_GameTitle",
 		path: "/img/ui/T_Logo_GameTitle.png",
 		type: AssetType.STATIC
-  },
-  button_frame_primary: 
-  {
-    key: "button_frame_primary",
-    path: "/img/ui/icons/ui-icon-frame-primary.png",
-    type: AssetType.STATIC
-  },
-  button_frame_secondary: 
-  {
-    key: "button_frame_secondary",
-    path: "/img/ui/icons/ui-icon-frame-secondary.png",
-    type: AssetType.STATIC
-  },
+	},
+	corporate_logo: {
+		key: "corporate_logo",
+			path: "/img/ui/T_Logo_Corporate.png",
+			type: AssetType.STATIC
+	  },
+	button_frame_primary: 
+	{
+	key: "button_frame_primary",
+	path: "/img/ui/icons/ui-icon-frame-primary.png",
+	type: AssetType.STATIC
+	},
+	button_frame_secondary: 
+	{
+	key: "button_frame_secondary",
+	path: "/img/ui/icons/ui-icon-frame-secondary.png",
+	type: AssetType.STATIC
+	},
 
   	// #region General
 	pause_button: {

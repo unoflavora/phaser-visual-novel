@@ -19,6 +19,7 @@ export const FontAsset = {
 export const FontColors = 
 {
     darkBrown : "#4B3B33",
-    lightBrown : "#92653B"
+    lightBrown : "#92653B",
+    red: "#FF0000",
 }
 
