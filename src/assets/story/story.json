@@ -1,0 +1,141 @@
+[
+    {
+        "id": 0,
+        "story": "Once upon a time, in a far-off kingdom, there was a young adventurer named Pomoro who is known for his thirst for adventure. He started his journey to Prospevil, a prosperous village in the Kingdom of Vefurata.\n\nPomoro set out on his journey, feeling excited to embark on this new adventure. To the forest of Vefurata.",
+        "required": "Na",
+        "leftCharacter": null,
+        "rightCharacter": null,
+        "questRespond": null,
+        "questAccuracy": []
+    },
+    {
+        "id": 1,
+        "story": "As he walked through the forest, Pomoro saw a mushroom humanoid in front of the house. She stood worried and looked shy.",
+        "questRespond": {
+            "options": [
+                {
+                    "option": "A",
+                    "context": "Pomoro ignore & walk a way",
+                    "response": null,
+                    "postInteraction": {
+                        "leftCharacter": "Ifuly",
+                        "dialogue": "Ifuly noticed that someone seems to be approaching her, and he ran inside her house."
+                    }
+                },
+                {
+                    "option": "B",
+                    "context": "Greet normally",
+                    "response": "Ohh, emm.. Hi there...",
+                    "postInteraction": {
+                        "leftCharacter": "Ifuly",
+                        "dialogue": "Ifuly look so embarrass and go inside her house."
+                    }
+                },
+                {
+                    "option": "C",
+                    "context": "Try a polite way to ask direction.",
+                    "response": "... Oh hi, sorry. Can you repeat your question? I didn’t pay full attention to it.",
+                    "postInteraction": [
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Sure, so I want to go to Prospevil, am I on the right direction?"
+                        },
+                        {
+                            "rightCharacter": "Ifuly",
+                            "dialogue": "Ohhh, Prospevil. I think it's correct, but I'm not sure.\n\nMaybe you can double check with one of my sisters, they went out a few hours ago."
+                        }
+                    ],
+                    "questAdded": "Directions from Ifuly’s sister"
+                },
+                {
+                    "option": "D",
+                    "context": "Introduce and ask politely & ask direction",
+                    "response": "Oh, hi Pomoro.\n\nSorry, I didn’t pay full attention. I'm Ifuly by the way. Do you mind repeating your question?",
+                    "postInteraction": [
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Yes, so I want to go to Prospevil, am I on the right direction?"
+                        },
+                        {
+                            "rightCharacter": "Ifuly",
+                            "dialogue": "Ohhh, Prospevil. I think it's correct, but you can double check with my sisters if you meet them\n\nThey’ve been there a lot, I’ve only been there few times"
+                        },
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Emm, may I know what your sisters’ names are?"
+                        },
+                        {
+                            "rightCharacter": "Ifuly",
+                            "dialogue": "They look similar to me and their names are Bolebole, Agari & Imuc.\n\nAlso say hi from me if you meet them, Pomoro!"
+                        }
+                    ],
+                    "questAdded": "Directions from Ifuly’s sisters"
+                }
+            ]
+        },
+        "questAccuracy": ["shy"]
+    },
+    {
+        "id": 2,
+        "story": "Upon venturing deep into the Vefurata forest, Pomoro discovers a carrot house on the cliff. He seems curious and went inside the carrot house.\n\nOnce Pomoro arrived there, he saw a carrot humanoid who looked so cheerful and smiley in front of the house.",
+        "questRespond": {
+            "options": [
+                {
+                    "option": "A",
+                    "context": "Feel uncomfortable to ask, leave immediatly.",
+                    "response": null,
+                    "postInteraction": {
+                        "leftCharacter": "Ifuly",
+                        "dialogue": "Ifuly look so embarrass and go inside her house."
+                    }
+                },
+                {
+                    "option": "B",
+                    "context": "Wondering a what that carrot person into, Pomoro also wondering such a good ambient today.",
+                    "response": "Yes! It's such a good day and I'm glad.\n\nAlright, time to get to work.",
+                    "postInteraction": {
+                        "leftCharacter": "Ota",
+                        "dialogue": "Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                    }
+                },
+                {
+                    "option": "C",
+                    "context": "Approach a carrot person and wondering what he think. Felt the breze and enjoy a nice weather on the cliff and greet him.",
+                    "response": "Surely.. A day like this lifts up ones spirits. Where are you heading?",
+                    "postInteraction": [
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "I'm heading to Prospevil, have you been there before?"
+                        },
+                        {
+                            "rightCharacter": "Ota",
+                            "dialogue": "Ohh, Prospevil! Truly a very beautiful place that you are heading to.\n\nWe all lived near that area back then."
+                        },
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Wait, \"we all\"? What do you mean?"
+                        },
+                        {
+                            "rightCharacter": "Ota",
+                            "dialogue": "Yeap. Pasti, Naca, Daucu and I. Oh and I forgot to tell you, my name is Ota."
+                        },
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Ahh, seems so nice having a tight-knit family. My name is Pomoro! It’s a pleasure to meet you, Ota."
+                        },
+                        {
+                            "rightCharacter": "Ota",
+                            "dialogue": "Yes, pleasure to meet you too, Pomoro. Have a great day! I'm going to go to work!\n\nOta swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                        },
+                        {
+                            "leftCharacter": "Pomoro",
+                            "dialogue": "Pomoro leave with a joy and smile upon his face."
+                        }
+                    ],
+                    "questAdded": "Cheers of Carrots"
+                }
+            ]
+        },
+        "questAccuracy": ["happy"]
+    }
+]

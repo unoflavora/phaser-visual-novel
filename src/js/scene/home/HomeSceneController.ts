@@ -1,5 +1,6 @@
 import { SceneInfo }            from "Definitions/SceneInfo";
 import HomeSceneView            from "./HomeSceneView";
+import Main from "../main";
 
 
 export default class HomeSceneController extends Phaser.Scene {
@@ -16,5 +17,19 @@ export default class HomeSceneController extends Phaser.Scene {
     {
         this.view = new HomeSceneView(this);
         this.view.create();
+        this.view.initButton(() => {
+
+            // Load Visual Novel
+            this.scene.start(SceneInfo.gameplayScene.key);
+        }, 
+        
+        () => {
+            // Open Log Game
+        }, 
+    
+        () => {
+            // Open Settings
+            Main.instance.OpenPopup();
+        })
     }
 }

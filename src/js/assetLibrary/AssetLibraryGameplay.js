@@ -1,3 +1,5 @@
+import { AssetType } from "Modules/assetLoader";
+
 export const GameplayAsset = {
     // character:{
     //     key: 'character',
@@ -6,4 +8,10 @@ export const GameplayAsset = {
     //     atlas_file: ['character.atlas'],
     //     type: AssetType.SPINE,
     // },
+
+    story : {
+        key: 'story',
+        path: '/story/story.json',
+        type: AssetType.JSON,
+    },
 };

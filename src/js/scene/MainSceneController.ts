@@ -1,11 +1,20 @@
 import { SceneInfo } from "Definitions/SceneInfo";
-
+import PopupController from "./popup/PopupController";
+import Main from "./main";
 export default class MainSceneController extends Phaser.Scene {
+    popupController!: PopupController;
+    main! : Main;
+
     constructor() {
         super({
             key: SceneInfo.mainScene.key
         });
     }    
+
+    init()
+    {
+        this.main = new Main(this)
+    }
 
     preload() { 
         this.load.plugin(
@@ -15,14 +24,8 @@ export default class MainSceneController extends Phaser.Scene {
         );
     }
 
-    init() 
-    {
-        // this.main = new Main();        
-    }
 
-    async create() {
-        // const popUpController = new PopUpController(this);
-        // popUpController.init();        
+    create() {
 
         // this.main.popUpController = popUpController;
 
@@ -37,17 +40,17 @@ export default class MainSceneController extends Phaser.Scene {
         const queryString = window.location.search;
 
         if (queryString) {
-            await this.checkTokenToSetPassword(queryString);
+            this.checkTokenToSetPassword(queryString);
         }
         else {
-            await this.startGame();
+             this.startGame();
         }
     }
 
     async startGame() {        
         var refreshToken = window.localStorage.getItem("refreshToken");
-
-        this.scene.launch(SceneInfo.createPassword.key);
+        
+        this.scene.launch(SceneInfo.gameplayScene.key);
 
         return;
 
@@ -122,4 +125,6 @@ export default class MainSceneController extends Phaser.Scene {
         }  
         */              
     }
+
+    
 }

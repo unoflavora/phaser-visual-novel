@@ -91,7 +91,7 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
     }
 
     
-    initButton = (startMissionAction : EventHandler, overviewAction : EventHandler, settingAction : EventHandler) => 
+    initButton = (startMissionAction : Function, overviewAction : Function, settingAction : Function) => 
     {
         this.startButton.click.on(startMissionAction);
         this.gameLogButton.click.on(overviewAction);

@@ -28,16 +28,12 @@ export default class SelectLanguageController extends Phaser.Scene {
 
         this.view.create();
     
-        this.view.registerOnLanguageClicked(LanguageEnum.English, () => {
-            this.audioController.play(AudioAsset.main_button_click.key);
-            GameData.settings.lang = LanguageEnum.English;
-            this.scene.start(SceneInfo.homeScene.key);
-        })
+        this.view.registerOnLanguageClicked(this.SelectLanguage)
+    }
 
-        this.view.registerOnLanguageClicked(LanguageEnum.Indonesian, () => {
-            this.audioController.play(AudioAsset.main_button_click.key);
-            GameData.settings.lang = LanguageEnum.Indonesian;
-            this.scene.start(SceneInfo.homeScene.key);
-        })  
+    private SelectLanguage(language : LanguageEnum) {
+        this.audioController.play(AudioAsset.main_button_click.key);
+        GameData.settings.lang = language;
+        this.scene.start(SceneInfo.loginScene.key);
     }
 }

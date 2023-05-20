@@ -3,6 +3,7 @@ import AudioController 			from "Modules/AudioController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
+import Story from "Definitions/StoryType";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
@@ -16,68 +17,57 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 	// Controllers
 	audioController : AudioController | undefined;
-	view : GameplaySceneView | undefined;
+	view! : GameplaySceneView;
+
+	// State
+	IsTyping : boolean = false;
 
 	beforeUnloadListener = (event : Event) => 
 	{		
 		event.preventDefault();
 	};
-	/**
-	 * 
-	 * @param {avatarData} avatarMainCharacter 
-	 */
+	
 	init = () => 
 	{		
-		// widow beforeUnload listener
 		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true});
 
 		this.audioController = AudioController.getInstance();
 
-		// this.gameController = new GameController(this);
-		// this.gameController.init(avatarMainCharacter);
-
-		// this.visualNovelController = new VisualNovelController(this);
-		// this.visualNovelController.init(story, avatarMainCharacter);
-		// this.visualNovelController.setInteractiveListener(true);		
-
-		// this.quizController = new QuizController(this);
-		// this.quizController.init(story);
-		// this.quizController.setInteractiveListener(false);
-
-		// this.main = Main.getInstance();
-		// this.main.popUpController.lostConnectionPopup.registerPopUpOpen(() => {
-		// 	this.view.setInteractiveListener(false);
-        //     this.visualNovelController.setInteractiveListener(false)
-		// 	this.quizController.setInteractiveListener(false);
-        // });
-
-        // this.main.popUpController.lostConnectionPopup.registerPopUpClose(() => {
-        //     this.main.popUpController.lostConnectionPopup.hide();
-        //     new Promise((resolve) => {
-        //         setTimeout(() => {
-        //             if (this.main.popUpController.isOffline) {
-        //                 this.main.popUpController.lostConnectionPopup.show();
-        //             }
-        //             else {                        
-		// 				this.view.setInteractiveListener(true);
-		// 				if (this.isQuiz) {
-		// 					this.quizController.setInteractiveListener(true);
-		// 				}
-		// 				else {
-		// 					this.visualNovelController.setInteractiveListener(true)
-		// 				}
-        //             }
-        //         }, 200);
-        //     });            
-        // });
-
-		// this.miniGameController = this.main.miniGameController;
-		// this.miniGameController.init(this);
-
-		// this.pauseController = new PauseController(this);
-   		// this.pauseController.init();
-
 		this.view = new GameplaySceneView(this);
 		this.view.create();		
+		
+		this.loadScene();
 	}
+
+	private loadScene() {
+		var data: Story = this.cache.json.get(GameplayAsset.story.key);
+		var currentSceneIndex = 0;
+		var scene = data[currentSceneIndex];
+
+		this.view.LoadScene(scene);
+
+		this.view.on(this.view.events.OnCurrentTextComplete, () => {
+			console.log("Scene Complete")
+
+			if(scene.questRespond != null)
+			{
+				console.log("Quest Respond");
+				return;
+			}
+
+			currentSceneIndex++;
+				
+			if(currentSceneIndex >= data.length)
+			{
+				console.log("Story Complete");
+			}
+			else
+			{
+				scene = data[currentSceneIndex]
+				this.view.LoadScene(scene);
+			}
+		});
+	}
+
+
 }

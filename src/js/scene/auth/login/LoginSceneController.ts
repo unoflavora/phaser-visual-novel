@@ -31,7 +31,7 @@ export default class LoginSceneController extends Phaser.Scene {
       this.view.setErrorConfirmVisible(false);
 
       console.log("Username: " +  username + " Password: " + confPass);
-      this.scene.start(SceneInfo.languageSelectorScene.key);
+      this.scene.start(SceneInfo.homeScene.key);
     })
 
     this.view.registerOnForgotPasswordListener(() => {

@@ -1,6 +1,8 @@
 import CreatePasswordView from './CreatePasswordView';
 import { SceneInfo } from 'Definitions/SceneInfo';
 import RexInputText from 'phaser3-rex-plugins/plugins/inputtext';
+import Main from '../../main';
+import { PopupType } from '../../popup/PopupController';
 
 export default class CreatePasswordController extends Phaser.Scene {
   private view!: CreatePasswordView;
@@ -30,5 +32,7 @@ export default class CreatePasswordController extends Phaser.Scene {
       this.scene.start(SceneInfo.loginScene.key);
       console.log("Password: " + pass);
     })
+
+    Main.instance.OpenPopup()
   }
 }

@@ -76,15 +76,15 @@ export const UIAsset = {
 	  },
 	button_frame_primary: 
 	{
-	key: "button_frame_primary",
-	path: "/img/ui/icons/ui-icon-frame-primary.png",
-	type: AssetType.STATIC
+		key: "button_frame_primary",
+		path: "/img/ui/icons/ui-icon-frame-primary.png",
+		type: AssetType.STATIC
 	},
 	button_frame_secondary: 
 	{
-	key: "button_frame_secondary",
-	path: "/img/ui/icons/ui-icon-frame-secondary.png",
-	type: AssetType.STATIC
+		key: "button_frame_secondary",
+		path: "/img/ui/icons/ui-icon-frame-secondary.png",
+		type: AssetType.STATIC
 	},
 
   	// #region General
@@ -100,18 +100,42 @@ export const UIAsset = {
 	},
 	// #endregion
 
-	// #region Login
+	// #region frame
 	popup_background: {
 		key: "popup_background",
 		path: "/img/ui/popups/ui-frame.png",
 		type: AssetType.STATIC,
 	},
-	icon_visibility: 
+	popup_background_with_head:
 	{
-		key: "icon_visibility",
-		path: "/img/ui/icons/ui-icon-visibility.png",
-		type: AssetType.STATIC
-	}
+		key: "popup_background_with_head",
+		path: "/img/ui/popups/ui-frame-1by1-placement-with_head.png",
+		type: AssetType.STATIC,
+	},
+	//#endregion
+
+	// #region Icons
+	icon_sfx: {
+		key: "icon_sfx",
+		path: "/img/ui/icons/ui-icon-interface-audio.png",
+		type: AssetType.STATIC,
+	},
+	icon_bgm: {
+		key: "icon_bgm",
+		path: "/img/ui/icons/ui-icon-interface-volume.png",
+		type: AssetType.STATIC,
+	},
+	icon_close: {
+		key: "icon_close",
+		path: "/img/ui/icons/ui-icon-interface-pause.png",
+		type: AssetType.STATIC,
+	},
+	icon_dropdown: {
+		key: "icon_dropdown",
+		path: "/img/ui/icons/ui-icon-interface-dropdown.png",
+		type: AssetType.STATIC,
+	},
+	// #endregion
 };
 
 export const BackgroundAsset = 
@@ -121,5 +145,21 @@ export const BackgroundAsset =
     key: "background_main",
     path: "/img/background/background_main.png",
     type: AssetType.STATIC,
-  }
+  },
+  gameplay_bg_0: {
+	key: "gameplay_bg_0",
+	path: "/img/background/bgscene-0.png",
+	type: AssetType.STATIC,
+  },
+  gameplay_bg_1: {
+	key: "gameplay_bg_1",
+	path: "/img/background/bgscene-1.png",
+	type: AssetType.STATIC,
+  },
+  gameplay_bg_2: {
+	key: "gameplay_bg_2",
+	path: "/img/background/bgscene-2.png",
+	type: AssetType.STATIC,
+},
+
 } 
