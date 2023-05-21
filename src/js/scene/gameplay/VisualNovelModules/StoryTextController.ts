@@ -3,7 +3,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import TagText from "phaser3-rex-plugins/plugins/tagtext";
 
-export class StoryText extends Phaser.GameObjects.Group {
+export class StoryTextController extends Phaser.GameObjects.Group {
     private _textBox : Image;
     private _text: TagText;
     private _nextButton: Text;

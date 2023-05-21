@@ -123,10 +123,12 @@ export default class GameplaySceneController extends Phaser.Scene {
 			if (currentResponses[currentPostInteractionIndex].monologue != null)
 			{
 				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].monologue, true);
+				this.view.ShowCharacter(currentResponses[currentPostInteractionIndex]);
 			}
 			else
 			{
 				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].dialogue);
+				this.view.ShowCharacter(currentResponses[currentPostInteractionIndex]);
 			}
 		}
 	}
