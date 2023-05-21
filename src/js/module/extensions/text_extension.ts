@@ -20,7 +20,7 @@ export default class RexInputText extends InputText
      * @param height 
      * @param config 
      */
-    constructor(scene : Phaser.Scene, x : number, y : number, width : number, height : number, config : InputText.IConfig) 
+    constructor(scene : Phaser.Scene, x : number, y : number, width : number, height : number, config : any) 
     {
         super(scene, x, y, width, height, config) 
         {

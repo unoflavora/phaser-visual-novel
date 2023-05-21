@@ -160,6 +160,10 @@ export const BackgroundAsset =
 	key: "gameplay_bg_2",
 	path: "/img/background/bgscene-2.png",
 	type: AssetType.STATIC,
-},
-
+  },
+  gameplay_bg_3: {
+	key: "gameplay_bg_3",
+	path: "/img/background/bgscene-3.png",
+	type: AssetType.STATIC,
+  },
 } 

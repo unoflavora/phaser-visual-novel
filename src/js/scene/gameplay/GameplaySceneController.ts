@@ -3,7 +3,7 @@ import AudioController 			from "Modules/AudioController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
-import Story from "Definitions/StoryType";
+import { DialogueResponse, MonologueResponse, Story } from "Definitions/StoryInterface";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
@@ -41,32 +41,94 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 	private loadScene() {
 		var data: Story = this.cache.json.get(GameplayAsset.story.key);
-		var currentSceneIndex = 0;
+
+		var currentSceneIndex : number = 0;
+
+		var currentResponses : (MonologueResponse | DialogueResponse)[] | null = null;
+
+		var currentPostInteractionIndex : number = -1;
+
 		var scene = data[currentSceneIndex];
 
 		this.view.LoadScene(scene);
 
-		this.view.on(this.view.events.OnCurrentTextComplete, () => {
-			console.log("Scene Complete")
+		this.view.on(this.view.events.OnStoryComplete, onStoryComplete.bind(this));
 
-			if(scene.questRespond != null)
+		this.view.on(this.view.events.OnPlayerResponse, onPlayerResponse.bind(this));
+
+		this.view.on(this.view.events.OnCurrentDialogueFinished, onInteractionDialogue.bind(this));			
+
+		function onStoryComplete(this : GameplaySceneController) {
+			console.log("Story Complete");
+
+			if(scene.questRespond != null && currentResponses == null)
 			{
-				console.log("Quest Respond");
+				this.view.AskPlayerForResponse(scene.questRespond);
 				return;
 			}
 
 			currentSceneIndex++;
-				
-			if(currentSceneIndex >= data.length)
+
+			if(currentSceneIndex < data.length)
 			{
 				console.log("Story Complete");
+
+				scene = data[currentSceneIndex]
+				this.view.LoadScene(scene);
+				return;
+			}
+
+			console.log("Scenes Complete");
+
+		}
+
+
+		function onPlayerResponse(this : GameplaySceneController, optionIndex : number) {
+			console.log("Asking Player Response");
+
+			this.view.HideOptions();
+
+			if(scene.questRespond == null) {
+				onStoryComplete.call(this);
+				return;
+			};
+
+			currentResponses = scene.questRespond.options[optionIndex].response;
+			
+			onInteractionDialogue.call(this);			
+		}
+		
+		function onInteractionDialogue(this: GameplaySceneController) 
+		{
+			if(currentResponses == null) return;
+			
+			console.log("Interaction Ongoing");
+			
+			currentPostInteractionIndex++;
+
+			if(currentPostInteractionIndex >= currentResponses.length)
+			{
+				console.log("Interaction Finished");
+
+				onStoryComplete.call(this);
+
+				currentResponses = null;
+
+				currentPostInteractionIndex = -1;
+				return;
+			}
+
+			console.log(currentResponses[currentPostInteractionIndex])
+
+			if (currentResponses[currentPostInteractionIndex].monologue != null)
+			{
+				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].monologue, true);
 			}
 			else
 			{
-				scene = data[currentSceneIndex]
-				this.view.LoadScene(scene);
+				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].dialogue);
 			}
-		});
+		}
 	}
 
 
