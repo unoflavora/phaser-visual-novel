@@ -125,8 +125,8 @@
                             "rightCharacter": "Ota"
                         },
                         {
-                            "dialogue": "Ota swung his shovel, put it on his right shoulder, and start leave from his yard.",
-                            "leftCharacter": "Ota"
+                            "monologue": "Ota swung his shovel, put it on his right shoulder, and start leave from his yard.",
+                            "leftCharacter": "leave"
                         }
                     ]
                 },
@@ -207,7 +207,7 @@
                   "rightCharacter": "Bolebole Agari Imuc"
                 },
                 {
-                  "dialogue": "Pomoro shocked they leave immediately. He felt something not right for what he did and thinks about a better way.",
+                  "monologue": "Pomoro shocked they leave immediately. He felt something not right for what he did and thinks about a better way.",
                   "rightCharacter": "leave"
                 }
               ]
@@ -245,11 +245,11 @@
                   "rightCharacter": "Agari"
                 },
                 {
-                  "dialogue": "Don't worry, we’ll be heading back later. Thanks for letting us know!\n---\nYes indeed she is a little bit shy, but she cares a lot about us",
+                  "dialogue": "Don't worry, we’ll be heading back later. Thanks for letting us know!\n\nYes indeed she is a little bit shy, but she cares a lot about us",
                   "rightCharacter": "Imuc"
                 },
                 {
-                  "dialogue": "So I have a question for all of you\n---\nBig sis says that you guys know the direction to Prospevil?",
+                  "dialogue": "So I have a question for all of you\n\nBig sis says that you guys know the direction to Prospevil?",
                   "leftCharacter": "Pomoro"
                 },
                 {

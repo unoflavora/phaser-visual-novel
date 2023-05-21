@@ -18,6 +18,7 @@ export class TextBox extends Phaser.GameObjects.Group {
         super(scene)
 
         this._textBox = textBox;
+        this._padding = this._textBox.gameobject.displayWidth * 0.02;
 
 		this._text = new TagText(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
@@ -29,7 +30,7 @@ export class TextBox extends Phaser.GameObjects.Group {
 		});
         this.scene.add.existing(this._text);
         this.add(this._text);
-        this._text.setWordWrapWidth(this._textBox.gameobject.displayWidth - 20)
+        this._text.setWordWrapWidth(this._textBox.gameobject.displayWidth - this._padding * 2)
         this._text.setWrapMode("word");
 
 		this._nextButton = new Text(scene, 
@@ -57,6 +58,7 @@ export class TextBox extends Phaser.GameObjects.Group {
 
 		this._nextButton.gameobject.once("pointerdown", () => {
             paragraphIndex += 1;
+            this._textBox.gameobject.removeAllListeners();
             this.LoadText(text, monologue, paragraphIndex);
         });
 
@@ -89,12 +91,12 @@ export class TextBox extends Phaser.GameObjects.Group {
         this._text.text += textToType[i];
         i += 1;
         if (i >= textToType.length) {
-            this.completeTyping(textToType);
+            this.stopTyping(textToType);
         }
       }, 20)		
     }
   
-    private completeTyping(text: string) 
+    private stopTyping(text: string) 
     {
         if(this._typingEffect != undefined)
         {
@@ -126,7 +128,8 @@ export class TextBox extends Phaser.GameObjects.Group {
 
     private handleTextBoxClick = (text: string) => {
         if(this._isTyping) {
-            this.completeTyping(text);
+            console.log("Skip typing", text);
+            this.stopTyping(text);
         } else {
             this._nextButton.gameobject.emit("pointerdown");
         }
