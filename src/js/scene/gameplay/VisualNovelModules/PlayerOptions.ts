@@ -5,7 +5,7 @@ import Text from "Modules/gameobjects/Text";
 import ContainerLite from "phaser3-rex-plugins/plugins/containerlite";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
 
-export class GridOptions extends Phaser.GameObjects.Group
+export class PlayerOptions extends Phaser.GameObjects.Group
 {
     private options: GridSizer
     private option_A: ContainerLite;

@@ -1,7 +1,7 @@
 import Image from "Modules/gameobjects/Image";
 import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
-import { TextBox } from "./VisualNovelModules/TextBox";
-import { GridOptions } from "./VisualNovelModules/GridOptions";
+import { StoryText } from "./VisualNovelModules/StoryText";
+import { PlayerOptions } from "./VisualNovelModules/PlayerOptions";
 import { QuestRespond, StoryElement } from "Definitions/StoryInterface";
 
 export default class GameplaySceneView extends Phaser.GameObjects.Group 
@@ -9,8 +9,8 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	// UI Objects
 	private sceneBg : Image;
 	private textBox: Image;
-	private storyText: TextBox;
-	private storyOptions: GridOptions;
+	private storyText: StoryText;
+	private storyOptions: PlayerOptions;
 	
 	// Variables
 	private eventKeys = {
@@ -35,10 +35,10 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.85, UIAsset.bg_text_box.key)
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
 
-		this.storyText = new TextBox(scene, this.textBox, () => this.emit(this.eventKeys.OnStoryComplete));
+		this.storyText = new StoryText(scene, this.textBox, () => this.emit(this.eventKeys.OnStoryComplete));
 		this.storyText.setVisible(false);
 
-		this.storyOptions = new GridOptions(scene, this.textBox, (text) => this.emit(this.eventKeys.OnPlayerResponse, text));
+		this.storyOptions = new PlayerOptions(scene, this.textBox, (text) => this.emit(this.eventKeys.OnPlayerResponse, text));
 		this.storyOptions.setVisible(false);
 	}
 
