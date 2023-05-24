@@ -1,0 +1,431 @@
+[
+    // start of 00
+    {
+        "scene": 0,
+        "has_quest": false, // skip context of emotions_*, response_*
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "background": "assets/lothar-emotional_understanding/audio/bg-sc_00.png",
+        "intro_en":
+        [
+            "Once upon a time, in a far-off kingdom, there was a young advanturer named Pomoro who known for his heart of adventurous spirit. He start a journey to Prospevil, one of prosper village in the Kingdom of Vefurata.",
+            "Excited to embark on his advanturer, Pomoro set out his journey. To the forest of Vefurata."
+        ],
+        "intro_id":
+        [
+            "sc-00 intro id tba 1",
+            "sc-00 intro id tba 2"
+        ],
+        "emotions_en": [],
+        "emotions_id": [],
+        "response_en": [],
+        "response_id": [],
+        "response_en_contexts": [],
+        "response_id_contexts": []
+    },
+    // end of 00
+
+
+
+
+    // start of 01
+    {
+        "scene": 1,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "background": "assets/lothar-emotional_understanding/audio/bg-sc_01.png",
+        "intro_en":
+        [
+            "As he walked through the forest, Pomoro saw a mushroom people in front of the house. She stood worried & looked shy."
+        ],
+        "intro_id":
+        [
+            "sc-01 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Ignore & walk a way.",
+                "score": 25
+            },
+            {
+                "text": "Greet normally.",
+                "score": 50
+            },
+            {
+                "text": "Try a polite way to ask direction.",
+                "score": 75
+            },
+            {
+                "text": "Introduce and ask politely & ask direction.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // 0 == A
+            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*you ignore and walk away"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "*Ifuly notice someone seems approach her, he ran inside her house."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hi..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "Ohh, emm.. Hi there...",
+                        "*Ifuly look so embarrass and go inside her house.*"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Excuse me, am I on right direction to Prospevil?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "...",
+                        "Oh hii, sorry...",
+                        "Can't you repeat your question? I'm not pay attention to it..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Sure, so I want to go to Prospevil, am I on right direction?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "Ohhh, Prospevil.. I think it's correct, but I'm not sure.",
+                        "Maybe you can make sure to one of my sisters, they went out a few hours ago."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hello there, my name is Pomoro.. am I on right direction to Prospevil?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "Oh, hii, Pomoro...",
+                        "...",
+                        "Sorry, not pay attention to you. I'm Ifuly, can you repeat your question?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yes, so I want to go to Prospevil, am I on right direction?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "Ohhh, Prospevil...",
+                        "I think it's correct, but you can ask to my sisters if you meet them",
+                        "They went there a lot, I only goes there few time"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Emm, may I know what is your sisters name?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "They looks like me and their name are Bolebole, Agari & Imuc...",
+                        "Also say hi from me if you meet them, Pomoro...."
+                    ]
+                }
+            ]
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 25
+            },
+            {
+                "text": "response id B tba",
+                "score": 50
+            },
+            {
+                "text": "response id C tba",
+                "score": 75
+            },
+            {
+                "text": "response id D tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // 0 == A
+            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *you ignore and walk away"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: *Ifuly notice someone seems approach her, he ran inside her house."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hi..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: Ohh, emm.. Hi there...",
+                        "id tba: *Ifuly look so embarrass and go inside her house.*"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Excuse me, am I on right direction to Prospevil?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: ...",
+                        "id tba: Oh hii, sorry...",
+                        "id tba: Can't you repeat your question? I'm not pay attention to it..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "id tba: Pomoro/You",
+                    "text": [
+                        "id tba: Sure, so I want to go to Prospevil, am I on right direction?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: Ohhh, Prospevil.. I think it's correct, but I'm not sure.",
+                        "id tba: Maybe you can make sure to one of my sisters, they went out a few hours ago."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hello there, my name is Pomoro.. am I on right direction to Prospevil?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: Oh, hii, Pomoro...",
+                        "id tba: ...",
+                        "id tba: Sorry, not pay attention to you. I'm Ifuly, can you repeat your question?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yes, so I want to go to Prospevil, am I on right direction?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: Ohhh, Prospevil...",
+                        "id tba: I think it's correct, but you can ask to my sisters if you meet them",
+                        "id tba: They went there a lot, I only goes there few time"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Emm, may I know what is your sisters name?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ifuly",
+                    "text": [
+                        "id tba: They looks like me and their name are Bolebole, Agari & Imuc...",
+                        "id tba: Also say hi from me if you meet them, Pomoro...."
+                    ]
+                }
+            ]
+        ]
+    },
+    // end of 01
+
+
+
+
+    // start of 02
+    {
+    },
+    // end of 02
+
+
+
+
+    // start of 03
+    {
+    },
+    // end of 03
+
+
+
+
+    // start of 04
+    {
+    },
+    // end of 04
+
+
+
+
+    // start of 05
+    {
+    },
+    // end of 05
+
+
+
+
+    // start of 06
+    {
+    },
+    // end of 06
+
+
+
+
+    // start of 07
+    {
+    },
+    // end of 07
+
+
+
+
+    // start of 08
+    {
+    },
+    // end of 08
+
+
+
+
+    // start of 09
+    {
+    }
+    // end of 09
+]
