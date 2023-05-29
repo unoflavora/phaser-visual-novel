@@ -78,7 +78,7 @@ export default class LoginView extends Phaser.GameObjects.Group  {
         this.usernameBg = new Image (this.scene,0,0,UIAsset.bg_text_box.key);
         this.usernameBg.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.7, true);
 
-        this.usernameLabel = new Text (this.scene,0,0,Localizations.text.mainMenu.auth.username, {...this.textStyle});
+        this.usernameLabel = new Text (this.scene,0,0,Localizations.text.mainMenu.auth.email, {...this.textStyle});
 
         this.passwordLabel = new Text(this.scene,0,0, Localizations.text.mainMenu.auth.password, {...this.textStyle});
 

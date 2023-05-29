@@ -13,7 +13,7 @@ const EnglishText = {
             password: "Password",
             confirm_password: "Confirm Password",
             create_password: "Create Password",
-            username: "Username",
+            email: "Email Address",
             forgot_password: "Forgot Password",
             remember_me: "Remember Me",
             wrong_password: "Wrong Password or Username",

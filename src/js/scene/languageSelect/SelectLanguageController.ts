@@ -28,7 +28,7 @@ export default class SelectLanguageController extends Phaser.Scene {
 
         this.view.create();
     
-        this.view.registerOnLanguageClicked(this.SelectLanguage)
+        this.view.registerOnLanguageClicked((lang) => this.SelectLanguage(lang))
     }
 
     private SelectLanguage(language : LanguageEnum) {

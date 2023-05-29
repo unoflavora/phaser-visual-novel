@@ -14,7 +14,7 @@ const IndonesianText : typeof EnglishText = {
             password: "Kata Sandi",
             confirm_password: "Konfirmasi Kata Sandi",
             create_password: "Buat Kata Sandi",
-            username: "Nama Pengguna",
+            email: "Alamat Email",
             forgot_password: "Lupa Kata Sandi",
             remember_me: "Ingat Saya",
             wrong_password: "Kata Sandi atau Nama Pengguna Salah",
