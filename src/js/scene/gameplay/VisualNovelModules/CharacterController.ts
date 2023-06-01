@@ -1,54 +1,55 @@
-import { CharacterDisplay } from "Definitions/StoryInterface";
+import { FontAsset } from "Assets/AssetLibraryFont";
+import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
+import Text from "Modules/gameobjects/Text";
 
 export default class CharacterController extends Phaser.GameObjects.Group
 {
-    private characters : {[key: string] : Image};
-
     private leftCharacter : Image | undefined;
 
     private rightCharacter : Image | undefined;
 
-    private targets : {[key: string] : number} = {};
-
     private tweens : ((value: void | PromiseLike<void>) => void)[] = [];
+
+    private characters : {[key: string] : Image} = {
+        'Pomoro/You': this.createCharacter("Pomoro"),
+
+        'Ifuly': this.createCharacter("Ifuly"),
+    };
 
     constructor(scene : Phaser.Scene) {
         super(scene);
         scene.add.existing(this);
-        this.characters = {
-            'Pomoro': this.createCharacter("Pomoro"),
-            'Ifuly': this.createCharacter("Ifuly"),
-            'Ota': this.createCharacter("Ota"),
-            'Bolebole Agari Imuc': this.createCharacter("Bolebole Agari Imuc"),
-            'Bolebole': this.createCharacter("Bolebole"),
-            'Agari': this.createCharacter("Agari"),
-            'Imuc': this.createCharacter("Imuc"),
-        };
-    }
+     }
 
     public LoadCharacter = (currentCharacter: CharacterDisplay) =>
     {
         console.log(currentCharacter)
+
         if (currentCharacter == null)
         {
             this.setVisible(false);
             return;
         }
 
-        this.setVisible(true);
-
-        if (currentCharacter.leftCharacter === "leave") 
-            this.hideCharacter(characterPosition.left);
-        else if (currentCharacter.leftCharacter) 
-            this.showCharacter(currentCharacter.leftCharacter, characterPosition.left);
-    
-        if (currentCharacter.rightCharacter === "leave") 
-            this.hideCharacter(characterPosition.right);
-        else if (currentCharacter.rightCharacter)
-            this.showCharacter(currentCharacter.rightCharacter, characterPosition.right);
+        switch(currentCharacter.position)
+        {
+            case -2:
+                this.fadeOut(characterPosition.left);
+                break;
+            case -1:
+                this.fadeIn(currentCharacter.name, characterPosition.left);
+                break;
+            case 1:
+                this.fadeIn(currentCharacter.name, characterPosition.right);
+                break;
+            case 2:
+                this.fadeOut(characterPosition.right);
+                break;
+        }
     }
 
+   
     private createCharacter(name: string) {
         var assetKey = "character_" + name.toLowerCase();
         console.log(assetKey)
@@ -59,41 +60,55 @@ export default class CharacterController extends Phaser.GameObjects.Group
         return character;
     }
 
-    private setPosition(character: Image, targetX: number, posY: number, position: characterPosition) {
-        character.transform.setPosition(targetX, posY);
+    private setFrom(character: Image, position: characterPosition) {
+
+        var posX = 0;
+
         if (position == characterPosition.left) {
             this.leftCharacter = character;
-            this.targets.left = targetX;
+            posX = this.scene.scale.width * -0.25;
         } else {
             this.rightCharacter = character;
-            this.targets.right = targetX;
+            posX = this.scene.scale.width * 1.25;
         }
+
+        character.transform.setPosition(posX, this.scene.scale.height * .5);
     }
 
 
-    private async showCharacter(name: string, position: characterPosition) {
+    private async fadeIn(name: string, position: characterPosition) {
         let character = this.characters[name];
         let targetX: number;
         let currentCharacter = position == characterPosition.left ? this.leftCharacter : this.rightCharacter;
-        if (currentCharacter && currentCharacter != character) {
-            await this.hideCharacter(position);
+
+        if (currentCharacter != null) {
+            if (currentCharacter == character) return;
+
+            await this.fadeOut(position);
         }
 
-        targetX = position == characterPosition.left ? this.scene.scale.width * 0.25 : this.scene.scale.width * 0.75;
-        this.setPosition(character, targetX, this.scene.scale.height * .5, position);
+        this.setFrom(character, position);
 
-        this.scene.tweens.add({
-            targets: character.gameobject,
-            x: targetX,
-            duration: 500,
-            ease: 'Power2',
-            onStart: function () {
-                character.gameobject.setVisible(true);
-            },
+        targetX = position == characterPosition.left ? this.scene.scale.width * 0.25 : this.scene.scale.width * 0.75;
+
+        await new Promise<void>(resolve => {
+            this.tweens.push(resolve);
+
+            this.scene.tweens.add({
+                targets: character.gameobject,
+                x: targetX,
+                duration: 500,
+                ease: 'Power2',
+                onStart: function () {
+                    character.gameobject.setVisible(true);
+                },
+            });
         });
+
+      
     }
     
-    private async hideCharacter(position: characterPosition) {
+    private async fadeOut(position: characterPosition) {
         let character = position == characterPosition.left ? this.leftCharacter : this.rightCharacter;
         if (character == undefined) return;
         let targetX: number = position == characterPosition.left ? this.scene.scale.width * -0.25 : this.scene.scale.width * 1.25;
@@ -117,8 +132,6 @@ export default class CharacterController extends Phaser.GameObjects.Group
     
     public FinishTween = () => 
     {
-        this.leftCharacter?.gameobject.setPosition(this.targets.left, this.scene.scale.height * .5);
-        this.rightCharacter?.gameobject.setPosition(this.targets.right, this.scene.scale.height * .5);
         this.tweens.filter(resolve => {resolve(); return false});
     }
 }

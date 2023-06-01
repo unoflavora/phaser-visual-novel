@@ -2,8 +2,8 @@ import Image from "Modules/gameobjects/Image";
 import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
 import { StoryTextController } from "./VisualNovelModules/StoryTextController";
 import { PlayerOptionsController } from "./VisualNovelModules/PlayerOptionsController";
-import { CharacterDisplay, QuestRespond, StoryElement } from "Definitions/StoryInterface";
 import CharacterController from "./VisualNovelModules/CharacterController";
+import CharacterNamesController from "./VisualNovelModules/CharacterNamesController";
 
 export default class GameplaySceneView extends Phaser.GameObjects.Group 
 {
@@ -13,12 +13,13 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	private storyText: StoryTextController;
 	private storyOptions: PlayerOptionsController;
 	private characterController: CharacterController;
+	private characterNames: CharacterNamesController;
 	
 	// Variables
 	private eventKeys = {
-		OnStoryComplete: "onStoryComplete",
-		OnPlayerResponse: "onOptionClicked",
-		OnCurrentDialogueFinished: "onInteractionComplete"
+		OnIntroComplete: "onStoryComplete",
+		OnPlayerChooseAnswer: "onOptionClicked",
+		OnResponseFinished: "onResponseFinished"
 	}
 
 	// Getter and Setters
@@ -39,10 +40,12 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.85, UIAsset.bg_text_box.key)
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
 
-		this.storyText = new StoryTextController(scene, this.textBox, () => this.emit(this.eventKeys.OnStoryComplete));
+		this.characterNames = new CharacterNamesController(scene);
+
+		this.storyText = new StoryTextController(scene, this.textBox, () => this.emit(this.eventKeys.OnIntroComplete));
 		this.storyText.setVisible(false);
 
-		this.storyOptions = new PlayerOptionsController(scene, this.textBox, (text) => this.emit(this.eventKeys.OnPlayerResponse, text));
+		this.storyOptions = new PlayerOptionsController(scene, this.textBox, (text) => this.emit(this.eventKeys.OnPlayerChooseAnswer, text));
 		this.storyOptions.setVisible(false);
 
 	}
@@ -51,44 +54,67 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		this.setDepth(depth);
 	};
 
-	public LoadScene = (scene : StoryElement) => 
+	public LoadScene = (scene : Scene) => 
 	{
-		this.sceneBg.gameobject.setTexture("gameplay_bg_" + scene.id);
+		this.sceneBg.gameobject.setTexture(scene.background);
 
 		this.storyText.setVisible(true);
 
 		this.storyOptions.setVisible(false);
+		
 
 		this.storyText.OnTextComplete = () => {
-			this.emit(this.eventKeys.OnStoryComplete)
+			this.emit(this.eventKeys.OnIntroComplete)
 			this.characterController.FinishTween();
 		};
 
-		this.storyText.LoadText(scene.story);
+		console.log(scene)
 
-		if(scene.required != null)
+		this.storyText.LoadText(scene.intro_en);
+
+		if(scene.intro_character != null)
 		{
-			this.ShowCharacter(scene.required)
+			this.ShowCharacter(scene.intro_character)
 		}
 	}
 
-	public ShowInteractionText(text: string, monologue: boolean = false)
+	public ShowCharacterResponses(responses: ResponseContext[], monologue: boolean = false)
 	{
 		if (this.storyText.IsTyping) return;
+
+		var currentResponseIndex = 0;
 
 		this.storyText.setVisible(true);
 
 		this.storyOptions.setVisible(false);
 
+		this.storyText.LoadText(responses[currentResponseIndex].text);
+
+		this.characterController.LoadCharacter(responses[currentResponseIndex]);
+
+		this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
+
 		this.storyText.OnTextComplete = () => {
-			this.emit(this.eventKeys.OnCurrentDialogueFinished);
+			currentResponseIndex++;
+
+			if(currentResponseIndex < responses.length)
+			{
+				this.storyText.LoadText(responses[currentResponseIndex].text);
+
+				this.characterController.LoadCharacter(responses[currentResponseIndex]);
+
+				this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
+
+				return;
+			}
+
+			this.emit(this.eventKeys.OnResponseFinished);
+
 			this.characterController.FinishTween();
 		}
-
-		this.storyText.LoadText(text, monologue)
 	}
 
-	public AskPlayerForResponse(respond: QuestRespond) 
+	public AskPlayerForAnswer(respond: Response[]) 
 	{
 		this.storyText.setVisible(false);
 
@@ -97,16 +123,19 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		for(var i = 0; i < 4; i++)
 		{
 			try {
-				this.storyOptions.setOptionValue(i, respond.options[i].context);
+				this.storyOptions.setOptionValue(i, respond[i].text);
 			} catch {
 				this.storyOptions.setOptionValue(i, "");
 			}
 		}
 	}
 
-	public ShowCharacter(character: CharacterDisplay)
+	public ShowCharacter(character: CharacterDisplay[])
 	{
-		this.characterController.LoadCharacter(character);
+		for(var i = 0; i < character.length; i++)
+		{
+			this.characterController.LoadCharacter(character[i]);
+		}
 	}
 
 	public HideOptions()

@@ -1,4 +1,5 @@
 import { FontAsset } from "Assets/AssetLibraryFont";
+import { UIAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import TagText from "phaser3-rex-plugins/plugins/tagtext";
@@ -11,7 +12,9 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 	private _padding: number = 10;
     private _isTyping : boolean = false;
     private _typingEffect : NodeJS.Timer | undefined;
-    
+
+
+
     public get IsTyping() : boolean { return this._isTyping; }
 
     constructor(scene : Phaser.Scene, textBox : Image, onCurrentTextComplete: Function) {
@@ -50,16 +53,17 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this.add(this._nextButton.gameobject);
 
         this._onTypingComplete = onCurrentTextComplete;
+        
     }
 
-    public LoadText(text: string, monologue : boolean = false, paragraphIndex: number = 0) {
+    public LoadText(paragraphs: string[], monologue : boolean = false, paragraphIndex: number = 0) {
 
         this._text.setFontStyle(monologue ? "italic" : "")
 
 		this._nextButton.gameobject.once("pointerdown", () => {
             paragraphIndex += 1;
             this._textBox.gameobject.removeAllListeners();
-            this.LoadText(text, monologue, paragraphIndex);
+            this.LoadText(paragraphs, monologue, paragraphIndex);
         });
 
         if(!this._textBox.gameobject.listenerCount("pointerdown")) {
@@ -67,7 +71,6 @@ export class StoryTextController extends Phaser.GameObjects.Group {
             this._textBox.gameobject.on("pointerdown", () => this.handleTextBoxClick(paragraphs[paragraphIndex]));
         }   
 
-		var paragraphs = text.split("\n\n");  // Split paragraphs
 		
         if (paragraphIndex < paragraphs.length) 
 		{
@@ -134,5 +137,8 @@ export class StoryTextController extends Phaser.GameObjects.Group {
             this._nextButton.gameobject.emit("pointerdown");
         }
     }
+
+    
+
   }
   

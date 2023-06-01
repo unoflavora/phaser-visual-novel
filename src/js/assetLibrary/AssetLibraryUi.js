@@ -140,30 +140,61 @@ export const UIAsset = {
 
 export const BackgroundAsset = 
 {
-  background_main: 
-  {
-    key: "background_main",
-    path: "/img/background/background_main.png",
-    type: AssetType.STATIC,
-  },
-  gameplay_bg_0: {
-	key: "gameplay_bg_0",
-	path: "/img/background/bgscene-0.png",
-	type: AssetType.STATIC,
-  },
-  gameplay_bg_1: {
-	key: "gameplay_bg_1",
-	path: "/img/background/bgscene-1.png",
-	type: AssetType.STATIC,
-  },
-  gameplay_bg_2: {
-	key: "gameplay_bg_2",
-	path: "/img/background/bgscene-2.png",
-	type: AssetType.STATIC,
-  },
-  gameplay_bg_3: {
-	key: "gameplay_bg_3",
-	path: "/img/background/bgscene-3.png",
-	type: AssetType.STATIC,
-  },
+	background_main: {
+		key: "background_main",
+		path: "/img/background/background_main.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_00": {
+		key: "bg-sc_00",
+		path: "/img/background/bg-sc_00.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_01": {
+		key: "bg-sc_01",
+		path: "/img/background/bg-sc_01.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_02": {
+		key: "bg-sc_02",
+		path: "/img/background/bg-sc_02.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_03": {
+		key: "bg-sc_03",
+		path: "/img/background/bg-sc_03.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_04": {
+		key: "bg-sc_04",
+		path: "/img/background/bg-sc_04.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_05": {
+		key: "bg-sc_05",
+		path: "/img/background/bg-sc_05.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_06": {
+		key: "bg-sc_06",
+		path: "/img/background/bg-sc_06.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_07": {
+		key: "bg-sc_07",
+		path: "/img/background/bg-sc_07.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_08": {
+		key: "bg-sc_08",
+		path: "/img/background/bg-sc_08.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_09": {
+		key: "bg-sc_09",
+		path: "/img/background/bg-sc_09.png",
+		type: AssetType.STATIC,
+	},
+
+	
 } 

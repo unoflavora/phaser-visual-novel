@@ -3,7 +3,6 @@ import AudioController 			from "Modules/AudioController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
-import { DialogueResponse, MonologueResponse, Story } from "Definitions/StoryInterface";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
@@ -40,96 +39,78 @@ export default class GameplaySceneController extends Phaser.Scene {
 	}
 
 	private loadScene() {
-		var data: Story = this.cache.json.get(GameplayAsset.story.key);
+		var scenes: Scene[] = this.cache.json.get(GameplayAsset.story.key);
 
+		//#region Scene State
 		var currentSceneIndex : number = 0;
 
-		var currentResponses : (MonologueResponse | DialogueResponse)[] | null = null;
+		var scene = scenes[currentSceneIndex];
+		//#endregion
 
-		var currentPostInteractionIndex : number = -1;
+		//#region Response State
+		var currentResponses : ResponseContext[] | null = null;
 
-		var scene = data[currentSceneIndex];
+		var playerHasAskedForResponse : boolean = false;
+		//#endregion
 
 		this.view.LoadScene(scene);
 
-		this.view.on(this.view.events.OnStoryComplete, onStoryComplete.bind(this));
+		this.view.on(this.view.events.OnIntroComplete, OnIntroComplete.bind(this));
 
-		this.view.on(this.view.events.OnPlayerResponse, onPlayerResponse.bind(this));
+		this.view.on(this.view.events.OnPlayerChooseAnswer, onPlayerChooseAnswer.bind(this));
 
-		this.view.on(this.view.events.OnCurrentDialogueFinished, onInteractionDialogue.bind(this));			
+		this.view.on(this.view.events.OnResponseFinished, goToNextScene.bind(this));			
 
-		function onStoryComplete(this : GameplaySceneController) {
-			console.log("Story Complete");
+		function OnIntroComplete(this : GameplaySceneController) {
+			console.log("Scene Complete");
 
-			if(scene.questRespond != null && currentResponses == null)
+			if(scene.has_quest)
 			{
-				this.view.AskPlayerForResponse(scene.questRespond);
+				this.view.AskPlayerForAnswer(scene.emotions_en);
 				return;
 			}
 
-			currentSceneIndex++;
+			goToNextScene.call(this);
+		}
 
-			if(currentSceneIndex < data.length)
+
+		function onPlayerChooseAnswer(this : GameplaySceneController, optionIndex : number) {
+			console.log("Asking Player Response");
+
+			if (!playerHasAskedForResponse)
 			{
-				console.log("Story Complete");
+				this.view.AskPlayerForAnswer(scene.response_en);
+				playerHasAskedForResponse = true;
+				return;
+			}
 
-				scene = data[currentSceneIndex]
+			this.view.HideOptions();
+
+			if(scene.response_en_contexts == null) {
+				OnIntroComplete.call(this);
+				return;
+			};
+
+			currentResponses = scene.response_en_contexts[optionIndex];
+
+			this.view.ShowCharacterResponses(currentResponses);
+		}
+		
+
+		function goToNextScene(this: GameplaySceneController)
+		{
+			currentSceneIndex++;
+			playerHasAskedForResponse = false;
+			currentResponses = null;
+
+			if(currentSceneIndex < scenes.length)
+			{
+				scene = scenes[currentSceneIndex]
 				this.view.LoadScene(scene);
 				return;
 			}
 
 			console.log("Scenes Complete");
-
-		}
-
-
-		function onPlayerResponse(this : GameplaySceneController, optionIndex : number) {
-			console.log("Asking Player Response");
-
-			this.view.HideOptions();
-
-			if(scene.questRespond == null) {
-				onStoryComplete.call(this);
-				return;
-			};
-
-			currentResponses = scene.questRespond.options[optionIndex].response;
-			
-			onInteractionDialogue.call(this);			
-		}
-		
-		function onInteractionDialogue(this: GameplaySceneController) 
-		{
-			if(currentResponses == null) return;
-			
-			console.log("Interaction Ongoing");
-			
-			currentPostInteractionIndex++;
-
-			if(currentPostInteractionIndex >= currentResponses.length)
-			{
-				console.log("Interaction Finished");
-
-				onStoryComplete.call(this);
-
-				currentResponses = null;
-
-				currentPostInteractionIndex = -1;
-				return;
-			}
-
-			console.log(currentResponses[currentPostInteractionIndex])
-
-			if (currentResponses[currentPostInteractionIndex].monologue != null)
-			{
-				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].monologue, true);
-				this.view.ShowCharacter(currentResponses[currentPostInteractionIndex]);
-			}
-			else
-			{
-				this.view.ShowInteractionText(currentResponses[currentPostInteractionIndex].dialogue);
-				this.view.ShowCharacter(currentResponses[currentPostInteractionIndex]);
-			}
 		}
 	}
 
