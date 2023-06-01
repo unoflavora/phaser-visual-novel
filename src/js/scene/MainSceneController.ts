@@ -1,19 +1,24 @@
 import { SceneInfo } from "Definitions/SceneInfo";
 import PopupController from "./popup/PopupController";
 import Main from "./main";
+import AudioController from "Modules/AudioController";
+import { AudioAsset } from "Assets/AssetLibraryAudio";
 export default class MainSceneController extends Phaser.Scene {
     popupController!: PopupController;
     main! : Main;
+    audio : AudioController;
 
     constructor() {
         super({
             key: SceneInfo.mainScene.key
         });
+        this.audio = AudioController.instance;
     }    
 
     init()
     {
         this.main = new Main(this)
+		this.audio.init(this, false);
     }
 
     preload() { 
@@ -26,6 +31,7 @@ export default class MainSceneController extends Phaser.Scene {
 
 
     create() {
+        
 
         // this.main.popUpController = popUpController;
 
@@ -50,7 +56,7 @@ export default class MainSceneController extends Phaser.Scene {
     async startGame() {        
         var refreshToken = window.localStorage.getItem("refreshToken");
         
-        this.scene.launch(SceneInfo.gameplayScene.key);
+        this.scene.launch(SceneInfo.languageSelectorScene.key);
 
         return;
 

@@ -8,29 +8,32 @@ import { AudioAsset } 			from "Assets/AssetLibraryAudio";
 // import PauseController 			from "../../sceneModule/pause/PauseController";
 
 export default class GameplaySceneController extends Phaser.Scene {
-	constructor() {
-		super({ 
-			key: SceneInfo.gameplayScene.key 
-		});
-	}	
+	// Modules
+	audioController : AudioController;
 
-	// Controllers
-	audioController : AudioController | undefined;
 	view! : GameplaySceneView;
 
 	// State
 	IsTyping : boolean = false;
+
+
+	constructor() {
+		super({ 
+			key: SceneInfo.gameplayScene.key 
+		});
+
+		this.audioController = AudioController.instance;
+
+	}	
 
 	beforeUnloadListener = (event : Event) => 
 	{		
 		event.preventDefault();
 	};
 	
-	init = () => 
+	init = async () => 
 	{		
-		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true});
-
-		this.audioController = AudioController.getInstance();
+		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true})
 
 		this.view = new GameplaySceneView(this);
 		this.view.create();		
@@ -54,6 +57,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 		//#endregion
 
 		this.view.LoadScene(scene);
+
+		this.audioController.playBGM(scene.audio);
 
 		this.view.on(this.view.events.OnIntroComplete, OnIntroComplete.bind(this));
 
@@ -107,6 +112,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 			{
 				scene = scenes[currentSceneIndex]
 				this.view.LoadScene(scene);
+				this.audioController.playBGM(scene.audio);
 				return;
 			}
 

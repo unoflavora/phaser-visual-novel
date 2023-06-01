@@ -18,10 +18,10 @@ const IndonesianText : typeof EnglishText = {
             forgot_password: "Lupa Kata Sandi",
             remember_me: "Ingat Saya",
             wrong_password: "Kata Sandi atau Nama Pengguna Salah",
-            send_email: "Kirim Email",
+            reset_password: "Reset Password",
             invalid_email: "Email Tidak Terdaftar",
             forgot_password_title: "Lupa Kata Sandi",
-            forgot_password_desc: "Masukkan alamat email Anda di bawah ini dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.",
+            forgot_password_desc: "Klik tautan di bawah ini dan Anda akan dialihkan ke halaman web lain untuk mengatur ulang kata sandi Anda.",
         }
     },
 }

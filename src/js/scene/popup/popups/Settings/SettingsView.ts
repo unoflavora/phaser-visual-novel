@@ -1,20 +1,21 @@
+import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
+import AudioController from "Modules/AudioController";
 import Button from "Modules/gameobjects/Button";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
-import DropDownList from "phaser3-rex-plugins/templates/ui/dropdownlist/DropDownList";
 
-export default class SettingsPopup extends Phaser.GameObjects.Container
+export default class SettingsView extends Phaser.GameObjects.Container
 {
     private bg : Image;
     private title: Text;
     private closeBtn: Button;
 
     private sfxTitle : Text;
-    private sfxButton : Button;
-    private bgmTitle : Text;
     private bgmButton : Button;
+    private bgmTitle : Text;
+    private sfxButton : Button;
 
     private languagesTitle : Text;
     private currentLanguage : Button;
@@ -49,11 +50,11 @@ export default class SettingsPopup extends Phaser.GameObjects.Container
         });
         this.add(this.sfxTitle.gameobject);
 
-        this.sfxButton = new Button(scene, 0, 0, UIAsset.icon_bgm.key);
-        this.add(this.sfxButton.gameobject);
-        
-        this.bgmButton = new Button(scene, 0, 0, UIAsset.icon_sfx.key);
+        this.bgmButton = new Button(scene, 0, 0, UIAsset.icon_bgm_off.key);
         this.add(this.bgmButton.gameobject);
+        
+        this.sfxButton = new Button(scene, 0, 0, UIAsset.icon_sfx_off.key);
+        this.add(this.sfxButton.gameobject);
 
         this.bgmTitle = new Text(scene, 0, 0, "Music", {
             fontSize: this.bg.transform.displayHeight * .04,
@@ -127,7 +128,9 @@ export default class SettingsPopup extends Phaser.GameObjects.Container
 
         this.closeBtn.transform.setDisplayWidth(this.bg.transform.displayWidth * .12, true);
         this.closeBtn.transform.setPosition(this.bg.gameobject.x + this.bg.gameobject.displayWidth * .48, this.bg.gameobject.y - this.bg.transform.displayHeight * .42);
-    
+        this.closeBtn.gameobject.on("pointerdown", () => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+        });
         this.layoutIcons();
 
         this.layoutLanguages();
@@ -200,23 +203,75 @@ export default class SettingsPopup extends Phaser.GameObjects.Container
         const bgmButtonY = sfxButtonY;
       
         // Set SFX button properties
-        this.sfxButton.transform.setDisplayWidth(sfxButtonWidth, true);
-        this.sfxButton.transform.setPosition(sfxButtonX, sfxButtonY);
+        this.bgmButton.transform.setDisplayWidth(sfxButtonWidth, true);
+        this.bgmButton.transform.setPosition(sfxButtonX, sfxButtonY);
       
         // Set SFX title properties
         this.sfxTitle.transform.setPosition(
           sfxButtonX - sfxButtonWidth - this.sfxTitle.transform.displayWidth * 0.5,
-          this.sfxButton.gameobject.y * 1.1
+          this.bgmButton.gameobject.y * 1.1
         );
       
         // Set BGM button properties
-        this.bgmButton.transform.setDisplayWidth(bgmButtonWidth, true);
-        this.bgmButton.transform.setPosition(bgmButtonX, bgmButtonY);
+        this.sfxButton.transform.setDisplayWidth(bgmButtonWidth, true);
+        this.sfxButton.transform.setPosition(bgmButtonX, bgmButtonY);
       
         // Set BGM title properties
         this.bgmTitle.transform.setPosition(
           bgmButtonX - bgmButtonWidth - this.bgmTitle.transform.displayWidth * 0.5, 
-          this.bgmButton.gameobject.y * 1.1
+          this.sfxButton.gameobject.y * 1.1
         );
+
+        this.sfxButton.gameobject.addListener("pointerdown", () => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+        });
+        this.bgmButton.gameobject.addListener("pointerdown", () => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+        });
+
+        this.sfxTitle.gameobject.on("pointerdown", () => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+        });
+        this.bgmTitle.gameobject.on("pointerdown", () => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+        });
       }
+
+    public registerOnLogout(callback : Function)
+    {
+        this.logoutButton.click.on(() => {
+            callback()
+        });
+    }
+
+    public setUserId(userId : string)
+    {
+        this.userId.gameobject.setText("User ID: " + userId);
+    }
+
+    public setLanguage(language : string)
+    {
+        this.currentLanguageText.gameobject.setText(language);
+        this.alternativeLanguageText.gameobject.setText(language == "English" ? "Indonesian" : "English");
+    }
+
+    public setSfxButtonState(isOn : boolean)
+    {
+        this.sfxButton.gameobject.setTexture(isOn ? UIAsset.icon_sfx_off.key : UIAsset.icon_sfx.key);
+    }
+
+    public setBgmButtonState(isOn : boolean)
+    {
+        this.bgmButton.gameobject.setTexture(isOn ? UIAsset.icon_bgm.key : UIAsset.icon_bgm_off.key);
+    }
+
+    public registerOnSfxClick(callback : Function)
+    {
+        this.sfxButton.gameobject.addListener("pointerdown", callback)
+    }
+
+    public registerOnBgmClick(callback : Function)
+    {
+        this.bgmButton.gameobject.on("pointerup", callback)
+    }
 }

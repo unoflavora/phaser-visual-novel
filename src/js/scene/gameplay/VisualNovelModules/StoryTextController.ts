@@ -1,5 +1,7 @@
+import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { FontAsset } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
+import AudioController from "Modules/AudioController";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import TagText from "phaser3-rex-plugins/plugins/tagtext";
@@ -130,6 +132,8 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     }
 
     private handleTextBoxClick = (text: string) => {
+        AudioController.instance.play(AudioAsset.main_button_click.key);
+        
         if(this._isTyping) {
             console.log("Skip typing", text);
             this.stopTyping(text);

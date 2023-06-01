@@ -120,9 +120,19 @@ export const UIAsset = {
 		path: "/img/ui/icons/ui-icon-interface-audio.png",
 		type: AssetType.STATIC,
 	},
+	icon_sfx_off: {
+		key: "icon_sfx_off",
+		path: "/img/ui/icons/ui-icon-interface-audio-off.png",
+		type: AssetType.STATIC,
+	},
 	icon_bgm: {
 		key: "icon_bgm",
 		path: "/img/ui/icons/ui-icon-interface-volume.png",
+		type: AssetType.STATIC,
+	},
+	icon_bgm_off: {
+		key: "icon_bgm_off",
+		path: "/img/ui/icons/ui-icon-interface-volume-off.png",
 		type: AssetType.STATIC,
 	},
 	icon_close: {

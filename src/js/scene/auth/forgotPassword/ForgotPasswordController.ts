@@ -23,7 +23,6 @@ export default class ForgotPasswordController extends Phaser.Scene {
     this.view.create();
     this.view.addOnConfirmPasswordListeners((email) => {
       console.log("Password: " + email);
-      this.view.setErrorConfirmVisible(true)
     })
 
     this.view.addOnBackButtonListeners(() => {

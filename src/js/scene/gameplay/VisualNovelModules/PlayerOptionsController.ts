@@ -1,5 +1,7 @@
+import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { FontAsset } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
+import AudioController from "Modules/AudioController";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import ContainerLite from "phaser3-rex-plugins/plugins/containerlite";
@@ -18,7 +20,11 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
     constructor(scene: Phaser.Scene, textBox: Image, onOptionClicked : (index: number) => void) {
         super(scene);
 
-        this.onOptionClicked = onOptionClicked;
+        this.onOptionClicked = (index) => 
+        {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+            onOptionClicked(index)
+        };
 
         this.options = new GridSizer(scene, textBox.gameobject.x, textBox.gameobject.y, textBox.gameobject.displayWidth, textBox.gameobject.displayHeight, 
         {

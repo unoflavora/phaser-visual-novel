@@ -3,17 +3,19 @@ import Image from "Modules/gameobjects/Image";
 import PopupController from "./PopupController";
 import Text from "Modules/gameobjects/Text";
 import Button from "Modules/gameobjects/Button";
-import SettingsPopup from "./popups/SettingsPopup";
+import SettingsView from "./popups/Settings/SettingsView";
+import SettingsController from "./popups/Settings/SettingsController";
 
 
-const popupDepth = {
+export const popupDepth = {
     default : 1000,
     alwaysOnTop: 9999,
 }
+
 export default class PopupView extends Phaser.GameObjects.Group
 {
     private background! : Button;
-    private settingsPopup : SettingsPopup;
+    private settingsPopup : SettingsController;
 
     constructor(controller : PopupController)
     {
@@ -25,12 +27,8 @@ export default class PopupView extends Phaser.GameObjects.Group
         background.gameobject.setInteractive({useHandCursor: true});
         this.background = background;        
 
-        this.settingsPopup = new SettingsPopup(this.scene);
-        this.scene.add.existing(this.settingsPopup);
-        this.settingsPopup.setDepth(popupDepth.default);
-        this.settingsPopup.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .5);
-        this.settingsPopup.create();
-        this.settingsPopup.setVisible(false);
+        this.settingsPopup = new SettingsController(this.scene);
+        this.settingsPopup.init();
     }
 
     create()

@@ -18,7 +18,7 @@ export default class SelectLanguageController extends Phaser.Scene {
             key: SceneInfo.languageSelectorScene.key      
         })
 
-        this.audioController = AudioController.getInstance();
+        this.audioController = AudioController.instance;
 
     }    
 

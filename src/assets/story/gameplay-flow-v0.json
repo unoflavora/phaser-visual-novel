@@ -2,7 +2,7 @@
     {
         "scene": 0,
         "has_quest": false,
-        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "audio": "bgm-emotion_understanding-sc_00_01_02",
         "background": "bg-sc_00",
         "intro_en":
         [
@@ -24,7 +24,7 @@
     {
         "scene": 1,
         "has_quest": true,
-        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "audio": "bgm-emotion_understanding-sc_00_01_02",
         "background": "bg-sc_01",
         "intro_en":
         [

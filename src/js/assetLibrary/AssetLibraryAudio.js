@@ -7,11 +7,6 @@ export const AudioAsset = {
     	path: '/audio/main_button_click.mp3',
     	type: AssetType.AUDIO
     },
-    quiz_number_drop:{
-    	key: 'quiz_number_drop',
-    	path: '/audio/quiz_number_drop.mp3',
-    	type: AssetType.AUDIO
-    },
     quiz_number_pick:{
     	key: 'quiz_number_pick',
     	path: '/audio/quiz_number_pick.mp3',
@@ -22,34 +17,29 @@ export const AudioAsset = {
     	path: '/audio/quiz_start.mp3',
     	type: AssetType.AUDIO
     },
-    bgm_calm:{
-    	key: 'bgm_calm',
-    	path: '/audio/bgm_calm.mp3',
-    	type: AssetType.AUDIO
-    },
-    bgm_intense:{
-    	key: 'bgm_intense',
-    	path: '/audio/bgm_intense.mp3',
-    	type: AssetType.AUDIO
-    },
-    bgm_joy:{
-    	key: 'bgm_joy',
-    	path: '/audio/bgm_joy.mp3',
-    	type: AssetType.AUDIO
-    },
-	bgm_mysterious:{
-    	key: 'bgm_mysterious',
-    	path: '/audio/bgm_mysterious.mp3',
-    	type: AssetType.AUDIO
-    },
-    bgm_normal:{
-    	key: 'bgm_normal',
-    	path: '/audio/bgm_normal.mp3',
-    	type: AssetType.AUDIO
-    },
-    bgm_normal:{
-    	key: 'bgm_normal',
-    	path: '/audio/bgm_normal.mp3',
-    	type: AssetType.AUDIO
-    },
+	"bgm-emotion_understanding-sc_00_01_02":
+	{
+		key: "bgm-emotion_understanding-sc_00_01_02",
+		path: "/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+		type: AssetType.AUDIO,
+	},
+	"bgm-emotion_understanding-sc_03_04_05":
+	{
+		key: "bgm-emotion_understanding-sc_03_04_05",
+		path: "/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+		type: AssetType.AUDIO,
+	},
+	"bgm-emotion_understanding-sc_06_07_08":
+	{
+		key: "bgm-emotion_understanding-sc_06_07_08",
+		path: "/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+		type: AssetType.AUDIO,
+	},
+	"bgm-emotion_understanding-sc_09":
+	{
+		key: "bgm-emotion_understanding-sc_09",
+		path: "/audio/bgm-emotion_understanding-sc_09.wav",
+		type: AssetType.AUDIO,
+	}
+
 };
