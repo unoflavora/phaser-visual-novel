@@ -1,4 +1,16 @@
 [
+    /**
+    Intro to user/player:
+    - en:
+        You will start a roll playingjourney as Pomoro in visual novel on land of Prospevil.
+        At each of your steps moving forward, you'll meet another character and will guess their emotion at glance,
+        after guessing their emotion from facial expression & body language, the next step is to gave response provided as an options.
+        You also will encounter some minigame during a visual novel, give your best shot, good luck, and have fun!
+    
+    - id:
+        Foo.
+        Bar baz.
+    */
     // start of 00
     {
         "scene": 0,
@@ -1408,6 +1420,420 @@
 
     // start of 05
     {
+        "scene": 5,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_05.png",
+        "intro_en":
+        [
+            "Once he back on his feet, he resumed his quest and step out to the forest.",
+            "A wide green grass field with pathway, a couple of carrot people seems resting under the tree aside with pathway."
+        ],
+        "intro_id":
+        [
+            "sc-05 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "They seems familiar, try to figure it out who are these two.",
+                "score": 75
+            },
+            {
+                "text": "Notice these two are carrot people, seems related with Ota.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Woahh, do I know you two?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yeah, waitt.. I forgot his name.",
+                        "Em.. Uu something?? Oo.. Oott???",
+                        "Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Owh owh owh, Ota Ota Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "Big big big brother Ota, ya??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yes, I think. He went to work with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Surely surely surely, Brother Ota always vibing with his smile every single day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "No matter how hard the day is, big brother Ota always always always find a way to smile."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yess, such a good personality to knew.",
+                        "Okay then, got to go. Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "*Thank you thank you thank you.. Have a pleasant day too."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Heyyy.. You two just looks like Ota"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "How's big big big brother doing there??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yeah, he seems fine. Also Ota seems delightful when went to work."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Smile generously, bother Ota always smile now matter what."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "There's no a bad bad bad day when borther Ota face the day."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Seems nice to knew someone like him.",
+                        "I would love to meet again with him someday."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Surely surely surely, you may."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "It's true true true, you can."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay then, pleasure to meet booth of you.",
+                        "Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "*Yess yess yess.. Have a great day too."
+                    ]
+                }
+            ]
+            // end of reponse en 04
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Woahh, do I know you two?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yeah, waitt.. I forgot his name.",
+                        "id tba: Em.. Uu something?? Oo.. Oott???",
+                        "id tba: Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Owh owh owh, Ota Ota Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: Big big big brother Ota, ya??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yes, I think. He went to work with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Surely surely surely, Brother Ota always vibing with his smile every single day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: No matter how hard the day is, big brother Ota always always always find a way to smile."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yess, such a good personality to knew.",
+                        "id tba: Okay then, got to go. Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "id tba: *Thank you thank you thank you.. Have a pleasant day too."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Heyyy.. You two just looks like Ota"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: How's big big big brother doing there??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yeah, he seems fine. Also Ota seems delightful when went to work."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Smile generously, bother Ota always smile now matter what."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: There's no a bad bad bad day when borther Ota face the day."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Seems nice to knew someone like him.",
+                        "id tba: I would love to meet again with him someday."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Surely surely surely, you may."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: It's true true true, you can."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay then, pleasure to meet booth of you.",
+                        "id tba: Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "id tba: *Yess yess yess.. Have a great day too."
+                    ]
+                }
+            ]
+            // end of response id 04
+        ]
     },
     // end of 05
 
