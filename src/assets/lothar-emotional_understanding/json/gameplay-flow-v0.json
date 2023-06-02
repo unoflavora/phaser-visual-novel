@@ -689,7 +689,7 @@
         ],
         "intro_id":
         [
-            "sc-02 intro id tba 1"
+            "sc-03 intro id tba 1"
         ],
         "emotions_en":
         [
@@ -1042,6 +1042,364 @@
 
     // start of 04
     {
+        "scene": 4,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_04.png",
+        "intro_en":
+        [
+            "Pomoro set his steps to his journey again. He manage though the forest, pass through various obstacles.",
+            "While Pomoro almost near to the forest edge, he heard something. Sound a rumble, but not beast nor thunder.",
+            "Pomoro seems unsure but curious to locate where the sound came from.",
+            "The sounds start getting closer, and he surprised. Pomoro saw a Warrior of Turnip."
+        ],
+        "intro_id":
+        [
+            "sc-04 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Pomoro leave immediatly.",
+                "score": 50
+            },
+            {
+                "text": "Surprised looking through on high incline & approach Warrior of Turnip.",
+                "score": 75
+            },
+            {
+                "text": "On high incline approach, gave concern & offer a help.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro leave immediatly",
+                        "*Not sure whether afraid or seems not good to approach"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "*Rapa notice a glimpse of presence"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Surprised looking through on high incline & approach Warrior of Turnip",
+                        "Waww, what are you doing at this ground and seems troubled."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Emm, Mu Ma Mo.. what?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Hahh!! no time to explain.. They looks like me",
+                        "If you meet 'em tell 'em to go here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, wait, wait.. I had to go to Prospevil."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Yes, good! So you go to the West, that's is direction to Prospevil.",
+                        "And I go to the East.",
+                        "*Rapa rush to the East"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro startled & bweildered"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*On high incline approach, gave concern & offer a help",
+                        "You seems troubled, may I help?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa, Mupo and Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Herrghh, all of my brothers, I can't find 'em",
+                        "I'm lookin for 'em, but where are they now.",
+                        "Aghh, I'll be glad if you meet 'em and tell to go back here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, wait, wait.. I had to go to Prospevil.",
+                        "But if I meet them along my journey."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Oh, so you want to go to Prospevil.",
+                        "You can go to the West.",
+                        "And I can go to the East.",
+                        "Tell 'em I'm lookin for 'em if you meet 'em."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Sure thing, I'll let them know...."
+                    ]
+                }
+            ]
+            // end of reponse en 04
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 50
+            },
+            {
+                "text": "response id B tba",
+                "score": 75
+            },
+            {
+                "text": "response id C tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro leave immediatly",
+                        "id tba: *Not sure whether afraid or seems not good to approach"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: *Rapa notice a glimpse of presence"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Surprised looking through on high incline & approach Warrior of Turnip",
+                        "id tba: Waww, what are you doing at this ground and seems troubled."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Emm, Mu Ma Mo.. what?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Hahh!! no time to explain.. They looks like me",
+                        "id tba: If you meet 'em tell 'em to go here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, wait, wait.. I had to go to Prospevil."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Yes, good! So you go to the West, that's is direction to Prospevil.",
+                        "id tba: And I go to the East.",
+                        "id tba: *Rapa rush to the East"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro startled & bweildered"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *On high incline approach, gave concern & offer a help",
+                        "id tba: You seems troubled, may I help?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa, Mupo and Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Herrghh, all of my brothers, I can't find 'em",
+                        "id tba: I'm lookin for 'em, but where are they now.",
+                        "id tba: Aghh, I'll be glad if you meet 'em and tell to go back here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, wait, wait.. I had to go to Prospevil.",
+                        "id tba: But if I meet them along my journey."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Oh, so you want to go to Prospevil.",
+                        "id tba: You can go to the West.",
+                        "id tba: And I can go to the East.",
+                        "id tba: Tell 'em I'm lookin for 'em if you meet 'em."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Sure thing, I'll let them know...."
+                    ]
+                }
+            ]
+            // end of response id 04
+        ]
     },
     // end of 04
 
