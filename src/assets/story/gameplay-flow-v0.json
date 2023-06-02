@@ -34,17 +34,6 @@
         [
             "sc-01 intro id tba 1"
         ],
-        "intro_character":
-        [
-            {
-                "position": -1,
-                "name": "Pomoro/You"
-            },
-            {
-                "position": 1,
-                "name": "Ifuly"
-            }
-        ],
         "emotions_en":
         [
             {
@@ -109,14 +98,14 @@
         [
             [
                 {
-                    "position": -2,
+                    "position": -1,
                     "name": "Pomoro/You",
                     "text": [
                         "*you ignore and walk away"
                     ]
                 },
                 {
-                    "position": 2,
+                    "position": 1,
                     "name": "Ifuly",
                     "text": [
                         "*Ifuly notice someone seems approach her, he ran inside her house."
@@ -139,7 +128,7 @@
                     ]
                 },
                 {
-                    "position": 2,
+                    "position": 1,
                     "name": "Ifuly",
                     "text": [
                         "*Ifuly look so embarrass and go inside her house.*"

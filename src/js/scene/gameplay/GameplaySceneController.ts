@@ -22,6 +22,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 	// State
 	IsTyping : boolean = false;
 
+	eventKey: string = ""
+
 
 	constructor() {
 		super({ 
@@ -51,8 +53,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 	private playEmotionalUnderstanding() {
 
 		var scenes: Scene[] = this.cache.json.get(GameplayAsset.story.key);
-		var currentInteraction : Function = () => {};
-		EventBus.instance.subscribe(GameEvents.settingsChanged, () => currentInteraction());
+		var currentInteraction : EventHandler = () => {};
+		this.eventKey = EventBus.instance.subscribe(GameEvents.settingsChanged, () => currentInteraction());
 
 		//#region Scene State
 		var currentSceneIndex : number = -1;
@@ -113,12 +115,14 @@ export default class GameplaySceneController extends Phaser.Scene {
 			if(currentSceneIndex < scenes.length)
 			{
 				scene = scenes[currentSceneIndex]
+
 				currentInteraction = () => this.view.LoadScene(scene, gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
 				currentInteraction();
 				this.audioController.playBGM(scene.audio);
 				return;
 			}
 
+            EventBus.instance.unsubscribe(GameEvents.settingsChanged, this.eventKey)
 
 
 			console.log("Scenes Complete");

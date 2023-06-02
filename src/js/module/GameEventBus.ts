@@ -5,7 +5,7 @@ export const GameEvents = {
 }
 
 export default class EventBus {
-  private _eventHandlers: Record<string, EventHandler<any>[]> = {};
+  private _eventHandlers: Record<string, Array<{id: string, handler: EventHandler<any>}>> = {};
   private static _instance: EventBus;
 
   private constructor() {}
@@ -18,25 +18,30 @@ export default class EventBus {
   }
 
 
-  public subscribe<T>(event: string, handler: EventHandler<T>): void {
-    if (!this._eventHandlers[event]) {
-      this._eventHandlers[event] = [];
+  public subscribe<T>(event: string, handler: EventHandler<T>): string {
+    const handlerId = generateUniqueIdentifier(); // Generate a unique identifier for the handler
+    const handlers = this._eventHandlers[event] || [];
+    handlers.push({ id: handlerId, handler: handler });
+    this._eventHandlers[event] = handlers;
+
+    return handlerId; // Return the handler's unique identifier
     }
 
-    this._eventHandlers[event].push(handler);
-  }
-
-  public unsubscribe<T>(event: string, handler: EventHandler<T>): void {
-    const handlers = this._eventHandlers[event];
-    if (handlers) {
-      this._eventHandlers[event] = handlers.filter((h) => h !== handler);
+    public unsubscribe(event: string, handlerId: string): void {
+        const handlers = this._eventHandlers[event];
+        if (handlers) {
+            this._eventHandlers[event] = handlers.filter((h) => h.id !== handlerId);
+        }
     }
-  }
 
   public publish<T>(event: string, data: T): void {
-    const handlers = this._eventHandlers[event];
-    if (handlers) {
-      handlers.forEach((handler) => handler(data));
+    const listeners = this._eventHandlers[event];
+    if (listeners) {
+      listeners.forEach((listeners) => listeners.handler(data));
     }
   }
 }
+function generateUniqueIdentifier() {
+    return Math.random().toString(36);
+}
+

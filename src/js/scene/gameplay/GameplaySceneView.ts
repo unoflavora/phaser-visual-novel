@@ -75,17 +75,12 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 			this.characterController.FinishTween();
 		};
 
-		console.log(scene)
+		this.characterController.LoadCharacter(scene.scene);
 
 		this.storyText.LoadText(intro);
-
-		if(scene.intro_character != null)
-		{
-			this.ShowCharacter(scene.intro_character)
-		}
 	}
 
-	public ShowCharacterResponses(responses: ResponseContext[], monologue: boolean = false)
+	public ShowCharacterResponses(responses: ResponseContext[])
 	{
 		if (this.storyText.IsTyping) return;
 
@@ -97,8 +92,6 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 
 		this.storyText.LoadText(responses[currentResponseIndex].text);
 
-		this.characterController.LoadCharacter(responses[currentResponseIndex]);
-
 		this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
 
 		this.storyText.OnTextComplete = () => {
@@ -107,8 +100,6 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 			if(currentResponseIndex < responses.length)
 			{
 				this.storyText.LoadText(responses[currentResponseIndex].text);
-
-				this.characterController.LoadCharacter(responses[currentResponseIndex]);
 
 				this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
 
@@ -137,13 +128,6 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		}
 	}
 
-	public ShowCharacter(character: CharacterDisplay[])
-	{
-		for(var i = 0; i < character.length; i++)
-		{
-			this.characterController.LoadCharacter(character[i]);
-		}
-	}
 
 	public HideOptions()
 	{

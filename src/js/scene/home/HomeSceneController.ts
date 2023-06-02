@@ -8,6 +8,7 @@ import IGameData from "Modules/GameData";
 export default class HomeSceneController extends Phaser.Scene {
 
     view! : HomeSceneView | undefined
+    eventKey : string = "";
 
     constructor() {
         super({
@@ -19,10 +20,15 @@ export default class HomeSceneController extends Phaser.Scene {
     {
         this.view = new HomeSceneView(this);
         this.view.create();
+
+        this.eventKey = EventBus.instance.subscribe(GameEvents.settingsChanged, this.onChangeLanguage.bind(this))
+
         this.view.initButton(() => 
             {
-                // Load Visual Novel
+                EventBus.instance.unsubscribe(GameEvents.settingsChanged, this.eventKey)
+
                 this.scene.start(SceneInfo.gameplayScene.key);
+
             },        
             () => {
                 // Open Log Game
@@ -33,8 +39,14 @@ export default class HomeSceneController extends Phaser.Scene {
                 Main.instance.OpenPopup();
             })
 
-        EventBus.instance.subscribe(GameEvents.settingsChanged, (data : IGameData) => {
-            this.view?.onLanguageChange();
-        })
+    }
+    
+    private onChangeLanguage() {
+        this.view?.onLanguageChange();
+    }
+
+    unload()
+    {
+
     }
 }
