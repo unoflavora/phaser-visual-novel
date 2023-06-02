@@ -4,7 +4,7 @@
         "scene": 0,
         "has_quest": false, // skip context of emotions_*, response_*
         "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
-        "background": "assets/lothar-emotional_understanding/audio/bg-sc_00.png",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_00.png",
         "intro_en":
         [
             "Once upon a time, in a far-off kingdom, there was a young advanturer named Pomoro who known for his heart of adventurous spirit. He start a journey to Prospevil, one of prosper village in the Kingdom of Vefurata.",
@@ -32,7 +32,7 @@
         "scene": 1,
         "has_quest": true,
         "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
-        "background": "assets/lothar-emotional_understanding/audio/bg-sc_01.png",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_01.png",
         "intro_en":
         [
             "As he walked through the forest, Pomoro saw a mushroom people in front of the house. She stood worried & looked shy."
@@ -103,8 +103,7 @@
         ],
         "response_en_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response en 01
             [
                 {
                     "position": -1,
@@ -220,6 +219,7 @@
                     ]
                 }
             ]
+            // end of response en 01
         ],
 
 
@@ -244,8 +244,7 @@
         ],
         "response_id_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response id 01
             [
                 {
                     "position": -1,
@@ -361,6 +360,7 @@
                     ]
                 }
             ]
+            // end of response id 01
         ]
     },
     // end of 01
@@ -373,7 +373,7 @@
         "scene": 2,
         "has_quest": true,
         "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
-        "background": "assets/lothar-emotional_understanding/audio/bg-sc_02.png",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_02.png",
         "intro_en":
         [
             "Upon reaching deep into Vefurata forest, Pomoro discover an carrot house on the cliff. he seems curious and went to a carrot house.",
@@ -427,7 +427,7 @@
         "response_en":
         [
             {
-                "text": "*Feel uncomfortable to ask, leave immediatly.",
+                "text": "Feel uncomfortable to ask, leave immediatly.",
                 "score": 50
             },
             {
@@ -441,8 +441,7 @@
         ],
         "response_en_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response en 02
             [
                 {
                     "position": -1,
@@ -544,6 +543,7 @@
                     ]
                 }
             ]
+            // end of response en 02
         ],
 
 
@@ -551,25 +551,20 @@
         [
             {
                 "text": "response id A tba",
-                "score": 25
-            },
-            {
-                "text": "response id B tba",
                 "score": 50
             },
             {
-                "text": "response id C tba",
+                "text": "response id B tba",
                 "score": 75
             },
             {
-                "text": "response id D tba",
+                "text": "response id C tba",
                 "score": 100
             }
         ],
         "response_id_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response id 02
             [
                 {
                     "position": -1,
@@ -671,6 +666,7 @@
                     ]
                 }
             ]
+            // end of response id 02
         ]
     },
     // end of 02
@@ -680,6 +676,364 @@
 
     // start of 03
     {
+        "scene": 3,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_03.png",
+        "intro_en":
+        [
+            "Once he was back on his feet, he resumed his quest & reached the incline with humid air.",
+            "Pomoro saw a motion with among the trees, he dare himself to seek what was that motion arround the trees.",
+            "Surprisingly, Pomoro saw something familiar. He saw three young mushroom people..",
+            "Remind him of Ifuly."
+        ],
+        "intro_id":
+        [
+            "sc-02 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Blindly, rush to three of them, and ask them.",
+                "score": 75
+            },
+            {
+                "text": "Being modest, ask about wondering are they Ifuly younger sisters.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 03
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, you guys seems familiar."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Whatttt.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "We all siblingsss..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "We aree more than triplets....."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole, Agari, Imuc",
+                    "text": [
+                        "*Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
+                        "*They leave to another trees a few meters from there and start play together again...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Excuse me, may I know that three of you are Ifuly sisters?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Woo..??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "You meet our big sisterss...???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "How shes doinggg....????"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Wait waitt.. Sisters worry about us..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "Ohh noo.. I want to play arround first..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "Don't worry, we're heading back later on.. Thank you for letting us know..",
+                        "Yes indeed she little bit shy, butt shes care to all of us..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So I had question to check to all of you",
+                        "Big sis says that you guys know direction to Prospevil"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Ayyyy, a Prospevil.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "Prospevilll... Just go straight a head..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "Yesss... Just go straight that is a correct direction",
+                        "We all heading back to big sis later.. Thank youuu..."
+                    ]
+                }
+            ]
+            // end of reponse en 03
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 03
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, you guys seems familiar."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Whatttt.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: We all siblingsss..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: We aree more than triplets....."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole, Agari, Imuc",
+                    "text": [
+                        "id tba: *Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
+                        "id tba: *They leave to another trees a few meters from there and start play together again...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Excuse me, may I know that three of you are Ifuly sisters?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Woo..??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: You meet our big sisterss...???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: How shes doinggg....????"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Wait waitt.. Sisters worry about us..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: Ohh noo.. I want to play arround first..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: Don't worry, we're heading back later on.. Thank you for letting us know..",
+                        "id tba: Yes indeed she little bit shy, butt shes care to all of us..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So I had question to check to all of you",
+                        "id tba: Big sis says that you guys know direction to Prospevil"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Ayyyy, a Prospevil.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: Prospevilll... Just go straight a head..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: Yesss... Just go straight that is a correct direction",
+                        "id tba: We all heading back to big sis later.. Thank youuu..."
+                    ]
+                }
+            ]
+            // end of response id 03
+        ]
     },
     // end of 03
 
