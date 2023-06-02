@@ -61,10 +61,11 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     public LoadText(paragraphs: string[], monologue : boolean = false, paragraphIndex: number = 0) {
 
         this._text.setFontStyle(monologue ? "italic" : "")
+        this._textBox.gameobject.removeAllListeners();
+        this._nextButton.gameobject.removeAllListeners();
 
 		this._nextButton.gameobject.once("pointerdown", () => {
             paragraphIndex += 1;
-            this._textBox.gameobject.removeAllListeners();
             this.LoadText(paragraphs, monologue, paragraphIndex);
         });
 

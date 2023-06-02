@@ -64,9 +64,6 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
 
         switch(currentCharacter.position)
         {
-            case -2:
-                this.leftCharacterNameContainer.setVisible(false);
-                break;
             case -1:
                 this.leftCharacterName.gameobject.setText(currentCharacter.name);
                 this.leftCharacterNameContainer.setVisible(true);
@@ -77,9 +74,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
                 this.rightCharacterNameContainer.setVisible(true);
                 this.leftCharacterNameContainer.setVisible(false);
                 break;
-            case 2:
-                this.rightCharacterNameContainer.setVisible(false);
-                break;
+
         }
     }
 }

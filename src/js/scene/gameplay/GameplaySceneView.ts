@@ -5,9 +5,12 @@ import { PlayerOptionsController } from "./VisualNovelModules/PlayerOptionsContr
 import CharacterController from "./VisualNovelModules/CharacterController";
 import CharacterNamesController from "./VisualNovelModules/CharacterNamesController";
 import Button from "Modules/gameobjects/Button";
+import { LanguageEnum } from "Definitions/Settings";
 
 export default class GameplaySceneView extends Phaser.GameObjects.Group 
 {
+	
+
 	// UI Objects
 	private sceneBg : Image;
 	private textBox: Image;
@@ -59,14 +62,13 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		this.setDepth(depth);
 	};
 
-	public LoadScene = (scene : Scene) => 
+	public LoadScene = (scene : Scene, intro: string[]) => 
 	{
 		this.sceneBg.gameobject.setTexture(scene.background);
 
 		this.storyText.setVisible(true);
 
 		this.storyOptions.setVisible(false);
-		
 
 		this.storyText.OnTextComplete = () => {
 			this.emit(this.eventKeys.OnIntroComplete)
@@ -75,7 +77,7 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 
 		console.log(scene)
 
-		this.storyText.LoadText(scene.intro_en);
+		this.storyText.LoadText(intro);
 
 		if(scene.intro_character != null)
 		{
@@ -152,5 +154,10 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	{
 		this.pauseButton.click.on(callback);
 	}
+
+	onChangeLanguage(lang: LanguageEnum) {
+		throw new Error("Method not implemented.");
+	}
+
 
 }

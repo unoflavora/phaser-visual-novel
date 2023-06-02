@@ -4,6 +4,10 @@ import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
 import Main from "../main";
+import { gameData } from "Modules/GameData";
+import { LanguageEnum } from "Definitions/Settings";
+import EventBus, { GameEvents } from "Modules/GameEventBus";
+import { EventHandler } from "Modules/helpers/TsHelper";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
@@ -45,23 +49,19 @@ export default class GameplaySceneController extends Phaser.Scene {
 	}
 
 	private playEmotionalUnderstanding() {
+
 		var scenes: Scene[] = this.cache.json.get(GameplayAsset.story.key);
+		var currentInteraction : Function = () => {};
+		EventBus.instance.subscribe(GameEvents.settingsChanged, () => currentInteraction());
 
 		//#region Scene State
-		var currentSceneIndex : number = 0;
-
+		var currentSceneIndex : number = -1;
 		var scene = scenes[currentSceneIndex];
 		//#endregion
 
-		//#region Response State
-		var currentResponses : ResponseContext[] | null = null;
+		goToNextScene.call(this);
 
 		var playerHasAskedForResponse : boolean = false;
-		//#endregion
-
-		this.view.LoadScene(scene);
-
-		this.audioController.playBGM(scene.audio);
 
 		this.view.on(this.view.events.OnIntroComplete, OnIntroComplete.bind(this));
 
@@ -74,7 +74,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 			if(scene.has_quest)
 			{
-				this.view.AskPlayerForAnswer(scene.emotions_en);
+				currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+				currentInteraction();
 				return;
 			}
 
@@ -83,25 +84,24 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 
 		function onPlayerChooseAnswer(this : GameplaySceneController, optionIndex : number) {
-			console.log("Asking Player Response");
 
 			if (!playerHasAskedForResponse)
 			{
-				this.view.AskPlayerForAnswer(scene.response_en);
+				currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+				currentInteraction();
+
 				playerHasAskedForResponse = true;
+	
 				return;
 			}
 
 			this.view.HideOptions();
 
-			if(scene.response_en_contexts == null) {
-				OnIntroComplete.call(this);
-				return;
-			};
+			currentInteraction = () => this.view.ShowCharacterResponses(gameData.settings.lang == LanguageEnum.English 
+				? scene.response_en_contexts[optionIndex]
+				: scene.response_id_contexts[optionIndex]);
 
-			currentResponses = scene.response_en_contexts[optionIndex];
-
-			this.view.ShowCharacterResponses(currentResponses);
+			currentInteraction();
 		}
 		
 
@@ -109,15 +109,17 @@ export default class GameplaySceneController extends Phaser.Scene {
 		{
 			currentSceneIndex++;
 			playerHasAskedForResponse = false;
-			currentResponses = null;
 
 			if(currentSceneIndex < scenes.length)
 			{
 				scene = scenes[currentSceneIndex]
-				this.view.LoadScene(scene);
+				currentInteraction = () => this.view.LoadScene(scene, gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
+				currentInteraction();
 				this.audioController.playBGM(scene.audio);
 				return;
 			}
+
+
 
 			console.log("Scenes Complete");
 		}
@@ -126,6 +128,5 @@ export default class GameplaySceneController extends Phaser.Scene {
 	private onPauseButtonClicked() {
 		Main.instance.OpenPopup();
 	}
-
 
 }
