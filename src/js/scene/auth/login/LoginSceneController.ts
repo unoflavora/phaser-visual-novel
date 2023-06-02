@@ -19,7 +19,9 @@ export default class LoginSceneController extends Phaser.Scene {
   create() {
     this.view = new LoginView(this);
 
-    this.view.create();
+    this.view.create(); 
+
+    console.log(this.scene.manager.getScenes().forEach((scene) => console.log(scene.scene.key)))
 
     this.view.registerOnLoginListener((username, confPass) => {
       if(username == null || confPass == null)

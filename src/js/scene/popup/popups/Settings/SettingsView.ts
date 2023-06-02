@@ -161,11 +161,16 @@ export default class SettingsView extends Phaser.GameObjects.Container
     
     public registerOnClosePopup(callback : Function)
     {
-        this.closeBtn.click.on(() => {
-            this.alternativeLanguage.gameobject.setVisible(false);
-            this.alternativeLanguageText.gameobject.setVisible(false);
+        this.closeBtn.gameobject.addListener("pointerup", () => {
+            this.closePopup();
             callback()
         });
+    }
+
+    private closePopup() {
+        this.alternativeLanguage.gameobject.setVisible(false);
+        this.alternativeLanguageText.gameobject.setVisible(false);
+        this.setVisible(false);
     }
 
     private handleLanguageClick(changelanguage : boolean = false)
@@ -242,6 +247,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
     {
         this.logoutButton.click.on(() => {
             callback()
+            this.closeBtn.gameobject.emit("pointerup");
         });
     }
 

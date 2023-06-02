@@ -11,16 +11,12 @@ export default class PopupController
     public constructor(scene: Phaser.Scene)
     {
         this.scene = scene;
+        this.view = new PopupView(this);
+        this.view.create();
     }
 
     public OpenPopup(this : PopupController, popupKey : PopupType)
     {
-        if(this.view == null)
-        {
-            this.view = new PopupView(this);
-            this.view.create();
-        }
-
         switch(popupKey)
         {
             case PopupType.Settings:

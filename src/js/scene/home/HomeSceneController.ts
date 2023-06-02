@@ -21,14 +21,15 @@ export default class HomeSceneController extends Phaser.Scene {
         this.view = new HomeSceneView(this);
         this.view.create();
 
-        this.eventKey = EventBus.instance.subscribe(GameEvents.settingsChanged, this.onChangeLanguage.bind(this))
+        this.eventKey = EventBus.instance.subscribe(GameEvents.languageChanged, this.onChangeLanguage.bind(this))
+        this.scene.scene.events.on("shutdown", () => {
+			console.log("Shutdown")
+			EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey);
+		});
 
         this.view.initButton(() => 
             {
-                EventBus.instance.unsubscribe(GameEvents.settingsChanged, this.eventKey)
-
                 this.scene.start(SceneInfo.gameplayScene.key);
-
             },        
             () => {
                 // Open Log Game

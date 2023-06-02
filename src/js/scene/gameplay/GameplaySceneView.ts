@@ -137,6 +137,9 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	public registerOnPauseButtonClicked(callback : Function)
 	{
 		this.pauseButton.click.on(callback);
+		this.scene.events.on("shutdown", () => {
+			this.pauseButton.click.removeAllListeners();
+		});
 	}
 
 	onChangeLanguage(lang: LanguageEnum) {

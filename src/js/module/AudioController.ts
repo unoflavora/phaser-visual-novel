@@ -10,7 +10,7 @@ export default class AudioController
     scene! : Phaser.Scene;
     bgmFadeTween : Phaser.Tweens.Tween | undefined;
     onMute = false;
-    bgm! : Phaser.Sound.BaseSound;
+    bgm : Phaser.Sound.BaseSound | undefined;
     private _bgmOn = true;
 
     private _sfxOn: boolean = true;
@@ -32,11 +32,11 @@ export default class AudioController
 
         if(this.bgm == null) return;
 
-        if(isOn && !this.bgm.isPlaying)
+        if(isOn)
         {
             this.bgm.resume();
         }
-        else if(!isOn && this.bgm.isPlaying)
+        else
         {
             this.bgm.pause();
         }
@@ -108,11 +108,9 @@ export default class AudioController
     playBGM = (key:string, fadeIn = false) =>
     {
         if(this.bgm?.key == key) return;
-
+        console.log("Play BGM", this.bgm, this._bgmOn)
         const config = {
             loop: true,
-            volume: this._bgmOn ? 
-                (fadeIn ? 0 : 1) : 0,
         };
 
         if (this.bgm) this.stopBGM(fadeIn);
@@ -120,6 +118,10 @@ export default class AudioController
 
         this.bgm = this.scene.sound.add(key, {...config});
         this.bgm.play();
+        if (!this._bgmOn)
+        {
+            this.bgm.pause();
+        }
 
         if (!fadeIn) return;
         this.scene.tweens.add({
@@ -128,10 +130,6 @@ export default class AudioController
             volume: 1,
         });
 
-        if (!this._bgmOn)
-        {
-            this.bgm.stop();
-        }
     };
 
     // #region TODO : Move to Tween Helper
@@ -156,7 +154,12 @@ export default class AudioController
     stopBGM = (fadeOut = false) =>
     {
         const bgm = this.bgm;
+
+        if(this.bgm == null) return;
+
         this.bgm.stop();
+
+        this.bgm = undefined;
 
         if(this.bgmFadeTween)
             this.waitUntilTweenComplete(this.bgmFadeTween).then(() =>

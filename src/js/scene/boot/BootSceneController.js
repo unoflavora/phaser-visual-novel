@@ -15,7 +15,7 @@ export default class BootSceneController extends Phaser.Scene {
     if (CONFIG.DEBUG_MODE) this.scene.launch(SceneInfo.debugScene.key);
 
     Promise.all([ScreenUtilityController.getInstance().init(this)])
-      .then(() => this.scene.launch(SceneInfo.loadingScene.key))
+      .then(() => this.scene.start(SceneInfo.loadingScene.key))
       .catch((err) => console.log(err));
   };
 }

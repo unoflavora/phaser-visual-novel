@@ -1,7 +1,9 @@
 type EventHandler<T> = (data: T) => void;
 
 export const GameEvents = {
-    settingsChanged: "gameDataChanged",
+    languageChanged: "languageChanged",
+    sfxChanged: "audioChanged",
+    bgmChanged: "bgmChanged"
 }
 
 export default class EventBus {

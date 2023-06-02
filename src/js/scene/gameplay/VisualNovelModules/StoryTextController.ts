@@ -55,11 +55,14 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this.add(this._nextButton.gameobject);
 
         this._onTypingComplete = onCurrentTextComplete;
+
+        this.scene.events.on("shutdown", this.clearIntervals, this)
         
     }
 
     public LoadText(paragraphs: string[], monologue : boolean = false, paragraphIndex: number = 0) {
-
+        this.clearIntervals();
+        
         this._text.setFontStyle(monologue ? "italic" : "")
         this._textBox.gameobject.removeAllListeners();
         this._nextButton.gameobject.removeAllListeners();
@@ -88,34 +91,39 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 	}
   
     private Type = (textToType : string): void => {
-      this._text.setText("");
-      this.nextButtonVisible = false;
-      this._isTyping = true;
+        this._text.setText("");
+        this.nextButtonVisible = false;
+        this._isTyping = true;
+        
+        let i = 0;
+        this._typingEffect = setInterval(() => {
+            this._text.text += textToType[i];
+            i += 1;
+            if (i >= textToType.length) {
+                this.stopTyping(textToType);
+            }
+        }, 20)	
       
-      let i = 0;
-      this._typingEffect = setInterval(() => {
-        this._text.text += textToType[i];
-        i += 1;
-        if (i >= textToType.length) {
-            this.stopTyping(textToType);
-        }
-      }, 20)		
+       
     }
   
     private stopTyping(text: string) 
     {
-        if(this._typingEffect != undefined)
-        {
-            clearInterval(this._typingEffect);
-            
-            this._typingEffect = undefined;
-        }
+        this.clearIntervals();
 
         this.nextButtonVisible = true;    
 
         this._isTyping = false;
 
         this._text.setText(text);
+    }
+
+    private clearIntervals() {
+        if (this._typingEffect != undefined) {
+            clearInterval(this._typingEffect);
+
+            this._typingEffect = undefined;
+        }
     }
 
     private set nextButtonVisible(value: boolean) {
@@ -146,4 +154,4 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     
 
   }
-  
+   

@@ -22,6 +22,8 @@ export default class Main
         this.scene = scene;
 
         this.popupController = new PopupController(scene);
+
+        this.popupController.RegisterOnClosePopup(() => this.ClosePopup());
     }
 
     
@@ -32,8 +34,6 @@ export default class Main
         this.HideAllDOMElements();
 
         this.popupController.OpenPopup(PopupType.Settings);
-
-        this.popupController.RegisterOnClosePopup(() => this.ClosePopup());
     }
 
     private ClosePopup()

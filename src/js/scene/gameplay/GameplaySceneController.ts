@@ -46,6 +46,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 		this.view = new GameplaySceneView(this);
 		this.view.create();		
 		this.view.registerOnPauseButtonClicked(() => this.onPauseButtonClicked());
+
 		
 		this.playEmotionalUnderstanding();
 	}
@@ -54,7 +55,11 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 		var scenes: Scene[] = this.cache.json.get(GameplayAsset.story.key);
 		var currentInteraction : EventHandler = () => {};
-		this.eventKey = EventBus.instance.subscribe(GameEvents.settingsChanged, () => currentInteraction());
+		this.eventKey = EventBus.instance.subscribe(GameEvents.languageChanged, () => currentInteraction());
+		this.scene.scene.events.on("shutdown", () => {
+			console.log("Shutdown")
+			EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey);
+		});
 
 		//#region Scene State
 		var currentSceneIndex : number = -1;
@@ -122,7 +127,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 				return;
 			}
 
-            EventBus.instance.unsubscribe(GameEvents.settingsChanged, this.eventKey)
+            EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey)
 
 
 			console.log("Scenes Complete");
@@ -132,5 +137,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 	private onPauseButtonClicked() {
 		Main.instance.OpenPopup();
 	}
+
+	
 
 }
