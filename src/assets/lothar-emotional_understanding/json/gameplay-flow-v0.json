@@ -2776,6 +2776,29 @@
 
     // start of 09
     {
+        "scene": 0,
+        "has_quest": false, // skip context of emotions_*, response_*
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_09.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_09.png",
+        "intro_en":
+        [
+            "Helping Mupi to get down from the highest boulder guided by Pomoro, finally, Mupa, Mupi, & Mupo going back to meet Rapa.",
+            "After sometime, Pomoro continue on his way, and get back to his advanture.",
+            "A few miles after leaving boulders along pathway, Pomoro saw a large village surrounded by rivers, green grass fields, and formidable walls stood.",
+            "There after, Pomoro stand under the village gate. He realized his current journey gave a colors of expresion, by situation, by emotion.",
+            "From now on Pomoro understood that he will learn manny things from many ways, drived by curious and courage."
+        ],
+        "intro_id":
+        [
+            "sc-09 intro id tba 1",
+            "sc-09 intro id tba 2"
+        ],
+        "emotions_en": [],
+        "emotions_id": [],
+        "response_en": [],
+        "response_id": [],
+        "response_en_contexts": [],
+        "response_id_contexts": []
     }
     // end of 09
 ]
