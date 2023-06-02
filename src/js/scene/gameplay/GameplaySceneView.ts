@@ -4,6 +4,7 @@ import { StoryTextController } from "./VisualNovelModules/StoryTextController";
 import { PlayerOptionsController } from "./VisualNovelModules/PlayerOptionsController";
 import CharacterController from "./VisualNovelModules/CharacterController";
 import CharacterNamesController from "./VisualNovelModules/CharacterNamesController";
+import Button from "Modules/gameobjects/Button";
 
 export default class GameplaySceneView extends Phaser.GameObjects.Group 
 {
@@ -14,6 +15,7 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	private storyOptions: PlayerOptionsController;
 	private characterController: CharacterController;
 	private characterNames: CharacterNamesController;
+	private pauseButton: Button;
 	
 	// Variables
 	private eventKeys = {
@@ -34,6 +36,9 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		
 		this.sceneBg = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, BackgroundAsset.background_main.key);
 		this.sceneBg.transform.setMinPreferredDisplaySize(scene.scale.width, scene.scale.height);
+
+		this.pauseButton = new Button(scene, scene.scale.width * 0.9, scene.scale.height * 0.1, UIAsset.icon_pause.key);
+		this.pauseButton.transform.setDisplayWidth(scene.scale.width * 0.08, true)
 
 		this.characterController = new CharacterController(scene);
 
@@ -141,6 +146,11 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 	public HideOptions()
 	{
 		this.storyOptions.setVisible(false);
-	}	
+	}
+	
+	public registerOnPauseButtonClicked(callback : Function)
+	{
+		this.pauseButton.click.on(callback);
+	}
 
 }

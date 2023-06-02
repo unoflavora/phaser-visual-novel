@@ -6,10 +6,16 @@ const IndonesianText : typeof EnglishText = {
     mainMenu: {
         startGame: "Mulai Test",
         gameLog: "Log Game",
-        settings: "Pengaturan",
+        settings: {
+            title: "Pengaturan",
+            language: "Bahasa",
+            sound: "Suara",
+            music: "Musik",
+        },
         recommendation: "Kami merekomendasikan memainkan game ini di browser PC untuk pengalaman terbaik.",
         auth: {
             login: "Masuk",
+            logout: "Keluar",
             create_password_title: "Buat Kata Sandi Anda",
             password: "Kata Sandi",
             confirm_password: "Konfirmasi Kata Sandi",

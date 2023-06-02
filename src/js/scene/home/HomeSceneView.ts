@@ -3,9 +3,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import { FontAsset } from "Assets/AssetLibraryFont";
 import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
-import GameData, { LanguageEnum } from "Modules/GameData";
 import Localizations from "Modules/localization/LocalizationHelper";
-import { EventHandler } from "Modules/helpers/TsHelper";
 
 
 export default class HomeSceneView extends Phaser.GameObjects.Container {
@@ -50,7 +48,7 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.gameLogButtonText.gameobject.setOrigin(.5)
 
         this.settingButton = new Button ( this.scene, 0,0 , UIAsset.button_frame_secondary.key);
-        this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings);
+        this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings.title);
         this.settingText.gameobject.setOrigin(.5)
         
         this.recommendText = new Text (
@@ -111,5 +109,12 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.gameLogButton.gameobject.disableInteractive();
         this.settingButton.gameobject.disableInteractive();
   
+    }
+
+    onLanguageChange = () => {
+        this.startButtonText.gameobject.setText(Localizations.text.mainMenu.startGame);
+        this.gameLogButtonText.gameobject.setText(Localizations.text.mainMenu.gameLog);
+        this.settingText.gameobject.setText(Localizations.text.mainMenu.settings.title);
+        this.recommendText.gameobject.setText(Localizations.text.mainMenu.recommendation);
     }
 }

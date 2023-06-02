@@ -5,10 +5,16 @@ const EnglishText = {
     mainMenu: {
         startGame: "Start Test",
         gameLog: "Game Log",
-        settings: "Settings",
+        settings: {
+            title: "Settings",
+            language: "Language",
+            sound: "Sound",
+            music: "Music",
+        },
         recommendation: "We recommend playing this game in a PC browser for the best experience.",
         auth: {
             login: "Login",
+            logout: "Logout",
             create_password_title: "Create Your Password",
             password: "Password",
             confirm_password: "Confirm Password",

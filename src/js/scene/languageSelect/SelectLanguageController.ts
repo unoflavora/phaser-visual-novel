@@ -1,8 +1,9 @@
 import SelectLanguageView from "./SelectLanguageView";
 import AudioController from "Modules/AudioController";
-import GameData, { LanguageEnum } from "Modules/GameData";
 import { SceneInfo } from "Definitions/SceneInfo";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
+import { LanguageEnum } from "Definitions/Settings";
+import { gameData, setSettings } from "Modules/GameData";
 
 export default class SelectLanguageController extends Phaser.Scene {
 
@@ -33,7 +34,9 @@ export default class SelectLanguageController extends Phaser.Scene {
 
     private SelectLanguage(language : LanguageEnum) {
         this.audioController.play(AudioAsset.main_button_click.key);
-        GameData.settings.lang = language;
+
+        setSettings({...gameData["settings"], lang: language});
+        
         this.scene.start(SceneInfo.loginScene.key);
     }
 }

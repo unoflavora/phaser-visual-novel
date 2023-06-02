@@ -1,5 +1,9 @@
 import AudioController from "Modules/AudioController";
 import SettingsView from "./SettingsView";
+import EventBus, { GameEvents } from "Modules/GameEventBus";
+import IGameData, { gameData, setSettings } from "Modules/GameData";
+import { ISettings, LanguageEnum } from "Definitions/Settings";
+import { AudioAsset } from "Assets/AssetLibraryAudio";
 
 export default class SettingsController extends Phaser.GameObjects.Group
 {
@@ -21,18 +25,32 @@ export default class SettingsController extends Phaser.GameObjects.Group
 
     public init()
     {
-        this.view.registerOnSfxClick(() => {
-            AudioController.instance.toggleMute(!AudioController.instance.onMute);
-            
-            this.view.setSfxButtonState(!AudioController.instance.onMute);
+        this.view.registerOnBgmButtonClick(() => {
+            AudioController.instance.TurnOnBgm(!AudioController.instance.bgmOn) 
+
+            setSettings({...gameData.settings, isBgmOn: AudioController.instance.bgmOn});
+            this.view.setBgmButtonsState(AudioController.instance.bgmOn);
+            AudioController.instance.play(AudioAsset.main_button_click.key);
         });
 
-        this.view.registerOnBgmClick(() => {
-            console.log("BGM CLICKED")
-            AudioController.instance.turnOnBgm = !AudioController.instance.muteBgm;
+        this.view.registerOnSfxButtonClick(() => {
+            AudioController.instance.TurnOnSfx(!AudioController.instance.sfxOn);
 
-            this.view.setBgmButtonState(!AudioController.instance.muteBgm);
+            setSettings({...gameData.settings, isSfxOn: AudioController.instance.sfxOn});
+            this.view.setSfxButtonsState(AudioController.instance.sfxOn);
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+
         });
+
+        this.view.registerOnLanguageButtonClick(() => {
+            AudioController.instance.play(AudioAsset.main_button_click.key);
+            setSettings({...gameData.settings, lang: gameData.settings.lang == LanguageEnum.English ? LanguageEnum.Indonesian : LanguageEnum.English});
+        });
+
+        EventBus.instance.subscribe(GameEvents.settingsChanged, (data : ISettings) => {
+            this.view.onChangeLanguage(data.lang);
+        })
+
     }
 
     public registerOnClosePopup(callback : Function)

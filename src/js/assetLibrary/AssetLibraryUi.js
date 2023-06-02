@@ -88,11 +88,6 @@ export const UIAsset = {
 	},
 
   	// #region General
-	pause_button: {
-		key: "pause_button",
-		path: "/img/ui/general/pause_button.png",
-		type: AssetType.STATIC,
-	},
 	bg_text_box: {
 		key: "red_text_box",
 		path: "/img/ui/general/ui-textbox.png",
@@ -115,28 +110,33 @@ export const UIAsset = {
 	//#endregion
 
 	// #region Icons
-	icon_sfx: {
-		key: "icon_sfx",
-		path: "/img/ui/icons/ui-icon-interface-audio.png",
-		type: AssetType.STATIC,
-	},
-	icon_sfx_off: {
-		key: "icon_sfx_off",
-		path: "/img/ui/icons/ui-icon-interface-audio-off.png",
-		type: AssetType.STATIC,
-	},
 	icon_bgm: {
 		key: "icon_bgm",
-		path: "/img/ui/icons/ui-icon-interface-volume.png",
+		path: "/img/ui/icons/ui-icon-interface-audio.png",
 		type: AssetType.STATIC,
 	},
 	icon_bgm_off: {
 		key: "icon_bgm_off",
+		path: "/img/ui/icons/ui-icon-interface-audio-off.png",
+		type: AssetType.STATIC,
+	},
+	icon_sfx: {
+		key: "icon_sfx",
+		path: "/img/ui/icons/ui-icon-interface-volume.png",
+		type: AssetType.STATIC,
+	},
+	icon_sfx_off: {
+		key: "icon_sfx_off",
 		path: "/img/ui/icons/ui-icon-interface-volume-off.png",
 		type: AssetType.STATIC,
 	},
 	icon_close: {
 		key: "icon_close",
+		path: "/img/ui/icons/ui-icon-interface-close.png",
+		type: AssetType.STATIC,
+	},
+	icon_pause: {
+		key: "icon_pause",
 		path: "/img/ui/icons/ui-icon-interface-pause.png",
 		type: AssetType.STATIC,
 	},

@@ -1,6 +1,8 @@
 import { SceneInfo }            from "Definitions/SceneInfo";
 import HomeSceneView            from "./HomeSceneView";
 import Main from "../main";
+import EventBus, { GameEvents } from "Modules/GameEventBus";
+import IGameData from "Modules/GameData";
 
 
 export default class HomeSceneController extends Phaser.Scene {
@@ -17,19 +19,22 @@ export default class HomeSceneController extends Phaser.Scene {
     {
         this.view = new HomeSceneView(this);
         this.view.create();
-        this.view.initButton(() => {
-
-            // Load Visual Novel
-            this.scene.start(SceneInfo.gameplayScene.key);
-        }, 
+        this.view.initButton(() => 
+            {
+                // Load Visual Novel
+                this.scene.start(SceneInfo.gameplayScene.key);
+            },        
+            () => {
+                // Open Log Game
+            }, 
         
-        () => {
-            // Open Log Game
-        }, 
-    
-        () => {
-            // Open Settings
-            Main.instance.OpenPopup();
+            () => {
+                // Open Settings
+                Main.instance.OpenPopup();
+            })
+
+        EventBus.instance.subscribe(GameEvents.settingsChanged, (data : IGameData) => {
+            this.view?.onLanguageChange();
         })
     }
 }

@@ -1,12 +1,13 @@
-import GameData, { LanguageEnum } from "Modules/GameData"
+import IGameData, {  gameData } from "Modules/GameData"
 import EnglishText from "./language/EnglishText";
 import IndonesianText from "./language/IndonesianText";
+import { LanguageEnum } from "Definitions/Settings";
 
 export default class Localizations 
 {
     static get text()
     {        
-        return GameData.settings.lang == LanguageEnum.English ? EnglishText : IndonesianText;
+        return gameData.settings.lang == LanguageEnum.English ? EnglishText : IndonesianText;
     }
     
 }

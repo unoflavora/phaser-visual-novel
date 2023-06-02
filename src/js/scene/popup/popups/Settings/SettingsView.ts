@@ -1,10 +1,13 @@
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
+import { LanguageEnum } from "Definitions/Settings";
 import AudioController from "Modules/AudioController";
+import  { gameData } from "Modules/GameData";
 import Button from "Modules/gameobjects/Button";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
+import Localizations from "Modules/localization/LocalizationHelper";
 
 export default class SettingsView extends Phaser.GameObjects.Container
 {
@@ -12,10 +15,14 @@ export default class SettingsView extends Phaser.GameObjects.Container
     private title: Text;
     private closeBtn: Button;
 
+    // TODO
+    // Creating two button state in two button object is not ideal, but using Phaser's setTexture() method is not working
     private sfxTitle : Text;
-    private bgmButton : Button;
-    private bgmTitle : Text;
     private sfxButton : Button;
+    private sfxButtonOff : Button;
+    private bgmTitle : Text;
+    private bgmButton : Button;
+    private bgmButtonOff : Button;
 
     private languagesTitle : Text;
     private currentLanguage : Button;
@@ -36,13 +43,13 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.add(this.bg.gameobject)
         this.bg.transform.setDisplayWidth(this.scene.scale.width * .4, true);
 
-        this.title = new Text(scene, 0, 0, "Settings", {})
+        this.title = new Text(scene, 0, 0, Localizations.text.mainMenu.settings.title, {})
         this.add(this.title.gameobject);
 
         this.closeBtn = new Button(scene, 0, 0, UIAsset.icon_close.key);
         this.add(this.closeBtn.gameobject);
 
-        this.sfxTitle = new Text(scene, 0, 0, "Sound", {
+        this.sfxTitle = new Text(scene, 0, 0, Localizations.text.mainMenu.settings.sound, {
             fontSize: this.bg.transform.displayHeight * .04,
             color: FontColors.darkBrown,
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
@@ -50,20 +57,26 @@ export default class SettingsView extends Phaser.GameObjects.Container
         });
         this.add(this.sfxTitle.gameobject);
 
-        this.bgmButton = new Button(scene, 0, 0, UIAsset.icon_bgm_off.key);
-        this.add(this.bgmButton.gameobject);
-        
-        this.sfxButton = new Button(scene, 0, 0, UIAsset.icon_sfx_off.key);
+        this.sfxButton = new Button(scene, 0, 0, UIAsset.icon_sfx.key);
         this.add(this.sfxButton.gameobject);
 
-        this.bgmTitle = new Text(scene, 0, 0, "Music", {
+        this.sfxButtonOff = new Button(scene, 0, 0, UIAsset.icon_sfx_off.key);
+        this.add(this.sfxButtonOff.gameobject);
+
+        this.bgmButton = new Button(scene, 0, 0, UIAsset.icon_bgm.key);
+        this.add(this.bgmButton.gameobject);
+
+        this.bgmButtonOff = new Button(scene, 0, 0, UIAsset.icon_bgm_off.key);
+        this.add(this.bgmButtonOff.gameobject);
+
+        this.bgmTitle = new Text(scene, 0, 0, Localizations.text.mainMenu.settings.music, {
             fontSize: this.bg.transform.displayHeight * .04,
             color: FontColors.darkBrown,
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
         });
         this.add(this.bgmTitle.gameobject);
 
-        this.languagesTitle = new Text(scene, 0, 0, "Language", {
+        this.languagesTitle = new Text(scene, 0, 0, Localizations.text.mainMenu.settings.language, {
             fontSize: this.bg.transform.displayHeight * .04,
             color: FontColors.darkBrown,
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
@@ -78,14 +91,14 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.alternativeLanguage.transform.setDisplaySize(this.currentLanguage.transform.displayWidth, this.currentLanguage.transform.displayHeight);
         this.add(this.alternativeLanguage.gameobject);
 
-        this.currentLanguageText = new Text(scene, 0, 0, "English", {
+        this.currentLanguageText = new Text(scene, 0, 0, "A", {
             fontSize: this.bg.transform.displayHeight * .04,
             color: "#ffffff",
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
         });
         this.add(this.currentLanguageText.gameobject);
 
-        this.alternativeLanguageText = new Text(scene, 0, 0, "Indonesian", {
+        this.alternativeLanguageText = new Text(scene, 0, 0, "B", {
             fontSize: this.bg.transform.displayHeight * .04,
             color: "#ffffff",
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
@@ -104,7 +117,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.logoutButton.transform.setDisplayWidth(this.bg.transform.displayWidth * .4, true);
         this.add(this.logoutButton.gameobject);
 
-        this.logoutText = new Text(scene, 0, 0, "Logout", {
+        this.logoutText = new Text(scene, 0, 0, Localizations.text.mainMenu.auth.logout, {
             fontSize: this.bg.transform.displayHeight * .04,
             color: "#ffffff",
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
@@ -124,7 +137,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
     {
         this.title.transform.setPosition(0, this.bg.gameobject.y - this.bg.transform.displayHeight * .42);
         this.title.gameobject.setOrigin(.5);
-        this.title.gameobject.setFontSize(this.bg.transform.displayHeight * .072)
+        this.title.gameobject.setFontSize(this.bg.transform.displayHeight * .07)
 
         this.closeBtn.transform.setDisplayWidth(this.bg.transform.displayWidth * .12, true);
         this.closeBtn.transform.setPosition(this.bg.gameobject.x + this.bg.gameobject.displayWidth * .48, this.bg.gameobject.y - this.bg.transform.displayHeight * .42);
@@ -132,6 +145,8 @@ export default class SettingsView extends Phaser.GameObjects.Container
             AudioController.instance.play(AudioAsset.main_button_click.key);
         });
         this.layoutIcons();
+        this.setBgmButtonsState(gameData.settings.isBgmOn);
+        this.setSfxButtonsState(gameData.settings.isSfxOn);
 
         this.layoutLanguages();
 
@@ -158,15 +173,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.alternativeLanguage.gameobject.setVisible(!this.alternativeLanguage.gameobject.visible);
         this.alternativeLanguageText.gameobject.setVisible(!this.alternativeLanguageText.gameobject.visible);
-        
-        if(changelanguage)
-        {
-            var temp = this.currentLanguageText.gameobject.text;
-            this.currentLanguageText.gameobject.setText(this.alternativeLanguageText.gameobject.text);
-            this.alternativeLanguageText.gameobject.setText(temp);
-        }
-        
-        console.log("CLick")
     }
 
     private layoutLanguages() {
@@ -182,59 +188,54 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.dropdownIcon.transform.setPosition(this.currentLanguage.gameobject.x + this.currentLanguage.transform.displayWidth * .9, this.currentLanguage.gameobject.y);
 
-        this.currentLanguageText.transform.setPosition(this.currentLanguage.gameobject.x, this.currentLanguage.gameobject.y);
-        this.currentLanguageText.gameobject.setOrigin(-.2, .5);
+        this.currentLanguageText.transform.setPosition(this.currentLanguage.gameobject.x * .8, this.currentLanguage.gameobject.y);
+        this.currentLanguageText.gameobject.setOrigin(0, .5);
 
-        this.alternativeLanguageText.transform.setPosition(this.alternativeLanguage.gameobject.x, this.alternativeLanguage.gameobject.y);
-        this.alternativeLanguageText.gameobject.setOrigin(-.2, .5);
+        this.alternativeLanguageText.transform.setPosition(this.alternativeLanguage.gameobject.x * .8, this.alternativeLanguage.gameobject.y);
+        this.alternativeLanguageText.gameobject.setOrigin(0, .5);
         this.alternativeLanguageText.gameobject.setVisible(false);
+        
+        this.currentLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
+
+        this.alternativeLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
+
     }
 
     private layoutIcons() {
          // Adjust this value as needed
         const iconSize = this.bg.transform.displayWidth * .15;
       
-        const sfxButtonWidth = iconSize; // Adjust the width as needed
-        const sfxButtonX = this.bg.gameobject.x - this.bg.gameobject.displayWidth * 0.15;
-        const sfxButtonY = this.bg.gameobject.y - this.bg.gameobject.displayWidth * 0.2;
-      
         const bgmButtonWidth = iconSize; // Adjust the width as needed
-        const bgmButtonX = this.bg.gameobject.x + this.bg.gameobject.displayWidth * 0.15 + this.sfxTitle.gameobject.displayWidth;;
-        const bgmButtonY = sfxButtonY;
+        const bgmButtonX = this.bg.gameobject.x - this.bg.gameobject.displayWidth * 0.15;
+        const bgmButtonY = this.bg.gameobject.y - this.bg.gameobject.displayWidth * 0.2;
       
-        // Set SFX button properties
-        this.bgmButton.transform.setDisplayWidth(sfxButtonWidth, true);
-        this.bgmButton.transform.setPosition(sfxButtonX, sfxButtonY);
-      
-        // Set SFX title properties
-        this.sfxTitle.transform.setPosition(
-          sfxButtonX - sfxButtonWidth - this.sfxTitle.transform.displayWidth * 0.5,
-          this.bgmButton.gameobject.y * 1.1
-        );
+        const sfxButtonWidth = iconSize; // Adjust the width as needed
+        const sfxButtonX = this.bg.gameobject.x + this.bg.gameobject.displayWidth * 0.15 + this.sfxTitle.gameobject.displayWidth;;
+        const sfxButtonY = bgmButtonY;
       
         // Set BGM button properties
         this.sfxButton.transform.setDisplayWidth(bgmButtonWidth, true);
         this.sfxButton.transform.setPosition(bgmButtonX, bgmButtonY);
+        this.sfxButtonOff.transform.setPosition(bgmButtonX, bgmButtonY);
+        this.sfxButtonOff.transform.setDisplayWidth(bgmButtonWidth, true);
+      
+        // Set SFX title properties
+        this.sfxTitle.transform.setPosition(
+          bgmButtonX - bgmButtonWidth - this.sfxTitle.transform.displayWidth * 0.5,
+          this.sfxButton.gameobject.y * 1.1
+        );
+      
+        // Set SFX button properties
+        this.bgmButton.transform.setDisplayWidth(sfxButtonWidth, true);
+        this.bgmButton.transform.setPosition(sfxButtonX, sfxButtonY);
+        this.bgmButtonOff.transform.setPosition(sfxButtonX, sfxButtonY);
+        this.bgmButtonOff.transform.setDisplayWidth(sfxButtonWidth, true);
       
         // Set BGM title properties
         this.bgmTitle.transform.setPosition(
-          bgmButtonX - bgmButtonWidth - this.bgmTitle.transform.displayWidth * 0.5, 
-          this.sfxButton.gameobject.y * 1.1
+          sfxButtonX - sfxButtonWidth - this.bgmTitle.transform.displayWidth * 0.5, 
+          this.bgmButton.gameobject.y * 1.1
         );
-
-        this.sfxButton.gameobject.addListener("pointerdown", () => {
-            AudioController.instance.play(AudioAsset.main_button_click.key);
-        });
-        this.bgmButton.gameobject.addListener("pointerdown", () => {
-            AudioController.instance.play(AudioAsset.main_button_click.key);
-        });
-
-        this.sfxTitle.gameobject.on("pointerdown", () => {
-            AudioController.instance.play(AudioAsset.main_button_click.key);
-        });
-        this.bgmTitle.gameobject.on("pointerdown", () => {
-            AudioController.instance.play(AudioAsset.main_button_click.key);
-        });
       }
 
     public registerOnLogout(callback : Function)
@@ -255,23 +256,51 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.alternativeLanguageText.gameobject.setText(language == "English" ? "Indonesian" : "English");
     }
 
-    public setSfxButtonState(isOn : boolean)
+    public setBgmButtonsState(isOn : boolean)
     {
-        this.sfxButton.gameobject.setTexture(isOn ? UIAsset.icon_sfx_off.key : UIAsset.icon_sfx.key);
+        this.bgmButton.gameobject.setVisible(isOn);
+        this.bgmButtonOff.gameobject.setVisible(!isOn);
     }
 
-    public setBgmButtonState(isOn : boolean)
+    public setSfxButtonsState(isOn : boolean)
     {
-        this.bgmButton.gameobject.setTexture(isOn ? UIAsset.icon_bgm.key : UIAsset.icon_bgm_off.key);
+        this.sfxButton.gameobject.setVisible(isOn);
+        this.sfxButtonOff.gameobject.setVisible(!isOn);
     }
 
-    public registerOnSfxClick(callback : Function)
+    public registerOnBgmButtonClick(callback : Function)
     {
-        this.sfxButton.gameobject.addListener("pointerdown", callback)
+        this.bgmButton.gameobject.addListener("pointerdown", callback)
+        this.bgmButtonOff.gameobject.addListener("pointerdown", callback)
+        this.bgmTitle.gameobject.addListener("pointerdown", callback)
     }
 
-    public registerOnBgmClick(callback : Function)
+    public registerOnSfxButtonClick(callback : Function)
     {
-        this.bgmButton.gameobject.on("pointerup", callback)
+        this.sfxButton.gameobject.on("pointerdown", callback)
+        this.sfxButtonOff.gameobject.on("pointerdown", callback)
+        this.sfxTitle.gameobject.on("pointerdown", callback)
+    }
+
+    public registerOnLanguageButtonClick(callback : Function)
+    {
+        this.alternativeLanguage.gameobject.on("pointerdown", callback)
+    }
+
+    public onChangeLanguage(lang : LanguageEnum)
+    {
+        // Set all text on this scene to the current language
+        console.log(lang)
+
+        this.logoutText.gameobject.setText(Localizations.text.mainMenu.auth.logout);
+        this.title.gameobject.setText(Localizations.text.mainMenu.settings.title);
+        this.sfxTitle.gameobject.setText(Localizations.text.mainMenu.settings.sound);
+        this.bgmTitle.gameobject.setText(Localizations.text.mainMenu.settings.music);
+        this.languagesTitle.gameobject.setText(Localizations.text.mainMenu.settings.language);
+
+        this.currentLanguageText.gameobject.setText(lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
+
+        this.alternativeLanguageText.gameobject.setText(lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
+        
     }
 }

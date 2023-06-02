@@ -8,11 +8,13 @@ const fadeConfiguration = {
 export default class AudioController
 {
     scene! : Phaser.Scene;
-    bgm! : Phaser.Sound.BaseSound;
     bgmFadeTween : Phaser.Tweens.Tween | undefined;
     onMute = false;
-    public muteBgm = false;
+    bgm! : Phaser.Sound.BaseSound;
+    private _bgmOn = true;
 
+    private _sfxOn: boolean = true;
+    
     static _instance : AudioController;
 
     static get instance() : AudioController
@@ -25,11 +27,36 @@ export default class AudioController
         return AudioController._instance;
     };
 
-    public set turnOnBgm (value : boolean) {
-        this.muteBgm = value;
+    public TurnOnBgm (isOn : boolean) {
+        this._bgmOn = isOn;
 
-        this.setBGMVolume(value ? 1 : 0, false);
+        if(this.bgm == null) return;
+
+        if(isOn && !this.bgm.isPlaying)
+        {
+            this.bgm.resume();
+        }
+        else if(!isOn && this.bgm.isPlaying)
+        {
+            this.bgm.pause();
+        }
     }
+    
+    public get bgmOn()
+    {
+        return this._bgmOn;
+    }
+
+
+    public TurnOnSfx(isOn : boolean) {
+        this._sfxOn = isOn;
+    }
+
+    public get sfxOn()
+    {
+        return this._sfxOn;
+    }
+
 
     
     /**
@@ -72,6 +99,7 @@ export default class AudioController
     {
         this.scene.sound.mute = this.onMute = toggle;
     };
+    
 
     /**
      * @param {string} key
@@ -83,7 +111,8 @@ export default class AudioController
 
         const config = {
             loop: true,
-            volume: fadeIn ? 0 : 1,
+            volume: this._bgmOn ? 
+                (fadeIn ? 0 : 1) : 0,
         };
 
         if (this.bgm) this.stopBGM(fadeIn);
@@ -99,9 +128,9 @@ export default class AudioController
             volume: 1,
         });
 
-        if (this.muteBgm)
+        if (!this._bgmOn)
         {
-            this.setBGMVolume(0);
+            this.bgm.stop();
         }
     };
 
@@ -153,37 +182,17 @@ export default class AudioController
     };
 
     /**
-     * @param {number} value
-     * @param {boolean} fade
-     */
-    setBGMVolume = (value: number, fade = true) =>
-    {
-        if(this.bgm == null) return;
-
-        if (fade)
-        {
-            this.scene.tweens.add({
-                targets: this.bgm.manager,
-                volume: value,
-                duration: 300,
-            });
-        }
-        else
-        {
-            this.bgm.manager.volume = value;
-        }
-    };
-
-
-
-    /**
      * @param {string} key
      * @param {boolean} checkOverlap
      */
     play = (key :string, checkOverlap = false) =>
     {
         if (checkOverlap && this.scene.sound.get(key)) return;
+
+        if (this._sfxOn == false) return
+
         this.scene.sound.play(key);
+        
     };
 
     /**

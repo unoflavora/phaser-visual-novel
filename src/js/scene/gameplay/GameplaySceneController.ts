@@ -3,11 +3,13 @@ import AudioController 			from "Modules/AudioController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
+import Main from "../main";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
 
 export default class GameplaySceneController extends Phaser.Scene {
+	
 	// Modules
 	audioController : AudioController;
 
@@ -37,11 +39,12 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 		this.view = new GameplaySceneView(this);
 		this.view.create();		
+		this.view.registerOnPauseButtonClicked(() => this.onPauseButtonClicked());
 		
-		this.loadScene();
+		this.playEmotionalUnderstanding();
 	}
 
-	private loadScene() {
+	private playEmotionalUnderstanding() {
 		var scenes: Scene[] = this.cache.json.get(GameplayAsset.story.key);
 
 		//#region Scene State
@@ -118,6 +121,10 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 			console.log("Scenes Complete");
 		}
+	}
+
+	private onPauseButtonClicked() {
+		Main.instance.OpenPopup();
 	}
 
 

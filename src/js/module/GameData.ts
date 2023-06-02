@@ -1,17 +1,23 @@
-export enum LanguageEnum { Indonesian, English }
+import { IGameData, ISettings, LanguageEnum } from "Definitions/Settings";
+import EventBus, { GameEvents } from "./GameEventBus";
 
-const GameData : GameData = {
+
+export const gameData : IGameData = {
     settings: 
     {
-        lang: LanguageEnum.Indonesian
+        lang: LanguageEnum.Indonesian,
+        isSfxOn: true,
+        isBgmOn: true
     }
 }
 
+export const setSettings = (value: ISettings): void => 
+{
+    gameData.settings = value
 
-interface GameData {
-    settings: {
-        lang : LanguageEnum
-    }
-}
+    EventBus.instance.publish(GameEvents.settingsChanged, value);
+};
+  
+  
 
-export default GameData;
+export default IGameData;

@@ -6,7 +6,7 @@ import { UIAsset } from "Assets/AssetLibraryUi";
 import { EventEmitter } from "events";
 import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
-import { LanguageEnum } from "Modules/GameData";
+import { LanguageEnum } from "Definitions/Settings";
 import { assertUnreachable } from "Modules/helpers/TsHelper";
 import Phaser from "phaser";
 import Localizations from "Modules/localization/LocalizationHelper";
