@@ -2206,8 +2206,8 @@
         "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
         "intro_en":
         [
-            "Pomoro was looking up to higher boulder by boulders. Going up to reach Mopo.",
-            "Pomoro finally stood on the same boulder as Mupo, where Mupo seems remorse for the situation."
+            "Pomoro was looking up to higher boulder by boulders. Going up to reach Mupi.",
+            "Pomoro finally stood on the same boulder as Mupi, where Mupo seems remorse for the situation."
         ],
         "intro_id":
         [
@@ -2500,6 +2500,274 @@
 
     // start of 08
     {
+        "scene": 8,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "After Mupi get down, Pomoro continue to go highest boulder reaching Mupo.",
+            "Mupo stood proudly, with confident where he looked so dignified on sloppy boulder surface."
+        ],
+        "intro_id":
+        [
+            "sc-08 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Talk to Mupo & get down",
+                "score": 75
+            },
+            {
+                "text": "Tell Mupo to be careful because it's dangerous where he stood.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 08
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Mupo is on top of the worldd, no one can stop Mupoo..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa and Mupo waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa and Mupi waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ]
+            // end of reponse en 08
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 08
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa and Mupo waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa and Mupi waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ]
+            // end of response id 08
+        ]
     },
     // end of 08
 
