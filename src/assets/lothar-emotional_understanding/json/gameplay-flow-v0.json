@@ -1487,7 +1487,7 @@
         ],
         "response_en_contexts":
         [
-            // start of reponse en 04
+            // start of reponse en 05
             [
                 {
                     "position": -1,
@@ -1651,7 +1651,7 @@
                     ]
                 }
             ]
-            // end of reponse en 04
+            // end of reponse en 05
         ],
 
 
@@ -1668,7 +1668,7 @@
         ],
         "response_id_contexts":
         [
-            // start of reponse id 04
+            // start of reponse id 05
             [
                 {
                     "position": -1,
@@ -1832,7 +1832,7 @@
                     ]
                 }
             ]
-            // end of response id 04
+            // end of response id 05
         ]
     },
     // end of 05
@@ -1842,6 +1842,356 @@
 
     // start of 06
     {
+        "scene": 6,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "As Pomoro was leaving from those two, a few hundred meters a head there are boulders along the small incline.",
+            "While near to the first boulders, he Pomoro saw childs of turnip."
+        ],
+        "intro_id":
+        [
+            "sc-06 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Shouted at first.",
+                "score": 75
+            },
+            {
+                "text": "Approach calmly & ask properly.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 06
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, are they the people who Rapa is looking for??",
+                        "Hey, are you Mupa, Mupo, or Mupi?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, what's going on?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Mupa is very very soryy...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Where Mupo & Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "They are up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "I'm so sorry, thank you"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "What happen?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Yeaahh... We shouldn't play that far actually."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "So sorry.. Thank you Pomoro..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ]
+            // end of reponse en 06
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 06
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, are they the people who Rapa is looking for??",
+                        "id tba: Hey, are you Mupa, Mupo, or Mupi?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, what's going on?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Mupa is very very soryy...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Where Mupo & Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: They are up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: I'm so sorry, thank you"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: What happen?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Yeaahh... We shouldn't play that far actually."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: So sorry.. Thank you Pomoro..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ]
+            // end of response id 06
+        ]
     },
     // end of 06
 
