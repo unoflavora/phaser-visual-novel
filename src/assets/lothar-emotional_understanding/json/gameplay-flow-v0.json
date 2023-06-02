@@ -1,10 +1,22 @@
 [
+    /**
+    Intro to user/player:
+    - en:
+        You will start a roll playingjourney as Pomoro in visual novel on land of Prospevil.
+        At each of your steps moving forward, you'll meet another character and will guess their emotion at glance,
+        after guessing their emotion from facial expression & body language, the next step is to gave response provided as an options.
+        You also will encounter some minigame during a visual novel, give your best shot, good luck, and have fun!
+    
+    - id:
+        Foo.
+        Bar baz.
+    */
     // start of 00
     {
         "scene": 0,
         "has_quest": false, // skip context of emotions_*, response_*
         "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
-        "background": "assets/lothar-emotional_understanding/audio/bg-sc_00.png",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_00.png",
         "intro_en":
         [
             "Once upon a time, in a far-off kingdom, there was a young advanturer named Pomoro who known for his heart of adventurous spirit. He start a journey to Prospevil, one of prosper village in the Kingdom of Vefurata.",
@@ -32,7 +44,7 @@
         "scene": 1,
         "has_quest": true,
         "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
-        "background": "assets/lothar-emotional_understanding/audio/bg-sc_01.png",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_01.png",
         "intro_en":
         [
             "As he walked through the forest, Pomoro saw a mushroom people in front of the house. She stood worried & looked shy."
@@ -103,14 +115,13 @@
         ],
         "response_en_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response en 01
             [
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*you ignore and walk away"
+                        "*You ignore and walk away."
                     ]
                 },
                 {
@@ -220,6 +231,7 @@
                     ]
                 }
             ]
+            // end of response en 01
         ],
 
 
@@ -244,8 +256,7 @@
         ],
         "response_id_contexts":
         [
-            // 0 == A
-            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            // start of response id 01
             [
                 {
                     "position": -1,
@@ -361,6 +372,7 @@
                     ]
                 }
             ]
+            // end of response id 01
         ]
     },
     // end of 01
@@ -370,6 +382,304 @@
 
     // start of 02
     {
+        "scene": 2,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_02.png",
+        "intro_en":
+        [
+            "Upon reaching deep into Vefurata forest, Pomoro discover an carrot house on the cliff. he seems curious and went to a carrot house.",
+            "Once Pomoro arrived at carrot house, he saw a carrot person who stood so cheer and smile in front of the house."
+        ],
+        "intro_id":
+        [
+            "sc-02 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Feel uncomfortable to ask, leave immediatly.",
+                "score": 50
+            },
+            {
+                "text": "Wondering a what that carrot person into, Pomoro also wondering such a good ambient today.",
+                "score": 75
+            },
+            {
+                "text": "Approach a carrot person and wondering what he think. Felt the breze and enjoy a nice weather on the cliff and greet him.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of response en 02
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Feel uncomfortable to ask, leave immediatly."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "*Ota confused, and sipping his drink."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Such a good day isn't it.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes.. It's good day and I'm glad.",
+                        "Alright, time to get to work.",
+                        "*Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hello, such a great day isn't it."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "I'm heading to the Prospevil, have you been there?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
+                        "We all lived near there before.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, 'we all'? What do you mean?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
+                        "Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro leave with a joy and smile upon his face."
+                    ]
+                }
+            ]
+            // end of response en 02
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 50
+            },
+            {
+                "text": "response id B tba",
+                "score": 75
+            },
+            {
+                "text": "response id C tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of response id 02
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Feel uncomfortable to ask, leave immediatly."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: *Ota confused, and sipping his drink."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Such a good day isn't it.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes.. It's good day and I'm glad.",
+                        "id tba: Alright, time to get to work.",
+                        "id tba: *Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hello, such a great day isn't it."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: I'm heading to the Prospevil, have you been there?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
+                        "id tba: We all lived near there before.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, 'we all'? What do you mean?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
+                        "id tba: Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro leave with a joy and smile upon his face."
+                    ]
+                }
+            ]
+            // end of response id 02
+        ]
     },
     // end of 02
 
@@ -378,6 +688,364 @@
 
     // start of 03
     {
+        "scene": 3,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_03.png",
+        "intro_en":
+        [
+            "Once he was back on his feet, he resumed his quest & reached the incline with humid air.",
+            "Pomoro saw a motion with among the trees, he dare himself to seek what was that motion arround the trees.",
+            "Surprisingly, Pomoro saw something familiar. He saw three young mushroom people..",
+            "Remind him of Ifuly."
+        ],
+        "intro_id":
+        [
+            "sc-03 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Blindly, rush to three of them, and ask them.",
+                "score": 75
+            },
+            {
+                "text": "Being modest, ask about wondering are they Ifuly younger sisters.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 03
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, you guys seems familiar."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Whatttt.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "We all siblingsss..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "We aree more than triplets....."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole, Agari, Imuc",
+                    "text": [
+                        "*Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
+                        "*They leave to another trees a few meters from there and start play together again...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Excuse me, may I know that three of you are Ifuly sisters?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Woo..??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "You meet our big sisterss...???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "How shes doinggg....????"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Wait waitt.. Sisters worry about us..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "Ohh noo.. I want to play arround first..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "Don't worry, we're heading back later on.. Thank you for letting us know..",
+                        "Yes indeed she little bit shy, butt shes care to all of us..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So I had question to check to all of you",
+                        "Big sis says that you guys know direction to Prospevil"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "Ayyyy, a Prospevil.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "Prospevilll... Just go straight a head..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "Yesss... Just go straight that is a correct direction",
+                        "We all heading back to big sis later.. Thank youuu..."
+                    ]
+                }
+            ]
+            // end of reponse en 03
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 03
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, you guys seems familiar."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Whatttt.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: We all siblingsss..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: We aree more than triplets....."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole, Agari, Imuc",
+                    "text": [
+                        "id tba: *Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
+                        "id tba: *They leave to another trees a few meters from there and start play together again...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Excuse me, may I know that three of you are Ifuly sisters?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Woo..??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: You meet our big sisterss...???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: How shes doinggg....????"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Wait waitt.. Sisters worry about us..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: Ohh noo.. I want to play arround first..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: Don't worry, we're heading back later on.. Thank you for letting us know..",
+                        "id tba: Yes indeed she little bit shy, butt shes care to all of us..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So I had question to check to all of you",
+                        "id tba: Big sis says that you guys know direction to Prospevil"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Bolebole",
+                    "text": [
+                        "id tba: Ayyyy, a Prospevil.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Agari",
+                    "text": [
+                        "id tba: Prospevilll... Just go straight a head..."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Imuc",
+                    "text": [
+                        "id tba: Yesss... Just go straight that is a correct direction",
+                        "id tba: We all heading back to big sis later.. Thank youuu..."
+                    ]
+                }
+            ]
+            // end of response id 03
+        ]
     },
     // end of 03
 
@@ -386,6 +1054,364 @@
 
     // start of 04
     {
+        "scene": 4,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_04.png",
+        "intro_en":
+        [
+            "Pomoro set his steps to his journey again. He manage though the forest, pass through various obstacles.",
+            "While Pomoro almost near to the forest edge, he heard something. Sound a rumble, but not beast nor thunder.",
+            "Pomoro seems unsure but curious to locate where the sound came from.",
+            "The sounds start getting closer, and he surprised. Pomoro saw a Warrior of Turnip."
+        ],
+        "intro_id":
+        [
+            "sc-04 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Pomoro leave immediatly.",
+                "score": 50
+            },
+            {
+                "text": "Surprised looking through on high incline & approach Warrior of Turnip.",
+                "score": 75
+            },
+            {
+                "text": "On high incline approach, gave concern & offer a help.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro leave immediatly",
+                        "*Not sure whether afraid or seems not good to approach"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "*Rapa notice a glimpse of presence"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Surprised looking through on high incline & approach Warrior of Turnip",
+                        "Waww, what are you doing at this ground and seems troubled."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Emm, Mu Ma Mo.. what?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Hahh!! no time to explain.. They looks like me",
+                        "If you meet 'em tell 'em to go here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, wait, wait.. I had to go to Prospevil."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Yes, good! So you go to the West, that's is direction to Prospevil.",
+                        "And I go to the East.",
+                        "*Rapa rush to the East"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro startled & bweildered"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*On high incline approach, gave concern & offer a help",
+                        "You seems troubled, may I help?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa, Mupo and Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Herrghh, all of my brothers, I can't find 'em",
+                        "I'm lookin for 'em, but where are they now.",
+                        "Aghh, I'll be glad if you meet 'em and tell to go back here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, wait, wait.. I had to go to Prospevil.",
+                        "But if I meet them along my journey."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "Oh, so you want to go to Prospevil.",
+                        "You can go to the West.",
+                        "And I can go to the East.",
+                        "Tell 'em I'm lookin for 'em if you meet 'em."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Sure thing, I'll let them know...."
+                    ]
+                }
+            ]
+            // end of reponse en 04
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 50
+            },
+            {
+                "text": "response id B tba",
+                "score": 75
+            },
+            {
+                "text": "response id C tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 04
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro leave immediatly",
+                        "id tba: *Not sure whether afraid or seems not good to approach"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: *Rapa notice a glimpse of presence"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Surprised looking through on high incline & approach Warrior of Turnip",
+                        "id tba: Waww, what are you doing at this ground and seems troubled."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Emm, Mu Ma Mo.. what?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Hahh!! no time to explain.. They looks like me",
+                        "id tba: If you meet 'em tell 'em to go here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, wait, wait.. I had to go to Prospevil."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Yes, good! So you go to the West, that's is direction to Prospevil.",
+                        "id tba: And I go to the East.",
+                        "id tba: *Rapa rush to the East"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro startled & bweildered"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *On high incline approach, gave concern & offer a help",
+                        "id tba: You seems troubled, may I help?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa, Mupo and Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Herrghh, all of my brothers, I can't find 'em",
+                        "id tba: I'm lookin for 'em, but where are they now.",
+                        "id tba: Aghh, I'll be glad if you meet 'em and tell to go back here"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, wait, wait.. I had to go to Prospevil.",
+                        "id tba: But if I meet them along my journey."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Rapa",
+                    "text": [
+                        "id tba: Oh, so you want to go to Prospevil.",
+                        "id tba: You can go to the West.",
+                        "id tba: And I can go to the East.",
+                        "id tba: Tell 'em I'm lookin for 'em if you meet 'em."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Sure thing, I'll let them know...."
+                    ]
+                }
+            ]
+            // end of response id 04
+        ]
     },
     // end of 04
 
@@ -394,6 +1420,420 @@
 
     // start of 05
     {
+        "scene": 5,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_05.png",
+        "intro_en":
+        [
+            "Once he back on his feet, he resumed his quest and step out to the forest.",
+            "A wide green grass field with pathway, a couple of carrot people seems resting under the tree aside with pathway."
+        ],
+        "intro_id":
+        [
+            "sc-05 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "They seems familiar, try to figure it out who are these two.",
+                "score": 75
+            },
+            {
+                "text": "Notice these two are carrot people, seems related with Ota.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 05
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Woahh, do I know you two?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yeah, waitt.. I forgot his name.",
+                        "Em.. Uu something?? Oo.. Oott???",
+                        "Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Owh owh owh, Ota Ota Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "Big big big brother Ota, ya??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yes, I think. He went to work with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Surely surely surely, Brother Ota always vibing with his smile every single day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "No matter how hard the day is, big brother Ota always always always find a way to smile."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yess, such a good personality to knew.",
+                        "Okay then, got to go. Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "*Thank you thank you thank you.. Have a pleasant day too."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Heyyy.. You two just looks like Ota"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "How's big big big brother doing there??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Yeah, he seems fine. Also Ota seems delightful when went to work."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Smile generously, bother Ota always smile now matter what."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "There's no a bad bad bad day when borther Ota face the day."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Seems nice to knew someone like him.",
+                        "I would love to meet again with him someday."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "Surely surely surely, you may."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "It's true true true, you can."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay then, pleasure to meet booth of you.",
+                        "Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "*Yess yess yess.. Have a great day too."
+                    ]
+                }
+            ]
+            // end of reponse en 05
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 05
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Woahh, do I know you two?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yeah, waitt.. I forgot his name.",
+                        "id tba: Em.. Uu something?? Oo.. Oott???",
+                        "id tba: Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Owh owh owh, Ota Ota Ota???"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: Big big big brother Ota, ya??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yes, I think. He went to work with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Surely surely surely, Brother Ota always vibing with his smile every single day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: No matter how hard the day is, big brother Ota always always always find a way to smile."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yess, such a good personality to knew.",
+                        "id tba: Okay then, got to go. Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "id tba: *Thank you thank you thank you.. Have a pleasant day too."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Heyyy.. You two just looks like Ota"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: How's big big big brother doing there??"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Yeah, he seems fine. Also Ota seems delightful when went to work."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Smile generously, bother Ota always smile now matter what."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: There's no a bad bad bad day when borther Ota face the day."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Seems nice to knew someone like him.",
+                        "id tba: I would love to meet again with him someday."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca",
+                    "text": [
+                        "id tba: Surely surely surely, you may."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Daucu",
+                    "text": [
+                        "id tba: It's true true true, you can."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay then, pleasure to meet booth of you.",
+                        "id tba: Have a great day."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Naca & Daucu",
+                    "text": [
+                        "id tba: *Yess yess yess.. Have a great day too."
+                    ]
+                }
+            ]
+            // end of response id 05
+        ]
     },
     // end of 05
 
@@ -402,6 +1842,356 @@
 
     // start of 06
     {
+        "scene": 6,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "As Pomoro was leaving from those two, a few hundred meters a head there are boulders along the small incline.",
+            "While near to the first boulders, he Pomoro saw childs of turnip."
+        ],
+        "intro_id":
+        [
+            "sc-06 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Shouted at first.",
+                "score": 75
+            },
+            {
+                "text": "Approach calmly & ask properly.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 06
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, are they the people who Rapa is looking for??",
+                        "Hey, are you Mupa, Mupo, or Mupi?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, what's going on?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Mupa is very very soryy...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Where Mupo & Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "They are up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "I'm so sorry, thank you"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "What happen?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "Yeaahh... We shouldn't play that far actually."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "So sorry.. Thank you Pomoro..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ]
+            // end of reponse en 06
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 06
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, are they the people who Rapa is looking for??",
+                        "id tba: Hey, are you Mupa, Mupo, or Mupi?!"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, what's going on?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Mupa is very very soryy...."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Where Mupo & Mupi?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: They are up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: I'm so sorry, thank you"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: What happen?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: Yeaahh... We shouldn't play that far actually."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupa",
+                    "text": [
+                        "id tba: So sorry.. Thank you Pomoro..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                    ]
+                }
+            ]
+            // end of response id 06
+        ]
     },
     // end of 06
 
@@ -410,6 +2200,298 @@
 
     // start of 07
     {
+        "scene": 7,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "Pomoro was looking up to higher boulder by boulders. Going up to reach Mupi.",
+            "Pomoro finally stood on the same boulder as Mupi, where Mupo seems remorse for the situation."
+        ],
+        "intro_id":
+        [
+            "sc-07 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Approach & suggest to get down from the mid high boulder",
+                "score": 75
+            },
+            {
+                "text": "Calmly approach, persuade to be careful",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 07
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey!! Get down, it's dangerous there."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Sss, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Yy.. Yess, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ]
+            // end of reponse en 07
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 07
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey!! Get down, it's dangerous there."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Sss, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Yy.. Yess, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ]
+            // end of response id 07
+        ]
     },
     // end of 07
 
@@ -418,6 +2500,274 @@
 
     // start of 08
     {
+        "scene": 8,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "After Mupi get down, Pomoro continue to go highest boulder reaching Mupo.",
+            "Mupo stood proudly, with confident where he looked so dignified on sloppy boulder surface."
+        ],
+        "intro_id":
+        [
+            "sc-08 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Talk to Mupo & get down",
+                "score": 75
+            },
+            {
+                "text": "Tell Mupo to be careful because it's dangerous where he stood.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 08
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Mupo is on top of the worldd, no one can stop Mupoo..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa and Mupo waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Mupa and Mupi waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ]
+            // end of reponse en 08
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 08
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa and Mupo waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupo, you are on high place, would you please get down now?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Mupa and Mupi waiting you come to Rapa."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupo",
+                    "text": [
+                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
+                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                    ]
+                }
+            ]
+            // end of response id 08
+        ]
     },
     // end of 08
 
@@ -426,6 +2776,29 @@
 
     // start of 09
     {
+        "scene": 0,
+        "has_quest": false, // skip context of emotions_*, response_*
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_09.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_09.png",
+        "intro_en":
+        [
+            "Helping Mupi to get down from the highest boulder guided by Pomoro, finally, Mupa, Mupi, & Mupo going back to meet Rapa.",
+            "After sometime, Pomoro continue on his way, and get back to his advanture.",
+            "A few miles after leaving boulders along pathway, Pomoro saw a large village surrounded by rivers, green grass fields, and formidable walls stood.",
+            "There after, Pomoro stand under the village gate. He realized his current journey gave a colors of expresion, by situation, by emotion.",
+            "From now on Pomoro understood that he will learn manny things from many ways, drived by curious and courage."
+        ],
+        "intro_id":
+        [
+            "sc-09 intro id tba 1",
+            "sc-09 intro id tba 2"
+        ],
+        "emotions_en": [],
+        "emotions_id": [],
+        "response_en": [],
+        "response_id": [],
+        "response_en_contexts": [],
+        "response_id_contexts": []
     }
     // end of 09
 ]
