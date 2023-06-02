@@ -64,8 +64,8 @@ export default class SettingsController extends Phaser.GameObjects.Group
 
        
 
-        EventBus.instance.subscribe(GameEvents.languageChanged, (data : ISettings) => {
-            this.view.onChangeLanguage(data.lang);
+        EventBus.instance.subscribe(GameEvents.languageChanged, () => {
+            this.view.onChangeLanguage();
         })
 
     }
