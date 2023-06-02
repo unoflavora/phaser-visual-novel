@@ -110,7 +110,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*you ignore and walk away"
+                        "*You ignore and walk away."
                     ]
                 },
                 {
@@ -370,6 +370,308 @@
 
     // start of 02
     {
+        "scene": 2,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_00_01_02.wav",
+        "background": "assets/lothar-emotional_understanding/audio/bg-sc_02.png",
+        "intro_en":
+        [
+            "Upon reaching deep into Vefurata forest, Pomoro discover an carrot house on the cliff. he seems curious and went to a carrot house.",
+            "Once Pomoro arrived at carrot house, he saw a carrot person who stood so cheer and smile in front of the house."
+        ],
+        "intro_id":
+        [
+            "sc-02 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "*Feel uncomfortable to ask, leave immediatly.",
+                "score": 50
+            },
+            {
+                "text": "Wondering a what that carrot person into, Pomoro also wondering such a good ambient today.",
+                "score": 75
+            },
+            {
+                "text": "Approach a carrot person and wondering what he think. Felt the breze and enjoy a nice weather on the cliff and greet him.",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // 0 == A
+            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Feel uncomfortable to ask, leave immediatly."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "*Ota confused, and sipping his drink."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Such a good day isn't it.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes.. It's good day and I'm glad.",
+                        "Alright, time to get to work.",
+                        "*Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hello, such a great day isn't it."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "I'm heading to the Prospevil, have you been there?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
+                        "We all lived near there before.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Wait, 'we all'? What do you mean?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
+                        "Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Pomoro leave with a joy and smile upon his face."
+                    ]
+                }
+            ]
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 25
+            },
+            {
+                "text": "response id B tba",
+                "score": 50
+            },
+            {
+                "text": "response id C tba",
+                "score": 75
+            },
+            {
+                "text": "response id D tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // 0 == A
+            // for -1 character text name must on the left side of the frame, while >= is on the right side of frame; do not use 0
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Feel uncomfortable to ask, leave immediatly."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: *Ota confused, and sipping his drink."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Such a good day isn't it.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes.. It's good day and I'm glad.",
+                        "id tba: Alright, time to get to work.",
+                        "id tba: *Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hello, such a great day isn't it."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: I'm heading to the Prospevil, have you been there?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
+                        "id tba: We all lived near there before.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Wait, 'we all'? What do you mean?"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Ota",
+                    "text": [
+                        "id tba: Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
+                        "id tba: Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Pomoro leave with a joy and smile upon his face."
+                    ]
+                }
+            ]
+        ]
     },
     // end of 02
 
