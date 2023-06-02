@@ -2200,6 +2200,298 @@
 
     // start of 07
     {
+        "scene": 7,
+        "has_quest": true,
+        "audio": "assets/lothar-emotional_understanding/audio/bgm-emotion_understanding-sc_06_07_08.wav",
+        "background": "assets/lothar-emotional_understanding/img/bg-sc_06_07_08.png",
+        "intro_en":
+        [
+            "Pomoro was looking up to higher boulder by boulders. Going up to reach Mopo.",
+            "Pomoro finally stood on the same boulder as Mupo, where Mupo seems remorse for the situation."
+        ],
+        "intro_id":
+        [
+            "sc-07 intro id tba 1"
+        ],
+        "emotions_en":
+        [
+            {
+                "text": "emotion en 1",
+                "score": 25
+            },
+            {
+                "text": "emotion en 2",
+                "score": 50
+            },
+            {
+                "text": "emotion en 3",
+                "score": 75
+            },
+            {
+                "text": "emotion en 4",
+                "score": 100
+            }
+
+        ],
+        "emotions_id":
+        [
+            {
+                "text": "emotion id 1",
+                "score": 25
+            },
+            {
+                "text": "emotion id 2",
+                "score": 50
+            },
+            {
+                "text": "emotion id 3",
+                "score": 75
+            },
+            {
+                "text": "emotion id 4",
+                "score": 100
+            }    
+        ],
+
+
+        "response_en":
+        [
+            {
+                "text": "Approach & suggest to get down from the mid high boulder",
+                "score": 75
+            },
+            {
+                "text": "Calmly approach, persuade to be careful",
+                "score": 100
+            }
+        ],
+        "response_en_contexts":
+        [
+            // start of reponse en 07
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey!! Get down, it's dangerous there."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Sss, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "Yy.. Yess, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "*Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ]
+            // end of reponse en 07
+        ],
+
+
+        "response_id":
+        [
+            {
+                "text": "response id A tba",
+                "score": 75
+            },
+            {
+                "text": "response id B tba",
+                "score": 100
+            }
+        ],
+        "response_id_contexts":
+        [
+            // start of reponse id 07
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey!! Get down, it's dangerous there."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Sss, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ],
+            [
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                    ]
+                },
+                {
+                    "position": 1,
+                    "name": "Mupi",
+                    "text": [
+                        "id tba: Yy.. Yess, sss.. Suree..."
+                    ]
+                },
+                {
+                    "position": -1,
+                    "name": "Pomoro/You",
+                    "text": [
+                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                    ]
+                }
+            ]
+            // end of response id 07
+        ]
     },
     // end of 07
 
