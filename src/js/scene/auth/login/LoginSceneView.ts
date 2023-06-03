@@ -130,7 +130,7 @@ export default class LoginView extends Phaser.GameObjects.Group  {
     
         this.loginButton.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y + this.panel.gameobject.displayHeight * .35)
         this.loginButton.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.45, true);
-        this.loginText.transform.setFontSize(this.loginButton.gameobject.displayHeight * 0.13);
+        this.loginText.transform.setFontSize(this.textStyle.fontSize);
         
 
         // #region DOM Elements

@@ -16,15 +16,16 @@ export default class InfoPopupController extends Phaser.GameObjects.Group {
   init() {
     this.view = new InfoPopupView(this.scene);
 
-    this.view.create();
+    this.view.layoutDefault();
 
     this.view.setVisible(false);
 
   }
 
-  OpenPopup(title: string, message: string, OnConfirm : Function, onCancel : Function | null = null) {
+  OpenPopup(title: string, message: string, iconKey: string, OnConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null) {
     this.view.setVisible(true);
-    this.view.setupInfo(title, message, OnConfirm, onCancel);
+    
+    this.view.setupInfo(title, message, iconKey, OnConfirm, onConfirmText, onCancel, onCancelText);
   }
 
 

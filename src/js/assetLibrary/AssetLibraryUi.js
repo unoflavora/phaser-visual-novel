@@ -145,6 +145,21 @@ export const UIAsset = {
 		path: "/img/ui/icons/ui-icon-interface-dropdown.png",
 		type: AssetType.STATIC,
 	},
+	icon_info: {
+		key: "icon_info",
+		path: "/img/ui/icons/ui-icon-interface-information.png",
+		type: AssetType.STATIC,
+	},
+	icon_warning: {
+		key: "icon_warning",
+		path: "/img/ui/icons/ui-icon-warning.png",
+		type: AssetType.STATIC,
+	},
+	icon_error: {
+		key: "icon_error",
+		path: "/img/ui/icons/ui-icon-error.png",
+		type: AssetType.STATIC,
+	},
 	// #endregion
 };
 

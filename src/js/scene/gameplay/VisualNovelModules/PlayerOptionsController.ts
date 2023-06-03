@@ -6,6 +6,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import ContainerLite from "phaser3-rex-plugins/plugins/containerlite";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
+import "Modules/extensions/text_sizer";
 
 export class PlayerOptionsController extends Phaser.GameObjects.Group
 {
@@ -110,25 +111,9 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
   
 		optionValueObject.setText(optionValue);
 
-        this.HandleTextSize(optionValueObject, option);
+        optionValueObject.handleTextSize(option, 24);
     }
 
-    private HandleTextSize(text: Phaser.GameObjects.Text, parentBox: ContainerLite)
-	{
-		var initialFontSize = 24;
-		text.setFontSize(initialFontSize);
-
-		// Check if the text overflows the parent box
-		while (text.displayWidth > parentBox.displayWidth || text.displayHeight > parentBox.displayHeight) {
-		// Reduce the font size
-		initialFontSize -= 1;
-	
-		// Update the font size of the Text object
-		text.setFontSize(initialFontSize);
-		}
-	
-		// Center the Text object within the parent box
-		text.setPosition(parentBox.x, parentBox.y);
-	}
+   
   }
   

@@ -45,40 +45,44 @@ export default class PopupController extends Phaser.GameObjects.Container
                 this.openSettingsPopup();
                 break;
             case PopupType.Error:
-                this.openInfoPopup("Error", message, this._onClosePopup);
+                this.openInfoPopup("Error", message, UIAsset.icon_error.key, this._onClosePopup, "OK");
                 break;
             case PopupType.LostConnection:
                 this.openLostConnectionPopup();
                 break;
         }
     }
-
-    openLostConnectionPopup()
-    {
-        this.openInfoPopup("Lost Connection", "You are offline, please check your internet connection.", () => {});
-    }
-
-    closeLostConnectionPopup()
+   
+    public closeLostConnectionPopup()
     {
         this._onClosePopup();
     }
 
-    openSettingsPopup() 
+    public openInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
     {
-        this.settingsPopup.OpenPopup();
+        this.background.gameobject.setVisible(true);
+
+        this.infoPopup.OpenPopup(title, message, iconKey, onConfirm,onConfirmText, onCancel, onCancelText);
     }
 
-    openInfoPopup(title : string, desc : string, callback : Function, callbackOnCancel : Function | null = null)
-    {
-        this.infoPopup.OpenPopup(title, desc, callback, callbackOnCancel);
-    }
-
-    registerOnClosePopup(callback : Function)
+    public registerOnClosePopup(callback : Function)
     {
         this._onClosePopup = callback;
 
         this.settingsPopup.registerOnClosePopup(this._onClosePopup);
     }
+
+    private openLostConnectionPopup()
+    {
+        this.openInfoPopup("Lost Connection", "You are offline, please check your internet connection.", UIAsset.icon_warning.key, () => {}, "Refresh");
+    }
+
+    private openSettingsPopup() 
+    {
+        this.settingsPopup.OpenPopup();
+    }
+
+    
 }
 
 

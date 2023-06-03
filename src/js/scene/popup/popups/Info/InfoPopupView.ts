@@ -13,6 +13,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
     private backButtonText: Text;
     private confirmButtonText: Text;
     private confirmButton: Button;
+    private infoIcon: Image;
 
     private infoTitle : Text;
     private infoDesc : Text;
@@ -39,7 +40,10 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.panel.transform.setDisplayWidth(this.scene.scale.width * 0.32, true);
         this.add(this.panel.gameobject)
 
-            
+        this.infoIcon = new Image(this.scene, 0, 0, UIAsset.icon_close.key);
+        this.infoIcon.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.1, true);
+        this.infoIcon.transform.setPosition(this.panel.gameobject.x, this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.315)
+
         this.backButton = new Button(this.scene,0,0,UIAsset.button_frame_secondary.key);
         this.backButtonText = new Text(this.scene,0,0,Localizations.text.back);
         this.add(this.backButton.gameobject)
@@ -53,7 +57,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoTitle = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.315,
+            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.15,
             Localizations.text.mainMenu.auth.forgot_password_title,
             {
                 color: FontColors.darkBrown,
@@ -68,7 +72,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoDesc = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y,
+            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.05,
             Localizations.text.mainMenu.auth.forgot_password_desc,
             {
                 color: FontColors.darkBrown,
@@ -82,8 +86,8 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.add(this.infoDesc.gameobject)
     }
 
-    public create = () => 
-    {    
+    public layoutDefault = () => 
+    {   
         this.backButton.transform.setPosition(this.panel.gameobject.x - this.panel.gameobject.displayWidth * .2,this.panel.gameobject.y + this.panel.gameobject.displayHeight * .32)
         this.backButton.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.35, true);
         this.backButtonText.transform.setPosition(this.backButton.gameobject.x, this.backButton.gameobject.y)   
@@ -103,19 +107,31 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.backButton.click.on(backAction);
     }
 
-    setupInfo(title: string, message: string, OnConfirm : Function, onCancel : Function | null = null)
+    setupInfo(
+        title: string, 
+        message: string,
+        iconKey: string, 
+        OnConfirm : Function, 
+        onConfirmText: string, 
+        onCancel : Function | null = null, 
+        onCancelText: string | null = null)
     {
         this.infoTitle.gameobject.setText(title);
         this.infoDesc.gameobject.setText(message);
+        this.infoIcon.gameobject.setTexture(iconKey);
+
+        this.infoIcon.transform.setDisplayHeight(this.panel.gameobject.displayHeight * .1, true)
 
         this.confirmButton.removeAllListener();
         this.confirmButton.click.on(OnConfirm);
+        this.confirmButtonText.gameobject.setText(onConfirmText);
 
-        if(onCancel != null)
+        if(onCancel != null && onCancelText != null)
         {
-            this.create();
+            this.layoutDefault();
             this.backButton.removeAllListener();
             this.backButton.click.on(onCancel);
+            this.backButtonText.gameobject.setText(onCancelText);
         }
         else
         {
@@ -126,6 +142,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             this.confirmButtonText.transform.setPosition(this.confirmButton.gameobject.x, this.confirmButton.gameobject.y)
         }
     }
+
 
 
 }
