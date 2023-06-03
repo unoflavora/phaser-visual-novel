@@ -1,12 +1,19 @@
-export interface AuthResponse {
-    data: LoginData,
+
+export interface Response<T> {
+    data: T,
     meta: string,
     error: Error | null,
     message: string,
     statusCode: number;
 }
 
-export interface LoginData 
+export interface InitData 
+{
+    sessionId: string,
+    savedData: string | null
+}
+
+export interface AuthData 
 {
     id: string
     fullName: string
@@ -15,6 +22,7 @@ export interface LoginData
     tokenExpiredDate: string
     hasPlayed: boolean  
 }
+
 
 export interface Error {
     code: string

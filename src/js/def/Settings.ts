@@ -11,6 +11,7 @@ export interface IScores {
 }
 
 export interface IGameData {
+    sessionId: string
     settings: ISettings,
     scores: IScores
 }

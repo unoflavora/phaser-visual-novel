@@ -2,7 +2,8 @@ import { SceneInfo } from "Definitions/SceneInfo";
 import PopupController, { PopupType } from "./popup/PopupController";
 import AudioController from "Modules/core/AudioController";
 import BackendController from "Modules/core/BackendController";
-import { AuthResponse } from "Definitions/BackendResponse";
+import { AuthData, Response } from "Definitions/BackendResponse";
+import { gameData } from "Modules/core/GameData";
 export default class MainSceneController extends Phaser.Scene {    
     private audio! : AudioController;
 
@@ -11,10 +12,6 @@ export default class MainSceneController extends Phaser.Scene {
     private backendController! : BackendController;
 
     public static _instance : MainSceneController;
-
-    private _token : string | null = "";
-
-    public get authToken() { return this._token; }
 
     public get backend() { return this.backendController; }
 
@@ -39,7 +36,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     }
 
-    preload() { 
+    async preload() { 
         this.load.plugin(
             'rexinputtextplugin', 
             'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', 
@@ -52,11 +49,13 @@ export default class MainSceneController extends Phaser.Scene {
 
         this.popupController = new PopupController(this);
 
-        this._token = localStorage.getItem("token");
-
         this.backendController = new BackendController();
 
         this.popupController.registerOnClosePopup(() => this.ClosePopup());
+
+        this.backendController.token = localStorage.getItem("token");
+
+        await this.Init();
     }
 
 
@@ -163,7 +162,7 @@ export default class MainSceneController extends Phaser.Scene {
         */              
     }
 
-    public async Login(username : string, password : string, rememberUser: boolean) : Promise<AuthResponse | null>
+    public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>
     {
         try 
         {
@@ -174,7 +173,9 @@ export default class MainSceneController extends Phaser.Scene {
                 
                 localStorage.setItem("token", auth.data.token);
 
-                this._token = auth.data.token;
+                this.backend.token = auth.data.token;
+
+                await this.Init();
             }
     
             return auth;
@@ -187,6 +188,26 @@ export default class MainSceneController extends Phaser.Scene {
 
             return null;
         }
+    }
+
+    private async Init() 
+    {
+        try 
+        {
+            var initData = await this.backendController.Init();
+            gameData.sessionId = initData.data.sessionId;
+    
+        } catch(e)
+        {
+            if (e instanceof Error)
+            {
+                this.OpenPopup(PopupType.Error, e.message);
+            }
+
+            return null;
+        }
+       
+       
     }
 
     public Logout()

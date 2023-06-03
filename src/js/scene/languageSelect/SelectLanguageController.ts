@@ -38,7 +38,7 @@ export default class SelectLanguageController extends Phaser.Scene {
 
         setGameLanguage(language);
         
-        if (MainSceneController.instance.authToken == null)
+        if (localStorage.getItem("token") == null)
             this.scene.start(SceneInfo.loginScene.key);
         else
             this.scene.start(SceneInfo.homeScene.key);

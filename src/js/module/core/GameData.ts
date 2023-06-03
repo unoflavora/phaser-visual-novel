@@ -2,6 +2,7 @@ import { IGameData, ISettings, LanguageEnum } from "Definitions/Settings";
 import EventBus, { GameEvents } from "./GameEventBus";
 
 export const gameData : IGameData = {
+    sessionId: "",
     settings: 
     {
         lang: LanguageEnum.English,
