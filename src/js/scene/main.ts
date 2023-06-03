@@ -27,13 +27,13 @@ export default class Main
     }
 
     
-    public OpenPopup()
+    public OpenPopup(type : PopupType)
     {
         this.scene.scene.bringToTop();
 
         this.HideAllDOMElements();
 
-        this.popupController.OpenPopup(PopupType.Settings);
+        this.popupController.OpenPopup(type);
     }
 
     private ClosePopup()

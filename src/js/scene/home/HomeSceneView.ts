@@ -37,7 +37,8 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         );
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
 
-        this.gameTitle = new Image (this.scene, this.xPos, this.scene.scale.height * .25, UIAsset.game_title.key);
+        this.gameTitle = new Image (this.scene, this.xPos, this.scene.scale.height * .2, UIAsset.game_title.key);
+        this.gameTitle.transform.setDisplayWidth(this.scene.scale.width * 0.25, true);
 
         this.startButton = new Button (this.scene,this.xPos, this.scene.scale.height * .45, UIAsset.button_frame_primary.key);
         this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.text.mainMenu.startGame);  
@@ -64,7 +65,6 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
 
     create = () => {
 
-        this.gameTitle.transform.setDisplayWidth(this.scene.scale.width * 0.4, true);
 
         this.startButton.transform.setDisplayWidth(this.scene.scale.width * 0.2, true);
         this.startButtonText.transform.setFontSize(this.startButton.gameobject.displayHeight * .15);

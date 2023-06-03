@@ -66,7 +66,7 @@ export const UIAsset = {
 	},
 	game_title: {
 		key: "T_Logo_GameTitle",
-		path: "/img/ui/T_Logo_GameTitle.png",
+		path: "/img/ui/Lothar-logo-v2.png",
 		type: AssetType.STATIC
 	},
 	corporate_logo: {

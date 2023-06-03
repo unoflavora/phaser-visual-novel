@@ -8,6 +8,7 @@ import { gameData } from "Modules/GameData";
 import { LanguageEnum } from "Definitions/Settings";
 import EventBus, { GameEvents } from "Modules/GameEventBus";
 import { EventHandler } from "Modules/helpers/TsHelper";
+import { PopupType } from "Scenes/popup/PopupController";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";
@@ -135,7 +136,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 	}
 
 	private onPauseButtonClicked() {
-		Main.instance.OpenPopup();
+		Main.instance.OpenPopup(PopupType.Settings);
 	}
 
 	

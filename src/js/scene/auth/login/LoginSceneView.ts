@@ -19,7 +19,7 @@ export default class LoginView extends Phaser.GameObjects.Group  {
 
     // UI OBJECTS
     private panel: Image;
-    private corporateLogo: Image;
+    private gameLogo: Image;
     private usernameBg: Image;
     private passwordBg: Image;
     private passwordLabel: Text;
@@ -62,7 +62,8 @@ export default class LoginView extends Phaser.GameObjects.Group  {
         );
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
 
-        this.corporateLogo = new Image(this.scene, this.scene.scale.width * .5 ,this.scene.scale.height * .15, UIAsset.game_title.key);
+        this.gameLogo = new Image(this.scene, this.scene.scale.width * .5 ,this.scene.scale.height * .15, UIAsset.game_title.key);
+        this.gameLogo.transform.setDisplayHeight(this.scene.scale.height * .3, true);
 
         this.panel = new Image(
             this.scene,

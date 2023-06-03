@@ -3,6 +3,7 @@ import HomeSceneView            from "./HomeSceneView";
 import Main from "../main";
 import EventBus, { GameEvents } from "Modules/GameEventBus";
 import IGameData from "Modules/GameData";
+import { PopupType } from "Scenes/popup/PopupController";
 
 
 export default class HomeSceneController extends Phaser.Scene {
@@ -37,7 +38,7 @@ export default class HomeSceneController extends Phaser.Scene {
         
             () => {
                 // Open Settings
-                Main.instance.OpenPopup();
+                Main.instance.OpenPopup(PopupType.Settings);
             })
 
     }
