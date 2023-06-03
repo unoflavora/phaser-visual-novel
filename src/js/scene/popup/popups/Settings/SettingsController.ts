@@ -1,10 +1,10 @@
-import AudioController from "Modules/AudioController";
+import AudioController from "Modules/core/AudioController";
 import SettingsView from "./SettingsView";
-import EventBus, { GameEvents } from "Modules/GameEventBus";
+import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import { ISettings, LanguageEnum } from "Definitions/Settings";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { SceneInfo } from "Definitions/SceneInfo";
-import { gameData, setBgmSettings, setGameLanguage, setSfxSettings } from "Modules/GameData";
+import { gameData, setBgmSettings, setGameLanguage, setSfxSettings } from "Modules/core/GameData";
 
 export default class SettingsController extends Phaser.GameObjects.Group
 {

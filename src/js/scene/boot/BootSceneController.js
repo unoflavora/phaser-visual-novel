@@ -1,6 +1,6 @@
 import { SceneInfo } from 'Definitions/SceneInfo';
 import ScreenUtilityController from 'Modules/ScreenUtilityController';
-import AudioController from 'Modules/AudioController';
+import AudioController from 'Modules/core/AudioController';
 import LogHelper from 'Modules/helpers/LogHelper';
 
 export default class BootSceneController extends Phaser.Scene {

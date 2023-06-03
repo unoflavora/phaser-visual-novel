@@ -1,7 +1,7 @@
 import { SceneInfo } from "Definitions/SceneInfo";
 import PopupController from "./popup/PopupController";
 import Main from "./main";
-import AudioController from "Modules/AudioController";
+import AudioController from "Modules/core/AudioController";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 export default class MainSceneController extends Phaser.Scene {
     popupController!: PopupController;

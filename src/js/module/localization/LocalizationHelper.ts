@@ -1,4 +1,4 @@
-import IGameData, {  gameData } from "Modules/GameData"
+import IGameData, {  gameData } from "Modules/core/GameData"
 import EnglishText from "./language/EnglishText";
 import IndonesianText from "./language/IndonesianText";
 import { LanguageEnum } from "Definitions/Settings";

@@ -1,9 +1,9 @@
 import SelectLanguageView from "./SelectLanguageView";
-import AudioController from "Modules/AudioController";
+import AudioController from "Modules/core/AudioController";
 import { SceneInfo } from "Definitions/SceneInfo";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { LanguageEnum } from "Definitions/Settings";
-import { setGameLanguage } from "Modules/GameData";
+import { setGameLanguage } from "Modules/core/GameData";
 
 export default class SelectLanguageController extends Phaser.Scene {
 
