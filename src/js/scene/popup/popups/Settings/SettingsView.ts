@@ -31,7 +31,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
     private alternativeLanguageText : Text;
     private dropdownIcon : Button;
 
-    private logoutButton : Button;
+    private logoutButton : Image;
     private logoutText : Text;
     private userId : Text;
 
@@ -76,7 +76,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
         });
         this.add(this.bgmTitle.gameobject);
 
-        this.languagesTitle = new Text(scene, 0, 0, Localizations.text.mainMenu.settings.language, {
+        this.languagesTitle = new Text(scene, 0, 0, "Language", {
             fontSize: this.bg.transform.displayHeight * .04,
             color: FontColors.darkBrown,
             fontFamily: FontAsset.adobe_caslon_pro_bold.key
@@ -110,12 +110,12 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.currentLanguage.click.on(() => this.handleLanguageClick());
         this.dropdownIcon.click.on(() => this.handleLanguageClick());
-
         this.alternativeLanguage.click.on(() => this.handleLanguageClick(true));
     
-        this.logoutButton = new Button(scene, 0, 0, UIAsset.button_frame_primary.key);
+        this.logoutButton = new Image(scene, 0, 0, UIAsset.button_frame_primary.key);
         this.logoutButton.transform.setDisplayWidth(this.bg.transform.displayWidth * .4, true);
         this.add(this.logoutButton.gameobject);
+        this.logoutButton.gameobject.setInteractive();
 
         this.logoutText = new Text(scene, 0, 0, Localizations.text.mainMenu.auth.logout, {
             fontSize: this.bg.transform.displayHeight * .04,
@@ -150,7 +150,8 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.layoutLanguages();
 
-        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .25);
+        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .27);
+        
         this.logoutText.transform.setPosition(this.logoutButton.gameobject.x, this.logoutButton.gameobject.y);
         this.logoutText.gameobject.setOrigin(.5);
 
@@ -184,7 +185,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.languagesTitle.transform.setPosition(this.sfxTitle.gameobject.x, this.sfxTitle.gameobject.y + this.bg.gameobject.displayHeight * .25);
         this.languagesTitle.gameobject.setOrigin(0, .5);
 
-        this.currentLanguage.transform.setPosition(this.languagesTitle.gameobject.x + this.languagesTitle.gameobject.displayWidth * 1.4, this.languagesTitle.gameobject.y);
+        this.currentLanguage.transform.setPosition(this.languagesTitle.gameobject.x + this.languagesTitle.gameobject.displayWidth * 1.25, this.languagesTitle.gameobject.y);
         this.currentLanguage.gameobject.setOrigin(0, .5);
        
         this.alternativeLanguage.transform.setPosition(this.currentLanguage.gameobject.x, this.currentLanguage.gameobject.y + this.currentLanguage.transform.displayHeight);
@@ -241,11 +242,11 @@ export default class SettingsView extends Phaser.GameObjects.Container
           sfxButtonX - sfxButtonWidth - this.bgmTitle.transform.displayWidth * 0.5, 
           this.bgmButton.gameobject.y * 1.1
         );
-      }
+    }
 
     public registerOnLogout(callback : Function)
     {
-        this.logoutButton.click.on(() => {
+        this.logoutButton.gameobject.addListener("pointerup", () => {
             callback()
             this.closeBtn.gameobject.emit("pointerup");
         });
@@ -301,6 +302,5 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.currentLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
 
         this.alternativeLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
-        
     }
 }
