@@ -14,7 +14,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
         super(scene);
 
         var leftCharacterNameBox = new Image(scene, scene.scale.width * 0.2, scene.scale.height * 0.7, UIAsset.bg_text_box.key);
-        
+        this.add(leftCharacterNameBox.gameobject)
         leftCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25);
 
         this.leftCharacterName = new Text(scene, leftCharacterNameBox.gameobject.x, leftCharacterNameBox.gameobject.y, "Ifuly", {
@@ -28,6 +28,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
             }
         });
         this.leftCharacterName.gameobject.setOrigin(0.5);
+        this.add(this.leftCharacterName.gameobject)
 
         this.leftCharacterNameContainer = new Phaser.GameObjects.Group(scene);
         this.leftCharacterNameContainer.add(leftCharacterNameBox.gameobject);
@@ -37,7 +38,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
 
         var rightCharacterNameBox = new Image(scene, scene.scale.width * 0.8, scene.scale.height * 0.7, UIAsset.bg_text_box.key);
         rightCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25);
-
+        this.add(rightCharacterNameBox.gameobject)
         this.rightCharacterName = new Text(scene, rightCharacterNameBox.gameobject.x, rightCharacterNameBox.gameobject.y, "Ifuly", {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
             fontSize: "24px",
@@ -49,6 +50,8 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
             }
         });
         this.rightCharacterName.gameobject.setOrigin(0.5);
+        this.add(this.rightCharacterName.gameobject)
+
         this.rightCharacterNameContainer = new Phaser.GameObjects.Group(scene);
         this.rightCharacterNameContainer.add(rightCharacterNameBox.gameobject);
         this.rightCharacterNameContainer.add(this.rightCharacterName.gameobject);
@@ -61,6 +64,8 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
             this.setVisible(false);
             return;
         }
+
+        this.setVisible(true);
 
         switch(currentCharacter.position)
         {

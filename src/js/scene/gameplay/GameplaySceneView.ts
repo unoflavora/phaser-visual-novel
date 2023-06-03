@@ -76,6 +76,7 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		};
 
 		this.characterController.LoadCharacter(scene.scene);
+		this.characterNames.setVisible(false);
 
 		this.storyText.LoadText(intro);
 	}

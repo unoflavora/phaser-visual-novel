@@ -185,19 +185,9 @@ export const BackgroundAsset =
 		path: "/img/background/bg-sc_05.png",
 		type: AssetType.STATIC,
 	},
-	"bg-sc_06": {
-		key: "bg-sc_06",
-		path: "/img/background/bg-sc_06.png",
-		type: AssetType.STATIC,
-	},
-	"bg-sc_07": {
-		key: "bg-sc_07",
-		path: "/img/background/bg-sc_07.png",
-		type: AssetType.STATIC,
-	},
-	"bg-sc_08": {
-		key: "bg-sc_08",
-		path: "/img/background/bg-sc_08.png",
+	"bg-sc_06_07_08": {
+		key: "bg-sc_06_07_08",
+		path: "/img/background/bg-sc_06_07_08.png",
 		type: AssetType.STATIC,
 	},
 	"bg-sc_09": {
