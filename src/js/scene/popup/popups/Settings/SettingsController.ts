@@ -5,7 +5,7 @@ import { ISettings, LanguageEnum } from "Definitions/Settings";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { SceneInfo } from "Definitions/SceneInfo";
 import { gameData, setBgmSettings, setGameLanguage, setSfxSettings } from "Modules/core/GameData";
-import Main from "Scenes/Main";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class SettingsController
 {
@@ -53,7 +53,7 @@ export default class SettingsController
             setGameLanguage(gameData.settings.lang == LanguageEnum.English ? LanguageEnum.Indonesian : LanguageEnum.English);
         });
 
-        this.view.registerOnLogout(Main.instance.Logout.bind(Main.instance))
+        this.view.registerOnLogout(MainSceneController.instance.Logout.bind(MainSceneController.instance))
 
         EventBus.instance.subscribe(GameEvents.languageChanged, () => {
             this.view.onChangeLanguage();

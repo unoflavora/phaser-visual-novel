@@ -1,8 +1,8 @@
 import { SceneInfo }            from "Definitions/SceneInfo";
 import HomeSceneView            from "./HomeSceneView";
-import Main from "../Main";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import { PopupType } from "Scenes/popup/PopupController";
+import MainSceneController from "Scenes/MainSceneController";
 
 
 export default class HomeSceneController extends Phaser.Scene {
@@ -37,7 +37,7 @@ export default class HomeSceneController extends Phaser.Scene {
         
             () => {
                 // Open Settings
-                Main.instance.OpenPopup(PopupType.Settings);
+                MainSceneController.instance.OpenPopup(PopupType.Settings);
             })
 
     }
