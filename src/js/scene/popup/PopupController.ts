@@ -47,8 +47,20 @@ export default class PopupController extends Phaser.GameObjects.Container
             case PopupType.Error:
                 this.openInfoPopup("Error", message, this._onClosePopup);
                 break;
-
+            case PopupType.LostConnection:
+                this.openLostConnectionPopup();
+                break;
         }
+    }
+
+    openLostConnectionPopup()
+    {
+        this.openInfoPopup("Lost Connection", "You are offline, please check your internet connection.", () => {});
+    }
+
+    closeLostConnectionPopup()
+    {
+        this._onClosePopup();
     }
 
     openSettingsPopup() 
@@ -69,8 +81,9 @@ export default class PopupController extends Phaser.GameObjects.Container
     }
 }
 
-export enum PopupType 
-{
+
+export enum PopupType {
     Settings = "Settings",
-    Error = "Error"
+    Error = "Error",
+    LostConnection = "LostConnection"
 }

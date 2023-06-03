@@ -54,15 +54,13 @@ export default class MainSceneController extends Phaser.Scene {
 
     create() {
 
-        // this.main.popUpController = popUpController;
+        window.addEventListener('offline', () => {            
+            this.OpenPopup(PopupType.LostConnection);
+        });
 
-        // window.addEventListener('offline', () => {            
-        //     popUpController.isOffline = true;
-        //     popUpController.openLostConnectionPopUp(PopUpType.LOST_CONNECTION);
-        // });
-        // window.addEventListener('online', () => {            
-        //     popUpController.isOffline = false;            
-        // });
+        window.addEventListener('online', () => {            
+            this.popupController.closeLostConnectionPopup();            
+        });
         
         this.startGame();
     }
@@ -177,6 +175,7 @@ export default class MainSceneController extends Phaser.Scene {
 
         this.popupController.OpenPopup(type, message);
     }
+    
 
     private ClosePopup()
     {
