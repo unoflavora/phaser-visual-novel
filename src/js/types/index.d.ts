@@ -15,4 +15,5 @@ export type Config = {
 	DEBUG_MODE: boolean;
 	OFFLINE_MODE: boolean;
 	BASE_URL: boolean;
+	GAME_URL: string;
 };

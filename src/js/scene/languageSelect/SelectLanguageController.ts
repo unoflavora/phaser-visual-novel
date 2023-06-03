@@ -4,6 +4,7 @@ import { SceneInfo } from "Definitions/SceneInfo";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { LanguageEnum } from "Definitions/Settings";
 import { setGameLanguage } from "Modules/core/GameData";
+import Main from '../Main'
 
 export default class SelectLanguageController extends Phaser.Scene {
 
@@ -37,6 +38,9 @@ export default class SelectLanguageController extends Phaser.Scene {
 
         setGameLanguage(language);
         
-        this.scene.start(SceneInfo.loginScene.key);
+        if (Main.instance.authToken == null)
+            this.scene.start(SceneInfo.loginScene.key);
+        else
+            this.scene.start(SceneInfo.homeScene.key);
     }
 }

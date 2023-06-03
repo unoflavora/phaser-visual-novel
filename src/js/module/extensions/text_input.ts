@@ -63,7 +63,7 @@ export function createTextInput(
       color: '#F6C167',
       paddingRight: '1.25em',
     }
-  ).on('textchange', onTextChange);
+  ).on('textchange', onTextChange).setClassName("phaser-dom-elements");;
 
   input.setOrigin(0.5, 0.5);
 

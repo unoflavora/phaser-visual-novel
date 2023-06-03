@@ -3,12 +3,12 @@ import AudioController 			from "Modules/core/AudioController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
-import Main from "../main";
 import { gameData, setEmotionScore, setResponseScore } from "Modules/core/GameData";
 import { LanguageEnum } from "Definitions/Settings";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import { EventHandler } from "Modules/helpers/TsHelper";
 import { PopupType } from "Scenes/popup/PopupController";
+import Main from "../Main";
 
 //TODO create Pause Controller
 // import PauseController 			from "../../sceneModule/pause/PauseController";

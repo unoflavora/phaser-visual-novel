@@ -4,7 +4,7 @@ import EventBus, { GameEvents } from "./GameEventBus";
 export const gameData : IGameData = {
     settings: 
     {
-        lang: LanguageEnum.Indonesian,
+        lang: LanguageEnum.English,
         isSfxOn: true,
         isBgmOn: true
     },

@@ -1,6 +1,6 @@
 import { SceneInfo }            from "Definitions/SceneInfo";
 import HomeSceneView            from "./HomeSceneView";
-import Main from "../main";
+import Main from "../Main";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import { PopupType } from "Scenes/popup/PopupController";
 

@@ -5,23 +5,27 @@ import { ISettings, LanguageEnum } from "Definitions/Settings";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { SceneInfo } from "Definitions/SceneInfo";
 import { gameData, setBgmSettings, setGameLanguage, setSfxSettings } from "Modules/core/GameData";
+import Main from "Scenes/Main";
 
-export default class SettingsController extends Phaser.GameObjects.Group
+export default class SettingsController
 {
-    view : SettingsView;
     
-    constructor(scene : Phaser.Scene)
+    view : SettingsView;
+    scene : Phaser.Scene
+    
+    constructor(popupContainer: Phaser.GameObjects.Container)
     {
-        super(scene);
+        this.scene = popupContainer.scene;
 
-        this.view = new SettingsView(scene);
-        this.scene.add.existing(this);
-        this.scene.add.existing(this.view);
-        this.add(this.view);
+        this.view = new SettingsView(this.scene);
 
         this.view.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .5);
         this.view.create();
         this.view.setVisible(false);
+
+        popupContainer.add(this.view);
+        this.scene.add.existing(this.view);
+
     }
 
     public init()
@@ -49,20 +53,7 @@ export default class SettingsController extends Phaser.GameObjects.Group
             setGameLanguage(gameData.settings.lang == LanguageEnum.English ? LanguageEnum.Indonesian : LanguageEnum.English);
         });
 
-        this.view.registerOnLogout(() => {
-            var scenes = this.scene.scene.manager.getScenes();
-
-            var loadedScene = scenes.filter(scene => scene.scene.key != SceneInfo.mainScene.key && scene.scene.key != SceneInfo.debugScene.key)
-
-            // remove the currently loaded scene
-            loadedScene.forEach(scene => this.scene.scene.stop(scene.scene.key))
-
-            AudioController.instance.stopBGM();
-            // load the login scene
-            this.scene.scene.launch(SceneInfo.loginScene.key);
-        })
-
-       
+        this.view.registerOnLogout(Main.instance.Logout.bind(Main.instance))
 
         EventBus.instance.subscribe(GameEvents.languageChanged, () => {
             this.view.onChangeLanguage();
@@ -73,6 +64,10 @@ export default class SettingsController extends Phaser.GameObjects.Group
     public registerOnClosePopup(callback : Function)
     {
         this.view.registerOnClosePopup(callback);
+    }
+
+    OpenPopup() {
+        this.view.setVisible(true);
     }
 
 

@@ -23,7 +23,7 @@ const IndonesianText : typeof EnglishText = {
             email: "Alamat Email",
             forgot_password: "Lupa Kata Sandi",
             remember_me: "Ingat Saya",
-            wrong_password: "Kata Sandi atau Nama Pengguna Salah",
+            wrong_password: "Kata Sandi atau Email Salah",
             reset_password: "Reset Password",
             invalid_email: "Email Tidak Terdaftar",
             forgot_password_title: "Lupa Kata Sandi",

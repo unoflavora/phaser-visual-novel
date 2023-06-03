@@ -22,7 +22,7 @@ const EnglishText = {
             email: "Email Address",
             forgot_password: "Forgot Password",
             remember_me: "Remember Me",
-            wrong_password: "Wrong Password or Username",
+            wrong_password: "Wrong Password or Email",
             reset_password: "Reset Password",
             invalid_email: "Email is Unregistered",
             forgot_password_title: "Forgot Password",
