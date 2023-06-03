@@ -7,6 +7,11 @@ export const gameData : IGameData = {
         lang: LanguageEnum.Indonesian,
         isSfxOn: true,
         isBgmOn: true
+    },
+    scores:
+    {
+        emotion: 0,
+        response: 0
     }
 }
 
@@ -30,7 +35,16 @@ export const setGameLanguage = (value: LanguageEnum): void =>
 
     EventBus.instance.publish(GameEvents.languageChanged, value);
 };
-  
-  
 
+export const setEmotionScore = (value: number): void =>
+{
+    gameData.scores.emotion = value;
+}
+
+export const setResponseScore = (value: number): void =>
+{
+    gameData.scores.response = value;
+}
+  
+  
 export default IGameData;

@@ -5,8 +5,14 @@ export interface ISettings {
     isBgmOn: boolean
 }
 
+export interface IScores {
+    emotion: number,
+    response: number
+}
+
 export interface IGameData {
-    settings: ISettings
+    settings: ISettings,
+    scores: IScores
 }
 
 export enum LanguageEnum { Indonesian, English }

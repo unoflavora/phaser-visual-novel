@@ -4,7 +4,7 @@ import { SceneInfo } 			from "Definitions/SceneInfo";
 import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
 import { AudioAsset } 			from "Assets/AssetLibraryAudio";
 import Main from "../main";
-import { gameData } from "Modules/GameData";
+import { gameData, setEmotionScore, setResponseScore } from "Modules/GameData";
 import { LanguageEnum } from "Definitions/Settings";
 import EventBus, { GameEvents } from "Modules/GameEventBus";
 import { EventHandler } from "Modules/helpers/TsHelper";
@@ -92,26 +92,45 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 
 		function onPlayerChooseAnswer(this : GameplaySceneController, optionIndex : number) {
-
 			if (!playerHasAskedForResponse)
 			{
-				currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
-				currentInteraction();
-
-				playerHasAskedForResponse = true;
-	
+				guessForEmotion.call(this, optionIndex);
 				return;
 			}
 
+			showNpcResponse.call(this, optionIndex);
+		}
+		
+
+		function showNpcResponse(this: GameplaySceneController, optionIndex: number) {
+			var score = gameData.settings.lang == LanguageEnum.English
+				? scene.response_en[optionIndex].score
+				: scene.response_id[optionIndex].score;
+
+			setResponseScore(gameData.scores.response + score);
+
 			this.view.HideOptions();
 
-			currentInteraction = () => this.view.ShowCharacterResponses(gameData.settings.lang == LanguageEnum.English 
+			currentInteraction = () => this.view.ShowCharacterResponses(gameData.settings.lang == LanguageEnum.English
 				? scene.response_en_contexts[optionIndex]
 				: scene.response_id_contexts[optionIndex]);
 
 			currentInteraction();
 		}
-		
+
+		function guessForEmotion(this: GameplaySceneController, optionIndex: number) {
+			var score = gameData.settings.lang == LanguageEnum.English
+				? scene.emotions_en[optionIndex].score
+				: scene.emotions_id[optionIndex].score;
+
+			setEmotionScore(gameData.scores.emotion + score);
+
+			currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+
+			currentInteraction();
+
+			playerHasAskedForResponse = true;
+		}
 
 		function goToNextScene(this: GameplaySceneController)
 		{
@@ -129,8 +148,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 			}
 
             EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey)
-
-
+			console.log(gameData.scores);
 			console.log("Scenes Complete");
 		}
 	}
