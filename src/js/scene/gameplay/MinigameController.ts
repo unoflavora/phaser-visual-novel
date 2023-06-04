@@ -9,6 +9,7 @@ export default class MiniGameController {
     private event: EventEmitter;    
     private scene: Phaser.Scene;
     private minigames = [ "puzzle-block", "memory-of-spades", "guess-the-word"]
+
     private playedMinigames!: MinigameTypes;
 
     constructor(scene: Phaser.Scene) {
@@ -21,12 +22,6 @@ export default class MiniGameController {
         }
          
         window.addEventListener('message', this.receiveMessage, false);
-    }
-
-
-
-    public registerOnFinishMiniGame = (events : (minigameType: MinigameTypes) => void) => {
-        this.event.on(this.eventNames.onFinishMiniGame, events);
     }
 
     public loadMiniGame = (src : MinigameTypes) => {   
@@ -59,7 +54,7 @@ export default class MiniGameController {
 
                 setBgmSettings(data.music);
 
-                this.event.emit(this.eventNames.onFinishMiniGame, this.playedMinigames);
+                this.scene.events.emit(this.eventNames.onFinishMiniGame, this.playedMinigames);
                 break;
         }        
     }
