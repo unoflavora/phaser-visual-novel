@@ -162,8 +162,9 @@ export default class MainSceneController extends Phaser.Scene {
         try 
         {
             var initData = await this._backendController.Init();
+            console.log(initData)
 
-            if(initData.data.savedData != null)
+            if(initData.data.savedData != null && initData.data.savedData != "")
             {
                 this.gameData = JSON.parse(initData.data.savedData);
 

@@ -68,11 +68,19 @@ export default class VisualNovelController
 		this.view.on(this.view.events.OnResponseFinished, goToNextScene.bind(this));			
 
 		function startScene(this: VisualNovelController) {
+			
+			if(currentSceneIndex == -1)
+			{
+				goToNextScene.call(this);
+
+				return;
+			}
+
 			this.view.ShowCharacter(scene.scene);
 
 			this.view.SetBackground(scene.background);
 
-			this.audioController.playBGM(scene.audio);
+			this.audioController.playBGM(scene.audio);	
 
 			switch (progress?.currentSceneState) {
 				case SceneState.Intro:
