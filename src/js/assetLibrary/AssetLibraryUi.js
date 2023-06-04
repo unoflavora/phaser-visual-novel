@@ -66,7 +66,7 @@ export const UIAsset = {
 	},
 	game_title: {
 		key: "T_Logo_GameTitle",
-		path: "/img/ui/T_Logo_GameTitle.png",
+		path: "/img/ui/Lothar-logo-v2.png",
 		type: AssetType.STATIC
 	},
 	corporate_logo: {
@@ -76,23 +76,18 @@ export const UIAsset = {
 	  },
 	button_frame_primary: 
 	{
-	key: "button_frame_primary",
-	path: "/img/ui/icons/ui-icon-frame-primary.png",
-	type: AssetType.STATIC
+		key: "button_frame_primary",
+		path: "/img/ui/icons/ui-icon-frame-primary.png",
+		type: AssetType.STATIC
 	},
 	button_frame_secondary: 
 	{
-	key: "button_frame_secondary",
-	path: "/img/ui/icons/ui-icon-frame-secondary.png",
-	type: AssetType.STATIC
+		key: "button_frame_secondary",
+		path: "/img/ui/icons/ui-icon-frame-secondary.png",
+		type: AssetType.STATIC
 	},
 
   	// #region General
-	pause_button: {
-		key: "pause_button",
-		path: "/img/ui/general/pause_button.png",
-		type: AssetType.STATIC,
-	},
 	bg_text_box: {
 		key: "red_text_box",
 		path: "/img/ui/general/ui-textbox.png",
@@ -100,26 +95,121 @@ export const UIAsset = {
 	},
 	// #endregion
 
-	// #region Login
+	// #region frame
 	popup_background: {
 		key: "popup_background",
 		path: "/img/ui/popups/ui-frame.png",
 		type: AssetType.STATIC,
 	},
-	icon_visibility: 
+	popup_background_with_head:
 	{
-		key: "icon_visibility",
-		path: "/img/ui/icons/ui-icon-visibility.png",
-		type: AssetType.STATIC
-	}
+		key: "popup_background_with_head",
+		path: "/img/ui/popups/ui-frame-1by1-placement-with_head.png",
+		type: AssetType.STATIC,
+	},
+	//#endregion
+
+	// #region Icons
+	icon_bgm: {
+		key: "icon_bgm",
+		path: "/img/ui/icons/ui-icon-interface-audio.png",
+		type: AssetType.STATIC,
+	},
+	icon_bgm_off: {
+		key: "icon_bgm_off",
+		path: "/img/ui/icons/ui-icon-interface-audio-off.png",
+		type: AssetType.STATIC,
+	},
+	icon_sfx: {
+		key: "icon_sfx",
+		path: "/img/ui/icons/ui-icon-interface-volume.png",
+		type: AssetType.STATIC,
+	},
+	icon_sfx_off: {
+		key: "icon_sfx_off",
+		path: "/img/ui/icons/ui-icon-interface-volume-off.png",
+		type: AssetType.STATIC,
+	},
+	icon_close: {
+		key: "icon_close",
+		path: "/img/ui/icons/ui-icon-interface-close.png",
+		type: AssetType.STATIC,
+	},
+	icon_pause: {
+		key: "icon_pause",
+		path: "/img/ui/icons/ui-icon-interface-pause.png",
+		type: AssetType.STATIC,
+	},
+	icon_dropdown: {
+		key: "icon_dropdown",
+		path: "/img/ui/icons/ui-icon-interface-dropdown.png",
+		type: AssetType.STATIC,
+	},
+	icon_info: {
+		key: "icon_info",
+		path: "/img/ui/icons/ui-icon-interface-information.png",
+		type: AssetType.STATIC,
+	},
+	icon_warning: {
+		key: "icon_warning",
+		path: "/img/ui/icons/ui-icon-warning.png",
+		type: AssetType.STATIC,
+	},
+	icon_error: {
+		key: "icon_error",
+		path: "/img/ui/icons/ui-icon-error.png",
+		type: AssetType.STATIC,
+	},
+	// #endregion
 };
 
 export const BackgroundAsset = 
 {
-  background_main: 
-  {
-    key: "background_main",
-    path: "/img/background/background_main.png",
-    type: AssetType.STATIC,
-  }
+	background_main: {
+		key: "background_main",
+		path: "/img/background/background_main.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_00": {
+		key: "bg-sc_00",
+		path: "/img/background/bg-sc_00.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_01": {
+		key: "bg-sc_01",
+		path: "/img/background/bg-sc_01.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_02": {
+		key: "bg-sc_02",
+		path: "/img/background/bg-sc_02.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_03": {
+		key: "bg-sc_03",
+		path: "/img/background/bg-sc_03.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_04": {
+		key: "bg-sc_04",
+		path: "/img/background/bg-sc_04.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_05": {
+		key: "bg-sc_05",
+		path: "/img/background/bg-sc_05.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_06_07_08": {
+		key: "bg-sc_06_07_08",
+		path: "/img/background/bg-sc_06_07_08.png",
+		type: AssetType.STATIC,
+	},
+	"bg-sc_09": {
+		key: "bg-sc_09",
+		path: "/img/background/bg-sc_09.png",
+		type: AssetType.STATIC,
+	},
+
+	
 } 

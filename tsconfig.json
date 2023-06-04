@@ -44,7 +44,8 @@
     "paths": {
       "Modules/*": ["js/module/*"],
       "Assets/*": ["js/assetLibrary/*"],
-      "Definitions/*": ["js/def/*"]
+      "Definitions/*": ["js/def/*"],
+      "Scenes/*": ["js/scene/*"],
     } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */,
 
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
@@ -68,5 +69,5 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["src/**/*", "src/js/types/index.d.ts", "src/js/types/custom.d.ts"]
+  "include": ["src/**/*", "src/js/types/index.d.ts", "src/js/types/deus.d.ts", "src/js/types/custom.d.ts", "node_modules/phaser3-rex-plugins-types"]
 }

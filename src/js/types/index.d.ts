@@ -9,10 +9,11 @@ declare global {
 }
 
 export type Config = {
+    BASE_GAME_URL: string,
 	BASE_ASSET_URL: string;
 	AUTO_CANVAS_RESIZE: boolean;
 	IS_AUDIO_MUTED: boolean;
 	DEBUG_MODE: boolean;
 	OFFLINE_MODE: boolean;
-	BASE_URL: boolean;
+	BASE_URL: string;
 };

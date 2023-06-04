@@ -1,125 +1,266 @@
 import { SceneInfo } from "Definitions/SceneInfo";
+import PopupController, { PopupType } from "./popup/PopupController";
+import AudioController from "Modules/core/AudioController";
+import BackendController from "Modules/core/BackendController";
+import { AuthData, Response } from "Definitions/BackendResponse";
+import IGameData from "Modules/core/GameData";
+import ProgressController from "Modules/core/ProgressController";
+import Settings from "Modules/core/SettingsController";
+import { LanguageEnum } from "Definitions/Settings";
+export default class MainSceneController extends Phaser.Scene {    
+    private audio! : AudioController;
 
-export default class MainSceneController extends Phaser.Scene {
+    private _popupController!: PopupController;
+
+    private _backendController! : BackendController;
+
+    private _settings! : Settings;
+
+    private _progressController! : ProgressController;
+
+    public static _instance : MainSceneController;
+
+    public get backend() { return this._backendController; }
+
+    public get settings() { return this._settings };
+
+    public get progress() { return this._progressController };
+
+    public gameData : IGameData = {
+        sessionId: "",
+        settings: 
+        {
+            lang: LanguageEnum.English,
+            isSfxOn: true,
+            isBgmOn: true
+        },
+        scores:
+        {
+            emotion: 0,
+            response: 0
+        },
+        progress: {
+            playedMinigames: [],
+            emotionalUnderstanding: {
+                currentSceneState: 0,
+                currentSceneIndex: -1,
+                userResponses: [],
+            }
+        }
+    }
+    
+
+    static get instance()
+    {
+        if (!this._instance) throw Error('Main is not initialized');
+
+        return this._instance;
+    };
+
     constructor() {
-        super({
-            key: SceneInfo.mainScene.key
-        });
+        
+        super({ key: SceneInfo.mainScene.key });
+
+        MainSceneController._instance = this;
+
     }    
 
-    preload() { 
-        this.load.plugin(
-            'rexinputtextplugin', 
-            'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', 
-            true
-        );
-    }
-
-    init() 
+    init()
     {
-        // this.main = new Main();        
+		
+
     }
 
-    async create() {
-        // const popUpController = new PopUpController(this);
-        // popUpController.init();        
+    async preload() { 
+        this.audio = AudioController.instance;
 
-        // this.main.popUpController = popUpController;
+        this.audio.init(this, false);   
 
-        // window.addEventListener('offline', () => {            
-        //     popUpController.isOffline = true;
-        //     popUpController.openLostConnectionPopUp(PopUpType.LOST_CONNECTION);
-        // });
-        // window.addEventListener('online', () => {            
-        //     popUpController.isOffline = false;            
-        // });
-        
-        const queryString = window.location.search;
+        this._popupController = new PopupController(this);
 
-        if (queryString) {
-            await this.checkTokenToSetPassword(queryString);
-        }
-        else {
-            await this.startGame();
-        }
+        this._backendController = new BackendController();
+
+        this._progressController = new ProgressController();
+
+        this._settings = new Settings();
+
+        this._popupController.registerOnClosePopup(() => this.ClosePopup());
+
+       
+        await this.Init();
     }
 
-    async startGame() {        
-        var refreshToken = window.localStorage.getItem("refreshToken");
 
-        this.scene.launch(SceneInfo.createPassword.key);
+    create() {
 
-        return;
-
-        // if (refreshToken) 
-        // {                         
-        //     const restApi = this.main.apiController;
-        //     const asyncHelper = this.main.asyncHelper;
-
-        //     //#region Global Error
-		// 	 asyncHelper.setPopUP(this);
-		// 	 asyncHelper.popUpController.globalPopup.registerPopUpClose(() => {
-        //         // window.localStorage.clear();
-        //         this.scene.launch(SceneInfo.loginScene.key);
-		// 	 })        
-		// 	 //#endregion
-
-        //     const response = await asyncHelper.nonFailingRequestAsync(() => restApi.authLoginFromToken(refreshToken));
-            
-        //     if (response) {
-        //         window.localStorage.setItem("refreshToken", response.data.refreshToken);
-                
-        //         restApi.authorizationToken = response.data.token;
-        //         GameData.PLAYER.fullName = response.data.fullName;
-        //         GameData.PLAYER.authorizationToken = response.data.token;
-        //         GameData.PLAYER.hasPlayed = response.data.hasPlayed;                
-                
-        //         var spaceIdx = GameData.PLAYER.fullName.indexOf(' ');
-        //         var firstName;
-        //         if (spaceIdx != -1) {
-        //             firstName = GameData.PLAYER.fullName.substring(0, spaceIdx);
-        //         }
-        //         else {
-        //             firstName = GameData.PLAYER.fullName;
-        //         }                
-        //         GameData.PLAYER.firstName = firstName;
-        //         this.scene.launch(SceneInfo.selectLanguageScene.key);
-        //         return;
-        //     }
-        // }
-
-        // this.scene.launch(SceneInfo.loginScene.key);
-    }
-
-    async checkTokenToSetPassword(queryString : string) { 
-        /**       
-        const restApi = this.main.apiController;
-        const asyncHelper = this.main.asyncHelper;        
-
-        const urlParams = new URLSearchParams(queryString);        
-        const token = urlParams.get('token');
-        const action = urlParams.get('action');
-        
-        const request = token;        
-
-        //#region Global Error
-        asyncHelper.setPopUP(this);        
-        asyncHelper.popUpController.globalPopup.registerPopUpClose(() => {
-            this.scene.launch(SceneInfo.loginScene.key);
+        window.addEventListener('offline', () => {            
+            this.OpenPopup(PopupType.LostConnection);
         });
-        //#endregion
-        const res = await asyncHelper.nonFailingRequestAsync(() => restApi.checkTokenToSetPassword(request));
+
+        window.addEventListener('online', () => {            
+            this._popupController.closeLostConnectionPopup();            
+        });
         
-        if (!res) {
-            this.scene.launch(SceneInfo.tokenScene.key);
-        }
-        else {
-            GameData.PLAYER.setPasswordToken = token;
-            
-            if (action === 'SET_PASSWORD' || action === 'RESET_PASSWORD') {
-                this.scene.launch(SceneInfo.createNewPasswordScene.key);
-            }
-        }  
-        */              
+        this.startGame();
     }
+            
+    
+
+    async startGame() {       
+        this.scene.launch(SceneInfo.languageSelectorScene.key);        
+    }
+
+    public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>
+    {
+        try 
+        {
+            var auth = await this.backend.Login(username, password);
+
+            if (auth.error == null && rememberUser)
+            {
+                
+                localStorage.setItem("token", auth.data.token);
+
+                localStorage.setItem("tokenExpiredDate", auth.data.tokenExpiredDate.toString());
+
+                this.backend.token = auth.data.token;
+
+                await this.Init();
+            }
+    
+            return auth;
+        } catch(e)
+        {
+            if (e instanceof Error)
+            {
+                this.OpenPopup(PopupType.Error, e.message);
+            }
+
+            return null;
+        }
+    }
+
+    private async Init() 
+    {
+        this._backendController.token = localStorage.getItem("token");
+
+        var expiredTokenDate = localStorage.getItem("tokenExpiredDate");
+
+        if (expiredTokenDate != null)
+        {
+            var expiredDate = new Date(expiredTokenDate);
+            var now = new Date();
+
+            if(expiredDate < now)
+            {
+                this._backendController.token = null;
+                localStorage.removeItem("token");
+                localStorage.removeItem("tokenExpiredDate");
+            }
+        }
+
+        try 
+        {
+            var initData = await this._backendController.Init();
+            console.log(initData)
+
+            if(initData.data.savedData != null && initData.data.savedData != "")
+            {
+                this.gameData = JSON.parse(initData.data.savedData);
+
+                if(this.gameData.progress.emotionalUnderstanding.userResponses == null)
+                {
+                    this.gameData.progress.emotionalUnderstanding.userResponses = [];
+                }
+
+                console.log(this.gameData)
+            }
+
+           
+
+            this.gameData.sessionId = initData.data.sessionId;
+
+
+    
+        } catch(e)
+        {
+            if (e instanceof Error)
+            {
+                this.OpenPopup(PopupType.Error, e.message);
+            }
+
+            return null;
+        }
+       
+       
+    }
+
+    public Logout()
+    {
+        try {
+
+            localStorage.removeItem("token");
+
+            var scenes = this.scene.manager.getScenes();
+    
+            var loadedScene = scenes.filter(scene => scene.scene.key != SceneInfo.mainScene.key && scene.scene.key != SceneInfo.debugScene.key)
+    
+            // remove the currently loaded scene
+            loadedScene.forEach(scene => this.scene.stop(scene.scene.key))
+    
+            AudioController.instance.stopBGM();
+            // load the login scene
+            this.scene.launch(SceneInfo.loginScene.key);
+    
+        }
+        catch(e)
+        {
+            if (e instanceof Error)
+            {
+                this.OpenPopup(PopupType.Error, e.message);
+            }
+
+        }
+
+    }
+
+    public OpenPopup(type : PopupType, message: string = "")
+    {
+        this.scene.bringToTop();
+
+        this.HideAllDOMElements();
+
+        this._popupController.OpenPopup(type, message);
+    }
+    
+
+    private ClosePopup()
+    {
+        console.log("Closing Popup")
+
+        this.HideAllDOMElements(false)
+
+        this.scene.sendToBack();
+    }
+
+    public async SaveGameData()
+    {        
+        await this._backendController.SaveGame(this.gameData);
+    }
+
+
+    private HideAllDOMElements(hide : boolean = true) {
+        var domElements = document.getElementsByClassName("phaser-dom-elements");
+
+        for (var i = 0; i < domElements.length; i++) {
+            var element = domElements[i] as HTMLElement;
+
+            if(hide) element.classList.add("hidden");
+            
+            else element.classList.remove("hidden");
+        }
+    }
+
+
+    
 }

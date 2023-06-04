@@ -1,13 +1,11 @@
 import ScreenUtilityController from "Modules/ScreenUtilityController";
 import Text from "Modules/gameobjects/Text";
 import Image from "Modules/gameobjects/Image";
-
 import { UIAsset } from "Assets/AssetLibraryUi";
 import { EventEmitter } from "events";
 import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
-import { LanguageEnum } from "Modules/GameData";
-import { assertUnreachable } from "Modules/helpers/TsHelper";
+import { LanguageEnum } from "Definitions/Settings";
 import Phaser from "phaser";
 import Localizations from "Modules/localization/LocalizationHelper";
 
@@ -82,18 +80,11 @@ export default class SelectLanguageView extends Phaser.GameObjects.Container {
         this.setupFlag(this.flagId, () => this.events.emit(this.eventKeys.OnIndonesiaClicked), "Indonesian");
     }
 
-    registerOnLanguageClicked (language : LanguageEnum, callback : () => void)
+    registerOnLanguageClicked (callback : (language : LanguageEnum) => void)
     {
-        switch(language)
-        {
-            case LanguageEnum.English:
-                this.events.on(this.eventKeys.OnEnglishClicked, callback)
-                break;
-            case LanguageEnum.Indonesian:
-                this.events.on(this.eventKeys.OnIndonesiaClicked, callback)
-                break;
-            default: assertUnreachable(language)
-        }
+        this.events.on(this.eventKeys.OnEnglishClicked, () => { callback(LanguageEnum.English) });
+        
+        this.events.on(this.eventKeys.OnIndonesiaClicked, () => { callback(LanguageEnum.Indonesian) })
     }
         
     private setupFlag(flag : Image, onClickCallback : () => void, text: string) 

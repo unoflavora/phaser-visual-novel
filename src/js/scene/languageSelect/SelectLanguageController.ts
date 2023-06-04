@@ -1,8 +1,9 @@
 import SelectLanguageView from "./SelectLanguageView";
-import AudioController from "Modules/AudioController";
-import GameData, { LanguageEnum } from "Modules/GameData";
+import AudioController from "Modules/core/AudioController";
 import { SceneInfo } from "Definitions/SceneInfo";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
+import { LanguageEnum } from "Definitions/Settings";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class SelectLanguageController extends Phaser.Scene {
 
@@ -18,7 +19,7 @@ export default class SelectLanguageController extends Phaser.Scene {
             key: SceneInfo.languageSelectorScene.key      
         })
 
-        this.audioController = AudioController.getInstance();
+        this.audioController = AudioController.instance;
 
     }    
 
@@ -28,16 +29,17 @@ export default class SelectLanguageController extends Phaser.Scene {
 
         this.view.create();
     
-        this.view.registerOnLanguageClicked(LanguageEnum.English, () => {
-            this.audioController.play(AudioAsset.main_button_click.key);
-            GameData.settings.lang = LanguageEnum.English;
-            this.scene.start(SceneInfo.homeScene.key);
-        })
+        this.view.registerOnLanguageClicked((lang) => this.SelectLanguage(lang))
+    }
 
-        this.view.registerOnLanguageClicked(LanguageEnum.Indonesian, () => {
-            this.audioController.play(AudioAsset.main_button_click.key);
-            GameData.settings.lang = LanguageEnum.Indonesian;
+    private SelectLanguage(language : LanguageEnum) {
+        this.audioController.play(AudioAsset.main_button_click.key);
+
+        MainSceneController.instance.settings.setGameLanguage(language);
+        
+        if (localStorage.getItem("token") == null)
+            this.scene.start(SceneInfo.loginScene.key);
+        else
             this.scene.start(SceneInfo.homeScene.key);
-        })  
     }
 }

@@ -1,83 +1,106 @@
-import GameplaySceneView 		from "./GameplaySceneView";
-import AudioController 			from "Modules/AudioController";
+import MiniGameController from "./MinigameController";
+import AudioController 			from "Modules/core/AudioController";
+import VisualNovelController from "./Emotional Understanding/VisualNovelController";
 import { SceneInfo } 			from "Definitions/SceneInfo";
-import { GameplayAsset } 		from "Assets/AssetLibraryGameplay";
-import { AudioAsset } 			from "Assets/AssetLibraryAudio";
-
-//TODO create Pause Controller
-// import PauseController 			from "../../sceneModule/pause/PauseController";
+import { MinigameTypes } from "Definitions/Minigame";
+import MainSceneController from "Scenes/MainSceneController";
+import { SceneState } from "Definitions/GameProgress";
 
 export default class GameplaySceneController extends Phaser.Scene {
+	
+	// Modules
+	audioController : AudioController;
+
+	minigame! : MiniGameController;
+
+	emotionalUnderstanding!: VisualNovelController;
+
+	playedMinigames : MinigameTypes[] = [];
+
+	// State
+	IsTyping : boolean = false;
+
+	eventKey: string = ""
+
 	constructor() {
 		super({ 
 			key: SceneInfo.gameplayScene.key 
 		});
-	}	
 
-	// Controllers
-	audioController : AudioController | undefined;
-	view : GameplaySceneView | undefined;
+		this.audioController = AudioController.instance;
+
+	}	
 
 	beforeUnloadListener = (event : Event) => 
 	{		
 		event.preventDefault();
 	};
-	/**
-	 * 
-	 * @param {avatarData} avatarMainCharacter 
-	 */
-	init = () => 
+	
+	init = async () => 
 	{		
-		// widow beforeUnload listener
-		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true});
+		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true})
+		
+		this.emotionalUnderstanding = new VisualNovelController(this);
 
-		this.audioController = AudioController.getInstance();
+		this.minigame = new MiniGameController(this);
 
-		// this.gameController = new GameController(this);
-		// this.gameController.init(avatarMainCharacter);
+		this.playedMinigames = MainSceneController.instance.gameData.progress.playedMinigames;	
 
-		// this.visualNovelController = new VisualNovelController(this);
-		// this.visualNovelController.init(story, avatarMainCharacter);
-		// this.visualNovelController.setInteractiveListener(true);		
+		this.events.on(this.emotionalUnderstanding.onFinishNovel, this.onFinishEmotionalUnderstanding.bind(this));
 
-		// this.quizController = new QuizController(this);
-		// this.quizController.init(story);
-		// this.quizController.setInteractiveListener(false);
+		this.events.on(this.emotionalUnderstanding.onProgress, this.onNovelProgressing.bind(this));
 
-		// this.main = Main.getInstance();
-		// this.main.popUpController.lostConnectionPopup.registerPopUpOpen(() => {
-		// 	this.view.setInteractiveListener(false);
-        //     this.visualNovelController.setInteractiveListener(false)
-		// 	this.quizController.setInteractiveListener(false);
-        // });
+		this.events.on(this.minigame.eventNames.onFinishMiniGame, this.onFinishMiniGame.bind(this));
 
-        // this.main.popUpController.lostConnectionPopup.registerPopUpClose(() => {
-        //     this.main.popUpController.lostConnectionPopup.hide();
-        //     new Promise((resolve) => {
-        //         setTimeout(() => {
-        //             if (this.main.popUpController.isOffline) {
-        //                 this.main.popUpController.lostConnectionPopup.show();
-        //             }
-        //             else {                        
-		// 				this.view.setInteractiveListener(true);
-		// 				if (this.isQuiz) {
-		// 					this.quizController.setInteractiveListener(true);
-		// 				}
-		// 				else {
-		// 					this.visualNovelController.setInteractiveListener(true)
-		// 				}
-        //             }
-        //         }, 200);
-        //     });            
-        // });
 
-		// this.miniGameController = this.main.miniGameController;
-		// this.miniGameController.init(this);
-
-		// this.pauseController = new PauseController(this);
-   		// this.pauseController.init();
-
-		this.view = new GameplaySceneView(this);
-		this.view.create();		
+		if(this.playedMinigames.length <= 2)
+		{
+			// the playedMinigames is an enum that is ordered by the order of the minigames
+			this.minigame.loadMiniGame(this.playedMinigames.length);
+		}
+		else
+		{
+			this.emotionalUnderstanding.play(MainSceneController.instance.gameData.progress.emotionalUnderstanding);
+		}
 	}
+
+	private onNovelProgressing(scene : Scene, state: SceneState, optionIndex : number)
+	{
+		MainSceneController.instance.progress.setProgress({
+			currentSceneIndex : scene.scene, 
+			currentSceneState : state,
+			userResponses : state == SceneState.ResponseContext 
+				? [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses, optionIndex]
+				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses
+		})
+
+	}
+
+
+	private onFinishEmotionalUnderstanding() {
+		console.log("FINISHED NOVEL");
+
+		console.log(MainSceneController.instance.gameData.scores);
+
+		console.log("Scenes Complete");
+	}
+
+	private onFinishMiniGame(minigameType : MinigameTypes) 
+	{
+		this.playedMinigames.push(minigameType);
+
+		MainSceneController.instance.progress.setProgress(this.playedMinigames)
+
+		switch(minigameType) {
+			case MinigameTypes.MemoryOfSpades:
+				this.minigame.loadMiniGame(MinigameTypes.PuzzleBlock);
+				break;
+			case MinigameTypes.PuzzleBlock:
+				this.minigame.loadMiniGame(MinigameTypes.GuessTheWord);
+				break;
+			case MinigameTypes.GuessTheWord:
+				this.emotionalUnderstanding.play();
+				break;
+		}
+	}	
 }

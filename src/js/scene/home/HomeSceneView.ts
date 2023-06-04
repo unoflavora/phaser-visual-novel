@@ -3,9 +3,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import { FontAsset } from "Assets/AssetLibraryFont";
 import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
-import GameData, { LanguageEnum } from "Modules/GameData";
 import Localizations from "Modules/localization/LocalizationHelper";
-import { EventHandler } from "Modules/helpers/TsHelper";
 
 
 export default class HomeSceneView extends Phaser.GameObjects.Container {
@@ -39,19 +37,25 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         );
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
 
-        this.gameTitle = new Image (this.scene, this.xPos, this.scene.scale.height * .25, UIAsset.game_title.key);
+        this.gameTitle = new Image (this.scene, this.xPos, this.scene.scale.height * .2, UIAsset.game_title.key);
+        this.gameTitle.transform.setDisplayWidth(this.scene.scale.width * 0.25, true);
 
         this.startButton = new Button (this.scene,this.xPos, this.scene.scale.height * .45, UIAsset.button_frame_primary.key);
         this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.text.mainMenu.startGame);  
         this.startButtonText.gameobject.setOrigin(.5)
+        this.startButtonText.gameobject.handleTextSize(this.startButton.gameobject, this.startButton.gameobject.displayHeight * 0.2);
 
         this.gameLogButton = new Button (this.scene, 0, 0, UIAsset.button_frame_secondary.key);
         this.gameLogButtonText = new Text (this.scene,0,0, Localizations.text.mainMenu.gameLog);
         this.gameLogButtonText.gameobject.setOrigin(.5)
+        this.gameLogButtonText.gameobject.handleTextSize(this.gameLogButton.gameobject, this.gameLogButton.gameobject.displayHeight * 0.2);
+
 
         this.settingButton = new Button ( this.scene, 0,0 , UIAsset.button_frame_secondary.key);
-        this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings);
+        this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings.title);
         this.settingText.gameobject.setOrigin(.5)
+        this.settingText.gameobject.handleTextSize(this.settingButton.gameobject, this.settingButton.gameobject.displayHeight * 0.2);
+
         
         this.recommendText = new Text (
             this.scene, 0, 0, Localizations.text.mainMenu.recommendation, 
@@ -66,7 +70,6 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
 
     create = () => {
 
-        this.gameTitle.transform.setDisplayWidth(this.scene.scale.width * 0.4, true);
 
         this.startButton.transform.setDisplayWidth(this.scene.scale.width * 0.2, true);
         this.startButtonText.transform.setFontSize(this.startButton.gameobject.displayHeight * .15);
@@ -91,7 +94,7 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
     }
 
     
-    initButton = (startMissionAction : EventHandler, overviewAction : EventHandler, settingAction : EventHandler) => 
+    initButton = (startMissionAction : Function, overviewAction : Function, settingAction : Function) => 
     {
         this.startButton.click.on(startMissionAction);
         this.gameLogButton.click.on(overviewAction);
@@ -111,5 +114,12 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.gameLogButton.gameobject.disableInteractive();
         this.settingButton.gameobject.disableInteractive();
   
+    }
+
+    onLanguageChange = () => {
+        this.startButtonText.gameobject.setText(Localizations.text.mainMenu.startGame);
+        this.gameLogButtonText.gameobject.setText(Localizations.text.mainMenu.gameLog);
+        this.settingText.gameobject.setText(Localizations.text.mainMenu.settings.title);
+        this.recommendText.gameobject.setText(Localizations.text.mainMenu.recommendation);
     }
 }

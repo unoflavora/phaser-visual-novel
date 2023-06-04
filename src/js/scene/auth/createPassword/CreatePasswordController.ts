@@ -30,5 +30,6 @@ export default class CreatePasswordController extends Phaser.Scene {
       this.scene.start(SceneInfo.loginScene.key);
       console.log("Password: " + pass);
     })
+
   }
 }

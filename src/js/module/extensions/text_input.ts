@@ -24,12 +24,12 @@ export function createPasswordInput(
                 color: '#F6C167',
                 paddingRight: '1.25em',
             },
-        ).on('textchange', onTextChange);
+        ).on('textchange', onTextChange).setClassName("phaser-dom-elements");
         
         const visibilityButton = scene.add.dom(
             inputBackground.gameobject.x + inputBackground.gameobject.displayWidth * .45, input.y, 
             "i", "font-size: 1.15rem; color: #EFEBD9; cursor: pointer;")
-            visibilityButton.setClassName("fas fa-eye");
+            visibilityButton.setClassName("fas fa-eye phaser-dom-elements");
             visibilityButton.setOrigin(1, 0.5);
             visibilityButton.addListener('click');
             visibilityButton.on("click", () => {
@@ -63,7 +63,7 @@ export function createTextInput(
       color: '#F6C167',
       paddingRight: '1.25em',
     }
-  ).on('textchange', onTextChange);
+  ).on('textchange', onTextChange).setClassName("phaser-dom-elements");;
 
   input.setOrigin(0.5, 0.5);
 
