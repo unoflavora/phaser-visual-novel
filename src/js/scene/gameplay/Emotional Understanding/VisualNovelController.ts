@@ -1,13 +1,14 @@
-import { gameData, setEmotionScore, setResponseScore } from "Modules/core/GameData";
+import { setEmotionScore, setResponseScore } from "Modules/core/GameData";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import VisualNovelView from "./VisualNovelView";
 import { GameplayAsset } from "Assets/AssetLibraryGameplay";
-import { EventHandler } from "Modules/helpers/TsHelper";
+import { EventHandler, assertUnreachable } from "Modules/helpers/TsHelper";
 import { LanguageEnum } from "Definitions/Settings";
 import GameplaySceneController from "../GameplaySceneController";
 import AudioController from "Modules/core/AudioController";
 import MainSceneController from "Scenes/MainSceneController";
 import { PopupType } from "Scenes/popup/PopupController";
+import { IEmotionalUnderstandingProgress, SceneState } from "Definitions/GameProgress";
 
 export default class VisualNovelController
 {
@@ -20,6 +21,8 @@ export default class VisualNovelController
     audioController : AudioController = AudioController.instance;
 
     public onFinishNovel : string = "VisualNovelIsFinished";
+
+	public onProgress : string = "OnSceneComplete";
     
     constructor(scene : GameplaySceneController)
     {
@@ -35,99 +38,152 @@ export default class VisualNovelController
         
     }
 
-    public play() {
+    public play(progress : IEmotionalUnderstandingProgress | null = null) 
+	{
+
 		this.view.setVisible(true);
 
 		var scenes: Scene[] = this.parentScene.cache.json.get(GameplayAsset.story.key);
 		var currentInteraction : EventHandler = () => {};
 		this.eventKey = EventBus.instance.subscribe(GameEvents.languageChanged, () => currentInteraction());
+
 		this.parentScene.scene.scene.events.on("shutdown", () => {
 			console.log("Shutdown")
 			EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey);
 		});
 
 		//#region Scene State
-		var currentSceneIndex : number = -1;
-		var scene = scenes[currentSceneIndex];
-		//#endregion
+		var currentSceneIndex : number = progress?.currentSceneIndex ?? -1;
+		var scene = scenes[currentSceneIndex]
+		console.log(scene, progress)
 
-		goToNextScene.call(this);
+		startScene.call(this)
 
-		var playerHasAskedForResponse : boolean = false;
+		var playerAskedForResponse : boolean = false;
 
-		this.view.on(this.view.events.OnIntroComplete, OnIntroComplete.bind(this));
+		this.view.on(this.view.events.OnIntroComplete, onFinishIntro.bind(this));
 
 		this.view.on(this.view.events.OnPlayerChooseAnswer, onPlayerChooseAnswer.bind(this));
 
 		this.view.on(this.view.events.OnResponseFinished, goToNextScene.bind(this));			
 
-		function OnIntroComplete(this : VisualNovelController) {
-			console.log("Scene Complete");
+		function startScene(this: VisualNovelController) {
+			this.view.ShowCharacter(scene.scene);
 
+			this.view.SetBackground(scene.background);
+
+			this.audioController.playBGM(scene.audio);
+
+			switch (progress?.currentSceneState) {
+				case SceneState.Intro:
+					currentInteraction = () => this.view.ShowIntroText(scene.background, MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
+					currentInteraction();
+					break;
+				case SceneState.AskEmotion:
+					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+					currentInteraction();
+					break;
+				case SceneState.AskResponse:
+					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+					currentInteraction();
+					break;
+				case SceneState.ResponseContext:
+					this.view.HideOptions();
+
+					var optionIndex = progress.userResponses[progress.userResponses.length - 1];
+
+					currentInteraction = () => this.view.ShowCharacterResponses(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
+						? scene.response_en_contexts[optionIndex]
+						: scene.response_id_contexts[optionIndex]);
+
+					currentInteraction();
+					break;
+				default:
+					goToNextScene.call(this);
+			}
+		}
+
+		function onFinishIntro(this : VisualNovelController) {
 			if(scene.has_quest)
 			{
-				currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskEmotion);
+
+				currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+				
 				currentInteraction();
+				
 				return;
 			}
 
 			goToNextScene.call(this);
 		}
 
-
 		function onPlayerChooseAnswer(this : VisualNovelController, optionIndex : number) {
-			if (!playerHasAskedForResponse)
+			if (!playerAskedForResponse)
 			{
-				guessForEmotion.call(this, optionIndex);
+				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskResponse);
+
+				askForResponse.call(this, optionIndex);
+
 				return;
 			}
 
 			showNpcResponse.call(this, optionIndex);
 		}
-		
 
-		function showNpcResponse(this: VisualNovelController, optionIndex: number) {
-			var score = gameData.settings.lang == LanguageEnum.English
-				? scene.response_en[optionIndex].score
-				: scene.response_id[optionIndex].score;
+		function askForResponse(this: VisualNovelController, optionIndex: number) {
 
-			setResponseScore(gameData.scores.response + score);
-
-			this.view.HideOptions();
-
-			currentInteraction = () => this.view.ShowCharacterResponses(gameData.settings.lang == LanguageEnum.English
-				? scene.response_en_contexts[optionIndex]
-				: scene.response_id_contexts[optionIndex]);
-
-			currentInteraction();
-		}
-
-		function guessForEmotion(this: VisualNovelController, optionIndex: number) {
-			var score = gameData.settings.lang == LanguageEnum.English
+			var score = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
 				? scene.emotions_en[optionIndex].score
 				: scene.emotions_id[optionIndex].score;
 
-			setEmotionScore(gameData.scores.emotion + score);
+			setEmotionScore(MainSceneController.instance.gameData.scores.emotion + score);
 
-			currentInteraction = () => this.view.AskPlayerForAnswer(gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
-
+			currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
 			currentInteraction();
 
-			playerHasAskedForResponse = true;
+			playerAskedForResponse = true;
+		}
+
+		function showNpcResponse(this: VisualNovelController, optionIndex: number) {
+
+			this.parentScene.events.emit(this.onProgress, scene, SceneState.ResponseContext, optionIndex);
+
+			var score = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
+				? scene.response_en[optionIndex].score
+				: scene.response_id[optionIndex].score;
+
+			setResponseScore(MainSceneController.instance.gameData.scores.response + score);
+
+			this.view.HideOptions();
+
+			currentInteraction = () => this.view.ShowCharacterResponses(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
+				? scene.response_en_contexts[optionIndex]
+				: scene.response_id_contexts[optionIndex]);
+			currentInteraction();
 		}
 
 		function goToNextScene(this: VisualNovelController)
 		{
 			currentSceneIndex++;
-			playerHasAskedForResponse = false;
+			playerAskedForResponse = false;
 
 			if(currentSceneIndex < scenes.length)
 			{
 				scene = scenes[currentSceneIndex]
 
-				currentInteraction = () => this.view.LoadScene(scene, gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
-				currentInteraction();
+				this.parentScene.events.emit(this.onProgress, scene, SceneState.Intro);
+
+				this.view.ShowCharacter(scene.scene);
+		
+				this.view.SetBackground(scene.background);
+
 				this.audioController.playBGM(scene.audio);
+		
+				currentInteraction = () => this.view.ShowIntroText(scene.background, MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
+				
+				currentInteraction();
+				
 				return;
 			}
 

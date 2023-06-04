@@ -4,7 +4,6 @@ import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import { ISettings, LanguageEnum } from "Definitions/Settings";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import { SceneInfo } from "Definitions/SceneInfo";
-import { gameData, setBgmSettings, setGameLanguage, setSfxSettings } from "Modules/core/GameData";
 import MainSceneController from "Scenes/MainSceneController";
 
 export default class SettingsController
@@ -32,7 +31,7 @@ export default class SettingsController
     {
         this.view.registerOnBgmButtonClick(() => {
             AudioController.instance.TurnOnBgm(!AudioController.instance.bgmOn) 
-            setBgmSettings(AudioController.instance.bgmOn);
+            MainSceneController.instance.settings.setBgmSettings(AudioController.instance.bgmOn);
 
             this.view.setBgmButtonsState(AudioController.instance.bgmOn);
             AudioController.instance.play(AudioAsset.main_button_click.key);
@@ -41,7 +40,7 @@ export default class SettingsController
         this.view.registerOnSfxButtonClick(() => {
             AudioController.instance.TurnOnSfx(!AudioController.instance.sfxOn);
 
-            setSfxSettings(AudioController.instance.sfxOn);
+            MainSceneController.instance.settings.setSfxSettings(AudioController.instance.sfxOn);
 
             this.view.setSfxButtonsState(AudioController.instance.sfxOn);
             AudioController.instance.play(AudioAsset.main_button_click.key);
@@ -50,7 +49,7 @@ export default class SettingsController
 
         this.view.registerOnLanguageButtonClick(() => {
             AudioController.instance.play(AudioAsset.main_button_click.key);
-            setGameLanguage(gameData.settings.lang == LanguageEnum.English ? LanguageEnum.Indonesian : LanguageEnum.English);
+            MainSceneController.instance.settings.setGameLanguage(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? LanguageEnum.Indonesian : LanguageEnum.English);
         });
 
         this.view.registerOnLogout(MainSceneController.instance.Logout.bind(MainSceneController.instance))

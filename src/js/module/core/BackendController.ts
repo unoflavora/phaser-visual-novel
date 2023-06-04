@@ -1,4 +1,5 @@
 import { AuthData, InitData, Response } from "Definitions/BackendResponse";
+import IGameData from "./GameData";
 
 export default class BackendController 
 {
@@ -34,6 +35,21 @@ export default class BackendController
                 "Authorization": "Bearer " + this._token,
             },
             body: JSON.stringify({})
+        }).then(res => res.json());
+    }
+
+    public async SaveGame(data : IGameData) : Promise<Response<boolean>>
+    {
+        return fetch(CONFIG.BASE_URL + "/game/save-game", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + this._token,
+            },
+            body: JSON.stringify({
+                sessionId: data.sessionId,
+                gameMetaData: JSON.stringify(data)
+            })
         }).then(res => res.json());
     }
 

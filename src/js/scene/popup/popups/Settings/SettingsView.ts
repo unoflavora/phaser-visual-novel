@@ -3,11 +3,11 @@ import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import { LanguageEnum } from "Definitions/Settings";
 import AudioController from "Modules/core/AudioController";
-import  { gameData } from "Modules/core/GameData";
 import Button from "Modules/gameobjects/Button";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import Localizations from "Modules/localization/LocalizationHelper";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class SettingsView extends Phaser.GameObjects.Container
 {
@@ -145,8 +145,8 @@ export default class SettingsView extends Phaser.GameObjects.Container
             AudioController.instance.play(AudioAsset.main_button_click.key);
         });
         this.layoutIcons();
-        this.setBgmButtonsState(gameData.settings.isBgmOn);
-        this.setSfxButtonsState(gameData.settings.isSfxOn);
+        this.setBgmButtonsState(MainSceneController.instance.gameData.settings.isBgmOn);
+        this.setSfxButtonsState(MainSceneController.instance.gameData.settings.isSfxOn);
 
         this.layoutLanguages();
 
@@ -201,9 +201,9 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.alternativeLanguageText.gameobject.setOrigin(0, .5);
         this.alternativeLanguageText.gameobject.setVisible(false);
         
-        this.currentLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
+        this.currentLanguageText.gameobject.setText(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
 
-        this.alternativeLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
+        this.alternativeLanguageText.gameobject.setText(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
 
     }
 
@@ -291,7 +291,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
     public onChangeLanguage()
     {
         // Set all text on this scene to the current language
-        console.log(gameData.settings.lang)
+        console.log(MainSceneController.instance.gameData.settings.lang)
 
         this.logoutText.gameobject.setText(Localizations.text.mainMenu.auth.logout);
         this.title.gameobject.setText(Localizations.text.mainMenu.settings.title);
@@ -299,8 +299,8 @@ export default class SettingsView extends Phaser.GameObjects.Container
         this.bgmTitle.gameobject.setText(Localizations.text.mainMenu.settings.music);
         this.languagesTitle.gameobject.setText(Localizations.text.mainMenu.settings.language);
 
-        this.currentLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
+        this.currentLanguageText.gameobject.setText(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? "English" : "Bahasa Indonesia");
 
-        this.alternativeLanguageText.gameobject.setText(gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
+        this.alternativeLanguageText.gameobject.setText(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? "Bahasa Indonesia" : "English");
     }
 }

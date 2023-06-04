@@ -6,6 +6,8 @@ import CharacterController from "./Modules/CharacterController";
 import CharacterNamesController from "./Modules/CharacterNamesController";
 import Button from "Modules/gameobjects/Button";
 import { LanguageEnum } from "Definitions/Settings";
+import { SceneState } from "Definitions/GameProgress";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class VisualNovelView extends Phaser.GameObjects.Group 
 {
@@ -66,10 +68,8 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.setDepth(depth);
 	};
 
-	public LoadScene = (scene : Scene, intro: string[]) => 
+	public ShowIntroText = (bgKey: string, intro: string[]) => 
 	{
-		this.sceneBg.gameobject.setTexture(scene.background);
-
 		this.storyText.setVisible(true);
 
 		this.storyOptions.setVisible(false);
@@ -78,11 +78,17 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 			this.emit(this.eventKeys.OnIntroComplete)
 			this.characterController.FinishTween();
 		};
-
-		this.characterController.LoadCharacter(scene.scene);
-		this.characterNames.setVisible(false);
-
+		
 		this.storyText.LoadText(intro);
+	}
+
+	public SetBackground(bgKey: string) {
+		this.sceneBg.gameobject.setTexture(bgKey);
+	}
+
+	public ShowCharacter(sceneIndex: number) {
+		this.characterController.LoadCharacter(sceneIndex);
+		this.characterNames.setVisible(false);
 	}
 
 	public ShowCharacterResponses(responses: ResponseContext[])
@@ -146,10 +152,5 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 			this.pauseButton.click.removeAllListeners();
 		});
 	}
-
-	onChangeLanguage(lang: LanguageEnum) {
-		throw new Error("Method not implemented.");
-	}
-
 
 }

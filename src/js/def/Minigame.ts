@@ -8,4 +8,6 @@ export interface IMinigameData {
     timeLeft: number
 }
 
-export enum MinigameTypes { PuzzleBlock, MemoryOfSpades, GuessTheWord}
+
+// Order of gameplay
+export enum MinigameTypes {MemoryOfSpades, PuzzleBlock, GuessTheWord}

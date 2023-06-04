@@ -1,3 +1,4 @@
+import IGameProgress from "./GameProgress"
 
 export interface ISettings {
     lang : LanguageEnum,
@@ -11,6 +12,7 @@ export interface IScores {
 }
 
 export interface IGameData {
+    progress: IGameProgress
     sessionId: string
     settings: ISettings,
     scores: IScores

@@ -1,6 +1,6 @@
 import { IMinigameData, MinigameTypes } from "Definitions/Minigame";
 import { LanguageEnum } from "Definitions/Settings";
-import { gameData, setBgmSettings, setSfxSettings } from "Modules/core/GameData";
+import MainSceneController from "Scenes/MainSceneController";
 import { EventEmitter }     from "events";
 
 export default class MiniGameController {
@@ -29,9 +29,9 @@ export default class MiniGameController {
         var minigame = this.minigames[src];
 
         var url = `${CONFIG.BASE_GAME_URL}minigames/${minigame}/` +
-            `?language=${gameData.settings.lang == LanguageEnum.English ? "en" : "id"}` +
-            `&sound=${gameData.settings.isSfxOn}` +
-            `&music=${gameData.settings.isBgmOn}`;
+            `?language=${MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? "en" : "id"}` +
+            `&sound=${MainSceneController.instance.gameData.settings.isSfxOn}` +
+            `&music=${MainSceneController.instance.gameData.settings.isBgmOn}`;
 
         console.log(url)
         this.openWindow(url);
@@ -50,9 +50,9 @@ export default class MiniGameController {
                 this.closeWindow();
 
                 // this.calculateMiniGameScore(data.game, data.score, data.accuracy, data.timeLeft);
-                setSfxSettings(data.sound);
+                MainSceneController.instance.settings.setSfxSettings(data.sound);
 
-                setBgmSettings(data.music);
+                MainSceneController.instance.settings.setBgmSettings(data.music);
 
                 this.scene.events.emit(this.eventNames.onFinishMiniGame, this.playedMinigames);
                 break;
