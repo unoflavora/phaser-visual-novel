@@ -43,14 +43,19 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
         this.startButton = new Button (this.scene,this.xPos, this.scene.scale.height * .45, UIAsset.button_frame_primary.key);
         this.startButtonText = new Text (this.scene, this.startButton.gameobject.x, this.startButton.gameobject.y, Localizations.text.mainMenu.startGame);  
         this.startButtonText.gameobject.setOrigin(.5)
+        this.startButtonText.gameobject.handleTextSize(this.startButton.gameobject, this.startButton.gameobject.displayHeight * 0.2);
 
         this.gameLogButton = new Button (this.scene, 0, 0, UIAsset.button_frame_secondary.key);
         this.gameLogButtonText = new Text (this.scene,0,0, Localizations.text.mainMenu.gameLog);
         this.gameLogButtonText.gameobject.setOrigin(.5)
+        this.gameLogButtonText.gameobject.handleTextSize(this.gameLogButton.gameobject, this.gameLogButton.gameobject.displayHeight * 0.2);
+
 
         this.settingButton = new Button ( this.scene, 0,0 , UIAsset.button_frame_secondary.key);
         this.settingText = new Text(this.scene, 0,0, Localizations.text.mainMenu.settings.title);
         this.settingText.gameobject.setOrigin(.5)
+        this.settingText.gameobject.handleTextSize(this.settingButton.gameobject, this.settingButton.gameobject.displayHeight * 0.2);
+
         
         this.recommendText = new Text (
             this.scene, 0, 0, Localizations.text.mainMenu.recommendation, 

@@ -103,6 +103,7 @@ export default class LoginView extends Phaser.GameObjects.Group  {
         this.rememberMeText = new Text(this.scene,0,0,Localizations.text.mainMenu.auth.remember_me, {...this.textStyle});
         this.rememberMeText.gameobject.setInteractive({ useHandCursor: true});
         this.rememberMeText.gameobject.on('pointerdown', () => { this.onRememberMeClicked() })
+        this.rememberMeCheckbox.transform.setDisplayHeight(this.textStyle.fontSize * 2, true);
 
         this.forgotPasswordText = new Text(this.scene,0,0,Localizations.text.mainMenu.auth.forgot_password, {...this.textStyle});
         this.forgotPasswordText.gameobject.setInteractive({useHandCursor: true})
@@ -130,7 +131,7 @@ export default class LoginView extends Phaser.GameObjects.Group  {
     
         this.loginButton.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y + this.panel.gameobject.displayHeight * .35)
         this.loginButton.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.45, true);
-        this.loginText.transform.setFontSize(this.textStyle.fontSize);
+        this.loginText.gameobject.handleTextSize(this.loginButton.gameobject, this.loginButton.gameobject.displayHeight * 0.2);
         
 
         // #region DOM Elements

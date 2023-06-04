@@ -1,13 +1,13 @@
 import Image from "Modules/gameobjects/Image";
 import { BackgroundAsset, UIAsset } from "Assets/AssetLibraryUi";
-import { StoryTextController } from "./VisualNovelModules/StoryTextController";
-import { PlayerOptionsController } from "./VisualNovelModules/PlayerOptionsController";
-import CharacterController from "./VisualNovelModules/CharacterController";
-import CharacterNamesController from "./VisualNovelModules/CharacterNamesController";
+import { StoryTextController } from "./Modules/StoryTextController";
+import { PlayerOptionsController } from "./Modules/PlayerOptionsController";
+import CharacterController from "./Modules/CharacterController";
+import CharacterNamesController from "./Modules/CharacterNamesController";
 import Button from "Modules/gameobjects/Button";
 import { LanguageEnum } from "Definitions/Settings";
 
-export default class GameplaySceneView extends Phaser.GameObjects.Group 
+export default class VisualNovelView extends Phaser.GameObjects.Group 
 {
 	
 
@@ -39,14 +39,18 @@ export default class GameplaySceneView extends Phaser.GameObjects.Group
 		
 		this.sceneBg = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, BackgroundAsset.background_main.key);
 		this.sceneBg.transform.setMinPreferredDisplaySize(scene.scale.width, scene.scale.height);
+		this.add(this.sceneBg.gameobject)
 
 		this.pauseButton = new Button(scene, scene.scale.width * 0.9, scene.scale.height * 0.1, UIAsset.icon_pause.key);
 		this.pauseButton.transform.setDisplayWidth(scene.scale.width * 0.08, true)
+		this.add(this.pauseButton.gameobject)
 
 		this.characterController = new CharacterController(scene);
+		this.characterController.getChildren().forEach(child => this.add(child));
 
 		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.85, UIAsset.bg_text_box.key)
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
+		this.add(this.textBox.gameobject)
 
 		this.characterNames = new CharacterNamesController(scene);
 

@@ -11,7 +11,7 @@ export default class BackendController
 
     public async Login(email : string, password : string) : Promise<Response<AuthData>>
     {
-        return fetch(CONFIG.GAME_URL + "/auth/login", {
+        return fetch(CONFIG.BASE_URL + "/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export default class BackendController
     {
         if(this._token == null) return Promise.reject("Token is null");
 
-        return fetch(CONFIG.GAME_URL + "/game/init", {
+        return fetch(CONFIG.BASE_URL + "/game/init", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

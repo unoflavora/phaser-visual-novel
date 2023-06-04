@@ -69,5 +69,5 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["src/**/*", "src/js/types/index.d.ts", "src/js/types/custom.d.ts", "node_modules/phaser3-rex-plugins-types"]
+  "include": ["src/**/*", "src/js/types/index.d.ts", "src/js/types/deus.d.ts", "src/js/types/custom.d.ts", "node_modules/phaser3-rex-plugins-types"]
 }

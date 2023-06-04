@@ -43,7 +43,8 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoIcon = new Image(this.scene, 0, 0, UIAsset.icon_close.key);
         this.infoIcon.transform.setDisplayWidth(this.panel.gameobject.displayWidth * 0.1, true);
         this.infoIcon.transform.setPosition(this.panel.gameobject.x, this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.315)
-
+        this.add(this.infoIcon.gameobject);
+        
         this.backButton = new Button(this.scene,0,0,UIAsset.button_frame_secondary.key);
         this.backButtonText = new Text(this.scene,0,0,Localizations.text.back);
         this.add(this.backButton.gameobject)

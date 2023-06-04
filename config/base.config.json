@@ -4,6 +4,7 @@
 	"IS_AUDIO_MUTED": false,
 	"DEBUG_MODE": true,
 	"OFFLINE_MODE" : false,
-	
-	"BASE_URL" : ""
+	"BASE_URL" : "http://ranggabima-001-site1.atempurl.com",
+    "BASE_GAME_URL": "https://hoafl.deusassessment.com/"
+
 }
