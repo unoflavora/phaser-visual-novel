@@ -13,7 +13,8 @@
 		"build:stag": "webpack --config webpack/webpack.prod.js --env build=stag",
 		"dist": "npx http-server dist/ -p 5500 -e",
 		"chrome:cors": "start chrome --disable-web-security --disable-gpu --user-data-dir=temp/chromeTemp",
-		"build:run": "npm run build:dev && npm run copy:asset && npm run dist"
+		"build:run": "npm run build:dev && npm run copy:asset && npm run dist",
+        "g::run::dist": "npx http-server ./dist/ -p 8007 -e --cors"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.7",
