@@ -1,9 +1,9 @@
 name: staging ci/cd - deusproject.lothar.phaser
 
 on:
-    push:
-        branches: [ staging ]
-    pull_request:
+    # push:
+    #     branches: [ staging ]
+    # pull_request:
     workflow_dispatch:
 
 jobs:
