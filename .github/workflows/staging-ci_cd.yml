@@ -1,0 +1,53 @@
+name: staging ci/cd - deusproject.lothar.phaser
+
+on:
+    # push:
+    #     branches: [ staging ]
+    # pull_request:
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: LOTHAR - CI/CD maingame ( staging )
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checking Connection ( staging )
+                id: s1
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.STAGING_HOST }}
+                    username: ${{ secrets.STAGING_USER }}
+                    key: ${{ secrets.STAGING_KEY }}
+                    port: ${{ secrets.STAGING_PORT }}
+                    script: |
+                        cd ${{ secrets.STAGING_LOTHAR_PHASER }}
+                        pwd
+                        git switch staging
+                        git pull origin staging
+
+            -   name: Build Game ( staging )
+                id: s2
+                if: ${{ success() && steps.s1.conclusion == 'success' }}
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.STAGING_HOST }}
+                    username: ${{ secrets.STAGING_USER }}
+                    key: ${{ secrets.STAGING_KEY }}
+                    port: ${{ secrets.STAGING_PORT }}
+                    script: |
+                        cd ${{ secrets.STAGING_LOTHAR_PHASER }}
+                        npm i
+                        npm run build
+
+            -   name: Restart Game, Service & Server ( staging )
+                id: s3
+                if: ${{ success() && steps.s2.conclusion == 'success' }}
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.STAGING_HOST }}
+                    username: ${{ secrets.STAGING_USER }}
+                    key: ${{ secrets.STAGING_KEY }}
+                    port: ${{ secrets.STAGING_PORT }}
+                    script: |
+                        cd ${{ secrets.STAGING_LOTHAR_PHASER }}
+                        echo "TODO: PM2 Restart Game, Service & Server"
