@@ -41,9 +41,8 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
             column: 10,
             row: 10,
             },
-            align: "center",
-            expand: true
         });
+        
 
         this.add(this.options);
     
@@ -78,7 +77,11 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 		container.add([bg, text]);
 
 		// Add container to grid
-		grid.add(container);
+		grid.add(container, {
+            align: "center",
+            expand: true,
+        });
+        
 		grid.layout();
 
 		// Set Item Position and Size based on layouted container
