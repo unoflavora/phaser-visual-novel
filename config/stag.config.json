@@ -1,5 +1,6 @@
 {
     "IS_AUDIO_MUTED": false,
-    "DEVELOPMENT_BUILD": false
+    "DEVELOPMENT_BUILD": false,
+    "BASE_URL" : "https://staging-lothar-cognitive-api.deusassessment.com"
     
 }
