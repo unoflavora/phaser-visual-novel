@@ -19,7 +19,7 @@ export function createPasswordInput(
                 type: 'password',
                 fontFamily: FontAsset.adobe_caslon_pro_bold.key,
                 text: '',
-                fontSize: '1.7rem',
+                fontSize: '1.4rem',
                 align: "left",
                 color: '#F6C167',
                 paddingRight: '1.25em',
@@ -58,7 +58,7 @@ export function createTextInput(
       type: 'text', // Set the input type to 'text' for username input
       fontFamily: FontAsset.adobe_caslon_pro_bold.key,
       text: '',
-      fontSize: '1.7rem',
+      fontSize: '1.4rem',
       align: 'left',
       color: '#F6C167',
       paddingRight: '1.25em',

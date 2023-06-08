@@ -7,6 +7,7 @@ import IGameData from "Modules/core/GameData";
 import ProgressController from "Modules/core/ProgressController";
 import Settings from "Modules/core/SettingsController";
 import { LanguageEnum } from "Definitions/Settings";
+import { debugLog } from "./debug/Debug";
 export default class MainSceneController extends Phaser.Scene {    
     private audio! : AudioController;
 
@@ -65,13 +66,9 @@ export default class MainSceneController extends Phaser.Scene {
 
     }    
 
-    init()
-    {
-		
-
-    }
-
     async preload() { 
+        console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT + " URL API: " + CONFIG.BASE_URL)
+
         this.audio = AudioController.instance;
 
         this.audio.init(this, false);   
