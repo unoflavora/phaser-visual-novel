@@ -2438,19 +2438,19 @@
         "emotions_en":
         [
             {
-                "text": "emotion en 1",
+                "text": "Legacy",
                 "score": 25
             },
             {
-                "text": "emotion en 2",
+                "text": "Validation",
                 "score": 50
             },
             {
-                "text": "emotion en 3",
+                "text": "Accomplishment",
                 "score": 75
             },
             {
-                "text": "emotion en 4",
+                "text": "Recognition",
                 "score": 100
             }
 
