@@ -16,4 +16,5 @@ export type Config = {
 	DEBUG_MODE: boolean;
 	OFFLINE_MODE: boolean;
 	BASE_URL: string;
+	ENVIRONMENT: string;
 };
