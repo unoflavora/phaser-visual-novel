@@ -162,9 +162,9 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
         }
 
         // hide unused results
-        for(var i = results.length; i < this.resultBoxes.length; i++)
+        for(var i = this.resultBoxes.length; i > results.length; i--)
         {
-            var resultView = this.resultBoxes[i]
+            var resultView = this.resultBoxes[i - 1]
 
             resultView.setVisible(false);
         }

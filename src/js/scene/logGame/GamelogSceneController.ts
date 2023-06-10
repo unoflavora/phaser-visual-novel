@@ -29,9 +29,9 @@ export default class GamelogSceneController extends Phaser.Scene
         this.view.registerOnNextBtnClicked(this.OnNextButtonClicked.bind(this));
         this.view.registerOnPrevBtnClicked(this.OnPrevButtonClicked.bind(this));
         this.view.registerOnBackBtnClicked(this.OnBackButtonClicked.bind(this));
-
-        EventBus.instance.subscribe(GameEvents.languageChanged, this.view.onChangeLanguage.bind(this))
-
+        this.view.onChangeLanguage();
+        this.results = [];
+        
         for(var i = 0; i < 8; i++)
         {
             this.results.push({
