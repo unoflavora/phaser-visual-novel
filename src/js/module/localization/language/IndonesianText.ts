@@ -28,6 +28,12 @@ const IndonesianText : typeof EnglishText = {
             invalid_email: "Email Tidak Terdaftar",
             forgot_password_title: "Lupa Kata Sandi",
             forgot_password_desc: "Klik tautan di bawah ini dan Anda akan dialihkan ke halaman web lain untuk mengatur ulang kata sandi Anda.",
+        },
+        overview: {
+            title: "Ringkasan",
+            score: "Skor",
+            takenOn: "Diambil pada",
+            backToHome: "Kembali ke Beranda",
         }
     },
 }

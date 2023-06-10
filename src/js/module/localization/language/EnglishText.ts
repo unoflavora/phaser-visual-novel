@@ -27,6 +27,12 @@ const EnglishText = {
             invalid_email: "Email is Unregistered",
             forgot_password_title: "Forgot Password",
             forgot_password_desc: "Click the link below and you will be redirected into another web page to reset you password.",
+        },
+        overview: {
+            title: "Overview",
+            score: "Score",
+            takenOn: "Taken on",
+            backToHome: "Back to Home",
         }
     },
 }

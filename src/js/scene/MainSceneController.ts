@@ -19,7 +19,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     private _progressController! : ProgressController;
 
-    public static _instance : MainSceneController;
+    private static _instance : MainSceneController;
 
     public get backend() { return this._backendController; }
 

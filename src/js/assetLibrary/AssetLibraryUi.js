@@ -7,7 +7,7 @@ export const UIAsset = {
 		type: AssetType.STATIC,
 	},
 
-  //#region Confirm New Password
+  	// #region Confirm New Password
 	confirm_newPassword_text: {
 		key: "confirm_newPassword_text",
 		path: "/img/ui/createNewPassword/confirm_newPassword_text.png",
@@ -35,7 +35,7 @@ export const UIAsset = {
 	},
 	//#endregion 
 
-	//#region Login Authentication
+	// #region Login Authentication
 	checkbox: {
 		key: "checkbox",
 		path: "/img/ui/login/ui-button-checkbox.png",
@@ -46,7 +46,7 @@ export const UIAsset = {
 		path: "/img/ui/login/ui-button-checkbox-checked.png",
 		type: AssetType.STATIC,
 	}
-,	//#endregion
+,	// #endregion
 
 
 	cover_black: {
@@ -91,6 +91,16 @@ export const UIAsset = {
 	bg_text_box: {
 		key: "red_text_box",
 		path: "/img/ui/general/ui-textbox.png",
+		type: AssetType.STATIC,
+	},
+	line_divider: {
+		key: "line_divider",
+		path: "/img/ui/general/ui-line-divider.png",
+		type: AssetType.STATIC,
+	},
+	result_box: {
+		key: "result_box",
+		path: "/img/background/ui-result-box.png",
 		type: AssetType.STATIC,
 	},
 	// #endregion
@@ -158,6 +168,16 @@ export const UIAsset = {
 	icon_error: {
 		key: "icon_error",
 		path: "/img/ui/icons/ui-icon-error.png",
+		type: AssetType.STATIC,
+	},
+	icon_next : {
+		key: "icon_next",
+		path: "/img/ui/icons/ui-icon-interface-right.png",
+		type: AssetType.STATIC,
+	},
+	icon_prev : {
+		key: "icon_prev",
+		path: "/img/ui/icons/ui-icon-interface-left.png",
 		type: AssetType.STATIC,
 	},
 	// #endregion
