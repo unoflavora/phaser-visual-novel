@@ -5,12 +5,22 @@ import AudioController from "Modules/core/AudioController";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import MainSceneController from "Scenes/MainSceneController";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
+import { UIAsset } from "Assets/AssetLibraryUi";
 
 export default class GamelogSceneController extends Phaser.Scene
 {
     view! : GamelogSceneView;
-
     results : GameResults[] = [];
+    resultTitle: string[] = [
+        "Working Memory",
+        "Spatial Reasoning",
+        "Linguistic Comprehension",
+        "Numerical Reasoning",
+        "Logical Reasoning",
+        "Problem Solving",
+        "Auditory Processing",
+        "Emotional Understanding"
+    ]
     startIndex: number = 0;
 
     constructor()
@@ -31,13 +41,14 @@ export default class GamelogSceneController extends Phaser.Scene
         this.view.registerOnBackBtnClicked(this.OnBackButtonClicked.bind(this));
         this.view.onChangeLanguage();
         this.results = [];
-        
+
         for(var i = 0; i < 8; i++)
         {
             this.results.push({
-                title: "Result " + i,
+                title: this.resultTitle[i],
                 score: Math.floor(Math.random() * 100),
-                date: "2021-01-01"
+                date: "01 February 2023",
+                id: i
             });
         }
 

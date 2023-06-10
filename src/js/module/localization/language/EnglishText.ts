@@ -1,7 +1,10 @@
 
 const EnglishText = {
     select_language: "Select Language",
-    back: "Back",
+    interactions: {
+        close: "Close",
+        back: "Back",
+    },
     mainMenu: {
         startGame: "Start Test",
         gameLog: "Game Log",
@@ -33,8 +36,19 @@ const EnglishText = {
             score: "Score",
             takenOn: "Taken on",
             backToHome: "Back to Home",
+            seeDetails: "See Details",
         }
     },
+    errors: {
+        not_taken_assesment: {
+            title: "You haven't taken the assesment yet.",
+            desc: "You have never done the test before. Please start running the test to be able to see the results.",
+        },
+        assesment_taken: {
+            title: "You have taken the assesment.",
+            desc: "Please contect the company you are affiliated with to be granted access to retake the test.",
+        }
+    }
 }
 
 export default EnglishText;

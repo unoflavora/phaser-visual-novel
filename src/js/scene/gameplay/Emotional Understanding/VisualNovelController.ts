@@ -34,7 +34,7 @@ export default class VisualNovelController
 		
 		this.view.setVisible(false);
 
-        this.view.registerOnPauseButtonClicked(() => MainSceneController.instance.OpenPopup(PopupType.Settings));
+        this.view.registerOnPauseButtonClicked(() => MainSceneController.instance.OpenTemplatePopup(PopupType.Settings));
         
     }
 

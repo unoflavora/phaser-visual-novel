@@ -46,7 +46,7 @@ export default class ForgotPasswordView extends Phaser.GameObjects.Container  {
 
             
         this.backButton = new Button(this.scene,0,0,UIAsset.button_frame_secondary.key);
-        this.backButtonText = new Text(this.scene,0,0,Localizations.text.back);
+        this.backButtonText = new Text(this.scene,0,0,Localizations.text.interactions.back);
 
         this.confirmButton = new Button(this.scene,0,0,UIAsset.button_frame_primary.key);
         this.confirmButtonText = new Text(this.scene,0,0, Localizations.text.mainMenu.auth.reset_password);

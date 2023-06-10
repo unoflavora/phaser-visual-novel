@@ -10,7 +10,9 @@ export interface Response<T> {
 export interface InitData 
 {
     sessionId: string,
-    savedData: string | null
+    savedData: string | null,
+    fullName: string,
+    hasPlayed: boolean,
 }
 
 export interface AuthData 

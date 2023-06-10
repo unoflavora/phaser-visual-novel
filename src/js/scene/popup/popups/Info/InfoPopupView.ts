@@ -46,7 +46,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.add(this.infoIcon.gameobject);
         
         this.backButton = new Button(this.scene,0,0,UIAsset.button_frame_secondary.key);
-        this.backButtonText = new Text(this.scene,0,0,Localizations.text.back);
+        this.backButtonText = new Text(this.scene,0,0,Localizations.text.interactions.back);
         this.add(this.backButton.gameobject)
         this.add(this.backButtonText.gameobject)
 
@@ -58,12 +58,15 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoTitle = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.15,
+            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.1,
             Localizations.text.mainMenu.auth.forgot_password_title,
             {
                 color: FontColors.darkBrown,
                 fontStyle: "bold",
-                fontSize: this.scene.scale.height * .035
+                fontSize: this.scene.scale.height * .035,
+                wordWrap: { width: this.panel.gameobject.displayWidth * 0.6, useAdvancedWrap: true },
+                align: "center"
+
             }
         );
         this.infoTitle.gameobject.setOrigin(0.5);
@@ -73,7 +76,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoDesc = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.05,
+            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.1,
             Localizations.text.mainMenu.auth.forgot_password_desc,
             {
                 color: FontColors.darkBrown,
@@ -121,7 +124,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoDesc.gameobject.setText(message);
         this.infoIcon.gameobject.setTexture(iconKey);
 
-        this.infoIcon.transform.setDisplayHeight(this.panel.gameobject.displayHeight * .1, true)
+        this.infoIcon.transform.setDisplayHeight(this.panel.gameobject.displayHeight * .15, true)
 
         this.confirmButton.removeAllListener();
         this.confirmButton.click.on(OnConfirm);

@@ -2,7 +2,7 @@ import { SceneInfo } from "Definitions/SceneInfo";
 import PopupController, { PopupType } from "./popup/PopupController";
 import AudioController from "Modules/core/AudioController";
 import BackendController from "Modules/core/BackendController";
-import { AuthData, Response } from "Definitions/BackendResponse";
+import { AuthData, InitData, Response } from "Definitions/BackendResponse";
 import IGameData from "Modules/core/GameData";
 import ProgressController from "Modules/core/ProgressController";
 import Settings from "Modules/core/SettingsController";
@@ -19,6 +19,8 @@ export default class MainSceneController extends Phaser.Scene {
 
     private _progressController! : ProgressController;
 
+    private _initData!: InitData;
+   
     private static _instance : MainSceneController;
 
     public get backend() { return this._backendController; }
@@ -26,6 +28,9 @@ export default class MainSceneController extends Phaser.Scene {
     public get settings() { return this._settings };
 
     public get progress() { return this._progressController };
+
+    public get initData() { return this._initData; }
+
 
     public gameData : IGameData = {
         sessionId: "",
@@ -91,7 +96,7 @@ export default class MainSceneController extends Phaser.Scene {
     create() {
 
         window.addEventListener('offline', () => {            
-            this.OpenPopup(PopupType.LostConnection);
+            this.OpenTemplatePopup(PopupType.LostConnection);
         });
 
         window.addEventListener('online', () => {            
@@ -104,7 +109,7 @@ export default class MainSceneController extends Phaser.Scene {
     
 
     async startGame() {       
-        this.scene.launch(SceneInfo.languageSelectorScene.key);        
+        this.scene.launch(SceneInfo.homeScene.key);        
     }
 
     public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>
@@ -130,7 +135,7 @@ export default class MainSceneController extends Phaser.Scene {
         {
             if (e instanceof Error)
             {
-                this.OpenPopup(PopupType.Error, e.message);
+                this.OpenTemplatePopup(PopupType.Error, e.message);
             }
 
             return null;
@@ -159,7 +164,8 @@ export default class MainSceneController extends Phaser.Scene {
         try 
         {
             var initData = await this._backendController.Init();
-            console.log(initData)
+            
+            this._initData = initData.data;
 
             if(initData.data.savedData != null && initData.data.savedData != "")
             {
@@ -183,7 +189,7 @@ export default class MainSceneController extends Phaser.Scene {
         {
             if (e instanceof Error)
             {
-                this.OpenPopup(PopupType.Error, e.message);
+                this.OpenTemplatePopup(PopupType.Error, e.message);
             }
 
             return null;
@@ -214,14 +220,14 @@ export default class MainSceneController extends Phaser.Scene {
         {
             if (e instanceof Error)
             {
-                this.OpenPopup(PopupType.Error, e.message);
+                this.OpenTemplatePopup(PopupType.Error, e.message);
             }
 
         }
 
     }
 
-    public OpenPopup(type : PopupType, message: string = "")
+    public OpenTemplatePopup(type : PopupType, message: string = "")
     {
         this.scene.bringToTop();
 
@@ -229,7 +235,7 @@ export default class MainSceneController extends Phaser.Scene {
 
         this._popupController.OpenPopup(type, message);
     }
-    
+
 
     private ClosePopup()
     {
@@ -243,6 +249,15 @@ export default class MainSceneController extends Phaser.Scene {
     public async SaveGameData()
     {        
         await this._backendController.SaveGame(this.gameData);
+    }
+
+    public OpenInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
+    {
+        this.scene.bringToTop();
+
+        this.HideAllDOMElements();
+
+        this._popupController.openInfoPopup(title, message, iconKey, () => this.ClosePopup(), onConfirmText, onCancel, onCancelText);
     }
 
 

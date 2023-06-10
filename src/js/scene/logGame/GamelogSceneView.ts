@@ -25,6 +25,17 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
     // Components
     public resultBoxes: ResultBox[] = [];
 
+    dummyIcons: string[] = [
+        UIAsset.working_memory.key,
+        UIAsset.spatial_reasoning.key,
+        UIAsset.linguistic_comprehension.key,
+        UIAsset.numerical_reasoning.key,
+        UIAsset.logical_reasoning.key,
+        UIAsset.problem_solving.key,
+        UIAsset.auditory_processing.key,
+        UIAsset.emotional_understanding.key
+    ]
+
     textStyle = {
         color: FontColors.darkBrown,
         fontStyle: "bold",
@@ -92,7 +103,7 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
 
         for(let i = 0; i < 6; i++)
         {
-            const result = new ResultBox(this.scene, this.scene.scale.width * .5, this.scene.scale.height * .5);
+            const result = new ResultBox(this.scene, 0,0);
 
             this.resultBoxes.push(result);
 
@@ -101,9 +112,10 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
                 expand: true,
             });
     
+            result.init()
             this.grid.layout();
-            result.layout();
         }
+
 
         this.onChangeLanguage();
     }
@@ -150,6 +162,7 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
 
     public updateResults(results: GameResults[])
     {
+        console.log(this.resultBoxes.length, results.length)
         // update results
         for(var i = 0; i < results.length; i++)
         {
@@ -157,6 +170,8 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
             {
                 var resultView = this.resultBoxes[i]
                 resultView.setResult(results[i]);
+                resultView.setIcon(this.dummyIcons[results[i].id]);
+                resultView.layout();
                 resultView.setVisible(true);
             }
         }

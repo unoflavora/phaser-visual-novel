@@ -1,13 +1,15 @@
 import InfoPopupView from './InfoPopupView';
 
 export default class InfoPopupController extends Phaser.GameObjects.Group {
+
   
   private view!: InfoPopupView;
 
   constructor(scene: Phaser.Scene) {
     super(scene)
-
   }
+
+  private _onClosePopup: Function = () => { };
 
   preload() {
     // Load any assets needed for the scene here
@@ -19,13 +21,26 @@ export default class InfoPopupController extends Phaser.GameObjects.Group {
     this.view.layoutDefault();
 
     this.view.setVisible(false);
-
   }
 
   OpenPopup(title: string, message: string, iconKey: string, OnConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null) {
     this.view.setVisible(true);
     
-    this.view.setupInfo(title, message, iconKey, OnConfirm, onConfirmText, onCancel, onCancelText);
+    this.view.setupInfo(title, message, iconKey, () => {
+      OnConfirm();
+      this.view.setVisible(false);
+      this._onClosePopup();
+    }, onConfirmText,
+    () => {
+      if (onCancel != null) onCancel();
+      this.view.setVisible(false);
+      this._onClosePopup();
+    }, onCancelText);
+  }
+
+  registerOnClosePopup(onClosePopup: Function) 
+  {
+    this._onClosePopup = onClosePopup;
   }
 
 

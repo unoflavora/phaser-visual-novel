@@ -181,6 +181,55 @@ export const UIAsset = {
 		type: AssetType.STATIC,
 	},
 	// #endregion
+
+	// #region results
+	auditory_processing:{
+		key: "auditory_processing",
+		path: "/img/ui/icons/result/Auditory Processing.png",
+		type: AssetType.STATIC,
+	},
+	emotional_understanding:
+	{
+		key: "emotional_understanding",
+		path: "/img/ui/icons/result/Emotional Understanding.png",
+		type: AssetType.STATIC,
+	},
+	linguistic_comprehension:
+	{
+		key: "linguistic_comprehension",
+		path: "/img/ui/icons/result/Linguistic Comprehension.png",
+		type: AssetType.STATIC,
+	},
+	logical_reasoning:
+	{
+		key: "logical_reasoning",
+		path: "/img/ui/icons/result/Logical Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	numerical_reasoning:
+	{
+		key: "numerical_reasoning",
+		path: "/img/ui/icons/result/Numerical Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	problem_solving:
+	{
+		key: "problem_solving",
+		path: "/img/ui/icons/result/Problem Solving.png",
+		type: AssetType.STATIC,
+	},
+	spatial_reasoning:
+	{
+		key: "spatial_reasoning",
+		path: "/img/ui/icons/result/Spatial Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	working_memory:
+	{
+		key: "working_memory",
+		path: "/img/ui/icons/result/Working Memory.png",
+		type: AssetType.STATIC,
+	}
 };
 
 export const BackgroundAsset = 

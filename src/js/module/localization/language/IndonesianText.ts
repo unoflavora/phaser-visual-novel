@@ -2,7 +2,10 @@ import EnglishText from "./EnglishText";
 
 const IndonesianText : typeof EnglishText = {
     select_language: "Pilih Bahasa",
-    back: "Kembali",
+    interactions: {
+        close: "Tutup",
+        back: "Kembali",
+    },
     mainMenu: {
         startGame: "Mulai Test",
         gameLog: "Log Game",
@@ -34,8 +37,19 @@ const IndonesianText : typeof EnglishText = {
             score: "Skor",
             takenOn: "Diambil pada",
             backToHome: "Kembali ke Beranda",
+            seeDetails: "Detailnya",
         }
     },
+    errors: {
+        not_taken_assesment: {
+            title: "Anda belum mengikuti tes.",
+            desc: "Anda belum pernah melakukan tes sebelumnya. Silakan mulai menjalankan tes untuk dapat melihat hasilnya.",
+        },
+        assesment_taken: {
+            title: "Anda telah mengikuti tes.",
+            desc: "Silakan hubungi perusahaan Anda agar diberi akses untuk mengulang tes.",
+        }
+    }
 }
 
 export default IndonesianText
