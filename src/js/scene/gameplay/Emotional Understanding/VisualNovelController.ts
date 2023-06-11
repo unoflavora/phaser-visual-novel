@@ -9,6 +9,8 @@ import AudioController from "Modules/core/AudioController";
 import MainSceneController from "Scenes/MainSceneController";
 import { PopupType } from "Scenes/popup/PopupController";
 import { IEmotionalUnderstandingProgress, SceneState } from "Definitions/GameProgress";
+import LoadingSceneView from "Scenes/loading/LoadingSceneView";
+import { UIAsset } from "Assets/AssetLibraryUi";
 
 export default class VisualNovelController
 {
@@ -40,6 +42,7 @@ export default class VisualNovelController
 
     public play(progress : IEmotionalUnderstandingProgress | null = null) 
 	{
+		this.startDummyLoading();
 
 		this.view.setVisible(true);
 
@@ -156,7 +159,7 @@ export default class VisualNovelController
 			setEmotionScore(MainSceneController.instance.gameData.scores.emotion + score);
 			var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
 			this.shuffleArray(interaction);
-			
+
 			currentInteraction = () => this.view.AskPlayerForAnswer(interaction);
 			currentInteraction();
 
@@ -213,6 +216,21 @@ export default class VisualNovelController
 		}
 
       
+	}
+
+	private startDummyLoading() {
+		var loading = new LoadingSceneView(this.parentScene, UIAsset.game_title.key);
+
+		var loadingValue = 0;
+		var s = setInterval(() => {
+			loading.setLoadingValue(loadingValue);
+			loadingValue += 0.1;
+
+			if (loadingValue >= 1) {
+				clearTimeout(s);
+				loading.destroy();
+			}
+		}, 100);
 	}
 
 	shuffleArray(array : any[]) {

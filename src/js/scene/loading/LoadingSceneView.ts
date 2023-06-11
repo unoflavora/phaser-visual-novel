@@ -20,7 +20,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 	logo: Image;
 	loadingText: Text;
 
-	constructor(scene : Phaser.Scene) {
+	constructor(scene : Phaser.Scene, logo : string | null = null) {
 		super(scene);
 		scene.add.existing(this);
 
@@ -28,7 +28,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 		this.background.transform.setMinPreferredDisplaySize(scene.scale.width, scene.scale.height);
 		this.add(this.background.gameobject);
 
-		this.logo = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, LoadingAsset.corporate_logo.key);
+		this.logo = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, logo ? logo : LoadingAsset.corporate_logo.key);
 		this.logo.transform.setDisplayWidth(scene.scale.width * 0.25, true);
 		this.add(this.logo.gameobject)
 
@@ -54,6 +54,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 
 		this.bar = new Image(scene, this.frame.gameobject.x, this.frame.gameobject.y, LoadingAsset.loading_bar.key);
 		this.bar.transform.setDisplaySize(this.frame.gameobject.displayWidth, this.frame.gameobject.displayHeight);
+		this.add(this.bar.gameobject)
 
 		this.progressBar = new RectFill(scene);
 		this.progressBar.assignFillAnchor(
@@ -63,6 +64,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 			false,
 			false
 		);
+		this.add(this.progressBar)
 
 		this.bar.gameobject.setMask(this.progressBar.createGeometryMask());
 		this.progressBar.visible = false;
