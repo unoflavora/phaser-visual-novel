@@ -52,6 +52,16 @@ export default class MainSceneController extends Phaser.Scene {
                 currentSceneIndex: -1,
                 userResponses: [],
             }
+        },
+        results: {
+            "Working Memory" : 0,
+            "Spatial Reasoning": 0,
+            "Linguistic Comprehension" : 0,
+            "Numerical Reasoning" : 0,
+            "Logical Reasoning" : 0,
+            "Problem Solving" : 0,
+            "Auditory Processing" : 0,
+            "Emotional Understanding": 0        
         }
     }
     
@@ -109,7 +119,7 @@ export default class MainSceneController extends Phaser.Scene {
     
 
     async startGame() {       
-        this.scene.launch(SceneInfo.homeScene.key);        
+        this.scene.launch(SceneInfo.resultScene.key);        
     }
 
     public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>

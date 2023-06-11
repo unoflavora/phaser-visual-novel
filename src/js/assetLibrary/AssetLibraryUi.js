@@ -103,6 +103,12 @@ export const UIAsset = {
 		path: "/img/background/ui-result-box.png",
 		type: AssetType.STATIC,
 	},
+	result_character:
+	{
+		key: "result_character",
+		path: "/img/ui/result_character.png",
+		type: AssetType.STATIC,
+	},
 	// #endregion
 
 	// #region frame
@@ -117,6 +123,25 @@ export const UIAsset = {
 		path: "/img/ui/popups/ui-frame-1by1-placement-with_head.png",
 		type: AssetType.STATIC,
 	},
+	progress_bg:
+	{
+		key: "progress_bg",
+		path: "/img/ui/progress/progress-bg.png",
+		type: AssetType.STATIC,
+	},
+	progress_fill:
+	{
+		key: "progress_fill",
+		path: "/img/ui/progress/progress-fill.png",
+		type: AssetType.STATIC,
+	},
+	brown_bg: 
+	{
+		key: "brown_bg",
+		path: "/img/ui/cover_brown.png",
+		type: AssetType.STATIC,
+	},
+	
 	//#endregion
 
 	// #region Icons
@@ -178,6 +203,11 @@ export const UIAsset = {
 	icon_prev : {
 		key: "icon_prev",
 		path: "/img/ui/icons/ui-icon-interface-left.png",
+		type: AssetType.STATIC,
+	},
+	icon_arrow_down : {
+		key: "icon_arrow_down",
+		path: "/img/ui/icons/ui-icon-action-move-arrow.png",
 		type: AssetType.STATIC,
 	},
 	// #endregion

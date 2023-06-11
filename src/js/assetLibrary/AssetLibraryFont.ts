@@ -27,5 +27,5 @@ export const FontColors =
     lightBrown : "#92653B",
     red: "#FF0000",
     white: "#FFFFFF",
-}
+} as const
 
