@@ -10,16 +10,16 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
     private leftCharacterNameContainer : Phaser.GameObjects.Group
     private rightCharacterNameContainer : Phaser.GameObjects.Group
 
-    constructor(scene: Phaser.Scene) {
+    constructor(scene: Phaser.Scene, textBox: Image) {
         super(scene);
 
-        var leftCharacterNameBox = new Image(scene, scene.scale.width * 0.2, scene.scale.height * 0.7, UIAsset.bg_text_box.key);
+        var leftCharacterNameBox = new Image(scene, textBox.gameobject.x - textBox.gameobject.displayWidth * .5, textBox.gameobject.y - textBox.gameobject.displayHeight * .55, UIAsset.bg_text_box.key);
+        leftCharacterNameBox.gameobject.setOrigin(0, 1)
         this.add(leftCharacterNameBox.gameobject)
-        leftCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25);
+        leftCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25, true);
 
-        this.leftCharacterName = new Text(scene, leftCharacterNameBox.gameobject.x, leftCharacterNameBox.gameobject.y, "Ifuly", {
+        this.leftCharacterName = new Text(scene, leftCharacterNameBox.gameobject.x + leftCharacterNameBox.gameobject.displayWidth * .5, leftCharacterNameBox.gameobject.y - leftCharacterNameBox.gameobject.displayHeight * .5, "Ifuly", {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-            fontSize: "24px",
             color: "#ffffff",
             align: "center",
             wordWrap: {
@@ -27,6 +27,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
                 useAdvancedWrap: true
             }
         });
+        this.leftCharacterName.gameobject.setFontSize(leftCharacterNameBox.gameobject.displayHeight * .4);
         this.leftCharacterName.gameobject.setOrigin(0.5);
         this.add(this.leftCharacterName.gameobject)
 
@@ -36,12 +37,12 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
         this.leftCharacterNameContainer.setVisible(false);
 
 
-        var rightCharacterNameBox = new Image(scene, scene.scale.width * 0.8, scene.scale.height * 0.7, UIAsset.bg_text_box.key);
-        rightCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25);
+        var rightCharacterNameBox = new Image(scene, textBox.gameobject.x + textBox.gameobject.displayWidth * .5, textBox.gameobject.y - textBox.gameobject.displayHeight * .55, UIAsset.bg_text_box.key);
+        rightCharacterNameBox.gameobject.setOrigin(1, 1)
+        rightCharacterNameBox.transform.setDisplayWidth(scene.scale.width * 0.25, true);
         this.add(rightCharacterNameBox.gameobject)
-        this.rightCharacterName = new Text(scene, rightCharacterNameBox.gameobject.x, rightCharacterNameBox.gameobject.y, "Ifuly", {
+        this.rightCharacterName = new Text(scene, rightCharacterNameBox.gameobject.x - rightCharacterNameBox.gameobject.displayWidth * .5, rightCharacterNameBox.gameobject.y - rightCharacterNameBox.gameobject.displayHeight * .5, "Ifuly", {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-            fontSize: "24px",
             color: "#ffffff",
             align: "center",
             wordWrap: {
@@ -51,6 +52,7 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
         });
         this.rightCharacterName.gameobject.setOrigin(0.5);
         this.add(this.rightCharacterName.gameobject)
+        this.rightCharacterName.gameobject.setFontSize(leftCharacterNameBox.gameobject.displayHeight * .4);
 
         this.rightCharacterNameContainer = new Phaser.GameObjects.Group(scene);
         this.rightCharacterNameContainer.add(rightCharacterNameBox.gameobject);

@@ -9,6 +9,9 @@ import AudioController from "Modules/core/AudioController";
 import MainSceneController from "Scenes/MainSceneController";
 import { PopupType } from "Scenes/popup/PopupController";
 import { IEmotionalUnderstandingProgress, SceneState } from "Definitions/GameProgress";
+import LoadingSceneView from "Scenes/loading/LoadingSceneView";
+import { UIAsset } from "Assets/AssetLibraryUi";
+import Localizations from "Modules/localization/LocalizationHelper";
 
 export default class VisualNovelController
 {
@@ -34,12 +37,13 @@ export default class VisualNovelController
 		
 		this.view.setVisible(false);
 
-        this.view.registerOnPauseButtonClicked(() => MainSceneController.instance.OpenPopup(PopupType.Settings));
+        this.view.registerOnPauseButtonClicked(() => MainSceneController.instance.OpenTemplatePopup(PopupType.Settings));
         
     }
 
     public play(progress : IEmotionalUnderstandingProgress | null = null) 
 	{
+		this.startDummyLoading();
 
 		this.view.setVisible(true);
 
@@ -54,7 +58,8 @@ export default class VisualNovelController
 
 		//#region Scene State
 		var currentSceneIndex : number = progress?.currentSceneIndex ?? -1;
-		var scene = scenes[currentSceneIndex]
+		var scene = scenes.find(s => s.scene == currentSceneIndex)!;
+
 		console.log(scene, progress)
 
 		startScene.call(this)
@@ -71,6 +76,8 @@ export default class VisualNovelController
 			
 			if(currentSceneIndex == -1)
 			{
+				currentSceneIndex = -2;
+
 				goToNextScene.call(this);
 
 				return;
@@ -88,11 +95,21 @@ export default class VisualNovelController
 					currentInteraction();
 					break;
 				case SceneState.AskEmotion:
-					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+					currentInteraction = () => {
+						var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
+						this.shuffleArray(interaction);	
+						this.view.showPrompt(Localizations.text.prompts.emotion)
+						this.view.AskPlayerForAnswer(interaction);
+					}
 					currentInteraction();
 					break;
 				case SceneState.AskResponse:
-					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+					currentInteraction = () => {
+						var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+						this.shuffleArray(interaction);	
+						this.view.showPrompt(Localizations.text.prompts.response)
+						this.view.AskPlayerForAnswer(interaction)
+					};
 					currentInteraction();
 					break;
 				case SceneState.ResponseContext:
@@ -115,8 +132,12 @@ export default class VisualNovelController
 			if(scene.has_quest)
 			{
 				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskEmotion);
-
-				currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+				currentInteraction = () => {
+					var emotions = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
+					this.shuffleArray(emotions);	
+					this.view.showPrompt(Localizations.text.prompts.emotion)
+					this.view.AskPlayerForAnswer(emotions)
+				};
 				
 				currentInteraction();
 				
@@ -147,7 +168,12 @@ export default class VisualNovelController
 
 			setEmotionScore(MainSceneController.instance.gameData.scores.emotion + score);
 
-			currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+			currentInteraction = () => {
+				var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+				this.shuffleArray(interaction);	
+				this.view.showPrompt(Localizations.text.prompts.response)
+				this.view.AskPlayerForAnswer(interaction);
+			}
 			currentInteraction();
 
 			playerAskedForResponse = true;
@@ -176,11 +202,12 @@ export default class VisualNovelController
 			currentSceneIndex++;
 			playerAskedForResponse = false;
 
-			if(currentSceneIndex < scenes.length)
+			// + 1 for tutorial scene
+			if(currentSceneIndex < scenes.length - 1)
 			{
-				scene = scenes[currentSceneIndex]
+				scene = scenes.find(s => s.scene == currentSceneIndex)!;
 
-				this.parentScene.events.emit(this.onProgress, scene, SceneState.Intro);
+				if(currentSceneIndex > 0) this.parentScene.events.emit(this.onProgress, scene, SceneState.Intro);
 
 				this.view.ShowCharacter(scene.scene);
 		
@@ -203,5 +230,30 @@ export default class VisualNovelController
 
       
 	}
+
+	private startDummyLoading() {
+		var loading = new LoadingSceneView(this.parentScene, UIAsset.game_title.key);
+
+		var loadingValue = 0;
+		var s = setInterval(() => {
+			loading.setLoadingValue(loadingValue);
+			loadingValue += 0.1;
+
+			if (loadingValue >= 1) {
+				clearTimeout(s);
+				loading.destroy();
+			}
+		}, 100);
+	}
+
+	shuffleArray(array : any[]) {
+		for (var i = array.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+	}
+	
 
 }

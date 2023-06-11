@@ -14,6 +14,11 @@ export const FontAsset = {
         path: '/fonts/concept_regular.ttf',
         type: AssetType.FONT
     },
+    adobe_caslon_pro_regular: {
+        key: 'adobe_caslon_pro_regular',
+        path: '/fonts/adobe_caslon_pro_regular.ttf',
+        type: AssetType.FONT
+    }
 };
 
 export const FontColors = 
@@ -21,5 +26,6 @@ export const FontColors =
     darkBrown : "#4B3B33",
     lightBrown : "#92653B",
     red: "#FF0000",
-}
+    white: "#FFFFFF",
+} as const
 

@@ -70,6 +70,9 @@ export default class PopupController extends Phaser.GameObjects.Container
         this._onClosePopup = callback;
 
         this.settingsPopup.registerOnClosePopup(this._onClosePopup);
+
+        this.infoPopup.registerOnClosePopup(this._onClosePopup);
+
     }
 
     private openLostConnectionPopup()

@@ -2,7 +2,14 @@ import EnglishText from "./EnglishText";
 
 const IndonesianText : typeof EnglishText = {
     select_language: "Pilih Bahasa",
-    back: "Kembali",
+    interactions: {
+        close: "Tutup",
+        back: "Kembali",
+    },
+    prompts:{
+        emotion: "Apa yang Anda pikirkan tentang karakter ini?",
+        response: "Apa yang menurut Anda tanggapan yang tepat?",
+    },
     mainMenu: {
         startGame: "Mulai Test",
         gameLog: "Log Game",
@@ -28,8 +35,25 @@ const IndonesianText : typeof EnglishText = {
             invalid_email: "Email Tidak Terdaftar",
             forgot_password_title: "Lupa Kata Sandi",
             forgot_password_desc: "Klik tautan di bawah ini dan Anda akan dialihkan ke halaman web lain untuk mengatur ulang kata sandi Anda.",
+        },
+        overview: {
+            title: "Ringkasan",
+            score: "Skor",
+            takenOn: "Diambil pada",
+            backToHome: "Kembali ke Beranda",
+            seeDetails: "Detailnya",
         }
     },
+    errors: {
+        not_taken_assesment: {
+            title: "Anda belum mengikuti tes.",
+            desc: "Anda belum pernah melakukan tes sebelumnya. Silakan mulai menjalankan tes untuk dapat melihat hasilnya.",
+        },
+        assesment_taken: {
+            title: "Anda telah mengikuti tes.",
+            desc: "Silakan hubungi perusahaan Anda agar diberi akses untuk mengulang tes.",
+        }
+    }
 }
 
 export default IndonesianText

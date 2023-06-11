@@ -37,6 +37,36 @@ html, body
   touch-action: manipulation;
 }
 
+.textStyle {
+  font-size: .8rem ;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+  .textStyle {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .textStyle {
+    font-size: .8em;
+  }
+}
+
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .textStyle {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
+
 div 
 {
   transform-origin: center !important;

@@ -7,7 +7,7 @@ export const UIAsset = {
 		type: AssetType.STATIC,
 	},
 
-  //#region Confirm New Password
+  	// #region Confirm New Password
 	confirm_newPassword_text: {
 		key: "confirm_newPassword_text",
 		path: "/img/ui/createNewPassword/confirm_newPassword_text.png",
@@ -35,7 +35,7 @@ export const UIAsset = {
 	},
 	//#endregion 
 
-	//#region Login Authentication
+	// #region Login Authentication
 	checkbox: {
 		key: "checkbox",
 		path: "/img/ui/login/ui-button-checkbox.png",
@@ -46,7 +46,7 @@ export const UIAsset = {
 		path: "/img/ui/login/ui-button-checkbox-checked.png",
 		type: AssetType.STATIC,
 	}
-,	//#endregion
+,	// #endregion
 
 
 	cover_black: {
@@ -93,6 +93,22 @@ export const UIAsset = {
 		path: "/img/ui/general/ui-textbox.png",
 		type: AssetType.STATIC,
 	},
+	line_divider: {
+		key: "line_divider",
+		path: "/img/ui/general/ui-line-divider.png",
+		type: AssetType.STATIC,
+	},
+	result_box: {
+		key: "result_box",
+		path: "/img/background/ui-result-box.png",
+		type: AssetType.STATIC,
+	},
+	result_character:
+	{
+		key: "result_character",
+		path: "/img/ui/result_character.png",
+		type: AssetType.STATIC,
+	},
 	// #endregion
 
 	// #region frame
@@ -107,6 +123,25 @@ export const UIAsset = {
 		path: "/img/ui/popups/ui-frame-1by1-placement-with_head.png",
 		type: AssetType.STATIC,
 	},
+	progress_bg:
+	{
+		key: "progress_bg",
+		path: "/img/ui/progress/progress-bg.png",
+		type: AssetType.STATIC,
+	},
+	progress_fill:
+	{
+		key: "progress_fill",
+		path: "/img/ui/progress/progress-fill.png",
+		type: AssetType.STATIC,
+	},
+	brown_bg: 
+	{
+		key: "brown_bg",
+		path: "/img/ui/cover_brown.png",
+		type: AssetType.STATIC,
+	},
+	
 	//#endregion
 
 	// #region Icons
@@ -160,7 +195,71 @@ export const UIAsset = {
 		path: "/img/ui/icons/ui-icon-error.png",
 		type: AssetType.STATIC,
 	},
+	icon_next : {
+		key: "icon_next",
+		path: "/img/ui/icons/ui-icon-interface-right.png",
+		type: AssetType.STATIC,
+	},
+	icon_prev : {
+		key: "icon_prev",
+		path: "/img/ui/icons/ui-icon-interface-left.png",
+		type: AssetType.STATIC,
+	},
+	icon_arrow_down : {
+		key: "icon_arrow_down",
+		path: "/img/ui/icons/ui-icon-action-move-arrow.png",
+		type: AssetType.STATIC,
+	},
 	// #endregion
+
+	// #region results
+	auditory_processing:{
+		key: "auditory_processing",
+		path: "/img/ui/icons/result/Auditory Processing.png",
+		type: AssetType.STATIC,
+	},
+	emotional_understanding:
+	{
+		key: "emotional_understanding",
+		path: "/img/ui/icons/result/Emotional Understanding.png",
+		type: AssetType.STATIC,
+	},
+	linguistic_comprehension:
+	{
+		key: "linguistic_comprehension",
+		path: "/img/ui/icons/result/Linguistic Comprehension.png",
+		type: AssetType.STATIC,
+	},
+	logical_reasoning:
+	{
+		key: "logical_reasoning",
+		path: "/img/ui/icons/result/Logical Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	numerical_reasoning:
+	{
+		key: "numerical_reasoning",
+		path: "/img/ui/icons/result/Numerical Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	problem_solving:
+	{
+		key: "problem_solving",
+		path: "/img/ui/icons/result/Problem Solving.png",
+		type: AssetType.STATIC,
+	},
+	spatial_reasoning:
+	{
+		key: "spatial_reasoning",
+		path: "/img/ui/icons/result/Spatial Reasoning.png",
+		type: AssetType.STATIC,
+	},
+	working_memory:
+	{
+		key: "working_memory",
+		path: "/img/ui/icons/result/Working Memory.png",
+		type: AssetType.STATIC,
+	}
 };
 
 export const BackgroundAsset = 
