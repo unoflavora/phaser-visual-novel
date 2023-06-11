@@ -19,23 +19,22 @@ export function createPasswordInput(
                 type: 'password',
                 fontFamily: FontAsset.adobe_caslon_pro_bold.key,
                 text: '',
-                fontSize: '1.4rem',
                 align: "left",
                 color: '#F6C167',
                 paddingRight: '1.25em',
             },
-        ).on('textchange', onTextChange).setClassName("phaser-dom-elements");
+        ).on('textchange', onTextChange).setClassName("phaser-dom-elements textStyle");
         
         const visibilityButton = scene.add.dom(
             inputBackground.gameobject.x + inputBackground.gameobject.displayWidth * .45, input.y, 
-            "i", "font-size: 1.15rem; color: #EFEBD9; cursor: pointer;")
-            visibilityButton.setClassName("fas fa-eye phaser-dom-elements");
+            "i", "color: #EFEBD9; cursor: pointer;")
+            visibilityButton.setClassName("fas fa-eye textStyle phaser-dom-elements");
             visibilityButton.setOrigin(1, 0.5);
             visibilityButton.addListener('click');
             visibilityButton.on("click", () => {
             const type = input.node.attributes.getNamedItem("type")!.value;
             input.node.setAttribute("type", type == "text" ? "password" : "text");
-            visibilityButton.setClassName(type == "text" ? "fas fa-eye" : "fas fa-eye-slash");
+            visibilityButton.setClassName(type == "text" ? "fas fa-eye phaser-dom-elements textStyle" : "fas fa-eye-slash phaser-dom-elements textStyle");
         });
 
         input.visibilityButton = visibilityButton;
@@ -58,12 +57,11 @@ export function createTextInput(
       type: 'text', // Set the input type to 'text' for username input
       fontFamily: FontAsset.adobe_caslon_pro_bold.key,
       text: '',
-      fontSize: '1.4rem',
       align: 'left',
       color: '#F6C167',
       paddingRight: '1.25em',
     }
-  ).on('textchange', onTextChange).setClassName("phaser-dom-elements");;
+  ).on('textchange', onTextChange).setClassName("phaser-dom-elements textStyle");;
 
   input.setOrigin(0.5, 0.5);
 
