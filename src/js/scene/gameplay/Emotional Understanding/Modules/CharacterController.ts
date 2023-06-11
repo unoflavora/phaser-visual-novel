@@ -18,7 +18,7 @@ export default class CharacterController extends Phaser.GameObjects.Group
     public LoadCharacter = (currentSceneIndex : number) =>
     {
         var key = "char-story-sc_0" + currentSceneIndex;
-        this.character.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
+        this.character.transform.setDisplaySize(this.scene.scale.width * 1.5, this.scene.scale.height * 1.5);
         if (GameplayAsset[key as keyof typeof GameplayAsset] == undefined) {
             this.setVisible(false);
             return;

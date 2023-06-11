@@ -53,7 +53,7 @@ export default class GameplaySceneController extends Phaser.Scene {
 		this.events.on(this.minigame.eventNames.onFinishMiniGame, this.onFinishMiniGame.bind(this));
 
 
-		if(this.playedMinigames.length <= 2)
+		if(this.playedMinigames.length <= 2 && false)
 		{
 			// the playedMinigames is an enum that is ordered by the order of the minigames
 			this.minigame.loadMiniGame(this.playedMinigames.length);
