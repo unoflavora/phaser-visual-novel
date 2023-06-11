@@ -26,29 +26,37 @@ export default class ResultBox extends Container
     };
 
 
-    constructor(scene : Phaser.Scene, x : number, y: number)
+    constructor(scene : Phaser.Scene, x : number, y: number, width: number, height: number)
     {
-        super(scene, x, y)
+        super(scene, x, y, width, height)
         scene.add.existing(this)
 
         this.bg = new Image(scene, 0, 0, UIAsset.result_box.key);
+        this.add(this.bg.gameobject)
 
         this.icon = new Image(scene, 0, 0, UIAsset.icon_bgm.key);
+        this.add(this.icon.gameobject)
 
         this.title = new Text(scene, 0, 0, "Result", this.textStyle);
+        this.add(this.title.gameobject)
 
         this.dividerLine = new Image(scene, 0, 0, UIAsset.line_divider.key);
+        this.add(this.dividerLine.gameobject)
 
         this.takenDate = new Text(scene, 0, 0, "Taken on: ", this.textStyle);
+        this.add(this.takenDate.gameobject);
 
         this.scoreText = new Text(scene, 0, 0, "Score ", this.textStyle);
+        this.add(this.scoreText.gameobject)
 
         this.scoreNumber = new Text(scene, 0, 0, "95", this.textStyle);
+        this.add(this.scoreNumber.gameobject)
 
         this.actionButton = new Button(scene, 0, 0, UIAsset.button_frame_primary.key);
+        this.add(this.actionButton.gameobject);
 
         this.actionText = new Text(scene, 0, 0, "See Details", this.textStyle);
-
+        this.add(this.actionText.gameobject);
     }
 
     public layout()
@@ -64,7 +72,7 @@ export default class ResultBox extends Container
 
         this.title.gameobject.setOrigin(0, .5);
         this.title.transform.setPosition(this.icon.gameobject.x + this.icon.gameobject.displayWidth * .6, this.y - this.displayHeight * .2);
-        this.title.gameobject.setFontSize(this.displayHeight * .15);
+        this.title.gameobject.setFontSize(this.displayHeight * .13);
 
         this.scoreText.transform.setPosition(this.x + this.displayWidth * .4, this.title.gameobject.y);
         this.scoreText.gameobject.setOrigin(.5);
@@ -72,7 +80,7 @@ export default class ResultBox extends Container
 
         this.scoreNumber.transform.setPosition(this.scoreText.gameobject.x, this.scoreText.gameobject.y + this.scoreText.gameobject.displayHeight * .5);
         this.scoreNumber.gameobject.setOrigin(.5, 0);
-        this.scoreNumber.gameobject.setFontSize(this.displayHeight * .45);
+        this.scoreNumber.gameobject.setFontSize(this.displayHeight * .35);
 
         this.dividerLine.gameobject.setOrigin(0);
         this.dividerLine.transform.setPosition(this.icon.gameobject.x + this.icon.gameobject.displayWidth * .65, this.title.gameobject.y + this.title.gameobject.displayHeight * .7);
@@ -89,23 +97,8 @@ export default class ResultBox extends Container
 
         this.actionText.transform.setPosition(this.actionButton.gameobject.x + this.actionButton.gameobject.displayWidth * .45, this.actionButton.gameobject.y);
         this.actionText.gameobject.setOrigin(.5);
-        this.actionText.gameobject.setFontSize(this.displayHeight * .07);
+        this.actionText.gameobject.setFontSize(this.actionButton.gameobject.displayHeight * .3);
         this.actionText.gameobject.setColor(FontColors.white);
-    }
-
-    public init()
-    {
-        this.layout()
-        this.add(this.bg.gameobject)
-        this.add(this.icon.gameobject)
-        this.add(this.title.gameobject)
-        this.add(this.scoreText.gameobject)
-        this.add(this.scoreNumber.gameobject)
-        this.add(this.dividerLine.gameobject)
-        this.add(this.takenDate.gameobject);
-        this.add(this.actionButton.gameobject);
-        this.add(this.actionText.gameobject);
-
     }
 
     public setResult(result: GameResults)
@@ -120,5 +113,7 @@ export default class ResultBox extends Container
     public setIcon(iconKey: string)
     {
         this.icon.gameobject.setTexture(iconKey);
+        this.icon.transform.setDisplayWidth(this.displayWidth * .15, true);
+
     }
 }

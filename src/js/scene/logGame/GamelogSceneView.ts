@@ -103,7 +103,7 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
 
         for(let i = 0; i < 6; i++)
         {
-            const result = new ResultBox(this.scene, 0,0);
+            const result = new ResultBox(this.scene, 0,0, this.scene.scale.width * .4, this.scene.scale.height * .2);
 
             this.resultBoxes.push(result);
 
@@ -112,8 +112,8 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
                 expand: true,
             });
     
-            result.init()
             this.grid.layout();
+            result.layout();
         }
 
 
@@ -171,7 +171,6 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
                 var resultView = this.resultBoxes[i]
                 resultView.setResult(results[i]);
                 resultView.setIcon(this.dummyIcons[results[i].id]);
-                resultView.layout();
                 resultView.setVisible(true);
             }
         }

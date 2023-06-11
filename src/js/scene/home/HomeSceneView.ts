@@ -72,19 +72,19 @@ export default class HomeSceneView extends Phaser.GameObjects.Container {
 
 
         this.startButton.transform.setDisplayWidth(this.scene.scale.width * 0.2, true);
-        this.startButtonText.transform.setFontSize(this.startButton.gameobject.displayHeight * .15);
+        this.startButtonText.gameobject.handleTextSize(this.startButton.gameobject, this.startButton.gameobject.displayHeight * 0.2);
         
         let gameLogButtonPos = { x: this.startButton.gameobject.x, y: this.startButton.gameobject.y + this.startButton.gameobject.displayHeight * .7}
         this.gameLogButton.transform.setPosition(gameLogButtonPos.x, gameLogButtonPos.y);
         this.gameLogButton.transform.setDisplayWidth(this.scene.scale.width * .18, true);
         this.gameLogButtonText.transform.setPosition(this.gameLogButton.gameobject.x, this.gameLogButton.gameobject.y)
-        this.gameLogButtonText.transform.setFontSize(this.gameLogButton.gameobject.displayHeight * .12)
+        this.gameLogButtonText.gameobject.handleTextSize(this.gameLogButton.gameobject, this.gameLogButton.gameobject.displayHeight * 0.2);
 
         let settingButtonPos = {x: this.gameLogButton.gameobject.x, y: this.gameLogButton.gameobject.y + this.gameLogButton.gameobject.displayHeight * .7}
         this.settingButton.transform.setPosition(settingButtonPos.x, settingButtonPos.y)
         this.settingButton.transform.setDisplayWidth(this.scene.scale.width * 0.18, true);
         this.settingText.transform.setPosition(this.settingButton.gameobject.x, this.settingButton.gameobject.y);
-        this.settingText.transform.setFontSize(this.settingButton.gameobject.displayHeight * .12);
+        this.settingText.gameobject.handleTextSize(this.settingButton.gameobject, this.settingButton.gameobject.displayHeight * 0.2);
 
         let recommendationPos = {x : this.settingButton.gameobject.x, y: this.settingButton.gameobject.y + this.settingButton.gameobject.displayHeight}
         this.recommendText.transform.setPosition (recommendationPos.x, recommendationPos.y)

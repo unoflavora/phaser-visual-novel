@@ -119,7 +119,7 @@ export default class MainSceneController extends Phaser.Scene {
     
 
     async startGame() {       
-        this.scene.launch(SceneInfo.resultScene.key);        
+        this.scene.launch(SceneInfo.homeScene.key);        
     }
 
     public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>
@@ -140,7 +140,7 @@ export default class MainSceneController extends Phaser.Scene {
                 await this.Init();
             }
     
-            return auth;
+            return auth;5
         } catch(e)
         {
             if (e instanceof Error)
