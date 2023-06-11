@@ -17,6 +17,8 @@
   interface Scene {
     scene: number;
     has_quest: boolean;
+    tutorialId: string | null;
+    tutorialEn: string | null;
     audio: string;
     background: string;
     intro_en: string[];

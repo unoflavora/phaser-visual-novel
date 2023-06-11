@@ -44,7 +44,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.add(this.sceneBg.gameobject)
 
 		this.pauseButton = new Button(scene, scene.scale.width * 0.9, scene.scale.height * 0.1, UIAsset.icon_pause.key);
-		this.pauseButton.transform.setDisplayWidth(scene.scale.width * 0.08, true)
+		this.pauseButton.transform.setDisplayWidth(scene.scale.width * 0.05, true)
 		this.add(this.pauseButton.gameobject)
 
 		this.characterController = new CharacterController(scene);
@@ -54,7 +54,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
 		this.add(this.textBox.gameobject)
 
-		this.characterNames = new CharacterNamesController(scene);
+		this.characterNames = new CharacterNamesController(scene, this.textBox);
 
 		this.storyText = new StoryTextController(scene, this.textBox, () => this.emit(this.eventKeys.OnIntroComplete));
 		this.storyText.setVisible(false);
@@ -87,6 +87,11 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 	}
 
 	public ShowCharacter(sceneIndex: number) {
+		if(sceneIndex == -1)
+		{
+			this.characterController.setVisible(false);
+			return;
+		}
 		this.characterController.LoadCharacter(sceneIndex);
 		this.characterNames.setVisible(false);
 	}

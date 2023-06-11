@@ -54,7 +54,7 @@ export default class VisualNovelController
 
 		//#region Scene State
 		var currentSceneIndex : number = progress?.currentSceneIndex ?? -1;
-		var scene = scenes[currentSceneIndex]
+		var scene = scenes.find(s => s.scene == currentSceneIndex)!;
 		console.log(scene, progress)
 
 		startScene.call(this)
@@ -71,6 +71,8 @@ export default class VisualNovelController
 			
 			if(currentSceneIndex == -1)
 			{
+				currentSceneIndex = -2;
+
 				goToNextScene.call(this);
 
 				return;
@@ -176,11 +178,12 @@ export default class VisualNovelController
 			currentSceneIndex++;
 			playerAskedForResponse = false;
 
-			if(currentSceneIndex < scenes.length)
+			// + 1 for tutorial scene
+			if(currentSceneIndex < scenes.length - 1)
 			{
-				scene = scenes[currentSceneIndex]
+				scene = scenes.find(s => s.scene == currentSceneIndex)!;
 
-				this.parentScene.events.emit(this.onProgress, scene, SceneState.Intro);
+				if(currentSceneIndex > 0) this.parentScene.events.emit(this.onProgress, scene, SceneState.Intro);
 
 				this.view.ShowCharacter(scene.scene);
 		

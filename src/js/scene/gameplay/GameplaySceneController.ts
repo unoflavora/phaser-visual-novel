@@ -66,6 +66,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 	private onNovelProgressing(scene : Scene, state: SceneState, optionIndex : number)
 	{
+		if (scene == null) return;
+
 		MainSceneController.instance.progress.setProgress({
 			currentSceneIndex : scene.scene, 
 			currentSceneState : state,
@@ -81,8 +83,6 @@ export default class GameplaySceneController extends Phaser.Scene {
 		console.log("FINISHED NOVEL");
 
 		console.log(MainSceneController.instance.gameData.scores);
-
-		console.log("Scenes Complete");
 
 		this.scene.launch(SceneInfo.resultScene.key);
 	}

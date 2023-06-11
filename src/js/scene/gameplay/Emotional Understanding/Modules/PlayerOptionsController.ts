@@ -62,7 +62,7 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
     private createOption(scene : Phaser.Scene,  grid : GridSizer, container: ContainerLite, assetKey : string, optionText : string) {
 		const optionTextStyle = {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-            fontSize: "24px",
+            fontSize: container.displayHeight * .05,
             color: "#ffffff",
             align: "center",
         };
@@ -90,7 +90,6 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
         text.setWordWrapWidth(container.displayWidth - 20);
 
 		bg.setDisplaySize(container.width, container.height);
-
 	}
   
     public setOptionValue(optionIndex : number, optionValue : string) {
@@ -114,7 +113,7 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
   
 		optionValueObject.setText(optionValue);
 
-        optionValueObject.handleTextSize(option, 24);
+        optionValueObject.handleTextSize(option, option.displayHeight * .3);
     }
 
    

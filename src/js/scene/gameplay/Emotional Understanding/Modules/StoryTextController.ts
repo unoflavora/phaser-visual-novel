@@ -8,7 +8,7 @@ import TagText from "phaser3-rex-plugins/plugins/tagtext";
 
 export class StoryTextController extends Phaser.GameObjects.Group {
     private _textBox : Image;
-    private _text: TagText;
+    private _text: Phaser.GameObjects.Text;
     private _nextButton: Text;
     private _onTypingComplete : Function;
 	private _padding: number = 10;
@@ -25,22 +25,21 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this._textBox = textBox;
         this._padding = this._textBox.gameobject.displayWidth * 0.02;
 
-		this._text = new TagText(scene, 
+		this._text = new Phaser.GameObjects.Text(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
 			this._textBox.gameobject.y - this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY + this._padding, 
 			"Loading...", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-			fontSize: "24px",
 			color: "#ffffff",	
 		});
         this.scene.add.existing(this._text);
         this.add(this._text);
-        this._text.setWordWrapWidth(this._textBox.gameobject.displayWidth - this._padding * 2)
-        this._text.setWrapMode("word");
+        this._text.setFontSize(textBox.gameobject.displayHeight * .125);
+        this._text.setWordWrapWidth(this._textBox.gameobject.displayWidth - this._padding * 2, true)
 
 		this._nextButton = new Text(scene, 
-			this._textBox.gameobject.x + this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX - 10, 
-			this._textBox.gameobject.y + this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY - 10, "Next", {
+			this._textBox.gameobject.x + this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX - this._padding, 
+			this._textBox.gameobject.y + this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY - this._padding, "Next", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
 			fontSize: "24px",
 			color: "#ffffff",
@@ -52,6 +51,8 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 		});
 		this._nextButton.gameobject.setOrigin(1);
 		this._nextButton.gameobject.setInteractive({ useHandCursor: true })
+        this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .125);
+
         this.add(this._nextButton.gameobject);
 
         this._onTypingComplete = onCurrentTextComplete;
@@ -146,8 +147,6 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         if(this._isTyping) {
             console.log("Skip typing", text);
             this.stopTyping(text);
-        } else {
-            this._nextButton.gameobject.emit("pointerdown");
         }
     }
 
