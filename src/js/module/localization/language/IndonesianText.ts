@@ -6,6 +6,10 @@ const IndonesianText : typeof EnglishText = {
         close: "Tutup",
         back: "Kembali",
     },
+    prompts:{
+        emotion: "Apa yang Anda pikirkan tentang karakter ini?",
+        response: "Apa yang menurut Anda tanggapan yang tepat?",
+    },
     mainMenu: {
         startGame: "Mulai Test",
         gameLog: "Log Game",

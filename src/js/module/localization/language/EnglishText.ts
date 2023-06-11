@@ -5,6 +5,10 @@ const EnglishText = {
         close: "Close",
         back: "Back",
     },
+    prompts:{
+        emotion: "What do you think the character is feeling?",
+        response: "What do you think the appropriate response is?",
+    },
     mainMenu: {
         startGame: "Start Test",
         gameLog: "Game Log",
