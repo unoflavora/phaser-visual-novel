@@ -8,7 +8,7 @@ export default class MiniGameController {
 
     private event: EventEmitter;    
     private scene: Phaser.Scene;
-    private minigames = [ "puzzle-block", "memory-of-spades", "guess-the-word"]
+    private minigames = [ "memory-of-spades","puzzle-block", "guess-the-word"]
 
     private playedMinigames!: MinigameTypes;
 
