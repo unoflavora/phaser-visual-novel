@@ -55,6 +55,7 @@ export default class VisualNovelController
 		//#region Scene State
 		var currentSceneIndex : number = progress?.currentSceneIndex ?? -1;
 		var scene = scenes.find(s => s.scene == currentSceneIndex)!;
+
 		console.log(scene, progress)
 
 		startScene.call(this)
@@ -90,11 +91,15 @@ export default class VisualNovelController
 					currentInteraction();
 					break;
 				case SceneState.AskEmotion:
-					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+					var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
+					this.shuffleArray(interaction);
+					currentInteraction = () => this.view.AskPlayerForAnswer(interaction);
 					currentInteraction();
 					break;
 				case SceneState.AskResponse:
-					currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+					var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+					this.shuffleArray(interaction);
+					currentInteraction = () => this.view.AskPlayerForAnswer(interaction);
 					currentInteraction();
 					break;
 				case SceneState.ResponseContext:
@@ -117,8 +122,9 @@ export default class VisualNovelController
 			if(scene.has_quest)
 			{
 				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskEmotion);
-
-				currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id);
+				var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
+				this.shuffleArray(interaction);
+				currentInteraction = () => this.view.AskPlayerForAnswer(interaction);
 				
 				currentInteraction();
 				
@@ -148,8 +154,10 @@ export default class VisualNovelController
 				: scene.emotions_id[optionIndex].score;
 
 			setEmotionScore(MainSceneController.instance.gameData.scores.emotion + score);
-
-			currentInteraction = () => this.view.AskPlayerForAnswer(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id);
+			var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+			this.shuffleArray(interaction);
+			
+			currentInteraction = () => this.view.AskPlayerForAnswer(interaction);
 			currentInteraction();
 
 			playerAskedForResponse = true;
@@ -206,5 +214,15 @@ export default class VisualNovelController
 
       
 	}
+
+	shuffleArray(array : any[]) {
+		for (var i = array.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+	}
+	
 
 }
