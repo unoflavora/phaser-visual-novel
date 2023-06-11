@@ -28,7 +28,7 @@
         "background": "bg-sc_01",
         "intro_en":
         [
-            "As he walked through the forest, Pomoro saw a mushroom humanoid in front of the house. She stood worried and looked shy."
+            "As he walked through the forest, Pomoro saw a mushroom humanoid in front of the house."
         ],
         "intro_id":
         [
@@ -101,14 +101,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*You ignore and walk away.*"
+                        "*Pomoro does not pay too much attention to the mushroom and decides to continue on the journey*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "*Ifuly noticed that someone seems to be approaching her, and he ran inside her house.*"
+                        "Ifuly noticed that someone seems to be approaching her, and he ran inside her house."
                     ]
                 }
             ],
@@ -117,6 +117,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
+                        "*Greets the mushroom*",
                         "Hi..."
                     ]
                 },
@@ -124,8 +125,8 @@
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Ohh, emm.. Hi there...",
-                        "*Ifuly look so embarrass and go inside her house.*"
+                        "Ohh, emm.. hi there...",
+                        "*Ifuly look so embarrassed and goes inside her house.*"
                     ]
                 }
             ],
@@ -134,7 +135,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Try a polite way to ask direction.*",
+                        "*Ask for directions.*",
                         "Excuse me, am I on the right direction to Prospevil?"
                     ]
                 },
@@ -142,7 +143,7 @@
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "... Oh hi, sorry. Can you repeat your question? I didn’t pay full attention to it."
+                        "... Oh hi, sorry. Can you repeat your question? I wasn’t fully paying attention."
                     ]
                 },
                 {
@@ -166,7 +167,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Introduce and ask politely & ask direction*",
+                        "*Introduce yourself and ask for directions*",
                         "Hello there, my name is Pomoro. Am I on the right direction to Prospevil?"
                     ]
                 },
@@ -197,14 +198,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Emm, may I know what your sisters’ names are?"
+                        "Emm, may I know what your sisters names are?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "They look similar to me and their names are Bolebole,",
+                        "They look similar to me and their names are Bolebole, Agari & Imuc.",
                         "Also say hi from me if you meet them, Pomoro!"
                     ]
                 }
@@ -358,7 +359,7 @@
         "intro_en":
         [
             "Upon venturing deep into the Vefurata forest, Pomoro discovers a carrot house on the cliff. He seems curious and went inside the carrot house.",
-            "Once Pomoro arrived there, he saw a carrot humanoid who looked so cheerful and smiley in front of the house."
+            "Once Pomoro arrived there, he saw a carrot humanoid."
         ],
         "intro_id":
         [
@@ -427,14 +428,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Feel uncomfortable to ask, leave immediatly.*"
+                        "*Feels a bit awkward or shy to ask and decides to continue on the journey.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "*Ota confused, and sipping his drink."
+                        "*Ota look sembarrassed and goes inside her house.*"
                     ]
                 }
             ],
@@ -443,7 +444,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Wondering a what that carrot person into, Pomoro also wondering such a good ambient today.*"
+                        "*Feels quite intrigued seeing the carrot and has a desire to start a conversation*",
+                        "Such a good day isn't it."
                     ]
                 },
                 {
@@ -452,7 +454,7 @@
                     "text": [
                         "Yes! It's such a good day and I'm glad.",
                         "Alright, time to get to work.",
-                        "*Ota swung his shovel, put it on his right shoulder, and start leave from his yard.*"
+                        "*Ota swings his shovel, puts it on his right shoulder, and starts to leave his yard.*"
                     ]
                 }
             ],
@@ -461,7 +463,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Approach a carrot person and wondering what he think. Felt the breze and enjoy a nice weather on the cliff and greet him.*",
+                        "*Decide to approach and greet the carrot to ask him for his inputs.*",
                         "Hello, it’s such a good day isn't it."
                     ]
                 },
@@ -469,7 +471,7 @@
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "Surely.. A day like this lifts up ones spirits. Where are you heading?"
+                        "Surely.. a day like this lifts up ones spirits. Where are you heading?"
                     ]
                 },
                 {
@@ -513,14 +515,14 @@
                     "name": "Ota",
                     "text": [
                         "Yes, pleasure to meet you too, Pomoro. Have a great day! I'm going to go to work!",
-                        "*Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face.*"
+                        "*Ota swings his shovel, puts it on his right shoulder, and starts to leave his yard with a bright smile on his face.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro leave with a joy and smile upon his face.*"
+                        "*Pomoro leaves with joy and with a smile on his face.*"
                     ]
                 }
             ]
@@ -722,7 +724,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Blindly, rush to three of them, and ask them.*",
+                        "*Quickly go up to the three of them to ask them if they are related to Ifuly.*",
                         "Hey, you guys look familiar!"
                     ]
                 },
@@ -752,15 +754,15 @@
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
                         "*Together they gather and shout*",
-                        "Sister said we shouldn't talk to impolite people!",
-                        "*They leave to another trees a few meters from there and start play together again....*"
+                        "// Sister said we shouldn't talk to impolite people! //",
+                        "*They go to other trees a few meters from there and start to play together again....*"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way.*"
+                        "*Pomoro is shocked and they leave immediately.*"
                     ]
                 }
             ],
@@ -769,8 +771,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Being modest, ask about wondering are they Ifuly younger sisters.*",
-                        "Excuse me, may I know if thethree of you are Ifuly’s sisters?"
+                        "*Wants to approach them modestly, wondering if they are Ifuly’s younger sisters.*",
+                        "Excuse me, may I know if the three of you are Ifuly’s sisters?"
                     ]
                 },
                 {
@@ -1085,8 +1087,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Not sure whether afraid or seems not good to approach*",
-                        "*Pomoro leave immediatly*"
+                        "*Not sure whether to be afraid or not, partly thinking that it may not be the best idea to approach*",
+                        "*Pomoro leaves immediately*"
                     ]
                 },
                 {
@@ -1102,7 +1104,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Surprised looking through on high incline & approach Warrior of Turnip*",
+                        "*Feel surprised seeing him on the high incline, decides to approach the turnip warrior.*",
                         "Wow, what are you doing in these lands? You seem troubled?"
                     ]
                 },
@@ -1157,7 +1159,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*On high incline approach, gave concern & offer a help*",
+                        "*Sees the turnip on a high incline, feel concerned and want to offer him help*",
                         "You seem troubled. May I help?"
                     ]
                 },
@@ -1207,7 +1209,7 @@
                     "name": "Pomoro/You",
                     "text": [
                         "Sure thing, I'll let them know....",
-                        "*Rapa & Pomoro go to their direction seperatly.*"
+                        "*Rapa and Pomoro go on separate directions.*"
                     ]
                 }
             ]
@@ -1436,8 +1438,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*They seems familiar, try to figure it out who are these two*",
-                        "Woahh, do I know you two?"
+                        "*They seem familiar. Try and figure out who these two are*",
+                        "Woah, do I know you two?"
                     ]
                 },
                 {
@@ -1451,7 +1453,7 @@
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Maybe maybe maybe. But how, when?Exciting isn’t it, yes yes yes?"
+                        "Maybe maybe maybe. But how, when? Exciting isn’t it, yes yes yes?"
                     ]
                 },
                 {
@@ -1510,8 +1512,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "*Together, Naca & Daucu",
-                        "Thank you thank you thank you. Have a pleasant day too!"
+                        "// Thank you thank you thank you. Have a pleasant day too! //"
                     ]
                 }
             ],
@@ -1520,8 +1521,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Notice these two are carrot people, seems related with Ota*",
-                        "Heyyy.. You two just looks like Ota"
+                        "*Notice these two carrot humanoids, they seem to be related with Ota*",
+                        "Hey! You two look just like Ota!"
                     ]
                 },
                 {
@@ -1593,8 +1594,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "*Together, Naca & Daucu",
-                        "Yess yess yess. Have a great day too!"
+                        "// Yess yess yess. Have a great day too! //"
                     ]
                 }
             ]
@@ -1852,7 +1852,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Shouted at the three of them*",
+                        "*Call on the three of them from afar*",
                         "Wait, are they the ones who Rapa is looking for?",
                         "Hey, are you Mupa, Mupo, or Mupi?"
                     ]
@@ -1861,7 +1861,7 @@
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Ohh no no no! I shouldn't have told them to go up there, haaa…"
+                        "Ohh no no no! I shouldn't have told them to go up there, haaa..."
                     ]
                 },
                 {
@@ -1882,7 +1882,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Where is Mupo & Mupi?"
+                        "Where is Mupi & Mupo?"
                     ]
                 },
                 {
@@ -1910,7 +1910,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro steps up to another boulder approacing Mupo & Mupi.*"
+                        "*Pomoro steps up to another boulder while approaching Mupo & Mupi.*"
                     ]
                 }
             ],
@@ -1919,8 +1919,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Approach calmly & ask properly*",
-                        "Hello, I'm Pomoro. Do you know Rapa? I thoughtyou know Rapa."
+                        "*Come up to them to inquire further*",
+                        "Hello, I'm Pomoro. Do you know Rapa? I thought you know Rapa."
                     ]
                 },
                 {
@@ -1976,7 +1976,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro steps up to another boulder approacing Mupo & Mupi.*"
+                        "*Pomoro steps up to another boulder while approaching Mupi and Mupo.*"
                     ]
                 }
             ]
@@ -2136,8 +2136,7 @@
         "background": "bg-sc_06_07_08",
         "intro_en":
         [
-            "Pomoro hiked up, boulder by boulderto reach Mopo.",
-            "Pomoro finally stood on the same boulder as Mupo, where Mupo seemed remorseful for the situation."
+            "Pomoro hikes up boulder by boulder to reach Mupi and finally stands on the same boulder as Mupi."
         ],
         "intro_id":
         [
@@ -2202,7 +2201,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Approach & suggest to get down from the mid high boulder*",
+                        "*Approach him and tell him to get down from the high boulder*",
                         "Hey! Get down, it's dangerous up there!"
                     ]
                 },
@@ -2210,14 +2209,14 @@
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Huaaa, Mupo won’t get down. Mupi can't go down, Mupi too scared!"
+                        "Huaaa, Mupo won’t get down. Mupo can't go down, Mupi too scared!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Okay okay. you don't have to look down, Mupi.. Wait, are you Mupi or Mupo?"
+                        "Okay okay. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
                     ]
                 },
                 {
@@ -2245,7 +2244,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Guided Mupo get down then go back to come over Mupi.*"
+                        "*Guided Mupi get down then go back to come over Mupo.*"
                     ]
                 }
             ],
@@ -2254,7 +2253,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Calmly approach, persuade to be careful*",
+                        "*Gently approach him and persuade him to be careful and come down*",
                         "Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa is looking for you too."
                     ]
                 },
@@ -2262,7 +2261,7 @@
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Huaaa, Mupo wont get down. Mupi can't go down, too high, too scared."
+                        "Huaaa, Mupo wont get down. Mupi can't go down, too high, too scared.."
                     ]
                 },
                 {
@@ -2276,7 +2275,7 @@
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Ooo, ookayy.. Yes, I'm Mupi. But Mupio isstill up there."
+                        "Ooo, ookayy.. Yes, I'm Mupi. But Mupo is still up there."
                     ]
                 },
                 {
@@ -2297,7 +2296,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Guided Mupi get down then go back to come over Mupo.*"
+                        "*Helps Mupi get down and then go back to help Mupo.*"
                     ]
                 }
             ]
@@ -2428,8 +2427,8 @@
         "background": "bg-sc_06_07_08",
         "intro_en":
         [
-            "After Mupo managed to get down, Pomoro continued to climb the highest boulder, finally reaching Mupi.",
-            "Mupi stood proudly with confidence where he looked so dignified on the sloppy boulder surface."
+            "After Mupi managed to get down, Pomoro continued to climb the highest boulder, finally reaching Mupo.",
+            "Mupo stood proudly with confidence where he looked so dignified on the sloppy boulder surface."
         ],
         "intro_id":
         [
@@ -2494,15 +2493,15 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Talk to Mupi & get down*",
-                        "Mupo, can you please getdown, it's verydangerous here! You got to be really careful"
+                        "*Talk to Mupo and order him to come down*",
+                        "Mupo, can you please get down, it's very dangerous here! You got to be really careful."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Mupo is on top of the world! No one can stop Mupiii!"
+                        "Mupo is on top of the world! No one can stop Mupooo!"
                     ]
                 },
                 {
@@ -2540,7 +2539,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Tell Mupo to be careful because it's dangerous where he stood.*",
+                        "*Tell Mupo to be careful and warn him of the dangers of standing on top of that boulder.*",
                         "Mupo, be careful there, it's dangerous. You're standing on a sloppy boulder."
                     ]
                 },
@@ -2696,10 +2695,10 @@
         "background": "bg-sc_09",
         "intro_en":
         [
-            "After Mupi manages to come down from the highest boulder with help from Pomoro, finally Mupa, Mupi and Mupo went back to meet Rapa.",
             "After some time, Pomoro continues on his way, and resumes his advantures.",
             "A few miles after leaving the boulders along the pathway, Pomoro saw a large village surrounded by rivers, green grass fields, and formidable walls.",
-            "There after, Pomoro stands underneath the village gate. He realized that his journey gave him so many experiences and allowed him to encounter many different people in different unique situations",
+            "A few miles after leaving the boulders along the pathway, Pomoro saw a large village surrounded by rivers, green grass fields, and formidable walls.",
+            "There after, Pomoro stands underneath the village gate. He realized that his journey gave him so many experiences and allowed him to encounter many different people in different unique situations.",
             "From then on, Pomoro continued to learn many things along his journey, driven by curiosity and courage."
         ],
         "intro_id":
