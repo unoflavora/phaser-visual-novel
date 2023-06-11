@@ -83,6 +83,8 @@ export default class GameplaySceneController extends Phaser.Scene {
 		console.log(MainSceneController.instance.gameData.scores);
 
 		console.log("Scenes Complete");
+
+		this.scene.launch(SceneInfo.resultScene.key);
 	}
 
 	private onFinishMiniGame(minigameType : MinigameTypes) 

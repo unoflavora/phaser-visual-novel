@@ -119,7 +119,7 @@ export default class MainSceneController extends Phaser.Scene {
     
 
     async startGame() {       
-        this.scene.launch(SceneInfo.homeScene.key);        
+        this.scene.launch(SceneInfo.languageSelectorScene.key);        
     }
 
     public async Login(username : string, password : string, rememberUser: boolean) : Promise<Response<AuthData> | null>
