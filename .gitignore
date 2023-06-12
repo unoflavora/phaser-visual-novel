@@ -1,13 +1,36 @@
-##
-## directory
-##
+# System and IDE files
+Thumbs.db
+.DS_Store
+.idea
+*.suo
+*.sublime-project
+*.sublime-workspace
 
+# npm & yarn
+node_modules/
+.npm
+.yarn-integrity
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*
+/build/bundle.js
+/build/index.html
+/build*
+/build/*
 
-##
-## extension
-##
+# Editor/IDE
+.idea
+packages/api/etc/
+# Temporary 
+temp/
 
+# Build
+dist/
+/npm-debug.log
 
-##
-## file
-##
+#cache
+.cache
+
+#else
+*.bak*

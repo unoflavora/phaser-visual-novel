@@ -1,0 +1,85 @@
+html, body
+{
+  font-family: 'Roboto-Regular', serif;
+  margin: 0; /*0 margin*/
+  overflow: hidden; /* disable scroll functionality */
+  touch-action: manipulation;
+  background-color: black;
+  height: 100vh; /*claim entire screen for ios safari*/
+  width: 100vw; /*auto center functionality purpose*/
+}
+
+#wrapper{
+  position: fixed; /*IMPORTANT placement based on browser window size / and position*/
+  display: flex;
+  height: 100vh; /*claim entire screen for ios safari*/
+  width: 100vw; /*auto center functionality purpose*/
+}
+
+#game {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  touch-action: manipulation;
+  background-color: black;
+  height: 100%; /*claim entire screen for ios safari*/
+  width: 100%; /*auto center functionality purpose*/
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+.textStyle {
+  font-size: .8rem ;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+  .textStyle {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+  .textStyle {
+    font-size: .8em;
+  }
+}
+
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+  .textStyle {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
+
+div 
+{
+  transform-origin: center !important;
+}
+
+input 
+{
+  padding-top: .5rem !important;
+  padding-left: .5rem !important;
+}
+
+a, button, .myelements
+{
+  -ms-touch-action: manipulation;	/* IE10  */
+  touch-action: manipulation;		/* IE11+ */
+}
