@@ -81,7 +81,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     }    
 
-    async preload() { 
+    preload() { 
         console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT + " URL API: " + CONFIG.BASE_URL)
 
         this.audio = AudioController.instance;
@@ -99,11 +99,10 @@ export default class MainSceneController extends Phaser.Scene {
         this._popupController.registerOnClosePopup(() => this.ClosePopup());
 
        
-        await this.Init();
     }
 
 
-    create() {
+    async create() {
 
         window.addEventListener('offline', () => {            
             this.OpenTemplatePopup(PopupType.LostConnection);
@@ -112,8 +111,9 @@ export default class MainSceneController extends Phaser.Scene {
         window.addEventListener('online', () => {            
             this._popupController.closeLostConnectionPopup();            
         });
-        
-        this.startGame();
+
+        await this.Init();
+
     }
             
     
@@ -171,11 +171,19 @@ export default class MainSceneController extends Phaser.Scene {
             }
         }
 
+        if(this._backendController.token == null)
+        {
+            this.scene.launch(SceneInfo.loginScene.key);
+            return;
+        }
+
         try 
         {
             var initData = await this._backendController.Init();
             
             this._initData = initData.data;
+
+            console.log(this._initData)
 
             if(initData.data.savedData != null && initData.data.savedData != "")
             {
@@ -193,10 +201,11 @@ export default class MainSceneController extends Phaser.Scene {
 
             this.gameData.sessionId = initData.data.sessionId;
 
-
+            this.startGame();
     
         } catch(e)
         {
+            console.log(e)
             if (e instanceof Error)
             {
                 this.OpenTemplatePopup(PopupType.Error, e.message);

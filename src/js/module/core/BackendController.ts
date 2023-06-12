@@ -10,6 +10,8 @@ export default class BackendController
         this._token = value;
     }
 
+    public get token() { return this._token };
+
     public async Login(email : string, password : string) : Promise<Response<AuthData>>
     {
         return fetch(CONFIG.BASE_URL + "/auth/login", {
