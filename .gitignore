@@ -31,3 +31,6 @@ dist/
 
 #cache
 .cache
+
+#else
+*.bak*

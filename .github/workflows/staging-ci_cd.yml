@@ -1,9 +1,10 @@
 name: staging ci/cd - deusproject.lothar.phaser
 
 on:
-    # push:
-    #     branches: [ staging ]
-    # pull_request:
+    pull_request:
+          branches: [ staging ]
+          types:
+              - closed
     workflow_dispatch:
 
 jobs:
@@ -13,6 +14,7 @@ jobs:
         steps:
             -   name: Checking Connection ( staging )
                 id: s1
+                if: github.event.pull_request.merged == true
                 uses: appleboy/ssh-action@master
                 with:
                     host: ${{ secrets.STAGING_HOST }}
@@ -36,6 +38,7 @@ jobs:
                     port: ${{ secrets.STAGING_PORT }}
                     script: |
                         cd ${{ secrets.STAGING_LOTHAR_PHASER }}
+                        pm2 stop deus-lothar-staging
                         npm i
                         npm run build
 
@@ -50,4 +53,4 @@ jobs:
                     port: ${{ secrets.STAGING_PORT }}
                     script: |
                         cd ${{ secrets.STAGING_LOTHAR_PHASER }}
-                        echo "TODO: PM2 Restart Game, Service & Server"
+                        pm2 start deus-lothar-staging
