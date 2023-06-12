@@ -35,8 +35,8 @@
         ],
         "intro_id":
         [
-            "sc-00 intro id tba 1",
-            "sc-00 intro id tba 2"
+            "Alkisah, di sebuah kerajaan yang jauh, ada seorang petualang muda bernama Pomoro yang dikenal haus akan petualangan. Ia memulai perjalanannya ke Prospevil, sebuah desa makmur di Kerajaan Vefurata.",
+            "Pomoro memulai perjalanannya, merasa bersemangat untuk memulai petualangan baru ini. Ke hutan Vefurata."
         ],
         "emotions_en": [],
         "emotions_id": [],
@@ -56,45 +56,53 @@
         ],
         "intro_id":
         [
-            "sc-01 intro id tba 1"
+            "Saat berjalan melewati hutan, Pomoro melihat humanoid jamur di depan rumah."
         ],
         "emotions_en":
         [
             {
                 "text": "Unease",
-                "score": 25
+                "score": 25,
+                "info": "Feeling a mild sense of discomfort or concern in response to a perceived threat or potential danger. This level of fear is often fleeting and may arise from unfamiliar situations or minor worries."
             },
             {
                 "text": "Pronounced Introversion",
-                "score": 50
+                "score": 50,
+                "info": "Encountering a significant inclination towards introversion, where social interactions can be challenging and draining. This level of shyness is characterized by a preference  solitude or small groups, a need for ample personal space, and a heightened sensitivity to external stimulation."
             },
             {
                 "text": "Moderate Timidity",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing a noticeable level of shyness that can impact interactions and self-expression. This level of shyness involves a greater tendency to avoid attention or seek solitude, and may involve feelings of self-doubt, nervousness, or difficulty initiating conversations or asserting oneself."
             },
             {
                 "text": "Mild Self Consciousness",
-                "score": 100
+                "score": 100,
+                "info": "Feeling a slight discomfort or unease in social situations, particularly when meeting new people or being the center of attention. This level of shyness is relatively low intensity and may manifest as hesitation, blushing, or a preference for observing rather than actively participating."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Gelisah",
+                "score": 25,
+                "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Diucapkan Introversi",
+                "score": 50,
+                "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Ketakutan Sedang",
+                "score": 75,
+                "info": "Mengalami tingkat rasa malu yang nyata yang dapat memengaruhi interaksi dan ekspresi diri. Tingkat rasa malu ini melibatkan kecenderungan yang lebih besar untuk menghindari perhatian atau mencari kesendirian, dan mungkin melibatkan perasaan ragu-ragu, gugup, atau kesulitan memulai percakapan atau menegaskan diri sendiri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
+                "text": "Kesadaran Diri Ringan",
+                "score": 100,
+                "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif."
             }    
         ],
 
@@ -240,19 +248,19 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Jangan terlalu memperhatikan dan melanjutkan perjalanan",
                 "score": 25
             },
             {
-                "text": "response id B tba",
+                "text": "Tanyakan arah pada jamur",
                 "score": 50
             },
             {
-                "text": "response id C tba",
+                "text": "Beri salam kepada jamur",
                 "score": 75
             },
             {
-                "text": "response id D tba",
+                "text": "Perkenalkan diri Anda dan tanyakan arah pada jamur",
                 "score": 100
             }
         ],
@@ -263,14 +271,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *you ignore and walk away"
+                        "*Pomoro tidak terlalu memperhatikan jamur dan memutuskan untuk melanjutkan perjalanan*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: *Ifuly notice someone seems approach her, he ran inside her house."
+                        "Ifuly memperhatikan bahwa seseorang tampaknya mendekatinya, dan dia berlari ke dalam rumahnya."
                     ]
                 }
             ],
@@ -279,15 +287,16 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hi..."
+                        "*Beri salam kepada jamur*",
+                        "Hi..."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohh, emm.. Hi there...",
-                        "id tba: *Ifuly look so embarrass and go inside her house.*"
+                        "Ohh, emm.. hai...",
+                        "*Ifuly terlihat sangat malu dan masuk ke dalam rumahnya.*"
                     ]
                 }
             ],
@@ -296,31 +305,30 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Excuse me, am I on right direction to Prospevil?"
+                        "*Menanyakan arah.*",
+                        "Permisi, apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: ...",
-                        "id tba: Oh hii, sorry...",
-                        "id tba: Can't you repeat your question? I'm not pay attention to it..."
+                        "... Oh hai, maaf. Bisakah Anda mengulangi pertanyaan Anda? Saya tidak sepenuhnya memperhatikan."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "id tba: Pomoro/You",
                     "text": [
-                        "id tba: Sure, so I want to go to Prospevil, am I on right direction?"
+                        "Tentu, jadi saya ingin pergi ke Prospevil, apakah saya berada di jalur yang benar?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohhh, Prospevil.. I think it's correct, but I'm not sure.",
-                        "id tba: Maybe you can make sure to one of my sisters, they went out a few hours ago."
+                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi saya tidak yakin.",
+                        "Mungkin Anda bisa mengecek dengan salah satu saudara perempuan saya, mereka pergi beberapa jam yang lalu."
                     ]
                 }
             ],
@@ -329,47 +337,46 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello there, my name is Pomoro.. am I on right direction to Prospevil?"
+                        "*Memperkenalkan diri dan menanyakan arah*",
+                        "Halo, nama saya Pomoro. Apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Oh, hii, Pomoro...",
-                        "id tba: ...",
-                        "id tba: Sorry, not pay attention to you. I'm Ifuly, can you repeat your question?"
+                        "Oh, hi Pomoro.",
+                        "Maaf, saya tidak memperhatikan sepenuhnya. Ngomong-ngomong, di Italia. Apakah Anda keberatan mengulangi pertanyaan Anda?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yes, so I want to go to Prospevil, am I on right direction?"
+                        "Ya, jadi saya ingin pergi ke Prospevil, apakah saya sudah berada di jalur yang benar?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohhh, Prospevil...",
-                        "id tba: I think it's correct, but you can ask to my sisters if you meet them",
-                        "id tba: They went there a lot, I only goes there few time"
+                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi Anda dapat memeriksa kembali dengan saudara perempuan saya jika Anda bertemu dengan mereka",
+                        "Mereka sudah sering ke sana, saya hanya ke sana beberapa kali"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Emm, may I know what is your sisters name?"
+                        "Emm, bolehkah saya tahu siapa nama saudara perempuan Anda?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: They looks like me and their name are Bolebole, Agari & Imuc...",
-                        "id tba: Also say hi from me if you meet them, Pomoro...."
+                        "Mereka terlihat mirip dengan saya dan nama mereka adalah Bolebole, Agari & Imuc.",
+                        "Juga sapa saya jika Anda bertemu mereka, Pomoro!"
                     ]
                 }
             ]
@@ -387,45 +394,54 @@
         ],
         "intro_id":
         [
-            "sc-02 intro id tba 1"
+            "Saat menjelajah jauh ke dalam hutan Vefurata, Pomoro menemukan rumah wortel di tebing. Dia tampak penasaran dan masuk ke dalam rumah wortel.",
+            "Begitu Pomoro tiba di sana, dia melihat humanoid wortel."
         ],
         "emotions_en":
         [
             {
                 "text": "Bliss",
-                "score": 25
+                "score": 25,
+                "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of ecstasy and serenity."
             },
             {
                 "text": "Fulfillment",
-                "score": 50
+                "score": 50,
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
             },
             {
                 "text": "Contentment",
-                "score": 75
+                "score": 75,
+                "info": "State of inner peace and satisfaction that arises from embracing one's current circumstances without longing for more. It involves finding joy and fulfillment in the present moment, appreciating what one has, and letting go of the constant pursuit of external desires. Contentment allows individuals to experience a deep sense of tranquility and well-being, accepting life as it is and finding happiness within themselves."
             },
             {
                 "text": "Excitement",
-                "score": 100
+                "score": 100,
+                "info": "State of heightened anticipation and enthusiasm that arises from the prospect of something new, thrilling, or engaging. It is characterized by a surge of energy and a sense of eager anticipation, often accompanied by feelings of joy or exhilaration. Excitement can be sparked by various experiences, such as upcoming events, adventures, achievements, or even the unknown, and it invigorates individuals by igniting a sense of curiosity, passion, and positive anticipation."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Kebahagiaan",
+                "score": 25,
+                "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Pemenuhan",
+                "score": 50,
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kepuasan",
+                "score": 75,
+                "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
+                "text": "Kegembiraan",
+                "score": 100,
+                "info": "Keadaan antisipasi dan antusiasme tinggi yang muncul dari prospek akan sesuatu yang baru, mendebarkan, atau menarik. Ini ditandai dengan gelombang energi dan rasa antisipasi yang bersemangat, sering kali disertai dengan perasaan senang atau gembira. Kegembiraan dapat dipicu oleh berbagai pengalaman, seperti peristiwa yang akan datang, petualangan, pencapaian, atau bahkan hal yang tidak diketahui, dan itu menyegarkan individu dengan memicu rasa ingin tahu, semangat, dan antisipasi positif."
             }    
         ],
 
@@ -556,15 +572,15 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Merasa agak canggung untuk bertanya, memutuskan untuk melanjutkan perjalanan",
                 "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Putuskan untuk mendekati dan menyapa wortel untuk meminta masukan darinya",
                 "score": 75
             },
             {
-                "text": "response id C tba",
+                "text": "Merasa cukup penasaran, merasakan keinginan untuk memulai obrolan",
                 "score": 100
             }
         ],
@@ -575,14 +591,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Feel uncomfortable to ask, leave immediatly."
+                        "*Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: *Ota confused, and sipping his drink."
+                        "*Ota terlihat malu dan masuk ke dalam rumahnya.*"
                     ]
                 }
             ],
@@ -591,16 +607,17 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Such a good day isn't it.."
+                        "*Merasa cukup tertarik melihat wortel dan memiliki keinginan untuk memulai percakapan*",
+                        "Hari yang begitu baik bukan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes.. It's good day and I'm glad.",
-                        "id tba: Alright, time to get to work.",
-                        "id tba: *Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                        "Ya! Ini hari yang baik dan saya senang.",
+                        "Baiklah, saatnya bekerja.",
+                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya.*"
                     ]
                 }
             ],
@@ -609,65 +626,66 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello, such a great day isn't it."
+                        "*Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya.*",
+                        "Halo, ini hari yang baik bukan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                        "Tentunya .. hari seperti ini mengangkat semangat seseorang. Kemana tujuanmu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: I'm heading to the Prospevil, have you been there?"
+                        "Saya menuju ke Prospevil, apakah Anda pernah ke sana sebelumnya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
-                        "id tba: We all lived near there before.."
+                        "Ohh, Prospervil! Benar-benar tempat yang sangat indah yang Anda tuju.",
+                        "Kami semua tinggal di dekat daerah itu saat itu."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, 'we all'? What do you mean?"
+                        "Tunggu, 'kita semua'? Apa maksudmu?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                        "Ya. Pasti, Naca, Daucu dan aku. Oh dan aku lupa memberitahumu, namaku Ota."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                        "Ahh, sepertinya menyenangkan memiliki keluarga yang erat. Nama saya Pomoro! Senang bertemu denganmu, Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
-                        "id tba: Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                        "Ya, senang bertemu denganmu juga, Pomoro. Semoga harimu menyenangkan! Aku akan pergi bekerja!",
+                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya dengan senyum cerah di wajahnya.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro leave with a joy and smile upon his face."
+                        "*Pomoro pergi dengan gembira dan dengan senyum di wajahnya.*"
                     ]
                 }
             ]
@@ -687,46 +705,57 @@
         ],
         "intro_id":
         [
-            "sc-03 intro id tba 1"
+            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan mencapai tanjakan, dipenuhi udara lembab.",
+            "Pomoro melihat beberapa gerakan di antara pepohonan, dan memberanikan diri untuk menyelidiki gerakan apa itu.",
+            "Yang mengejutkan, Pomoro melihat pemandangan yang familiar. Dia melihat tiga jamur muda.",
+            "Itu mengingatkannya pada Ifuly."
         ],
         "emotions_en":
         [
             {
                 "text": "Imaginative playfulness",
-                "score": 25
+                "score": 25,
+                "info": "Embracing creativity and imagination during play. This level of playfulness involves the exploration of imaginary worlds, storytelling, role-playing, or engaging with toys, props, or artistic activities. It encourages imaginative thinking, problem-solving, and the expression of one's inner world."
             },
             {
                 "text": "Adventurous playfulness",
-                "score": 50
+                "score": 50,
+                "info": "Embracing a sense of adventure, exploration, and risk-taking play. This level of playfulness involves seeking new experiences, pushing boundaries, and engaging in challenging or thrilling activities. It often involves a spirit of curiosity, daring, and a willingness to  outside of one's comfort zone."
             },
             {
                 "text": "Light hearted playfulness",
-                "score": 75
+                "score": 75,
+                "info": "A carefree and joyful state of being, characterized by a lighthearted attitude and a playful approach to life. It involves engaging in activities or interactions with a sense of spontaneity, humor, and a lack of seriousness. It often brings a sense of levity, laughter, and a refreshing break from the pressures and responsibilities of everyday life, allowing individuals to embrace their inner child and find happiness in the simple joys of the present moment."
             },
             {
                 "text": "Energetic playfulness",
-                "score": 100
+                "score": 100,
+                "info": "Exhibiting a higher level of energy and enthusiasm during play. This level of playfulness involves more active and dynamic participation, such as engaging in physical activities, games, or playful competitions. It often involves a sense of excitement, movement, and vitality."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Kegembiraan imajinatif",
+                "score": 25,
+                "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Kegembiraan petualang",
+                "score": 50,
+                "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Keceriaan ringan",
+                "score": 75,
+                "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kegembiraan yang energik",
+                "score": 100,
+                "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas."
+            }  
         ],
 
 
@@ -886,11 +915,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Cepat pergi ke mereka bertiga untuk mengajukan pertanyaan kepada mereka",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah saudara perempuan Ifuly",
                 "score": 100
             }
         ],
@@ -901,43 +930,45 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, you guys seems familiar."
+                        "*Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka berhubungan dengan Ifuly.*",
+                        "Hei, kalian terlihat akrab!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Whatttt.."
+                        "Apaaa?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: We all siblingsss..."
+                        "Kita semua bersaudaraaa"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: We aree more than triplets....."
+                        "Kami lebih dari kembar tiga!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
-                        "id tba: *Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
-                        "id tba: *They leave to another trees a few meters from there and start play together again...."
+                        "*Bersama-sama mereka berkumpul dan berteriak*",
+                        "// Kakak bilang kita tidak boleh berbicara dengan orang yang tidak sopan! //",
+                        "*Mereka pergi ke pohon lain beberapa meter dari sana dan mulai bermain bersama lagi....*"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                        "*Pomoro kaget dan mereka langsung pergi.*"
                     ]
                 }
             ],
@@ -946,87 +977,88 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Excuse me, may I know that three of you are Ifuly sisters?"
+                        "*Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah adik perempuan Ifuly.*",
+                        "Permisi, bolehkah saya tahu jika kalian bertiga adalah saudara perempuan Ifuly?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Woo..??"
+                        "Wooo..?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: You meet our big sisterss...???"
+                        "Anda bertemu kakak perempuan kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: How shes doinggg....????"
+                        "Bagaimana kabarnya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                        "Yah, dia tampak baik-baik saja tetapi sedikit pemalu. Bagaimanapun, dia menyapa kalian semua. Saya pikir dia khawatir."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Wait waitt.. Sisters worry about us..."
+                        "Tunggu tunggu! Kakak mengkhawatirkan kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: Ohh noo.. I want to play arround first..."
+                        "Oh tidak! Aku ingin bermain-main dulu!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: Don't worry, we're heading back later on.. Thank you for letting us know..",
-                        "id tba: Yes indeed she little bit shy, butt shes care to all of us..."
+                        "Jangan khawatir, kami akan kembali lagi nanti. Terima kasih telah memberi tahu kami!",
+                        "Ya memang dia sedikit pemalu, tapi dia sangat peduli dengan kami"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So I had question to check to all of you",
-                        "id tba: Big sis says that you guys know direction to Prospevil"
+                        "Jadi saya punya pertanyaan untuk kalian semua",
+                        "Kakak bilang kalian tahu arah ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Ayyyy, a Prospevil.."
+                        "Ayy, Prospevil!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: Prospevilll... Just go straight a head..."
+                        "Prospevil... Langsung saja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: Yesss... Just go straight that is a correct direction",
-                        "id tba: We all heading back to big sis later.. Thank youuu..."
+                        "Ya. Jalan lurus saja itu arah yang benar",
+                        "Kami akan kembali ke kakak nanti. Terima kasih!"
                     ]
                 }
             ]
@@ -1046,46 +1078,57 @@
         ],
         "intro_id":
         [
-            "sc-04 intro id tba 1"
+            "Pomoro memulai perjalanannya lagi. Dia berhasil melewati hutan, melewati berbagai rintangan.",
+            "Ketika Pomoro hampir mencapai tepi hutan, dia mendengar sesuatu. Dia mendengar gemuruh, tapi itu bukan suara binatang buas, bukan pula guntur.",
+            "Pomoro sepertinya tidak yakin tapi penasaran untuk menyelidiki sumber suara itu.",
+            "Suara itu mulai semakin dekat, dan yang mengejutkan, Pomoro melihat seorang Prajurit Lobak."
         ],
         "emotions_en":
         [
             {
                 "text": "Rage",
-                "score": 25
+                "score": 25,
+                "info": "Encountering an intense and uncontrollable anger that can lead to a loss of self-control. This level of anger is characterized by an explosive emotional outburst, accompanied by a heightened physical and psychological arousal. Rage can result in aggressive or destructive behavior."
             },
             {
                 "text": "Irritation",
-                "score": 50
+                "score": 50,
+                "info": "Feeling a mild annoyance or frustration in response to a minor inconvenience or disruption. This level of anger is relatively low intensity and may arise from everyday irritants or inconveniences."
             },
             {
                 "text": "Hostility",
-                "score": 75
+                "score": 75,
+                "info": "Exhibiting a strong antagonistic attitude or aggressive behavior towards someone or something. This level of animosity entails a more overt and confrontational stance, with a significant intent to harm, obstruct, or undermine the target."
             },
             {
                 "text": "Anger",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a more pronounced emotional state of displeasure, often triggered by perceived injustices, conflicts, or violations of personal boundaries. This level of anger involves a stronger emotional response, including feelings of resentment, indignation, or frustration."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Kemarahan",
+                "score": 25,
+                "info": "Menghadapi kemarahan yang intens dan tak terkendali yang dapat menyebabkan hilangnya kendali diri. Tingkat kemarahan ini ditandai dengan ledakan emosi yang meledak-ledak, disertai dengan peningkatan gairah fisik dan psikologis. Kemarahan dapat mengakibatkan perilaku agresif atau destruktif."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Kejengkelan",
+                "score": 50,
+                "info": "Merasakan gangguan atau frustrasi ringan sebagai tanggapan atas ketidaknyamanan atau gangguan kecil. Tingkat kemarahan ini relatif rendah intensitasnya dan dapat timbul dari iritasi atau ketidaknyamanan sehari-hari."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Permusuhan",
+                "score": 75,
+                "info": "Menunjukkan sikap antagonis yang kuat atau perilaku agresif terhadap seseorang atau sesuatu. Tingkat permusuhan ini memerlukan sikap yang lebih terbuka dan konfrontatif, dengan maksud yang signifikan untuk menyakiti, menghalangi, atau merusak target."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kemarahan",
+                "score": 100,
+                "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi."
+            } 
         ],
 
 
@@ -1096,7 +1139,7 @@
                 "score": 50
             },
             {
-                "text": "Feel surprised seeing him on the high incline, decides to approach ",
+                "text": "Feel surprised seeing him on the high incline, decides to approach",
                 "score": 75
             },
             {
@@ -1243,15 +1286,15 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Tidak yakin apakah harus takut atau tidak, mungkin itu bukan ide terbaik untuk didekati",
                 "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekat",
                 "score": 75
             },
             {
-                "text": "response id C tba",
+                "text": "Merasa prihatin dan ingin menawarkan bantuan kepadanya",
                 "score": 100
             }
         ],
@@ -1262,15 +1305,15 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro leave immediatly",
-                        "id tba: *Not sure whether afraid or seems not good to approach"
+                        "*Tidak yakin apakah harus takut atau tidak, sebagian berpikir bahwa itu mungkin bukan ide terbaik untuk didekati*",
+                        "*Pomoro pergi dengan segera*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: *Rapa notice a glimpse of presence"
+                        ""
                     ]
                 }
             ],
@@ -1279,53 +1322,53 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Surprised looking through on high incline & approach Warrior of Turnip",
-                        "id tba: Waww, what are you doing at this ground and seems troubled."
+                        "*Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati pendekar lobak.*",
+                        "Wow, apa yang kamu lakukan di sini? Anda tampak bermasalah?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                        "Gila Kesal. Marah! Saya mencari Mupa, Mupo dan Mupi."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Emm, Mu Ma Mo.. what?!"
+                        "Emm, Mu Ma Mo.. haa?!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Hahh!! no time to explain.. They looks like me",
-                        "id tba: If you meet 'em tell 'em to go here"
+                        "Hah! Tidak ada waktu untuk menjelaskan. Mereka terlihat seperti saya",
+                        "Jika Anda bertemu mereka, suruh mereka pergi ke sini"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, wait, wait.. I had to go to Prospevil."
+                        "Tunggu! Saya harus pergi ke Prospevil."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Yes, good! So you go to the West, that's is direction to Prospevil.",
-                        "id tba: And I go to the East.",
-                        "id tba: *Rapa rush to the East"
+                        "Ya baik! Jadi Anda bisa melanjutkan ke barat, yaitu arah ke Prospevil.",
+                        "Dan saya menuju ke Timur.",
+                        "*Rapa buru-buru ke Timur*"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro startled & bweildered"
+                        "* Pomodoro kaget dan bingung"
                     ]
                 }
             ],
@@ -1334,56 +1377,57 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *On high incline approach, gave concern & offer a help",
-                        "id tba: You seems troubled, may I help?"
+                        "*Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan*",
+                        "Anda tampak bermasalah. Bisakah saya bantu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                        "Argghh.. Mupa, Mupo dan Mupi dimana mereka!?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa, Mupo and Mupi?"
+                        "Mupa, Mupo and Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Herrghh, all of my brothers, I can't find 'em",
-                        "id tba: I'm lookin for 'em, but where are they now.",
-                        "id tba: Aghh, I'll be glad if you meet 'em and tell to go back here"
+                        "Herrghh, semua saudaraku, aku tidak bisa menemukan mereka",
+                        "Aku mencari mereka, tapi dimana mereka sekarang?",
+                        "Aghh, Jika Anda kebetulan menemukan mereka, saya akan senang jika Anda dapat memberitahu mereka untuk kembali ke sini"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, wait, wait.. I had to go to Prospevil.",
-                        "id tba: But if I meet them along my journey."
+                        "Tunggu! Aku harus pergi ke Prospevil.",
+                        "Tapi saya akan memberi tahu mereka jika saya bertemu mereka di sepanjang perjalanan saya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Oh, so you want to go to Prospevil.",
-                        "id tba: You can go to the West.",
-                        "id tba: And I can go to the East.",
-                        "id tba: Tell 'em I'm lookin for 'em if you meet 'em."
+                        "Oh, jadi kamu ingin pergi ke Prospevil.",
+                        "Anda bisa pergi ke Barat.",
+                        "Dan saya bisa pergi ke Timur.",
+                        "Katakan pada mereka, aku mencari mereka jika kamu bertemu mereka."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Sure thing, I'll let them know...."
+                        "Tentu saja, saya akan memberi tahu mereka ....",
+                        "*Rapa dan Pomoro pergi ke arah yang berbeda.*"
                     ]
                 }
             ]
@@ -1401,46 +1445,55 @@
         ],
         "intro_id":
         [
-            "sc-05 intro id tba 1"
+            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan menuju ke hutan.",
+            "Dia melewati padang rumput hijau yang luas dengan jalan setapak, dan melihat beberapa humanoid wortel sedang beristirahat di bawah pohon di samping jalan setapak."
         ],
         "emotions_en":
         [
             {
                 "text": "Fulfillment",
-                "score": 25
+                "score": 25,
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
             },
             {
                 "text": "Unstoppable Passion",
-                "score": 50
+                "score": 50,
+                "info": "Refers to an intense and unwavering drive or enthusiasm towards a particular pursuit or goal. It is characterized by a relentless determination, a burning desire, and a steadfast commitment to overcoming obstacles and achieving success. Unstoppable passion empowers individuals to persevere through challenges, fueling their actions with unwavering dedication and a refusal to be deterred, ultimately leading to the fulfillment of their ambitions."
             },
             {
                 "text": "Moderate Drive",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing a noticeable increase in motivation and determination. This level of incentive involves a stronger sense of purpose and focus, often fueled by external rewards, recognition, or a clear sense of progress towards a desired outcome."
             },
             {
                 "text": "Excitement",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a heightened state of joy and enthusiasm. This level of happiness is characterized by a sense of anticipation, thrill, or delight."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Pemenuhan",
+                "score": 25,
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Gairah yang Tak Terbendung",
+                "score": 50,
+                "info": "Mengacu pada dorongan atau antusiasme yang kuat dan tak tergoyahkan terhadap pengejaran atau tujuan tertentu. Ini ditandai dengan tekad yang tak kenal lelah, hasrat yang membara, dan komitmen yang teguh untuk mengatasi rintangan dan mencapai kesuksesan. Gairah yang tak terbendung memberdayakan individu untuk bertahan melalui tantangan, memicu tindakan mereka dengan dedikasi yang tak tergoyahkan dan penolakan untuk terhalang, yang pada akhirnya mengarah pada pemenuhan ambisi mereka."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kegembiraan Sedang",
+                "score": 75,
+                "info": "Mengalami peningkatan motivasi dan tekad yang nyata. Tingkat insentif ini melibatkan rasa tujuan dan fokus yang lebih kuat, sering didorong oleh penghargaan eksternal, pengakuan, atau rasa kemajuan yang jelas menuju hasil yang diinginkan."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kegembiraan",
+                "score": 100,
+                "info": "Mengalami keadaan kegembiraan dan antusiasme yang tinggi. Tingkat kebahagiaan ini ditandai dengan rasa antisipasi, sensasi, atau kegembiraan."
+            }
         ],
 
 
@@ -1628,11 +1681,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Mereka tampak akrab. Coba dan cari tahu siapa mereka",
                 "score": 100
             }
         ],
@@ -1643,80 +1696,81 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Woahh, do I know you two?"
+                        "*Mereka tampak akrab. Coba cari tahu siapa mereka berdua*",
+                        "Woah, apa aku mengenal kalian berdua?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                        "Kenapa kenapa kenapa? Ini hari yang bagus untuk bersenang-senang, bagaimana kamu mengenal kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                        "Mungkin mungkin mungkin. Tapi bagaimana, kapan? Seru bukan, ya ya ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yeah, waitt.. I forgot his name.",
-                        "id tba: Em.. Uu something?? Oo.. Oott???",
-                        "id tba: Ota???"
+                        "Ya, tunggu hmm… aku lupa namanya.",
+                         "Erm...uu sesuatu? Oo.. Oott?",
+                         "Ota???"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Owh owh owh, Ota Ota Ota???"
+                        "Owh owh owh, Ota Ota Ota?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: Big big big brother Ota, ya??"
+                        "Kak kak kakak Ota, ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yes, I think. He went to work with a bright smile on his face."
+                        "Ya, saya pikir. Dia pergi bekerja dengan senyum cerah di wajahnya!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Surely surely surely, Brother Ota always vibing with his smile every single day."
+                        "Pasti pasti pasti, Kak Ota selalu bergetar dengan senyumnya setiap hari!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: No matter how hard the day is, big brother Ota always always always find a way to smile."
+                        "Seberat apapun hari ini, kakak Ota selalu selalu menemukan alasan untuk tersenyum."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yess, such a good personality to knew.",
-                        "id tba: Okay then, got to go. Have a great day."
+                        "Ya, kepribadian yang periang!",
+                        "Baiklah kalau begitu, aku harus pergi. Semoga harimu menyenangkan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "id tba: *Thank you thank you thank you.. Have a pleasant day too."
+                        "// Terima kasih terima kasih terima kasih. Semoga harimu menyenangkan juga! //"
                     ]
                 }
             ],
@@ -1725,79 +1779,80 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Heyyy.. You two just looks like Ota"
+                        "*Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota*",
+                        "Hei! Kalian berdua mirip Ota!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                        "Owww, Ota Ota Ota? Jadi ketemu dia di suatu tempat, ya ya ya?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: How's big big big brother doing there??"
+                        "Bagaimana kabar kak kak kakak di sana?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yeah, he seems fine. Also Ota seems delightful when went to work."
+                        "Ya, dia terlihat baik-baik saja. Ota juga terlihat sangat senang ketika dia pergi bekerja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Smile generously, bother Ota always smile now matter what."
+                        "Selalu tersenyum dengan murah hati, kakak Ota selalu tersenyum apapun yang terjadi!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: There's no a bad bad bad day when borther Ota face the day."
+                        "Tidak ada hari buruk yang buruk untuk saudara Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Seems nice to knew someone like him.",
-                        "id tba: I would love to meet again with him someday."
+                        "Sepertinya senang mengenal seseorang seperti dia.",
+                        "Aku ingin sekali bertemu dengannya lagi suatu hari nanti."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Surely surely surely, you may."
+                        "Pasti pasti pasti, kamu bisa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: It's true true true, you can."
+                        "Itu benar benar benar, kamu bisa."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay then, pleasure to meet booth of you.",
-                        "id tba: Have a great day."
+                        "Baiklah kalau begitu, senang bertemu kalian berdua.",
+                        "Semoga harimu menyenangkan!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "id tba: *Yess yess yess.. Have a great day too."
+                        "// Ya ya ya. Semoga harimu menyenangkan juga! //"
                     ]
                 }
             ]
@@ -1815,46 +1870,55 @@
         ],
         "intro_id":
         [
-            "sc-06 intro id tba 1"
+            "Saat Pomoro meninggalkan daerah itu, dia melihat batu-batu besar di sepanjang tanjakan kecil beberapa ratus meter di depan.",
+            "Di dekat kelompok batu pertama, Pomoro melihat anak-anak lobak."
         ],
         "emotions_en":
         [
             {
                 "text": "Sorrow",
-                "score": 25
+                "score": 25,
+                "info": "Experiencing profound and long-lasting sadness that permeates various aspects of life. This level of sadness can be associated with prolonged grief, significant trauma, or  emotional pain. It may affect one's ability to function and require support to address and manage."
             },
             {
                 "text": "Mild remorse",
-                "score": 50
+                "score": 50,
+                "info": "Feeling a slight sense of guilt or regret in response to a minor wrongdoing or a perceived violation of personal values. This level of guilt is relatively low intensity and may involve a sense of unease, self-reflection, or the recognition of a minor mistake."
             },
             {
                 "text": "Disappointment",
-                "score": 75
+                "score": 75,
+                "info": "Feeling let down or dissatisfied due to unmet expectations or unfavorable outcomes. This level of sadness is typically milder and temporary, often related to specific events or circumstances."
             },
             {
                 "text": "Moderate culpability",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a more pronounced level of guilt, often accompanied by a stronger sense of responsibility for a perceived wrongdoing. This level of guilt involves a deeper  response, such as feelings of remorse, shame, or self-blame, and may motivate efforts to make amends or seek forgiveness."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Duka",
+                "score": 25,
+                "info": "Mengalami kesedihan yang mendalam dan bertahan lama yang menembus berbagai aspek kehidupan. Tingkat kesedihan ini dapat dikaitkan dengan kesedihan yang berkepanjangan, trauma yang signifikan, atau rasa sakit emosional. Ini dapat memengaruhi kemampuan seseorang untuk berfungsi dan membutuhkan dukungan untuk mengatasi dan mengelolanya."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Penyesalan ringan",
+                "score": 50,
+                "info": "Merasakan sedikit rasa bersalah atau penyesalan sebagai tanggapan atas kesalahan kecil atau pelanggaran nilai-nilai pribadi yang dirasakan. Tingkat rasa bersalah ini relatif rendah dan mungkin melibatkan rasa tidak nyaman, refleksi diri, atau pengakuan kesalahan kecil ."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kekecewaan",
+                "score": 75,
+                "info": "Merasa kecewa atau tidak puas karena harapan yang tidak terpenuhi atau hasil yang tidak diinginkan. Tingkat kesedihan ini biasanya lebih ringan dan sementara, seringkali terkait dengan kejadian atau keadaan tertentu."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kesalahan sedang",
+                "score": 100,
+                "info": "Mengalami tingkat rasa bersalah yang lebih jelas, seringkali disertai dengan rasa tanggung jawab yang lebih kuat atas kesalahan yang dirasakan. Tingkat rasa bersalah ini melibatkan respons yang lebih dalam, seperti perasaan menyesal, malu, atau menyalahkan diri sendiri, dan dapat memotivasi upaya untuk membuat memperbaiki atau meminta pengampunan."
+            }
         ],
 
 
@@ -2010,11 +2074,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Panggil mereka bertiga dari jauh",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Datanglah ke mereka untuk bertanya lebih lanjut",
                 "score": 100
             }
         ],
@@ -2025,64 +2089,65 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, are they the people who Rapa is looking for??",
-                        "id tba: Hey, are you Mupa, Mupo, or Mupi?!"
+                        "*Panggil mereka bertiga dari jauh*",
+                        "Tunggu, apakah mereka yang dicari Rapa?",
+                        "Hei, apakah kamu Mupa, Mupo, atau Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                        "Oh tidak, tidak, tidak! Seharusnya aku tidak menyuruh mereka naik ke sana, haaa..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, what's going on?"
+                        "Hey apa yang terjadi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Mupa is very very soryy...."
+                        "Mupa sangat sangat menyesal"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Where Mupo & Mupi?"
+                        "Di mana Mupi & Mupo?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: They are up there on the boulder."
+                        "Mereka ada di sana di atas batu besar."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                        "Oke, kamu kembali ke Rapa. Aku akan memeriksa keduanya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: I'm so sorry, thank you"
+                        "Maafkan aku, terima kasih"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                        "*Pomoro melangkah ke batu lain sambil mendekati Mupo & Mupi.*"
                     ]
                 }
             ],
@@ -2091,63 +2156,64 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                        "*Datanglah ke mereka untuk bertanya lebih lanjut*",
+                        "Halo, saya Pomoro. Apakah Anda mengenal Rapa? Saya pikir Anda mengenal Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                        "Hah. Seharusnya aku tidak melakukan itu. Oh hai, aku Mupa."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: What happen?"
+                        "Apa yang telah terjadi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                        "Seharusnya aku tidak menyuruh mereka mengejar tempat yang lebih tinggi. Dan sekarang mereka ada di atas batu."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                        "Jadi, mereka Mupo & Mupi, di atas batu yang lain?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Yeaahh... We shouldn't play that far actually."
+                        "Ya, kita seharusnya tidak bermain sejauh itu sebenarnya."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                        "Oke oke, santai. Aku akan pergi ke mereka berdua. Kamu bisa kembali ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: So sorry.. Thank you Pomoro..."
+                        "Maaf. Terima kasih Pomoro."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                        "*Pomoro melangkah ke batu lain sambil mendekati Mupi dan Mupo.*"
                     ]
                 }
             ]
@@ -2164,46 +2230,54 @@
         ],
         "intro_id":
         [
-            "sc-07 intro id tba 1"
+            "Pomoro mendaki batu demi batu untuk mencapai Mupi dan akhirnya berdiri di atas batu yang sama dengan Mupi."
         ],
         "emotions_en":
         [
             {
                 "text": "Paralyzing remorse",
-                "score": 25
+                "score": 25,
+                "info": "Experiencing an extreme and debilitating level of guilt that significantly impacts one's emotional well-being and daily functioning. This level of guilt is associated with intense and persistent self-blame, overwhelming shame, or a profound sense of unworthiness. It may lead to a loss of self-esteem, withdrawal from social interactions."
             },
             {
                 "text": "Terror",
-                "score": 50
+                "score": 50,
+                "info": "Experiencing an extreme and paralyzing level of fear that overwhelms the individual's ability to think or act rationally. This level of fear is associated with an imminent or perceived life-threatening situation and can be accompanied by a complete loss of control or a sense of extreme danger. It often triggers a fight-or-flight response."
             },
             {
                 "text": "Anxiety",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing heightened apprehension, restlessness, or worry about potential future events or uncertain outcomes. This level of fear can be persistent and may affect daily functioning, leading to feelings of nervousness or uneasiness."
             },
             {
                 "text": "Panic",
-                "score": 100
+                "score": 100,
+                "info": "Encountering an intense and overwhelming fear response characterized by a sudden onset of extreme distress. This level of fear is often accompanied by physical symptoms such as rapid heartbeat, shortness of breath, or a sense of impending doom. Panic can impair judgment and may require immediate attention and intervention."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Penyesalan yang melumpuhkan",
+                "score": 25,
+                "info": "Mengalami tingkat rasa bersalah yang ekstrem dan melemahkan yang secara signifikan memengaruhi kesejahteraan emosional dan fungsi sehari-hari seseorang. Tingkat rasa bersalah ini dikaitkan dengan menyalahkan diri sendiri yang intens dan terus-menerus, rasa malu yang berlebihan, atau rasa tidak berharga yang mendalam. Ini dapat menyebabkan hilangnya harga diri, penarikan diri dari interaksi sosial."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Teror",
+                "score": 50,
+                "info": "Mengalami tingkat ketakutan yang ekstrim dan melumpuhkan yang menguasai kemampuan individu untuk berpikir atau bertindak secara rasional. Tingkat ketakutan ini dikaitkan dengan situasi yang mengancam jiwa yang akan segera terjadi atau dirasakan dan dapat disertai dengan kehilangan kendali sepenuhnya atau rasa bahaya yang ekstrim. Ini sering memicu respons melawan-atau-lari."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kecemasan",
+                "score": 75,
+                "info": "Mengalami ketakutan yang meningkat, kegelisahan, atau kekhawatiran tentang potensi kejadian di masa depan atau hasil yang tidak pasti. Tingkat ketakutan ini bisa terus-menerus dan dapat memengaruhi fungsi sehari-hari, menyebabkan perasaan gugup atau tidak nyaman."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Panik",
+                "score": 100,
+                "info": "Menghadapi respons ketakutan yang intens dan luar biasa yang ditandai dengan serangan tiba-tiba dari tekanan ekstrem. Tingkat ketakutan ini sering kali disertai dengan gejala fisik seperti detak jantung yang cepat, sesak napas, atau perasaan akan datangnya malapetaka. Kepanikan dapat merusak penilaian dan mungkin memerlukan perhatian dan intervensi segera."
+            }
         ],
 
 
@@ -2330,11 +2404,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Dekati dia dan suruh dia turun dari batu yang cukup tinggi",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Dekati dia dengan lembut dan bujuk dia untuk berhati-hati dan turun",
                 "score": 100
             }
         ],
@@ -2345,49 +2419,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey!! Get down, it's dangerous there."
+                        "*Dekati dia dan suruh dia turun dari batu besar*",
+                        "Hei! Turun, berbahaya di atas sana!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                        "Huaaa, Mupo tidak mau turun. Mupo tidak bisa turun, Mupi terlalu takut!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                        "Oke oke. Gak usah lihat ke bawah, Mupo.. Tunggu, kamu Mupi atau Mupo?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                        "Ooo, oke. Saya Mupi. Tapi Mupo masih di atas sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                        "Jadi sekarang kita akan turun dari bongkahan batu ini, oke? Dan pergi ke Rapa setelah kita mendarat."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Sss, sss.. Suree..."
+                        "Tte, ttt.. tentuu..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                        "*Bimbing Mupi turun lalu kembali menghampiri Mupo.*"
                     ]
                 }
             ],
@@ -2396,49 +2471,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                        "*Dengan lembut dekati dia dan bujuk dia untuk berhati-hati dan turun*",
+                        "Hei, hei. Apakah kamu Mupo atau Mupi. Kata Mupa kita harus turun. Rapa juga mencarimu."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                        "Huaaa, Mupo tidak mau turun. Mupi tidak bisa turun, terlalu tinggi, terlalu takut.."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                        "Oke oke. Nggak usah lihat ke bawah, Mupi. Jadi kamu Mupi? Betul?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                        "Ooo, ookayy.. Ya, aku Mupi. Tapi Mupo masih di atas sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Yy.. Yess, sss.. Suree..."
+                        "Tte, ttt.. tentuu..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                        "*Membantu Mupi turun lalu kembali membantu Mupo.*"
                     ]
                 }
             ]
@@ -2456,46 +2532,55 @@
         ],
         "intro_id":
         [
-            "sc-08 intro id tba 1"
+            "Setelah Mupi berhasil turun, Pomoro terus mendaki bongkahan batu tertinggi, akhirnya sampai di Mupo.",
+            "Mupo berdiri dengan bangga dengan percaya diri di mana dia terlihat begitu bermartabat di permukaan batu yang tidak rapi."
         ],
         "emotions_en":
         [
             {
                 "text": "Legacy",
-                "score": 25
+                "score": 25,
+                "info": "Encountering a profound and lasting sense of pride derived from making a meaningful impact or leaving a positive mark on the world. This level of pride is associated with significant contributions, acts of service, or accomplishments that have a lasting influence beyond one's immediate sphere. It reflects a sense of purpose, contribution, and a desire to create a lasting legacy"
             },
             {
                 "text": "Validation",
-                "score": 50
+                "score": 50,
+                "info": "Experiencing a deeper level of pride that arises from the affirmation of one's identity, values, or beliefs. This level of pride reflects a sense of self-acceptance and authenticity, often linked to personal growth, embracing one's uniqueness, or standing up for what one believes in."
             },
             {
                 "text": "Accomplishment",
-                "score": 75
+                "score": 75,
+                "info": "Feeling a sense of pride and satisfaction in achieving a personal goal, completing a task, or overcoming a challenge. This level of pride is associated with a specific accomplishment and reflects a sense of fulfillment and self-worth."
             },
             {
                 "text": "Recognition",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing pride in being acknowledged or recognized for one's achievements or contributions. This level of pride involves external validation, such as receiving awards, accolades, or praise from others, and it reinforces a sense of accomplishment and value."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Mewariskan",
+                "score": 25,
+                "info": "Menghadapi rasa bangga yang mendalam dan bertahan lama yang berasal dari membuat dampak yang berarti atau meninggalkan jejak positif di dunia. Tingkat kebanggaan ini diasosiasikan dengan kontribusi yang signifikan, tindakan pelayanan, atau pencapaian yang memiliki pengaruh abadi di luar jangkauan langsung seseorang. Itu mencerminkan rasa tujuan, kontribusi, dan keinginan untuk menciptakan warisan abadi"
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Validasi",
+                "score": 50,
+                "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Prestasi",
+                "score": 75,
+                "info": "Merasakan rasa bangga dan puas dalam mencapai tujuan pribadi, menyelesaikan tugas, atau mengatasi tantangan. Tingkat kebanggaan ini dikaitkan dengan pencapaian tertentu dan mencerminkan rasa pemenuhan dan harga diri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Pengakuan",
+                "score": 100,
+                "info": "Mengalami kebanggaan karena diakui atau diakui atas pencapaian atau kontribusi seseorang. Tingkat kebanggaan ini melibatkan validasi eksternal, seperti menerima penghargaan, pujian, atau pujian dari orang lain, dan ini memperkuat rasa pencapaian dan nilai."
+            }
         ],
 
 
@@ -2610,11 +2695,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Beri tahu Mupi untuk berhati-hati dan peringatkan dia tentang bahayanya",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Bicaralah dengan Mupi dan perintahkan dia untuk turun",
                 "score": 100
             }
         ],
@@ -2625,43 +2710,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                        "*Bicaralah dengan Mupo dan perintahkan dia untuk turun*",
+                        "Mupo, bisakah kamu turun, sangat berbahaya disini! Kamu harus benar-benar berhati-hati."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo..."
+                        "Mupo ada di puncak dunia! Tidak ada yang bisa menghentikan Mupooo!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, you are on high place, would you please get down now?"
+                        "Mupo, kamu berada di atas batu yang tinggi dan licin, bisakah kamu turun sekarang?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                        "Aku di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa and Mupo waiting you come to Rapa."
+                        "Mupa dan Mupi menunggumu datang ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
-                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                        "Uhhh Rapa? Yess protecta family bolak-balik.",
+                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
                     ]
                 }
             ],
@@ -2670,43 +2756,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                        "*Katakan pada Mupo untuk berhati-hati dan peringatkan dia akan bahaya berdiri di atas batu besar itu.*",
+                        "Mupo, hati-hati di sana, berbahaya. Kamu berdiri di atas batu besar yang ceroboh."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                        "Mupo ada di puncak dunia, tidak ada yang bisa menghentikan Mupooo!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, you are on high place, would you please get down now?"
+                        "Mupo, bisakah kamu turun sekarang?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                        "Aku di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa and Mupi waiting you come to Rapa."
+                        "Mupa dan Mupi menunggumu datang ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
-                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                        "Uhhh Rapa? Ya bolak-balik lindungi keluarga.",
+                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
                     ]
                 }
             ]
@@ -2727,8 +2814,11 @@
         ],
         "intro_id":
         [
-            "sc-09 intro id tba 1",
-            "sc-09 intro id tba 2"
+            "Setelah beberapa waktu, Pomoro melanjutkan perjalanannya, dan melanjutkan petualangannya.",
+            "Beberapa mil setelah meninggalkan batu besar di sepanjang jalan setapak, Pomoro melihat sebuah desa besar yang dikelilingi oleh sungai, padang rumput hijau, dan tembok yang kokoh.",
+            "Beberapa mil setelah meninggalkan batu besar di sepanjang jalan setapak, Pomoro melihat sebuah desa besar yang dikelilingi oleh sungai, padang rumput hijau, dan tembok yang kokoh.",
+            "Setelah itu, Pomoro berdiri di bawah gerbang desa. Dia menyadari bahwa perjalanannya memberinya begitu banyak pengalaman dan memungkinkan dia untuk bertemu dengan banyak orang berbeda dalam situasi unik yang berbeda.",
+            "Sejak saat itu, Pomoro terus mempelajari banyak hal sepanjang perjalanannya, didorong oleh rasa ingin tahu dan keberanian."
         ],
         "emotions_en": [],
         "emotions_id": [],
