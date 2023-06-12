@@ -1078,46 +1078,57 @@
         ],
         "intro_id":
         [
-            "sc-04 intro id tba 1"
+            "Pomoro memulai perjalanannya lagi. Dia berhasil melewati hutan, melewati berbagai rintangan.",
+            "Ketika Pomoro hampir mencapai tepi hutan, dia mendengar sesuatu. Dia mendengar gemuruh, tapi itu bukan suara binatang buas, bukan pula guntur.",
+            "Pomoro sepertinya tidak yakin tapi penasaran untuk menyelidiki sumber suara itu.",
+            "Suara itu mulai semakin dekat, dan yang mengejutkan, Pomoro melihat seorang Prajurit Lobak."
         ],
         "emotions_en":
         [
             {
                 "text": "Rage",
-                "score": 25
+                "score": 25,
+                "info": "Encountering an intense and uncontrollable anger that can lead to a loss of self-control. This level of anger is characterized by an explosive emotional outburst, accompanied by a heightened physical and psychological arousal. Rage can result in aggressive or destructive behavior."
             },
             {
                 "text": "Irritation",
-                "score": 50
+                "score": 50,
+                "info": "Feeling a mild annoyance or frustration in response to a minor inconvenience or disruption. This level of anger is relatively low intensity and may arise from everyday irritants or inconveniences."
             },
             {
                 "text": "Hostility",
-                "score": 75
+                "score": 75,
+                "info": "Exhibiting a strong antagonistic attitude or aggressive behavior towards someone or something. This level of animosity entails a more overt and confrontational stance, with a significant intent to harm, obstruct, or undermine the target."
             },
             {
                 "text": "Anger",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a more pronounced emotional state of displeasure, often triggered by perceived injustices, conflicts, or violations of personal boundaries. This level of anger involves a stronger emotional response, including feelings of resentment, indignation, or frustration."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Kemarahan",
+                "score": 25,
+                "info": "Menghadapi kemarahan yang intens dan tak terkendali yang dapat menyebabkan hilangnya kendali diri. Tingkat kemarahan ini ditandai dengan ledakan emosi yang meledak-ledak, disertai dengan peningkatan gairah fisik dan psikologis. Kemarahan dapat mengakibatkan perilaku agresif atau destruktif."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Kejengkelan",
+                "score": 50,
+                "info": "Merasakan gangguan atau frustrasi ringan sebagai tanggapan atas ketidaknyamanan atau gangguan kecil. Tingkat kemarahan ini relatif rendah intensitasnya dan dapat timbul dari iritasi atau ketidaknyamanan sehari-hari."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Permusuhan",
+                "score": 75,
+                "info": "Menunjukkan sikap antagonis yang kuat atau perilaku agresif terhadap seseorang atau sesuatu. Tingkat permusuhan ini memerlukan sikap yang lebih terbuka dan konfrontatif, dengan maksud yang signifikan untuk menyakiti, menghalangi, atau merusak target."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kemarahan",
+                "score": 100,
+                "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi."
+            } 
         ],
 
 
@@ -1128,7 +1139,7 @@
                 "score": 50
             },
             {
-                "text": "Feel surprised seeing him on the high incline, decides to approach ",
+                "text": "Feel surprised seeing him on the high incline, decides to approach",
                 "score": 75
             },
             {
@@ -1275,15 +1286,15 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Tidak yakin apakah harus takut atau tidak, mungkin itu bukan ide terbaik untuk didekati",
                 "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekat",
                 "score": 75
             },
             {
-                "text": "response id C tba",
+                "text": "Merasa prihatin dan ingin menawarkan bantuan kepadanya",
                 "score": 100
             }
         ],
@@ -1294,15 +1305,15 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro leave immediatly",
-                        "id tba: *Not sure whether afraid or seems not good to approach"
+                        "*Tidak yakin apakah harus takut atau tidak, sebagian berpikir bahwa itu mungkin bukan ide terbaik untuk didekati*",
+                        "*Pomoro pergi dengan segera*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: *Rapa notice a glimpse of presence"
+                        ""
                     ]
                 }
             ],
@@ -1311,53 +1322,53 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Surprised looking through on high incline & approach Warrior of Turnip",
-                        "id tba: Waww, what are you doing at this ground and seems troubled."
+                        "*Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati pendekar lobak.*",
+                        "Wow, apa yang kamu lakukan di sini? Anda tampak bermasalah?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Rapa's madd.. Angryy... I was looking for Mupa, Mupo and Mupi.."
+                        "Gila Kesal. Marah! Saya mencari Mupa, Mupo dan Mupi."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Emm, Mu Ma Mo.. what?!"
+                        "Emm, Mu Ma Mo.. haa?!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Hahh!! no time to explain.. They looks like me",
-                        "id tba: If you meet 'em tell 'em to go here"
+                        "Hah! Tidak ada waktu untuk menjelaskan. Mereka terlihat seperti saya",
+                        "Jika Anda bertemu mereka, suruh mereka pergi ke sini"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, wait, wait.. I had to go to Prospevil."
+                        "Tunggu! Saya harus pergi ke Prospevil."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Yes, good! So you go to the West, that's is direction to Prospevil.",
-                        "id tba: And I go to the East.",
-                        "id tba: *Rapa rush to the East"
+                        "Ya baik! Jadi Anda bisa melanjutkan ke barat, yaitu arah ke Prospevil.",
+                        "Dan saya menuju ke Timur.",
+                        "*Rapa buru-buru ke Timur*"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro startled & bweildered"
+                        "* Pomodoro kaget dan bingung"
                     ]
                 }
             ],
@@ -1366,56 +1377,57 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *On high incline approach, gave concern & offer a help",
-                        "id tba: You seems troubled, may I help?"
+                        "*Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan*",
+                        "Anda tampak bermasalah. Bisakah saya bantu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Argghh.. Mupa, Mupo and Mupi where are they?!?!?!"
+                        "Argghh.. Mupa, Mupo dan Mupi dimana mereka!?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa, Mupo and Mupi?"
+                        "Mupa, Mupo and Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Herrghh, all of my brothers, I can't find 'em",
-                        "id tba: I'm lookin for 'em, but where are they now.",
-                        "id tba: Aghh, I'll be glad if you meet 'em and tell to go back here"
+                        "Herrghh, semua saudaraku, aku tidak bisa menemukan mereka",
+                        "Aku mencari mereka, tapi dimana mereka sekarang?",
+                        "Aghh, Jika Anda kebetulan menemukan mereka, saya akan senang jika Anda dapat memberitahu mereka untuk kembali ke sini"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, wait, wait.. I had to go to Prospevil.",
-                        "id tba: But if I meet them along my journey."
+                        "Tunggu! Aku harus pergi ke Prospevil.",
+                        "Tapi saya akan memberi tahu mereka jika saya bertemu mereka di sepanjang perjalanan saya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "id tba: Oh, so you want to go to Prospevil.",
-                        "id tba: You can go to the West.",
-                        "id tba: And I can go to the East.",
-                        "id tba: Tell 'em I'm lookin for 'em if you meet 'em."
+                        "Oh, jadi kamu ingin pergi ke Prospevil.",
+                        "Anda bisa pergi ke Barat.",
+                        "Dan saya bisa pergi ke Timur.",
+                        "Katakan pada mereka, aku mencari mereka jika kamu bertemu mereka."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Sure thing, I'll let them know...."
+                        "Tentu saja, saya akan memberi tahu mereka ....",
+                        "*Rapa dan Pomoro pergi ke arah yang berbeda.*"
                     ]
                 }
             ]
