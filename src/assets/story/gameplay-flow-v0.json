@@ -1870,46 +1870,55 @@
         ],
         "intro_id":
         [
-            "sc-06 intro id tba 1"
+            "Saat Pomoro meninggalkan daerah itu, dia melihat batu-batu besar di sepanjang tanjakan kecil beberapa ratus meter di depan.",
+            "Di dekat kelompok batu pertama, Pomoro melihat anak-anak lobak."
         ],
         "emotions_en":
         [
             {
                 "text": "Sorrow",
-                "score": 25
+                "score": 25,
+                "info": "Experiencing profound and long-lasting sadness that permeates various aspects of life. This level of sadness can be associated with prolonged grief, significant trauma, or  emotional pain. It may affect one's ability to function and require support to address and manage."
             },
             {
                 "text": "Mild remorse",
-                "score": 50
+                "score": 50,
+                "info": "Feeling a slight sense of guilt or regret in response to a minor wrongdoing or a perceived violation of personal values. This level of guilt is relatively low intensity and may involve a sense of unease, self-reflection, or the recognition of a minor mistake."
             },
             {
                 "text": "Disappointment",
-                "score": 75
+                "score": 75,
+                "info": "Feeling let down or dissatisfied due to unmet expectations or unfavorable outcomes. This level of sadness is typically milder and temporary, often related to specific events or circumstances."
             },
             {
                 "text": "Moderate culpability",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a more pronounced level of guilt, often accompanied by a stronger sense of responsibility for a perceived wrongdoing. This level of guilt involves a deeper  response, such as feelings of remorse, shame, or self-blame, and may motivate efforts to make amends or seek forgiveness."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Duka",
+                "score": 25,
+                "info": "Mengalami kesedihan yang mendalam dan bertahan lama yang menembus berbagai aspek kehidupan. Tingkat kesedihan ini dapat dikaitkan dengan kesedihan yang berkepanjangan, trauma yang signifikan, atau rasa sakit emosional. Ini dapat memengaruhi kemampuan seseorang untuk berfungsi dan membutuhkan dukungan untuk mengatasi dan mengelolanya."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Penyesalan ringan",
+                "score": 50,
+                "info": "Merasakan sedikit rasa bersalah atau penyesalan sebagai tanggapan atas kesalahan kecil atau pelanggaran nilai-nilai pribadi yang dirasakan. Tingkat rasa bersalah ini relatif rendah dan mungkin melibatkan rasa tidak nyaman, refleksi diri, atau pengakuan kesalahan kecil ."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kekecewaan",
+                "score": 75,
+                "info": "Merasa kecewa atau tidak puas karena harapan yang tidak terpenuhi atau hasil yang tidak diinginkan. Tingkat kesedihan ini biasanya lebih ringan dan sementara, seringkali terkait dengan kejadian atau keadaan tertentu."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kesalahan sedang",
+                "score": 100,
+                "info": "Mengalami tingkat rasa bersalah yang lebih jelas, seringkali disertai dengan rasa tanggung jawab yang lebih kuat atas kesalahan yang dirasakan. Tingkat rasa bersalah ini melibatkan respons yang lebih dalam, seperti perasaan menyesal, malu, atau menyalahkan diri sendiri, dan dapat memotivasi upaya untuk membuat memperbaiki atau meminta pengampunan."
+            }
         ],
 
 
@@ -2065,11 +2074,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Panggil mereka bertiga dari jauh",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Datanglah ke mereka untuk bertanya lebih lanjut",
                 "score": 100
             }
         ],
@@ -2080,64 +2089,65 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, are they the people who Rapa is looking for??",
-                        "id tba: Hey, are you Mupa, Mupo, or Mupi?!"
+                        "*Panggil mereka bertiga dari jauh*",
+                        "Tunggu, apakah mereka yang dicari Rapa?",
+                        "Hei, apakah kamu Mupa, Mupo, atau Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Ohh no no no no no.. I shouldn't tell them to go up theree, hmmmffhhh......"
+                        "Oh tidak, tidak, tidak! Seharusnya aku tidak menyuruh mereka naik ke sana, haaa..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, what's going on?"
+                        "Hey apa yang terjadi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Mupa is very very soryy...."
+                        "Mupa sangat sangat menyesal"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Where Mupo & Mupi?"
+                        "Di mana Mupi & Mupo?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: They are up there on the boulder."
+                        "Mereka ada di sana di atas batu besar."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wooo.. Okay, you just head back to Rapa. I'll check those two.?"
+                        "Oke, kamu kembali ke Rapa. Aku akan memeriksa keduanya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: I'm so sorry, thank you"
+                        "Maafkan aku, terima kasih"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                        "*Pomoro melangkah ke batu lain sambil mendekati Mupo & Mupi.*"
                     ]
                 }
             ],
@@ -2146,63 +2156,64 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello, I'm Pomoro. Do you know Rapa? I was thinking that you know Rapa."
+                        "*Datanglah ke mereka untuk bertanya lebih lanjut*",
+                        "Halo, saya Pomoro. Apakah Anda mengenal Rapa? Saya pikir Anda mengenal Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Hmmhfhh.. I shouldn't done this... Hi, I'm Mupa."
+                        "Hah. Seharusnya aku tidak melakukan itu. Oh hai, aku Mupa."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: What happen?"
+                        "Apa yang telah terjadi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: I shouldn't tell 'em to chase a higher place and they are goes up there on the boulder."
+                        "Seharusnya aku tidak menyuruh mereka mengejar tempat yang lebih tinggi. Dan sekarang mereka ada di atas batu."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So.. Those are Mupo & Mupi, on the top of the another boulder?"
+                        "Jadi, mereka Mupo & Mupi, di atas batu yang lain?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: Yeaahh... We shouldn't play that far actually."
+                        "Ya, kita seharusnya tidak bermain sejauh itu sebenarnya."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay, relax.. I'll head to those two. You just head back to Rapa"
+                        "Oke oke, santai. Aku akan pergi ke mereka berdua. Kamu bisa kembali ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "id tba: So sorry.. Thank you Pomoro..."
+                        "Maaf. Terima kasih Pomoro."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro steps up to another boulder approacing Mupo & Mupi."
+                        "*Pomoro melangkah ke batu lain sambil mendekati Mupi dan Mupo.*"
                     ]
                 }
             ]
