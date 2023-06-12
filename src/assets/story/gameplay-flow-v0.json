@@ -35,8 +35,8 @@
         ],
         "intro_id":
         [
-            "sc-00 intro id tba 1",
-            "sc-00 intro id tba 2"
+            "Alkisah, di sebuah kerajaan yang jauh, ada seorang petualang muda bernama Pomoro yang dikenal haus akan petualangan. Ia memulai perjalanannya ke Prospevil, sebuah desa makmur di Kerajaan Vefurata.",
+            "Pomoro memulai perjalanannya, merasa bersemangat untuk memulai petualangan baru ini. Ke hutan Vefurata."
         ],
         "emotions_en": [],
         "emotions_id": [],
@@ -56,45 +56,53 @@
         ],
         "intro_id":
         [
-            "sc-01 intro id tba 1"
+            "Saat berjalan melewati hutan, Pomoro melihat humanoid jamur di depan rumah."
         ],
         "emotions_en":
         [
             {
                 "text": "Unease",
-                "score": 25
+                "score": 25,
+                "info": "Feeling a mild sense of discomfort or concern in response to a perceived threat or potential danger. This level of fear is often fleeting and may arise from unfamiliar situations or minor worries."
             },
             {
                 "text": "Pronounced Introversion",
-                "score": 50
+                "score": 50,
+                "info": "Encountering a significant inclination towards introversion, where social interactions can be challenging and draining. This level of shyness is characterized by a preference  solitude or small groups, a need for ample personal space, and a heightened sensitivity to external stimulation."
             },
             {
                 "text": "Moderate Timidity",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing a noticeable level of shyness that can impact interactions and self-expression. This level of shyness involves a greater tendency to avoid attention or seek solitude, and may involve feelings of self-doubt, nervousness, or difficulty initiating conversations or asserting oneself."
             },
             {
                 "text": "Mild Self Consciousness",
-                "score": 100
+                "score": 100,
+                "info": "Feeling a slight discomfort or unease in social situations, particularly when meeting new people or being the center of attention. This level of shyness is relatively low intensity and may manifest as hesitation, blushing, or a preference for observing rather than actively participating."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Gelisah",
+                "score": 25,
+                "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Diucapkan Introversi",
+                "score": 50,
+                "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Ketakutan Sedang",
+                "score": 75,
+                "info": "Mengalami tingkat rasa malu yang nyata yang dapat memengaruhi interaksi dan ekspresi diri. Tingkat rasa malu ini melibatkan kecenderungan yang lebih besar untuk menghindari perhatian atau mencari kesendirian, dan mungkin melibatkan perasaan ragu-ragu, gugup, atau kesulitan memulai percakapan atau menegaskan diri sendiri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
+                "text": "Kesadaran Diri Ringan",
+                "score": 100,
+                "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif."
             }    
         ],
 
@@ -387,7 +395,8 @@
         ],
         "intro_id":
         [
-            "sc-02 intro id tba 1"
+            "Saat menjelajah jauh ke dalam hutan Vefurata, Pomoro menemukan rumah wortel di tebing. Dia tampak penasaran dan masuk ke dalam rumah wortel.",
+            "Begitu Pomoro tiba di sana, dia melihat humanoid wortel."
         ],
         "emotions_en":
         [
@@ -412,7 +421,7 @@
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
+                "text": "Kebahagiaan",
                 "score": 25
             },
             {
