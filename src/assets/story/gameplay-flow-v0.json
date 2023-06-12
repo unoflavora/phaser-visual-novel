@@ -2230,46 +2230,54 @@
         ],
         "intro_id":
         [
-            "sc-07 intro id tba 1"
+            "Pomoro mendaki batu demi batu untuk mencapai Mupi dan akhirnya berdiri di atas batu yang sama dengan Mupi."
         ],
         "emotions_en":
         [
             {
                 "text": "Paralyzing remorse",
-                "score": 25
+                "score": 25,
+                "info": "Experiencing an extreme and debilitating level of guilt that significantly impacts one's emotional well-being and daily functioning. This level of guilt is associated with intense and persistent self-blame, overwhelming shame, or a profound sense of unworthiness. It may lead to a loss of self-esteem, withdrawal from social interactions."
             },
             {
                 "text": "Terror",
-                "score": 50
+                "score": 50,
+                "info": "Experiencing an extreme and paralyzing level of fear that overwhelms the individual's ability to think or act rationally. This level of fear is associated with an imminent or perceived life-threatening situation and can be accompanied by a complete loss of control or a sense of extreme danger. It often triggers a fight-or-flight response."
             },
             {
                 "text": "Anxiety",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing heightened apprehension, restlessness, or worry about potential future events or uncertain outcomes. This level of fear can be persistent and may affect daily functioning, leading to feelings of nervousness or uneasiness."
             },
             {
                 "text": "Panic",
-                "score": 100
+                "score": 100,
+                "info": "Encountering an intense and overwhelming fear response characterized by a sudden onset of extreme distress. This level of fear is often accompanied by physical symptoms such as rapid heartbeat, shortness of breath, or a sense of impending doom. Panic can impair judgment and may require immediate attention and intervention."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Penyesalan yang melumpuhkan",
+                "score": 25,
+                "info": "Mengalami tingkat rasa bersalah yang ekstrem dan melemahkan yang secara signifikan memengaruhi kesejahteraan emosional dan fungsi sehari-hari seseorang. Tingkat rasa bersalah ini dikaitkan dengan menyalahkan diri sendiri yang intens dan terus-menerus, rasa malu yang berlebihan, atau rasa tidak berharga yang mendalam. Ini dapat menyebabkan hilangnya harga diri, penarikan diri dari interaksi sosial."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Teror",
+                "score": 50,
+                "info": "Mengalami tingkat ketakutan yang ekstrim dan melumpuhkan yang menguasai kemampuan individu untuk berpikir atau bertindak secara rasional. Tingkat ketakutan ini dikaitkan dengan situasi yang mengancam jiwa yang akan segera terjadi atau dirasakan dan dapat disertai dengan kehilangan kendali sepenuhnya atau rasa bahaya yang ekstrim. Ini sering memicu respons melawan-atau-lari."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kecemasan",
+                "score": 75,
+                "info": "Mengalami ketakutan yang meningkat, kegelisahan, atau kekhawatiran tentang potensi kejadian di masa depan atau hasil yang tidak pasti. Tingkat ketakutan ini bisa terus-menerus dan dapat memengaruhi fungsi sehari-hari, menyebabkan perasaan gugup atau tidak nyaman."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Panik",
+                "score": 100,
+                "info": "Menghadapi respons ketakutan yang intens dan luar biasa yang ditandai dengan serangan tiba-tiba dari tekanan ekstrem. Tingkat ketakutan ini sering kali disertai dengan gejala fisik seperti detak jantung yang cepat, sesak napas, atau perasaan akan datangnya malapetaka. Kepanikan dapat merusak penilaian dan mungkin memerlukan perhatian dan intervensi segera."
+            }
         ],
 
 
@@ -2396,11 +2404,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Dekati dia dan suruh dia turun dari batu yang cukup tinggi",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Dekati dia dengan lembut dan bujuk dia untuk berhati-hati dan turun",
                 "score": 100
             }
         ],
@@ -2411,49 +2419,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey!! Get down, it's dangerous there."
+                        "*Dekati dia dan suruh dia turun dari batu besar*",
+                        "Hei! Turun, berbahaya di atas sana!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too afraid."
+                        "Huaaa, Mupo tidak mau turun. Mupo tidak bisa turun, Mupi terlalu takut!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay.. you don't have to look down, Mupo.. Wait, are you Mupi or Mupo?"
+                        "Oke oke. Gak usah lihat ke bawah, Mupo.. Tunggu, kamu Mupi atau Mupo?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Ooo, ookayy.. I'm Mupi.. But Mupo still up there."
+                        "Ooo, oke. Saya Mupi. Tapi Mupo masih di atas sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                        "Jadi sekarang kita akan turun dari bongkahan batu ini, oke? Dan pergi ke Rapa setelah kita mendarat."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Sss, sss.. Suree..."
+                        "Tte, ttt.. tentuu..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                        "*Bimbing Mupi turun lalu kembali menghampiri Mupo.*"
                     ]
                 }
             ],
@@ -2462,49 +2471,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, hey. Are you Mupo or Mupi. Mupa said we need to get down. Rapa looking for you too."
+                        "*Dengan lembut dekati dia dan bujuk dia untuk berhati-hati dan turun*",
+                        "Hei, hei. Apakah kamu Mupo atau Mupi. Kata Mupa kita harus turun. Rapa juga mencarimu."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Huaaa, Mupo wont get downn. Mupi can't go down, too high, too afraid."
+                        "Huaaa, Mupo tidak mau turun. Mupi tidak bisa turun, terlalu tinggi, terlalu takut.."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay okay.. you don't have to look down.. So you're Mupi? Is that correct?"
+                        "Oke oke. Nggak usah lihat ke bawah, Mupi. Jadi kamu Mupi? Betul?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Ooo, ookayy.. Yes, I'm Mupi.. But Mupo still up there."
+                        "Ooo, ookayy.. Ya, aku Mupi. Tapi Mupo masih di atas sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "id tba: Yy.. Yess, sss.. Suree..."
+                        "Tte, ttt.. tentuu..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Guided Mupi get down then go back to come over Mupo."
+                        "*Membantu Mupi turun lalu kembali membantu Mupo.*"
                     ]
                 }
             ]
