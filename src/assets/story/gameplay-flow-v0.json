@@ -401,19 +401,23 @@
         [
             {
                 "text": "Bliss",
-                "score": 25
+                "score": 25,
+                "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of ecstasy and serenity."
             },
             {
                 "text": "Fulfillment",
-                "score": 50
+                "score": 50,
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
             },
             {
                 "text": "Contentment",
-                "score": 75
+                "score": 75,
+                "info": "State of inner peace and satisfaction that arises from embracing one's current circumstances without longing for more. It involves finding joy and fulfillment in the present moment, appreciating what one has, and letting go of the constant pursuit of external desires. Contentment allows individuals to experience a deep sense of tranquility and well-being, accepting life as it is and finding happiness within themselves."
             },
             {
                 "text": "Excitement",
-                "score": 100
+                "score": 100,
+                "info": "State of heightened anticipation and enthusiasm that arises from the prospect of something new, thrilling, or engaging. It is characterized by a surge of energy and a sense of eager anticipation, often accompanied by feelings of joy or exhilaration. Excitement can be sparked by various experiences, such as upcoming events, adventures, achievements, or even the unknown, and it invigorates individuals by igniting a sense of curiosity, passion, and positive anticipation."
             }
 
         ],
@@ -421,19 +425,23 @@
         [
             {
                 "text": "Kebahagiaan",
-                "score": 25
+                "score": 25,
+                "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Pemenuhan",
+                "score": 50,
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kepuasan",
+                "score": 75,
+                "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
+                "text": "Kegembiraan",
+                "score": 100,
+                "info": "Keadaan antisipasi dan antusiasme tinggi yang muncul dari prospek akan sesuatu yang baru, mendebarkan, atau menarik. Ini ditandai dengan gelombang energi dan rasa antisipasi yang bersemangat, sering kali disertai dengan perasaan senang atau gembira. Kegembiraan dapat dipicu oleh berbagai pengalaman, seperti peristiwa yang akan datang, petualangan, pencapaian, atau bahkan hal yang tidak diketahui, dan itu menyegarkan individu dengan memicu rasa ingin tahu, semangat, dan antisipasi positif."
             }    
         ],
 
@@ -564,15 +572,15 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Merasa agak canggung untuk bertanya, memutuskan untuk melanjutkan perjalanan",
                 "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Putuskan untuk mendekati dan menyapa wortel untuk meminta masukan darinya",
                 "score": 75
             },
             {
-                "text": "response id C tba",
+                "text": "Merasa cukup penasaran, merasakan keinginan untuk memulai obrolan",
                 "score": 100
             }
         ],
@@ -583,14 +591,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Feel uncomfortable to ask, leave immediatly."
+                        "*Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: *Ota confused, and sipping his drink."
+                        "*Ota terlihat malu dan masuk ke dalam rumahnya.*"
                     ]
                 }
             ],
@@ -599,16 +607,17 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Such a good day isn't it.."
+                        "*Merasa cukup tertarik melihat wortel dan memiliki keinginan untuk memulai percakapan*",
+                        "Hari yang begitu baik bukan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes.. It's good day and I'm glad.",
-                        "id tba: Alright, time to get to work.",
-                        "id tba: *Ota swung his shovel, put it on his right shoulder, and start leave from his yard."
+                        "Ya! Ini hari yang baik dan saya senang.",
+                        "Baiklah, saatnya bekerja.",
+                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya.*"
                     ]
                 }
             ],
@@ -617,65 +626,66 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello, such a great day isn't it."
+                        "*Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya.*",
+                        "Halo, ini hari yang baik bukan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Surely yes yes yes.. A day like these we must happy for it, Where you heading?"
+                        "Tentunya .. hari seperti ini mengangkat semangat seseorang. Kemana tujuanmu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: I'm heading to the Prospevil, have you been there?"
+                        "Saya menuju ke Prospevil, apakah Anda pernah ke sana sebelumnya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Oww oww owww, Prospevil.. Such a very very very nice place to heading.",
-                        "id tba: We all lived near there before.."
+                        "Ohh, Prospervil! Benar-benar tempat yang sangat indah yang Anda tuju.",
+                        "Kami semua tinggal di dekat daerah itu saat itu."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Wait, 'we all'? What do you mean?"
+                        "Tunggu, 'kita semua'? Apa maksudmu?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes.. Naca, Daucu and me.. I forgot I forgot, my name is Ota.."
+                        "Ya. Pasti, Naca, Daucu dan aku. Oh dan aku lupa memberitahumu, namaku Ota."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Ahh, seems nice having a family.. My name is Pomoro.. Pleasure to know you, Ota"
+                        "Ahh, sepertinya menyenangkan memiliki keluarga yang erat. Nama saya Pomoro! Senang bertemu denganmu, Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "id tba: Yes yes yes, pleasure to meet you too, Pomoro.. Have a great great great day! I'm going to work!.",
-                        "id tba: Ota swung his shovel, put it on his right shoulder, and start leave from his yard with a bright smile on his face."
+                        "Ya, senang bertemu denganmu juga, Pomoro. Semoga harimu menyenangkan! Aku akan pergi bekerja!",
+                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya dengan senyum cerah di wajahnya.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro leave with a joy and smile upon his face."
+                        "*Pomoro pergi dengan gembira dan dengan senyum di wajahnya.*"
                     ]
                 }
             ]
