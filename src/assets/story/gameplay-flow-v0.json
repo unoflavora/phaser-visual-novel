@@ -1445,46 +1445,55 @@
         ],
         "intro_id":
         [
-            "sc-05 intro id tba 1"
+            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan menuju ke hutan.",
+            "Dia melewati padang rumput hijau yang luas dengan jalan setapak, dan melihat beberapa humanoid wortel sedang beristirahat di bawah pohon di samping jalan setapak."
         ],
         "emotions_en":
         [
             {
                 "text": "Fulfillment",
-                "score": 25
+                "score": 25,
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
             },
             {
                 "text": "Unstoppable Passion",
-                "score": 50
+                "score": 50,
+                "info": "Refers to an intense and unwavering drive or enthusiasm towards a particular pursuit or goal. It is characterized by a relentless determination, a burning desire, and a steadfast commitment to overcoming obstacles and achieving success. Unstoppable passion empowers individuals to persevere through challenges, fueling their actions with unwavering dedication and a refusal to be deterred, ultimately leading to the fulfillment of their ambitions."
             },
             {
                 "text": "Moderate Drive",
-                "score": 75
+                "score": 75,
+                "info": "Experiencing a noticeable increase in motivation and determination. This level of incentive involves a stronger sense of purpose and focus, often fueled by external rewards, recognition, or a clear sense of progress towards a desired outcome."
             },
             {
                 "text": "Excitement",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing a heightened state of joy and enthusiasm. This level of happiness is characterized by a sense of anticipation, thrill, or delight."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Pemenuhan",
+                "score": 25,
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Gairah yang Tak Terbendung",
+                "score": 50,
+                "info": "Mengacu pada dorongan atau antusiasme yang kuat dan tak tergoyahkan terhadap pengejaran atau tujuan tertentu. Ini ditandai dengan tekad yang tak kenal lelah, hasrat yang membara, dan komitmen yang teguh untuk mengatasi rintangan dan mencapai kesuksesan. Gairah yang tak terbendung memberdayakan individu untuk bertahan melalui tantangan, memicu tindakan mereka dengan dedikasi yang tak tergoyahkan dan penolakan untuk terhalang, yang pada akhirnya mengarah pada pemenuhan ambisi mereka."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Kegembiraan Sedang",
+                "score": 75,
+                "info": "Mengalami peningkatan motivasi dan tekad yang nyata. Tingkat insentif ini melibatkan rasa tujuan dan fokus yang lebih kuat, sering didorong oleh penghargaan eksternal, pengakuan, atau rasa kemajuan yang jelas menuju hasil yang diinginkan."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kegembiraan",
+                "score": 100,
+                "info": "Mengalami keadaan kegembiraan dan antusiasme yang tinggi. Tingkat kebahagiaan ini ditandai dengan rasa antisipasi, sensasi, atau kegembiraan."
+            }
         ],
 
 
@@ -1672,11 +1681,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Mereka tampak akrab. Coba dan cari tahu siapa mereka",
                 "score": 100
             }
         ],
@@ -1687,80 +1696,81 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Woahh, do I know you two?"
+                        "*Mereka tampak akrab. Coba cari tahu siapa mereka berdua*",
+                        "Woah, apa aku mengenal kalian berdua?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Why why why? It's a good day for an incentive, how do we know.. Yes yes yes??"
+                        "Kenapa kenapa kenapa? Ini hari yang bagus untuk bersenang-senang, bagaimana kamu mengenal kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: Maybe maybe maybe.. But how how, when when... Exciting insn't it yes yes yes???"
+                        "Mungkin mungkin mungkin. Tapi bagaimana, kapan? Seru bukan, ya ya ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yeah, waitt.. I forgot his name.",
-                        "id tba: Em.. Uu something?? Oo.. Oott???",
-                        "id tba: Ota???"
+                        "Ya, tunggu hmm… aku lupa namanya.",
+                         "Erm...uu sesuatu? Oo.. Oott?",
+                         "Ota???"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Owh owh owh, Ota Ota Ota???"
+                        "Owh owh owh, Ota Ota Ota?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: Big big big brother Ota, ya??"
+                        "Kak kak kakak Ota, ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yes, I think. He went to work with a bright smile on his face."
+                        "Ya, saya pikir. Dia pergi bekerja dengan senyum cerah di wajahnya!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Surely surely surely, Brother Ota always vibing with his smile every single day."
+                        "Pasti pasti pasti, Kak Ota selalu bergetar dengan senyumnya setiap hari!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: No matter how hard the day is, big brother Ota always always always find a way to smile."
+                        "Seberat apapun hari ini, kakak Ota selalu selalu menemukan alasan untuk tersenyum."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yess, such a good personality to knew.",
-                        "id tba: Okay then, got to go. Have a great day."
+                        "Ya, kepribadian yang periang!",
+                        "Baiklah kalau begitu, aku harus pergi. Semoga harimu menyenangkan."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "id tba: *Thank you thank you thank you.. Have a pleasant day too."
+                        "// Terima kasih terima kasih terima kasih. Semoga harimu menyenangkan juga! //"
                     ]
                 }
             ],
@@ -1769,79 +1779,80 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Heyyy.. You two just looks like Ota"
+                        "*Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota*",
+                        "Hei! Kalian berdua mirip Ota!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Owww, Ota Ota Ota? So you meet him somewhere, yes yes yes??"
+                        "Owww, Ota Ota Ota? Jadi ketemu dia di suatu tempat, ya ya ya?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: How's big big big brother doing there??"
+                        "Bagaimana kabar kak kak kakak di sana?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yeah, he seems fine. Also Ota seems delightful when went to work."
+                        "Ya, dia terlihat baik-baik saja. Ota juga terlihat sangat senang ketika dia pergi bekerja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Smile generously, bother Ota always smile now matter what."
+                        "Selalu tersenyum dengan murah hati, kakak Ota selalu tersenyum apapun yang terjadi!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: There's no a bad bad bad day when borther Ota face the day."
+                        "Tidak ada hari buruk yang buruk untuk saudara Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Seems nice to knew someone like him.",
-                        "id tba: I would love to meet again with him someday."
+                        "Sepertinya senang mengenal seseorang seperti dia.",
+                        "Aku ingin sekali bertemu dengannya lagi suatu hari nanti."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "id tba: Surely surely surely, you may."
+                        "Pasti pasti pasti, kamu bisa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "id tba: It's true true true, you can."
+                        "Itu benar benar benar, kamu bisa."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Okay then, pleasure to meet booth of you.",
-                        "id tba: Have a great day."
+                        "Baiklah kalau begitu, senang bertemu kalian berdua.",
+                        "Semoga harimu menyenangkan!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "id tba: *Yess yess yess.. Have a great day too."
+                        "// Ya ya ya. Semoga harimu menyenangkan juga! //"
                     ]
                 }
             ]
