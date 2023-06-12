@@ -22,7 +22,6 @@ jobs:
                     key: ${{ secrets.STAGING_KEY }}
                     port: ${{ secrets.STAGING_PORT }}
                     script: |
-                        echo "pull-request staging branch merged"
                         cd ${{ secrets.STAGING_LOTHAR_PHASER }}
                         pwd
                         git switch staging
