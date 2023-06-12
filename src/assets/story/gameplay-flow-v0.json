@@ -248,19 +248,19 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
+                "text": "Jangan terlalu memperhatikan dan melanjutkan perjalanan",
                 "score": 25
             },
             {
-                "text": "response id B tba",
+                "text": "Tanyakan arah pada jamur",
                 "score": 50
             },
             {
-                "text": "response id C tba",
+                "text": "Beri salam kepada jamur",
                 "score": 75
             },
             {
-                "text": "response id D tba",
+                "text": "Perkenalkan diri Anda dan tanyakan arah pada jamur",
                 "score": 100
             }
         ],
@@ -271,14 +271,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *you ignore and walk away"
+                        "*Pomoro tidak terlalu memperhatikan jamur dan memutuskan untuk melanjutkan perjalanan*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: *Ifuly notice someone seems approach her, he ran inside her house."
+                        "Ifuly memperhatikan bahwa seseorang tampaknya mendekatinya, dan dia berlari ke dalam rumahnya."
                     ]
                 }
             ],
@@ -287,15 +287,16 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hi..."
+                        "*Beri salam kepada jamur*",
+                        "Hi..."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohh, emm.. Hi there...",
-                        "id tba: *Ifuly look so embarrass and go inside her house.*"
+                        "Ohh, emm.. hai...",
+                        "*Ifuly terlihat sangat malu dan masuk ke dalam rumahnya.*"
                     ]
                 }
             ],
@@ -304,31 +305,30 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Excuse me, am I on right direction to Prospevil?"
+                        "*Menanyakan arah.*",
+                        "Permisi, apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: ...",
-                        "id tba: Oh hii, sorry...",
-                        "id tba: Can't you repeat your question? I'm not pay attention to it..."
+                        "... Oh hai, maaf. Bisakah Anda mengulangi pertanyaan Anda? Saya tidak sepenuhnya memperhatikan."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "id tba: Pomoro/You",
                     "text": [
-                        "id tba: Sure, so I want to go to Prospevil, am I on right direction?"
+                        "Tentu, jadi saya ingin pergi ke Prospevil, apakah saya berada di jalur yang benar?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohhh, Prospevil.. I think it's correct, but I'm not sure.",
-                        "id tba: Maybe you can make sure to one of my sisters, they went out a few hours ago."
+                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi saya tidak yakin.",
+                        "Mungkin Anda bisa mengecek dengan salah satu saudara perempuan saya, mereka pergi beberapa jam yang lalu."
                     ]
                 }
             ],
@@ -337,47 +337,46 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hello there, my name is Pomoro.. am I on right direction to Prospevil?"
+                        "*Memperkenalkan diri dan menanyakan arah*",
+                        "Halo, nama saya Pomoro. Apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Oh, hii, Pomoro...",
-                        "id tba: ...",
-                        "id tba: Sorry, not pay attention to you. I'm Ifuly, can you repeat your question?"
+                        "Oh, hi Pomoro.",
+                        "Maaf, saya tidak memperhatikan sepenuhnya. Ngomong-ngomong, di Italia. Apakah Anda keberatan mengulangi pertanyaan Anda?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Yes, so I want to go to Prospevil, am I on right direction?"
+                        "Ya, jadi saya ingin pergi ke Prospevil, apakah saya sudah berada di jalur yang benar?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: Ohhh, Prospevil...",
-                        "id tba: I think it's correct, but you can ask to my sisters if you meet them",
-                        "id tba: They went there a lot, I only goes there few time"
+                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi Anda dapat memeriksa kembali dengan saudara perempuan saya jika Anda bertemu dengan mereka",
+                        "Mereka sudah sering ke sana, saya hanya ke sana beberapa kali"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Emm, may I know what is your sisters name?"
+                        "Emm, bolehkah saya tahu siapa nama saudara perempuan Anda?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "id tba: They looks like me and their name are Bolebole, Agari & Imuc...",
-                        "id tba: Also say hi from me if you meet them, Pomoro...."
+                        "Mereka terlihat mirip dengan saya dan nama mereka adalah Bolebole, Agari & Imuc.",
+                        "Juga sapa saya jika Anda bertemu mereka, Pomoro!"
                     ]
                 }
             ]
