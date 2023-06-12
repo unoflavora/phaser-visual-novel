@@ -705,46 +705,57 @@
         ],
         "intro_id":
         [
-            "sc-03 intro id tba 1"
+            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan mencapai tanjakan, dipenuhi udara lembab.",
+            "Pomoro melihat beberapa gerakan di antara pepohonan, dan memberanikan diri untuk menyelidiki gerakan apa itu.",
+            "Yang mengejutkan, Pomoro melihat pemandangan yang familiar. Dia melihat tiga jamur muda.",
+            "Itu mengingatkannya pada Ifuly."
         ],
         "emotions_en":
         [
             {
                 "text": "Imaginative playfulness",
-                "score": 25
+                "score": 25,
+                "info": "Embracing creativity and imagination during play. This level of playfulness involves the exploration of imaginary worlds, storytelling, role-playing, or engaging with toys, props, or artistic activities. It encourages imaginative thinking, problem-solving, and the expression of one's inner world."
             },
             {
                 "text": "Adventurous playfulness",
-                "score": 50
+                "score": 50,
+                "info": "Embracing a sense of adventure, exploration, and risk-taking play. This level of playfulness involves seeking new experiences, pushing boundaries, and engaging in challenging or thrilling activities. It often involves a spirit of curiosity, daring, and a willingness to  outside of one's comfort zone."
             },
             {
                 "text": "Light hearted playfulness",
-                "score": 75
+                "score": 75,
+                "info": "A carefree and joyful state of being, characterized by a lighthearted attitude and a playful approach to life. It involves engaging in activities or interactions with a sense of spontaneity, humor, and a lack of seriousness. It often brings a sense of levity, laughter, and a refreshing break from the pressures and responsibilities of everyday life, allowing individuals to embrace their inner child and find happiness in the simple joys of the present moment."
             },
             {
                 "text": "Energetic playfulness",
-                "score": 100
+                "score": 100,
+                "info": "Exhibiting a higher level of energy and enthusiasm during play. This level of playfulness involves more active and dynamic participation, such as engaging in physical activities, games, or playful competitions. It often involves a sense of excitement, movement, and vitality."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Kegembiraan imajinatif",
+                "score": 25,
+                "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang."
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Kegembiraan petualang",
+                "score": 50,
+                "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Keceriaan ringan",
+                "score": 75,
+                "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Kegembiraan yang energik",
+                "score": 100,
+                "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas."
+            }  
         ],
 
 
@@ -904,11 +915,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Cepat pergi ke mereka bertiga untuk mengajukan pertanyaan kepada mereka",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah saudara perempuan Ifuly",
                 "score": 100
             }
         ],
@@ -919,43 +930,45 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Hey, you guys seems familiar."
+                        "*Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka berhubungan dengan Ifuly.*",
+                        "Hei, kalian terlihat akrab!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Whatttt.."
+                        "Apaaa?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: We all siblingsss..."
+                        "Kita semua bersaudaraaa"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: We aree more than triplets....."
+                        "Kami lebih dari kembar tiga!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
-                        "id tba: *Together they gather and shout* Sister said we shouldn't talk to the impolite people....",
-                        "id tba: *They leave to another trees a few meters from there and start play together again...."
+                        "*Bersama-sama mereka berkumpul dan berteriak*",
+                        "// Kakak bilang kita tidak boleh berbicara dengan orang yang tidak sopan! //",
+                        "*Mereka pergi ke pohon lain beberapa meter dari sana dan mulai bermain bersama lagi....*"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: *Pomoro shocked they leave immediatly. He felt something not right for what he did and think what is better way."
+                        "*Pomoro kaget dan mereka langsung pergi.*"
                     ]
                 }
             ],
@@ -964,87 +977,88 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Excuse me, may I know that three of you are Ifuly sisters?"
+                        "*Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah adik perempuan Ifuly.*",
+                        "Permisi, bolehkah saya tahu jika kalian bertiga adalah saudara perempuan Ifuly?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Woo..??"
+                        "Wooo..?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: You meet our big sisterss...???"
+                        "Anda bertemu kakak perempuan kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: How shes doinggg....????"
+                        "Bagaimana kabarnya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Well, she seems fine but a little bit shy. Anyway, she said hi to all of you. I think she worried."
+                        "Yah, dia tampak baik-baik saja tetapi sedikit pemalu. Bagaimanapun, dia menyapa kalian semua. Saya pikir dia khawatir."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Wait waitt.. Sisters worry about us..."
+                        "Tunggu tunggu! Kakak mengkhawatirkan kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: Ohh noo.. I want to play arround first..."
+                        "Oh tidak! Aku ingin bermain-main dulu!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: Don't worry, we're heading back later on.. Thank you for letting us know..",
-                        "id tba: Yes indeed she little bit shy, butt shes care to all of us..."
+                        "Jangan khawatir, kami akan kembali lagi nanti. Terima kasih telah memberi tahu kami!",
+                        "Ya memang dia sedikit pemalu, tapi dia sangat peduli dengan kami"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: So I had question to check to all of you",
-                        "id tba: Big sis says that you guys know direction to Prospevil"
+                        "Jadi saya punya pertanyaan untuk kalian semua",
+                        "Kakak bilang kalian tahu arah ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "id tba: Ayyyy, a Prospevil.."
+                        "Ayy, Prospevil!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "id tba: Prospevilll... Just go straight a head..."
+                        "Prospevil... Langsung saja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "id tba: Yesss... Just go straight that is a correct direction",
-                        "id tba: We all heading back to big sis later.. Thank youuu..."
+                        "Ya. Jalan lurus saja itu arah yang benar",
+                        "Kami akan kembali ke kakak nanti. Terima kasih!"
                     ]
                 }
             ]
