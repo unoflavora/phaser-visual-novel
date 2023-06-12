@@ -2532,46 +2532,55 @@
         ],
         "intro_id":
         [
-            "sc-08 intro id tba 1"
+            "Setelah Mupi berhasil turun, Pomoro terus mendaki bongkahan batu tertinggi, akhirnya sampai di Mupo.",
+            "Mupo berdiri dengan bangga dengan percaya diri di mana dia terlihat begitu bermartabat di permukaan batu yang tidak rapi."
         ],
         "emotions_en":
         [
             {
                 "text": "Legacy",
-                "score": 25
+                "score": 25,
+                "info": "Encountering a profound and lasting sense of pride derived from making a meaningful impact or leaving a positive mark on the world. This level of pride is associated with significant contributions, acts of service, or accomplishments that have a lasting influence beyond one's immediate sphere. It reflects a sense of purpose, contribution, and a desire to create a lasting legacy"
             },
             {
                 "text": "Validation",
-                "score": 50
+                "score": 50,
+                "info": "Experiencing a deeper level of pride that arises from the affirmation of one's identity, values, or beliefs. This level of pride reflects a sense of self-acceptance and authenticity, often linked to personal growth, embracing one's uniqueness, or standing up for what one believes in."
             },
             {
                 "text": "Accomplishment",
-                "score": 75
+                "score": 75,
+                "info": "Feeling a sense of pride and satisfaction in achieving a personal goal, completing a task, or overcoming a challenge. This level of pride is associated with a specific accomplishment and reflects a sense of fulfillment and self-worth."
             },
             {
                 "text": "Recognition",
-                "score": 100
+                "score": 100,
+                "info": "Experiencing pride in being acknowledged or recognized for one's achievements or contributions. This level of pride involves external validation, such as receiving awards, accolades, or praise from others, and it reinforces a sense of accomplishment and value."
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "emotion id 1",
-                "score": 25
+                "text": "Mewariskan",
+                "score": 25,
+                "info": "Menghadapi rasa bangga yang mendalam dan bertahan lama yang berasal dari membuat dampak yang berarti atau meninggalkan jejak positif di dunia. Tingkat kebanggaan ini diasosiasikan dengan kontribusi yang signifikan, tindakan pelayanan, atau pencapaian yang memiliki pengaruh abadi di luar jangkauan langsung seseorang. Itu mencerminkan rasa tujuan, kontribusi, dan keinginan untuk menciptakan warisan abadi"
             },
             {
-                "text": "emotion id 2",
-                "score": 50
+                "text": "Validasi",
+                "score": 50,
+                "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang."
             },
             {
-                "text": "emotion id 3",
-                "score": 75
+                "text": "Prestasi",
+                "score": 75,
+                "info": "Merasakan rasa bangga dan puas dalam mencapai tujuan pribadi, menyelesaikan tugas, atau mengatasi tantangan. Tingkat kebanggaan ini dikaitkan dengan pencapaian tertentu dan mencerminkan rasa pemenuhan dan harga diri."
             },
             {
-                "text": "emotion id 4",
-                "score": 100
-            }    
+                "text": "Pengakuan",
+                "score": 100,
+                "info": "Mengalami kebanggaan karena diakui atau diakui atas pencapaian atau kontribusi seseorang. Tingkat kebanggaan ini melibatkan validasi eksternal, seperti menerima penghargaan, pujian, atau pujian dari orang lain, dan ini memperkuat rasa pencapaian dan nilai."
+            }
         ],
 
 
@@ -2686,11 +2695,11 @@
         "response_id":
         [
             {
-                "text": "response id A tba",
-                "score": 75
+                "text": "Beri tahu Mupi untuk berhati-hati dan peringatkan dia tentang bahayanya",
+                "score": 50
             },
             {
-                "text": "response id B tba",
+                "text": "Bicaralah dengan Mupi dan perintahkan dia untuk turun",
                 "score": 100
             }
         ],
@@ -2701,43 +2710,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, would you get down, it's a bit dangerous here if we're not careful."
+                        "*Bicaralah dengan Mupo dan perintahkan dia untuk turun*",
+                        "Mupo, bisakah kamu turun, sangat berbahaya disini! Kamu harus benar-benar berhati-hati."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo..."
+                        "Mupo ada di puncak dunia! Tidak ada yang bisa menghentikan Mupooo!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, you are on high place, would you please get down now?"
+                        "Mupo, kamu berada di atas batu yang tinggi dan licin, bisakah kamu turun sekarang?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                        "Aku di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa and Mupo waiting you come to Rapa."
+                        "Mupa dan Mupi menunggumu datang ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
-                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                        "Uhhh Rapa? Yess protecta family bolak-balik.",
+                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
                     ]
                 }
             ],
@@ -2746,43 +2756,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, careful there, it's dangerous. You're standing or sloppy boulder."
+                        "*Katakan pada Mupo untuk berhati-hati dan peringatkan dia akan bahaya berdiri di atas batu besar itu.*",
+                        "Mupo, hati-hati di sana, berbahaya. Kamu berdiri di atas batu besar yang ceroboh."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Mupo is on top of the worldd, no one can stop Mupoo.. Bwahahahaha..!!"
+                        "Mupo ada di puncak dunia, tidak ada yang bisa menghentikan Mupooo!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupo, you are on high place, would you please get down now?"
+                        "Mupo, bisakah kamu turun sekarang?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Imma on the highest peak, to protectt while seekk..."
+                        "Aku di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "id tba: Mupa and Mupi waiting you come to Rapa."
+                        "Mupa dan Mupi menunggumu datang ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "id tba: Uhhh Rapa? Yess protectt and protecttt, protect family forth and back..",
-                        "id tba: Okay, I'll go back to Rapa's place. Of mee goo to another highest placee, thanks!"
+                        "Uhhh Rapa? Ya bolak-balik lindungi keluarga.",
+                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
                     ]
                 }
             ]
