@@ -10,6 +10,9 @@ const IndonesianText : typeof EnglishText = {
         emotion: "Apa yang Anda pikirkan tentang karakter ini?",
         response: "Apa yang menurut Anda tanggapan yang tepat?",
     },
+    loading: {
+        minigame: "Memuat Minigame...",
+    },
     mainMenu: {
         startGame: "Mulai Test",
         gameLog: "Log Game",

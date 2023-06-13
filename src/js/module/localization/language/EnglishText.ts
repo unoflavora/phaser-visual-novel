@@ -9,6 +9,9 @@ const EnglishText = {
         emotion: "What do you think the character is feeling?",
         response: "What do you think the appropriate response is?",
     },
+    loading: {
+        minigame: "Loading Minigame...",
+    },
     mainMenu: {
         startGame: "Start Test",
         gameLog: "Game Log",

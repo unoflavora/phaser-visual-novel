@@ -20,7 +20,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 	logo: Image;
 	loadingText: Text;
 
-	constructor(scene : Phaser.Scene, logo : string | null = null) {
+	constructor(scene : Phaser.Scene, logo : string | null = null, loadingText : string | null = null) {
 		super(scene);
 		scene.add.existing(this);
 
@@ -49,6 +49,8 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 			fontSize: "24px",
 			color: "#4B3B33"
 		})
+		if(loadingText != null) this.loadingText.gameobject.setText(loadingText)
+		
 		this.loadingText.gameobject.setOrigin(.5)
 		this.add(this.loadingText.gameobject)
 

@@ -232,7 +232,7 @@ export default class VisualNovelController
 	}
 
 	private startDummyLoading() {
-		var loading = new LoadingSceneView(this.parentScene, UIAsset.game_title.key);
+		var loading = new LoadingSceneView(this.parentScene, UIAsset.game_title.key, Localizations.text.loading.minigame);
 
 		var loadingValue = 0;
 		var s = setInterval(() => {
