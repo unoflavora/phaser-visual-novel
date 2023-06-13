@@ -15,7 +15,7 @@ export default class AudioController
 
     private _sfxOn: boolean = true;
     
-    static _instance : AudioController;
+    private static _instance : AudioController;
 
     static get instance() : AudioController
     {

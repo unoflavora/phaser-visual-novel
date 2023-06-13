@@ -1,3 +1,4 @@
+import AudioController from 'Modules/core/AudioController';
 import InfoPopupView from './InfoPopupView';
 
 export default class InfoPopupController extends Phaser.GameObjects.Group {
@@ -30,9 +31,12 @@ export default class InfoPopupController extends Phaser.GameObjects.Group {
       OnConfirm();
       this.view.setVisible(false);
       this._onClosePopup();
+      AudioController.instance.play("main_button_click");
+
     }, onConfirmText,
     () => {
       if (onCancel != null) onCancel();
+      AudioController.instance.play("main_button_click");
       this.view.setVisible(false);
       this._onClosePopup();
     }, onCancelText);
