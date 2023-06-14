@@ -1,5 +1,5 @@
 import { AudioAsset } from "Assets/AssetLibraryAudio";
-import { FontAsset } from "Assets/AssetLibraryFont";
+import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import AudioController from "Modules/core/AudioController";
 import Image from "Modules/gameobjects/Image";
@@ -7,14 +7,12 @@ import Text from "Modules/gameobjects/Text";
 import ContainerLite from "phaser3-rex-plugins/plugins/containerlite";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
 import "Modules/extensions/text_sizer";
+import Container from "phaser3-rex-plugins/templates/ui/container/Container";
 
 export class PlayerOptionsController extends Phaser.GameObjects.Group
 {
     private options: GridSizer
-    private option_A: ContainerLite;
-    private options_B: ContainerLite;
-    private options_C: ContainerLite;
-    private options_D: ContainerLite;
+    private optionData : optionData[] = [];
 
     onOptionClicked : (index: number) => void;
 
@@ -27,6 +25,7 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
             onOptionClicked(index)
         };
 
+        var spacing = textBox.gameobject.displayWidth * .05;
         this.options = new GridSizer(scene, textBox.gameobject.x, textBox.gameobject.y, textBox.gameobject.displayWidth, textBox.gameobject.displayHeight, 
         {
             column: 2,
@@ -34,47 +33,53 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
             columnProportions: 1,
             rowProportions: 1,
             space: {
-            left: 10,
-            right: 10,
-            top: 10,
-            bottom: 10,
-            column: 10,
-            row: 10,
+            left: spacing * 2,
+            right: spacing * 2,
+            top: spacing * .5,
+            bottom: spacing * .5,
+            column: spacing * 2,
+            row: spacing * .2,
             },
         });
         
 
         this.add(this.options);
+        this.generateOptions();
     
-        this.option_A = new ContainerLite(scene, 0, 0);
-        this.createOption(scene, this.options, this.option_A, UIAsset.bg_text_box.key, "Option A");
-    
-        this.options_B = new ContainerLite(scene, 0, 0);
-        this.createOption(scene, this.options, this.options_B, UIAsset.bg_text_box.key, "Option B");
-    
-        this.options_C = new ContainerLite(scene, 0, 0);
-        this.createOption(scene, this.options, this.options_C, UIAsset.bg_text_box.key, "Option C");
-    
-        this.options_D = new ContainerLite(scene, 0, 0);
-        this.createOption(scene, this.options, this.options_D, UIAsset.bg_text_box.key, "Option D");
     }
 
-    private createOption(scene : Phaser.Scene,  grid : GridSizer, container: ContainerLite, assetKey : string, optionText : string) {
+    private generateOptions()
+    {
+        var index = ["A", "B", "C", "D"]
+
+        for(var i = 0; i < index.length; i++)
+        {
+            var option = new ContainerLite(this.scene, 0, 0);
+            var optionData = this.createOption(this.scene, this.options, option, "Option " + index[i]);
+
+            this.optionData.push(optionData);
+        }
+
+        this.options.layout();
+
+    }
+
+    private createOption(scene : Phaser.Scene,  grid : GridSizer, container: ContainerLite, optionText : string) {
 		const optionTextStyle = {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
             fontSize: container.displayHeight * .05,
-            color: "#ffffff",
+            color: FontColors.darkBrown,
             align: "center",
         };
     
         // Create UI within container
-		var bg = new Image(scene, 0, 0, assetKey).gameobject;
-		var text = new Text(scene, 0, 0, optionText, optionTextStyle).gameobject;
+		var bg = new Image(scene, 0, 0, UIAsset.bg_story_options.key);
+		var text = new Text(scene, 0, 0, optionText, optionTextStyle);
 
-        container.setInteractive({ useHandCursor: true });
+        bg.gameobject.setInteractive({ useHandCursor: true });
 
 		// Add UI to container
-		container.add([bg, text]);
+		container.add([bg.gameobject, text.gameobject]);
 
 		// Add container to grid
 		grid.add(container, {
@@ -82,40 +87,49 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
             expand: true,
         });
         
-		grid.layout();
-
 		// Set Item Position and Size based on layouted container
-		text.setPosition(bg.x, bg.y);
-		text.setOrigin(0.5);
-        text.setWordWrapWidth(container.displayWidth - 20);
+		text.gameobject.setPosition(bg.gameobject.x, bg.gameobject.y);
+		text.gameobject.setOrigin(0.5);
+		bg.gameobject.setDisplaySize(container.width, container.height);
 
-		bg.setDisplaySize(container.width, container.height);
+        var optionData : optionData = {
+            container : container,
+            image : bg,
+            text : text
+        }
+
+        return optionData;
 	}
   
     public setOptionValue(optionIndex : number, optionValue : string) {
-        var option = this.options.getChildren()[optionIndex] as ContainerLite;
+        var option = this.optionData[optionIndex];
         
-        option.setVisible(optionValue.length > 0)
+        option.container.setVisible(optionValue.length > 0)
 
         if(optionValue.length < 1) return;
 
-        option.removeAllListeners()
+        var optionValueObject = option.text;
+        var optionBg = option.image
+
+  
+		optionValueObject.gameobject.setText(optionValue);
+
+        optionBg.transform.setDisplaySize(option.container.displayWidth, option.container.displayHeight)
+        optionBg.gameobject.removeAllListeners()
 
         // Set Interactive
-        option.once("pointerdown", () => {
+        optionBg.gameobject.once("pointerdown", () => {
             this.onOptionClicked(optionIndex);
         });
-
-        var optionValueObject = option.getChildren().find
-        (
-            (child : Phaser.GameObjects.GameObject) => (child as Phaser.GameObjects.Text).text != null
-        ) as Phaser.GameObjects.Text;
-  
-		optionValueObject.setText(optionValue);
-
-        optionValueObject.handleTextSize(option, option.displayHeight * .3);
+        optionValueObject.gameobject.setWordWrapWidth(optionBg.transform.displayWidth * .75);
+        optionValueObject.gameobject.handleTextSize(option.container, optionBg.gameobject.displayHeight * .2);
     }
 
-   
+  }
+
+  type optionData = {
+    container : ContainerLite,
+    image : Image,
+    text : Text
   }
   

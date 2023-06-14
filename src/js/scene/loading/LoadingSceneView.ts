@@ -20,7 +20,7 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 	logo: Image;
 	loadingText: Text;
 
-	constructor(scene : Phaser.Scene, logo : string | null = null) {
+	constructor(scene : Phaser.Scene, logo : string | null = null, loadingText : string | null = null) {
 		super(scene);
 		scene.add.existing(this);
 
@@ -49,12 +49,15 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 			fontSize: "24px",
 			color: "#4B3B33"
 		})
+		if(loadingText != null) this.loadingText.gameobject.setText(loadingText)
+		
 		this.loadingText.gameobject.setOrigin(.5)
 		this.add(this.loadingText.gameobject)
 
 		this.bar = new Image(scene, this.frame.gameobject.x, this.frame.gameobject.y, LoadingAsset.loading_bar.key);
 		this.bar.transform.setDisplaySize(this.frame.gameobject.displayWidth, this.frame.gameobject.displayHeight);
 		this.add(this.bar.gameobject)
+		this.loadingText.gameobject.setFontSize(this.bar.transform.displayHeight * .65)
 
 		this.progressBar = new RectFill(scene);
 		this.progressBar.assignFillAnchor(

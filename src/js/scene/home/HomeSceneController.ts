@@ -33,8 +33,6 @@ export default class HomeSceneController extends Phaser.Scene {
 
         this.view.initButton(() => 
             {
-                try {
-                    AudioController.instance.play(AudioAsset.main_button_click.key);
                 if(MainSceneController.instance.initData.hasPlayed)
                 {
                     MainSceneController.instance.OpenInfoPopup(
@@ -46,10 +44,6 @@ export default class HomeSceneController extends Phaser.Scene {
                     return;
                 }
                 this.scene.start(SceneInfo.gameplayScene.key);
-                } catch(e)
-                {
-                    console.log(e)
-                }
                 // Start Game
                 
             },        
