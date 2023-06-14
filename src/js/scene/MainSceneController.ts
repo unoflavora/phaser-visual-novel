@@ -129,7 +129,7 @@ export default class MainSceneController extends Phaser.Scene {
         {
             var auth = await this.backend.Login(username, password);
 
-            if (auth.error == null )
+            if (auth.error == null)
             {
                 if(rememberUser)
                 {
@@ -143,7 +143,7 @@ export default class MainSceneController extends Phaser.Scene {
                 await this.Init();
             }
 
-            return auth;5
+            return auth;
         } catch(e)
         {
             if (e instanceof Error)
