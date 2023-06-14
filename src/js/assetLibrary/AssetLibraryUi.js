@@ -93,6 +93,16 @@ export const UIAsset = {
 		path: "/img/ui/general/ui-textbox.png",
 		type: AssetType.STATIC,
 	},
+	bg_story_box:{
+		key: "bg_story_box",
+		path: "/img/background/ui-frame-text_placer_bottom.png",
+		type: AssetType.STATIC,
+	},
+	bg_story_options:{
+		key: "bg_story_options",
+		path: "/img/background/ui-button-option.png",
+		type: AssetType.STATIC,
+	},
 	line_divider: {
 		key: "line_divider",
 		path: "/img/ui/general/ui-line-divider.png",
