@@ -4,6 +4,7 @@ import IGameData from "./GameData";
 export default class BackendController 
 {
     private _token : string | null = "";
+    public tokenExpiredDate: string | null = "";
 
     public set token(value: string | null) 
     {
@@ -28,7 +29,10 @@ export default class BackendController
 
     public async Init() : Promise<Response<InitData>>
     {
-        if(this._token == null) return Promise.reject("Token is null");
+        if(this._token == null) {
+            console.error("Token is null");
+            return Promise.reject("Token is null");
+        }
 
         return fetch(CONFIG.BASE_URL + "/game/init", {
             method: "POST",

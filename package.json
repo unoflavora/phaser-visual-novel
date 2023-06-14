@@ -1,6 +1,6 @@
 {
 	"name": "deus-game",
-	"version": "0.0.1.20230614",
+	"version": "0.0.2.20230614",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {
