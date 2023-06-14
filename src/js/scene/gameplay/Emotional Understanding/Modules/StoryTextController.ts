@@ -1,5 +1,5 @@
 import { AudioAsset } from "Assets/AssetLibraryAudio";
-import { FontAsset } from "Assets/AssetLibraryFont";
+import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import AudioController from "Modules/core/AudioController";
 import Image from "Modules/gameobjects/Image";
@@ -23,26 +23,26 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         super(scene)
 
         this._textBox = textBox;
-        this._padding = this._textBox.gameobject.displayWidth * 0.02;
+        this._padding = this._textBox.gameobject.displayWidth * 0.05;
 
 		this._text = new Phaser.GameObjects.Text(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
-			this._textBox.gameobject.y - this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY + this._padding, 
+			this._textBox.gameobject.y - this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY + this._padding * .75, 
 			"Loading...", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-			color: "#ffffff",	
+			color: FontColors.darkBrown,	
 		});
         this.scene.add.existing(this._text);
         this.add(this._text);
-        this._text.setFontSize(textBox.gameobject.displayHeight * .125);
+        this._text.setFontSize(textBox.gameobject.displayHeight * .09);
         this._text.setWordWrapWidth(this._textBox.gameobject.displayWidth - this._padding * 2, true)
 
 		this._nextButton = new Text(scene, 
 			this._textBox.gameobject.x + this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX - this._padding, 
-			this._textBox.gameobject.y + this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY - this._padding, "Next", {
+			this._textBox.gameobject.y + this._textBox.gameobject.displayHeight * this._textBox.gameobject.originY - this._padding * .5, "Next", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
 			fontSize: "24px",
-			color: "#ffffff",
+			color: FontColors.darkBrown,
 			align: "right",
             wordWrap: {
                 width: this._textBox.gameobject.displayWidth - 20,
@@ -51,7 +51,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 		});
 		this._nextButton.gameobject.setOrigin(1);
 		this._nextButton.gameobject.setInteractive({ useHandCursor: true })
-        this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .125);
+        this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
 
         this.add(this._nextButton.gameobject);
 

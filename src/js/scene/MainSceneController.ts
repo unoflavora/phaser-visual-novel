@@ -112,8 +112,9 @@ export default class MainSceneController extends Phaser.Scene {
             this._popupController.closeLostConnectionPopup();            
         });
 
-        await this.Init();
+        this._backendController.token = localStorage.getItem("token");
 
+        await this.Init();
     }
             
     
@@ -128,19 +129,21 @@ export default class MainSceneController extends Phaser.Scene {
         {
             var auth = await this.backend.Login(username, password);
 
-            if (auth.error == null && rememberUser)
+            if (auth.error == null)
             {
-                
-                localStorage.setItem("token", auth.data.token);
+                if(rememberUser)
+                {
+                    localStorage.setItem("token", auth.data.token);
 
-                localStorage.setItem("tokenExpiredDate", auth.data.tokenExpiredDate.toString());
+                    localStorage.setItem("tokenExpiredDate", auth.data.tokenExpiredDate.toString());    
+                }
 
                 this.backend.token = auth.data.token;
 
                 await this.Init();
             }
-    
-            return auth;5
+
+            return auth;
         } catch(e)
         {
             if (e instanceof Error)
@@ -154,66 +157,63 @@ export default class MainSceneController extends Phaser.Scene {
 
     private async Init() 
     {
-        this._backendController.token = localStorage.getItem("token");
-
         var expiredTokenDate = localStorage.getItem("tokenExpiredDate");
 
-        if (expiredTokenDate != null)
+        if (this._backendController.token != null && expiredTokenDate != null)
         {
             var expiredDate = new Date(expiredTokenDate);
+
             var now = new Date();
+
+            console.log(expiredDate, now)
 
             if(expiredDate < now)
             {
                 this._backendController.token = null;
                 localStorage.removeItem("token");
                 localStorage.removeItem("tokenExpiredDate");
+                this.startGame();
+                return;
             }
-        }
 
-        if(this._backendController.token == null)
-        {
-            this.scene.launch(SceneInfo.loginScene.key);
-            return;
-        }
-
-        try 
-        {
-            var initData = await this._backendController.Init();
-            
-            this._initData = initData.data;
-
-            console.log(this._initData)
-
-            if(initData.data.savedData != null && initData.data.savedData != "")
+            try 
             {
-                this.gameData = JSON.parse(initData.data.savedData);
+                var initData = await this._backendController.Init();
+                
+                this._initData = initData.data;
 
-                if(this.gameData.progress.emotionalUnderstanding.userResponses == null)
+                console.log(this._initData)
+
+                if(initData.data.savedData != null && initData.data.savedData != "")
                 {
-                    this.gameData.progress.emotionalUnderstanding.userResponses = [];
+                    var data = JSON.parse(initData.data.savedData);
+                    this.gameData = {...this.gameData, ...data};
+
+                    if(this.gameData.progress.emotionalUnderstanding.userResponses == null)
+                    {
+                        this.gameData.progress.emotionalUnderstanding.userResponses = [];
+                    }
+
+                    console.log(this.gameData)
                 }
 
-                console.log(this.gameData)
-            }
+            
 
-           
-
-            this.gameData.sessionId = initData.data.sessionId;
-
-            this.startGame();
-    
-        } catch(e)
-        {
-            console.log(e)
-            if (e instanceof Error)
+                this.gameData.sessionId = initData.data.sessionId;
+        
+            } catch(e)
             {
-                this.OpenTemplatePopup(PopupType.Error, e.message);
-            }
+                console.log(e)
+                if (e instanceof Error)
+                {
+                    this.OpenTemplatePopup(PopupType.Error, e.message);
+                }
 
-            return null;
+                return null;
+            }
         }
-       
+
+       this.startGame();
        
     }
 
