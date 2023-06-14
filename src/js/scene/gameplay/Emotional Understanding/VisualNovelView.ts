@@ -9,7 +9,7 @@ import { LanguageEnum } from "Definitions/Settings";
 import { SceneState } from "Definitions/GameProgress";
 import MainSceneController from "Scenes/MainSceneController";
 import Text from "Modules/gameobjects/Text";
-import { FontAsset } from "Assets/AssetLibraryFont";
+import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import Localizations from "Modules/localization/LocalizationHelper";
 
 export default class VisualNovelView extends Phaser.GameObjects.Group 
@@ -55,7 +55,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.characterController = new CharacterController(scene);
 		this.characterController.getChildren().forEach(child => this.add(child));
 
-		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.85, UIAsset.bg_text_box.key)
+		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.81, UIAsset.bg_story_box.key)
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
 		this.add(this.textBox.gameobject)
 
@@ -177,21 +177,21 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 	}
 
 	private setupPromptText(scene: Phaser.Scene) {
-		var promptBox = new Image(scene, this.textBox.gameobject.x, this.textBox.gameobject.y - this.textBox.gameobject.displayHeight * .55, UIAsset.bg_text_box.key);
+		var promptBox = new Image(scene, this.textBox.gameobject.x, this.textBox.gameobject.y - this.textBox.gameobject.displayHeight * .55, UIAsset.bg_story_options.key);
 		promptBox.gameobject.setOrigin(0.5, 1);
 		this.add(promptBox.gameobject);
-		promptBox.transform.setDisplayWidth(this.textBox.gameobject.displayWidth * .45)
+		promptBox.transform.setDisplaySize(this.textBox.gameobject.displayWidth * .45, this.textBox.gameobject.displayHeight * .25)
 
 		var promptText = new Text(scene, promptBox.gameobject.x, promptBox.gameobject.y - promptBox.gameobject.displayHeight * .5, "Ifuly", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
-			color: "#ffffff",
+			color: FontColors.darkBrown,
 			align: "center",
 			wordWrap: {
 				width: promptBox.gameobject.displayWidth,
 				useAdvancedWrap: true
 			}
 		});
-		promptText.gameobject.setFontSize(promptBox.gameobject.displayHeight * .4);
+		promptText.gameobject.setFontSize(promptBox.gameobject.displayHeight * .3);
 		promptText.gameobject.setOrigin(0.5);
 		this.promptText = promptText;
 		this.add(promptText.gameobject);

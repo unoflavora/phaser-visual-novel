@@ -129,6 +129,8 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.confirmButton.removeAllListener();
         this.confirmButton.click.on(OnConfirm);
         this.confirmButtonText.gameobject.setText(onConfirmText);
+        this.confirmButtonText.gameobject.handleTextSize(this.confirmButton.gameobject, this.confirmButton.transform.displayHeight * .25)
+
 
         if(onCancel != null && onCancelText != null)
         {

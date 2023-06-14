@@ -3,6 +3,7 @@ import LoginView from './LoginSceneView';
 import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import BackendController from 'Modules/core/BackendController';
 import MainSceneController from 'Scenes/MainSceneController';
+import AudioController from 'Modules/core/AudioController';
 
 export default class LoginSceneController extends Phaser.Scene {
   public rexUI! : RexUIPlugin;
@@ -24,6 +25,7 @@ export default class LoginSceneController extends Phaser.Scene {
     this.view.create(); 
 
     this.view.registerOnLoginListener(async (username, confPass) => {
+      AudioController.instance.play("main_button_click");
       if(username == null || confPass == null)
       {
         this.view.setErrorConfirmVisible(true);
@@ -51,7 +53,7 @@ export default class LoginSceneController extends Phaser.Scene {
     })
 
     this.view.registerOnForgotPasswordListener(() => {
-      console.log("Forgot Password Clicked")
+      AudioController.instance.play("main_button_click");
       this.view.setInputActive(false);
       this.scene.launch(SceneInfo.forgotPasswordScene.key, {
         onBackButton: () => { 
