@@ -77,6 +77,8 @@ export default class MainSceneController extends Phaser.Scene {
         
         super({ key: SceneInfo.mainScene.key });
 
+        console.log("Main Scene Constructor")
+
         MainSceneController._instance = this;
 
     }    
@@ -114,12 +116,17 @@ export default class MainSceneController extends Phaser.Scene {
 
         this._backendController.token = localStorage.getItem("token");
 
+        this._backendController.tokenExpiredDate = localStorage.getItem("tokenExpiredDate");
+
         await this.Init();
+
+        this.startGame();
     }
             
     
 
-    async startGame() {       
+    async startGame() { 
+        console.log("Starting Game Again")      
         this.scene.launch(SceneInfo.languageSelectorScene.key);        
     }
 
@@ -140,12 +147,15 @@ export default class MainSceneController extends Phaser.Scene {
 
                 this.backend.token = auth.data.token;
 
+                this.backend.tokenExpiredDate = auth.data.tokenExpiredDate;
+
                 await this.Init();
             }
 
             return auth;
         } catch(e)
         {
+            console.log(e)
             if (e instanceof Error)
             {
                 this.OpenTemplatePopup(PopupType.Error, e.message);
@@ -157,11 +167,11 @@ export default class MainSceneController extends Phaser.Scene {
 
     private async Init() 
     {
-        var expiredTokenDate = localStorage.getItem("tokenExpiredDate");
+        console.log(this._backendController.token, this.backend.tokenExpiredDate)
 
-        if (this._backendController.token != null && expiredTokenDate != null)
+        if (this._backendController.token != null && this.backend.tokenExpiredDate != null)
         {
-            var expiredDate = new Date(expiredTokenDate);
+            var expiredDate = new Date(this.backend.tokenExpiredDate);
 
             var now = new Date();
 
@@ -169,10 +179,10 @@ export default class MainSceneController extends Phaser.Scene {
 
             if(expiredDate < now)
             {
+                console.log("Expired")
                 this._backendController.token = null;
                 localStorage.removeItem("token");
                 localStorage.removeItem("tokenExpiredDate");
-                this.startGame();
                 return;
             }
 
@@ -211,10 +221,7 @@ export default class MainSceneController extends Phaser.Scene {
 
                 return null;
             }
-        }
-
-       this.startGame();
-       
+        }       
     }
 
     public Logout()
