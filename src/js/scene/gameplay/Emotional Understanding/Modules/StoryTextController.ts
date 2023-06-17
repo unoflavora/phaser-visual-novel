@@ -145,7 +145,6 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         AudioController.instance.play(AudioAsset.main_button_click.key);
         
         if(this._isTyping) {
-            console.log("Skip typing", text);
             this.stopTyping(text);
         }
     }

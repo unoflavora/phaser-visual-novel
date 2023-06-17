@@ -10,6 +10,7 @@
   }
   
   interface Response {
+    index: number;
     text: string;
     score: number;
   }

@@ -3,11 +3,13 @@ import PopupController, { PopupType } from "./popup/PopupController";
 import AudioController from "Modules/core/AudioController";
 import BackendController from "Modules/core/BackendController";
 import { AuthData, InitData, Response } from "Definitions/BackendResponse";
-import IGameData from "Modules/core/GameData";
 import ProgressController from "Modules/core/ProgressController";
 import Settings from "Modules/core/SettingsController";
-import { LanguageEnum } from "Definitions/Settings";
-import { debugLog } from "./debug/Debug";
+import { IGameData, LanguageEnum } from "Definitions/Settings";
+import ScoreController from "Modules/scoring/ScoreController";
+import GameScore, { SubmitScoreData } from "Definitions/GameScore";
+import { MinigameTypes } from "Definitions/Minigame";
+import Localizations from "Modules/localization/LocalizationHelper";
 export default class MainSceneController extends Phaser.Scene {    
     private audio! : AudioController;
 
@@ -20,6 +22,8 @@ export default class MainSceneController extends Phaser.Scene {
     private _progressController! : ProgressController;
 
     private _initData!: InitData;
+
+    private _scoringController!: ScoreController;
    
     private static _instance : MainSceneController;
 
@@ -34,16 +38,10 @@ export default class MainSceneController extends Phaser.Scene {
 
     public gameData : IGameData = {
         sessionId: "",
-        settings: 
-        {
+        settings: {
             lang: LanguageEnum.English,
             isSfxOn: true,
             isBgmOn: true
-        },
-        scores:
-        {
-            emotion: 0,
-            response: 0
         },
         progress: {
             playedMinigames: [],
@@ -51,18 +49,14 @@ export default class MainSceneController extends Phaser.Scene {
                 currentSceneState: 0,
                 currentSceneIndex: -1,
                 userResponses: [],
+                userEmotions: [],
+                scores: {
+                    emotion : 0,
+                    response: 0
+                }
             }
         },
-        results: {
-            "Working Memory" : 0,
-            "Spatial Reasoning": 0,
-            "Linguistic Comprehension" : 0,
-            "Numerical Reasoning" : 0,
-            "Logical Reasoning" : 0,
-            "Problem Solving" : 0,
-            "Auditory Processing" : 0,
-            "Emotional Understanding": 0        
-        }
+        results: null
     }
     
 
@@ -82,13 +76,49 @@ export default class MainSceneController extends Phaser.Scene {
         MainSceneController._instance = this;
 
     }    
+    
+    async init(finishLoading: Function)
+    {
+        this.InitModules();
 
-    preload() { 
-        console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT + " URL API: " + CONFIG.BASE_URL)
+        window.addEventListener('offline', () => {            
+            this.OpenTemplatePopup(PopupType.LostConnection);
+        });
+
+        window.addEventListener('online', () => {            
+            this._popupController.closeLostConnectionPopup();            
+        });
+
+        if(navigator.onLine == false) {
+            this.OpenTemplatePopup(PopupType.LostConnection);
+
+            await new Promise<void>(resolve => {
+                window.addEventListener('online', () => {
+                    resolve();
+                });
+            })
+        }
+
+
+        this._backendController.token = localStorage.getItem("token");
+
+        this._backendController.tokenExpiredDate = localStorage.getItem("tokenExpiredDate");
+
+        await this.gameInit();
+        
+
+        finishLoading();
+
+        this.startGame();
+    }     
+    
+
+    private InitModules() {
+        console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT + " URL API: " + CONFIG.BASE_URL);
 
         this.audio = AudioController.instance;
 
-        this.audio.init(this, false);   
+        this.audio.init(this, false);
 
         this._popupController = new PopupController(this);
 
@@ -100,33 +130,13 @@ export default class MainSceneController extends Phaser.Scene {
 
         this._popupController.registerOnClosePopup(() => this.ClosePopup());
 
-       
+        this._scoringController = new ScoreController();
+
+        this.gameData.results = this._scoringController.scores;
     }
-
-
-    async create() {
-
-        window.addEventListener('offline', () => {            
-            this.OpenTemplatePopup(PopupType.LostConnection);
-        });
-
-        window.addEventListener('online', () => {            
-            this._popupController.closeLostConnectionPopup();            
-        });
-
-        this._backendController.token = localStorage.getItem("token");
-
-        this._backendController.tokenExpiredDate = localStorage.getItem("tokenExpiredDate");
-
-        await this.Init();
-
-        this.startGame();
-    }
-            
-    
 
     async startGame() { 
-        console.log("Starting Game Again")      
+        console.log("Starting Game...")      
         this.scene.launch(SceneInfo.languageSelectorScene.key);        
     }
 
@@ -149,7 +159,7 @@ export default class MainSceneController extends Phaser.Scene {
 
                 this.backend.tokenExpiredDate = auth.data.tokenExpiredDate;
 
-                await this.Init();
+                await this.gameInit();
             }
 
             return auth;
@@ -165,7 +175,7 @@ export default class MainSceneController extends Phaser.Scene {
         }
     }
 
-    private async Init() 
+    private async gameInit() 
     {
         console.log(this._backendController.token, this.backend.tokenExpiredDate)
 
@@ -189,10 +199,12 @@ export default class MainSceneController extends Phaser.Scene {
             try 
             {
                 var initData = await this._backendController.Init();
-                
-                this._initData = initData.data;
 
-                console.log(this._initData)
+                if(initData.error != null) throw new Error(initData.error.message)
+                this._initData = initData.data;
+                this._backendController.sessionId = initData.data.sessionId;
+
+                console.log("INIT DATA", this._initData)
 
                 if(initData.data.savedData != null && initData.data.savedData != "")
                 {
@@ -204,12 +216,13 @@ export default class MainSceneController extends Phaser.Scene {
                         this.gameData.progress.emotionalUnderstanding.userResponses = [];
                     }
 
-                    console.log(this.gameData)
                 }
 
-            
-
                 this.gameData.sessionId = initData.data.sessionId;
+
+                this.gameData.results = this._scoringController.Init(this.gameData.results!, this.gameData.progress.emotionalUnderstanding.scores)
+
+                console.log("GAME DATA", this.gameData)
         
             } catch(e)
             {
@@ -273,8 +286,23 @@ export default class MainSceneController extends Phaser.Scene {
     }
 
     public async SaveGameData()
-    {        
-        await this._backendController.SaveGame(this.gameData);
+    {  
+        try {
+            var res = await this._backendController.SaveGame(this.gameData);
+            if(res.error != null)
+            {
+                throw Error(res.error.message);
+            }
+            console.log("progress saved")
+        } catch(e)
+        {
+            console.log(e)
+            if (e instanceof Error)
+            {
+                this.OpenTemplatePopup(PopupType.Error, Localizations.text.errors.failed_to_save.desc );
+            }
+        }
+
     }
 
     public OpenInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
@@ -299,6 +327,68 @@ export default class MainSceneController extends Phaser.Scene {
         }
     }
 
+    public AddEmotionScore(emotion: number)
+    {
+        this.gameData.progress.emotionalUnderstanding.scores.emotion = this._scoringController.addEmotionalScore(emotion)
+    }
 
-    
+    public AddRespondScore(respond: number)
+    {
+        this.gameData.progress.emotionalUnderstanding.scores.response = this._scoringController.addRespondScore(respond)
+    }
+
+    public AddMinigameScore(minigameType: MinigameTypes, minigameScore : GameScore)
+    {
+        this.gameData.results = this._scoringController.addMinigameScore(minigameType, minigameScore)
+    }
+
+    public async FinishMinigames()
+    {
+        var finalScore = this._scoringController.getFinalScore();
+
+        await this.SaveGameData();
+
+        this.gameData.results = finalScore;
+        console.log(this.gameData.results)
+
+        var scoreData : SubmitScoreData = {
+            wM_Accuracy: finalScore[MinigameTypes.MemoryOfSpades].accuracy,
+            wM_Performance: finalScore[MinigameTypes.MemoryOfSpades].performance,
+            sR_Accuracy: finalScore[MinigameTypes.PuzzleBlock].accuracy,
+            sR_Performance: finalScore[MinigameTypes.PuzzleBlock].performance,
+            lC_Accuracy: finalScore[MinigameTypes.GuessTheWord].accuracy,
+            lC_Performance: finalScore[MinigameTypes.GuessTheWord].performance,
+            nR_Accuracy: 0,
+            nR_Performance: 0,
+            lR_Accuracy: 0,
+            lR_Performance: 0,
+            pS_Accuracy: 0,
+            pS_Performance: 0,
+            aP_Accuracy: 0,
+            aP_Performance: 0,
+            eU_Accuracy: finalScore[MinigameTypes.EmotionalUnderstanding].accuracy,
+            eU_Performance: finalScore[MinigameTypes.EmotionalUnderstanding].performance,
+        }
+
+        console.log("Final score data", scoreData)
+
+        //TODO submit data to BE
+        try {
+            var res = await this._backendController.SubmitScore(scoreData);
+            console.log(res)
+            if(res.error != null)
+            {
+                throw new Error(res.error.message);
+            }
+            this.scene.remove(SceneInfo.gameplayScene.key)
+            this.scene.launch(SceneInfo.resultScene.key);
+        } catch(e)
+        {
+            console.log(e)
+            if (e instanceof Error)
+            {
+                this.OpenTemplatePopup(PopupType.Error, e.message);
+            }
+        }
+    }
 }

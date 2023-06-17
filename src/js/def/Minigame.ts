@@ -10,4 +10,4 @@ export interface IMinigameData {
 
 
 // Order of gameplay
-export enum MinigameTypes {MemoryOfSpades, PuzzleBlock, GuessTheWord}
+export enum MinigameTypes {MemoryOfSpades, PuzzleBlock, GuessTheWord, EmotionalUnderstanding}

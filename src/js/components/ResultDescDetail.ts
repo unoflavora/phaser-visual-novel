@@ -70,9 +70,9 @@ export default class ResultDescDetail extends Container
     {        
         for (var i = 0; i < 8; i++) 
         {
-            var key = Object.keys(MainSceneController.instance.gameData.results)[i] as keyof IResults;
+            var key = "Result " + i;
             
-            var value = scores[key];
+            var value = Math.random() * 100;
 
             this.results[i].setProgress(key, value);
         }
@@ -82,7 +82,7 @@ export default class ResultDescDetail extends Container
         for (var i = 0; i < 8; i++) {
             var progress = new ProgressBar(this.scene, 0, 0, this.displayWidth * .47, this.scene.scale.height * .06, this.color);
             progress.setProgress(
-                Object.keys(MainSceneController.instance.gameData.results)[i],
+                "Result " + i,
                 Math.random()
             )
             this.results.push(progress);

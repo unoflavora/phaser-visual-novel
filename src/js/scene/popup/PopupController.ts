@@ -56,9 +56,11 @@ export default class PopupController extends Phaser.GameObjects.Container
     public closeLostConnectionPopup()
     {
         this._onClosePopup();
+
+        this.infoPopup.ClosePopup();
     }
 
-    public openInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
+    public openInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function | null, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
     {
         this.background.gameobject.setVisible(true);
 
@@ -77,7 +79,7 @@ export default class PopupController extends Phaser.GameObjects.Container
 
     private openLostConnectionPopup()
     {
-        this.openInfoPopup("Lost Connection", "You are offline, please check your internet connection.", UIAsset.icon_warning.key, () => {}, "Refresh");
+        this.openInfoPopup("Lost Connection", "You are offline, please check your internet connection.", UIAsset.icon_warning.key, null, "Refresh");
     }
 
     private openSettingsPopup() 

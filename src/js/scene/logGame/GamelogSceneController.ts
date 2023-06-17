@@ -33,7 +33,7 @@ export default class GamelogSceneController extends Phaser.Scene
         for(var i = 0; i < 8; i++)
         {
             this.results.push({
-                title: Object.keys(MainSceneController.instance.gameData.results)[i],
+                title: "Result " + i,
                 score: Math.floor(Math.random() * 100),
                 date: "01 February 2023",
                 id: i

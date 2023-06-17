@@ -14,9 +14,9 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
     private options: GridSizer
     private optionData : optionData[] = [];
 
-    onOptionClicked : (index: number) => void;
+    onOptionClicked : (optionValue : string) => void;
 
-    constructor(scene: Phaser.Scene, textBox: Image, onOptionClicked : (index: number) => void) {
+    constructor(scene: Phaser.Scene, textBox: Image, onOptionClicked : (optionValue: string) => void) {
         super(scene);
 
         this.onOptionClicked = (index) => 
@@ -119,10 +119,10 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 
         // Set Interactive
         optionBg.gameobject.once("pointerdown", () => {
-            this.onOptionClicked(optionIndex);
+            this.onOptionClicked(optionValue);
         });
         optionValueObject.gameobject.setWordWrapWidth(optionBg.transform.displayWidth * .75);
-        optionValueObject.gameobject.handleTextSize(option.container, optionBg.gameobject.displayHeight * .2);
+        optionValueObject.gameobject.handleTextSize(optionBg.gameobject, optionBg.gameobject.displayHeight * .2, optionBg.gameobject.displayHeight * .1);
     }
 
   }
