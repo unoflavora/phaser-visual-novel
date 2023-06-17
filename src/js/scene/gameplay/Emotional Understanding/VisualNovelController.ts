@@ -25,7 +25,9 @@ export default class VisualNovelController
     public onFinishNovel : string = "VisualNovelIsFinished";
 
 	public onProgress : string = "OnSceneComplete";
-    
+	
+	private _playerAskedForResponse : boolean = false;
+
     constructor(scene : GameplaySceneController)
     {
         this.parentScene = scene;
@@ -62,7 +64,6 @@ export default class VisualNovelController
 
 		startScene.call(this)
 
-		var playerAskedForResponse : boolean = false;
 
 		this.view.on(this.view.events.OnIntroComplete, onFinishIntro.bind(this));
 
@@ -71,7 +72,8 @@ export default class VisualNovelController
 		this.view.on(this.view.events.OnResponseFinished, goToNextScene.bind(this));			
 
 		function startScene(this: VisualNovelController) {
-			
+			const lang = MainSceneController.instance.gameData.settings.lang;
+
 			if(currentSceneIndex == -1)
 			{
 				currentSceneIndex = -2;
@@ -103,6 +105,7 @@ export default class VisualNovelController
 					break;
 				case SceneState.AskResponse:
 					currentInteraction = () => {
+						this._playerAskedForResponse = true;
 						var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
 						this.randomize(interaction);	
 						this.view.showPrompt(Localizations.text.prompts.response)
@@ -113,13 +116,38 @@ export default class VisualNovelController
 				case SceneState.ResponseContext:
 					this.view.HideOptions();
 
+					// The code finds the index of a selected option by comparing the user's response with text values in response arrays, 
+					// taking into account different languages.
 					var optionValue = progress.userResponses[progress.userResponses.length - 1];
-					var responseData = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
-					var optionIndex = responseData.findIndex(e => e.text == optionValue);
+					var optionIndex : number;
 
-					var responseContexts = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en_contexts : scene.response_id_contexts;
+					var optionIndexEn = scene.response_en.findIndex(res => res.text == optionValue);
+					
+					// If previous response are in english
+					if (optionIndexEn > -1) 
+					{
+						optionIndex = optionIndexEn;
+						// But current game language is Indonesian
+						if (lang == LanguageEnum.Indonesian)
+						{
+							// Find the equivalent response in Indonesian
+							optionIndex = scene.response_id.findIndex(res => res.score == scene.response_en[optionIndex].score)
+						}
+					}
+					// Else, previous response are in Indonesian 
+					else {
+						optionIndex = scene.response_id.findIndex(res => res.text == optionValue);
+
+						// If the current game language are in English
+						if (lang == LanguageEnum.English)
+						{
+							// Find the equivalent response in English
+							optionIndex = scene.response_en.findIndex(res => res.score == scene.response_id[optionIndex].score)
+						}
+					}
+
+					var responseContexts = lang == LanguageEnum.English ? scene.response_en_contexts : scene.response_id_contexts;
 					currentInteraction = () => this.view.ShowCharacterResponses(responseContexts[optionIndex]);
-
 					currentInteraction();
 					break;
 				default:
@@ -148,7 +176,7 @@ export default class VisualNovelController
 		function onPlayerChooseAnswer(this : VisualNovelController, optionValue : string) {
 			console.log("user choosing this response: " + optionValue)
 
-			if (!playerAskedForResponse)
+			if (!this._playerAskedForResponse)
 			{
 				// Submit scores and then emit progressing event MUST be in this order.
 				// Otherwise score will not be saved.
@@ -178,7 +206,7 @@ export default class VisualNovelController
 			}
 			currentInteraction();
 
-			playerAskedForResponse = true;
+			this._playerAskedForResponse = true;
 		}
 
 		function showNpcResponse(this: VisualNovelController, optionValue: string) {
@@ -208,7 +236,7 @@ export default class VisualNovelController
 		function goToNextScene(this: VisualNovelController)
 		{
 			currentSceneIndex++;
-			playerAskedForResponse = false;
+			this._playerAskedForResponse = false;
 
 			// + 1 for tutorial scene
 			if(currentSceneIndex < scenes.length - 1)

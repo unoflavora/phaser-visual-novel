@@ -7,8 +7,8 @@ const IndonesianText : typeof EnglishText = {
         back: "Kembali",
     },
     prompts:{
-        emotion: "Apa yang Anda pikirkan tentang karakter ini?",
-        response: "Apa yang menurut Anda tanggapan yang tepat?",
+        emotion: "Pilih respon Anda",
+        response: "Pilih respon Anda",
     },
     loading: {
         minigame: "Memuat Minigame...",
