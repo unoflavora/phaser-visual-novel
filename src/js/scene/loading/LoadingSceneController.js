@@ -15,10 +15,12 @@ export default class LoadingSceneController extends Phaser.Scene {
       .then(this.loadLoadingResources)
       .then(this.setupLoading)
       .then(this.loadMainResouces)
+      .then(this.getInitData)
       .then(() => {
+        console.log('Loading Complete')
         this.load.removeAllListeners();
         this.view.setLoadingValue(1);
-        this.scene.start(SceneInfo.mainScene.key);
+        this.scene.remove(this.scene.key)
       })
       .catch((error) => {
         LogHelper.log('ERROR', error);
@@ -35,6 +37,12 @@ export default class LoadingSceneController extends Phaser.Scene {
   LoadFonts = () => {
     return DomAssetLoadHelper.loadFonts(Object.values(FontAsset));
   };
+
+  getInitData = () => {
+    return new Promise((resolve) => {
+      this.scene.launch(SceneInfo.mainScene.key, resolve)
+    });  
+  }
 
   /**
    * Load Boot Resources
@@ -59,7 +67,8 @@ export default class LoadingSceneController extends Phaser.Scene {
     return new Promise((resolve) => {
       this.view = new LoadingSceneView(this);
       this.load.on('progress', (value) => {
-        this.view.setTargetLoadingValue(value);
+        // loading value is maxed at 90% to allow for the game to await for mainscene init
+        this.view.setTargetLoadingValue(value * .9);
       });
 
       resolve();

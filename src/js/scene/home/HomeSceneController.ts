@@ -27,7 +27,6 @@ export default class HomeSceneController extends Phaser.Scene {
 
         this.eventKey = EventBus.instance.subscribe(GameEvents.languageChanged, this.onChangeLanguage.bind(this))
         this.scene.scene.events.on("shutdown", () => {
-			console.log("Shutdown")
 			EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey);
 		});
 

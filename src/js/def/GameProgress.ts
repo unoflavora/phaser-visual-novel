@@ -1,9 +1,12 @@
 import { MinigameTypes } from "./Minigame";
+import { IEmotionalUnderstandingScore } from "./Settings";
 
 export interface IEmotionalUnderstandingProgress {
     currentSceneIndex: number;
     currentSceneState: SceneState;
-    userResponses: number[]
+    userEmotions: string[];
+    userResponses: string[];
+    scores: IEmotionalUnderstandingScore,
 }
 
 export default interface IGameProgress

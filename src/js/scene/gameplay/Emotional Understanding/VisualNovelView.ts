@@ -55,8 +55,9 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.characterController = new CharacterController(scene);
 		this.characterController.getChildren().forEach(child => this.add(child));
 
-		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.81, UIAsset.bg_story_box.key)
+		this.textBox = new Image(scene, scene.scale.width * 0.5, scene.scale.height, UIAsset.bg_story_box.key)	
 		this.textBox.transform.setDisplayWidth(scene.scale.width * 0.9, true);
+		this.textBox.gameobject.setPosition(scene.scale.width * .5, scene.scale.height - this.textBox.gameobject.displayHeight * .5)
 		this.add(this.textBox.gameobject)
 
 		this.characterNames = new CharacterNamesController(scene, this.textBox);
@@ -180,7 +181,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		var promptBox = new Image(scene, this.textBox.gameobject.x, this.textBox.gameobject.y - this.textBox.gameobject.displayHeight * .55, UIAsset.bg_story_options.key);
 		promptBox.gameobject.setOrigin(0.5, 1);
 		this.add(promptBox.gameobject);
-		promptBox.transform.setDisplaySize(this.textBox.gameobject.displayWidth * .45, this.textBox.gameobject.displayHeight * .25)
+		promptBox.transform.setDisplaySize(this.textBox.gameobject.displayWidth * .25, this.textBox.gameobject.displayHeight * .25)
 
 		var promptText = new Text(scene, promptBox.gameobject.x, promptBox.gameobject.y - promptBox.gameobject.displayHeight * .5, "Ifuly", {
 			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
