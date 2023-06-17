@@ -1,10 +1,4 @@
-# readme
-
-__*status:*__
-- ![staging](https://github.com/prothegee/deusproject.lothar.phaser/actions/workflows/staging-ci_cd.yml/badge.svg)
-<!-- - production __TBD__ -->
-
-## Template Phaser
+ # Template Phaser
 
 > ![template version](https://img.shields.io/badge/Phaser_Template-3.4.1-brightgreen)
 

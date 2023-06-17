@@ -1,17 +1,12 @@
 import { AuthData, InitData, Response } from "Definitions/BackendResponse";
-import IGameData from "./GameData";
+import { SubmitScoreData } from "Definitions/GameScore";
+import { IGameData } from "Definitions/Settings";
 
 export default class BackendController 
 {
-    private _token : string | null = "";
+    public token : string | null = "";
     public tokenExpiredDate: string | null = "";
-
-    public set token(value: string | null) 
-    {
-        this._token = value;
-    }
-
-    public get token() { return this._token };
+    public sessionId: string | null = "";
 
     public async Login(email : string, password : string) : Promise<Response<AuthData>>
     {
@@ -29,7 +24,7 @@ export default class BackendController
 
     public async Init() : Promise<Response<InitData>>
     {
-        if(this._token == null) {
+        if(this.token == null) {
             console.error("Token is null");
             return Promise.reject("Token is null");
         }
@@ -38,7 +33,7 @@ export default class BackendController
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + this._token,
+                "Authorization": "Bearer " + this.token,
             },
             body: JSON.stringify({})
         }).then(res => res.json());
@@ -50,13 +45,35 @@ export default class BackendController
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + this._token,
+                "Authorization": "Bearer " + this.token,
             },
             body: JSON.stringify({
                 sessionId: data.sessionId,
                 gameMetaData: JSON.stringify(data)
             })
         }).then(res => res.json());
+    }
+
+    public async SubmitScore(scoreData: SubmitScoreData) : Promise<Response<boolean>>
+    {
+        var payload = {
+            sessionId: this.sessionId,
+            scoreData: scoreData
+        }
+
+        console.log(payload)
+        return fetch(CONFIG.BASE_URL + "/game/submit-score", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + this.token,
+            },
+            body: JSON.stringify(payload)
+        }).then(res => res.json()).catch(err => {
+            console.error(err);
+            return Promise.reject(err);
+        });
+
     }
 
 }

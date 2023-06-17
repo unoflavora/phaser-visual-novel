@@ -54,6 +54,10 @@ const EnglishText = {
         assesment_taken: {
             title: "You have taken the assesment.",
             desc: "Please contect the company you are affiliated with to be granted access to retake the test.",
+        },
+        failed_to_save: {
+            title: "Failed to save game",
+            desc: "Failed to save game, please check your internet connection and try again.",
         }
     }
 }

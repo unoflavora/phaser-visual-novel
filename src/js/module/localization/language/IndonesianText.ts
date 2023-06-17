@@ -55,6 +55,10 @@ const IndonesianText : typeof EnglishText = {
         assesment_taken: {
             title: "Anda telah mengikuti tes.",
             desc: "Silakan hubungi perusahaan Anda agar diberi akses untuk mengulang tes.",
+        },
+        failed_to_save: {
+            title: "Gagal menyimpan game",
+            desc: "Gagal menyimpan progress game, silakan periksa koneksi internet Anda dan coba lagi.",
         }
     }
 }

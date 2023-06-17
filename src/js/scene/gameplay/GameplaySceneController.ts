@@ -64,27 +64,31 @@ export default class GameplaySceneController extends Phaser.Scene {
 		}
 	}
 
-	private onNovelProgressing(scene : Scene, state: SceneState, optionIndex : number)
+	private onNovelProgressing(scene : Scene, state: SceneState, optionValue : string)
 	{
 		if (scene == null) return;
 
 		MainSceneController.instance.progress.setProgress({
 			currentSceneIndex : scene.scene, 
 			currentSceneState : state,
+			userEmotions : state == SceneState.AskResponse ?
+				[...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions, optionValue]
+				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions,
 			userResponses : state == SceneState.ResponseContext 
-				? [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses, optionIndex]
-				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses
+				? [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses, optionValue]
+				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses,
+			scores: MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores
 		})
 
 	}
 
 
-	private onFinishEmotionalUnderstanding() {
+	private async onFinishEmotionalUnderstanding() {
 		console.log("FINISHED NOVEL");
 
-		console.log(MainSceneController.instance.gameData.scores);
+		console.log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
 
-		this.scene.launch(SceneInfo.resultScene.key);
+		await MainSceneController.instance.FinishMinigames();
 	}
 
 	private onFinishMiniGame(minigameType : MinigameTypes) 

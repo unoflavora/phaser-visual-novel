@@ -1,4 +1,3 @@
-import { setEmotionScore, setResponseScore } from "Modules/core/GameData";
 import EventBus, { GameEvents } from "Modules/core/GameEventBus";
 import VisualNovelView from "./VisualNovelView";
 import { GameplayAsset } from "Assets/AssetLibraryGameplay";
@@ -52,7 +51,6 @@ export default class VisualNovelController
 		this.eventKey = EventBus.instance.subscribe(GameEvents.languageChanged, () => currentInteraction());
 
 		this.parentScene.scene.scene.events.on("shutdown", () => {
-			console.log("Shutdown")
 			EventBus.instance.unsubscribe(GameEvents.languageChanged, this.eventKey);
 		});
 
@@ -97,7 +95,7 @@ export default class VisualNovelController
 				case SceneState.AskEmotion:
 					currentInteraction = () => {
 						var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
-						this.shuffleArray(interaction);	
+						this.randomize(interaction);	
 						this.view.showPrompt(Localizations.text.prompts.emotion)
 						this.view.AskPlayerForAnswer(interaction);
 					}
@@ -106,7 +104,7 @@ export default class VisualNovelController
 				case SceneState.AskResponse:
 					currentInteraction = () => {
 						var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
-						this.shuffleArray(interaction);	
+						this.randomize(interaction);	
 						this.view.showPrompt(Localizations.text.prompts.response)
 						this.view.AskPlayerForAnswer(interaction)
 					};
@@ -115,11 +113,12 @@ export default class VisualNovelController
 				case SceneState.ResponseContext:
 					this.view.HideOptions();
 
-					var optionIndex = progress.userResponses[progress.userResponses.length - 1];
+					var optionValue = progress.userResponses[progress.userResponses.length - 1];
+					var responseData = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+					var optionIndex = responseData.findIndex(e => e.text == optionValue);
 
-					currentInteraction = () => this.view.ShowCharacterResponses(MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
-						? scene.response_en_contexts[optionIndex]
-						: scene.response_id_contexts[optionIndex]);
+					var responseContexts = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en_contexts : scene.response_id_contexts;
+					currentInteraction = () => this.view.ShowCharacterResponses(responseContexts[optionIndex]);
 
 					currentInteraction();
 					break;
@@ -134,9 +133,8 @@ export default class VisualNovelController
 				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskEmotion);
 				currentInteraction = () => {
 					var emotions = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
-					this.shuffleArray(emotions);	
 					this.view.showPrompt(Localizations.text.prompts.emotion)
-					this.view.AskPlayerForAnswer(emotions)
+					this.view.AskPlayerForAnswer(this.randomize(emotions))
 				};
 				
 				currentInteraction();
@@ -147,47 +145,57 @@ export default class VisualNovelController
 			goToNextScene.call(this);
 		}
 
-		function onPlayerChooseAnswer(this : VisualNovelController, optionIndex : number) {
+		function onPlayerChooseAnswer(this : VisualNovelController, optionValue : string) {
+			console.log("user choosing this response: " + optionValue)
+
 			if (!playerAskedForResponse)
 			{
-				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskResponse);
+				// Submit scores and then emit progressing event MUST be in this order.
+				// Otherwise score will not be saved.
 
-				askForResponse.call(this, optionIndex);
+
+				askForResponse.call(this, optionValue);
+
+				this.parentScene.events.emit(this.onProgress, scene, SceneState.AskResponse, optionValue);
 
 				return;
 			}
 
-			showNpcResponse.call(this, optionIndex);
+			showNpcResponse.call(this, optionValue);
 		}
 
-		function askForResponse(this: VisualNovelController, optionIndex: number) {
+		function askForResponse(this: VisualNovelController, optionValue: string) {
+			var emotionData = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.emotions_en : scene.emotions_id;
+			var optionIndex = emotionData.findIndex(e => e.text == optionValue);
+			var score = emotionData[optionIndex].score;
 
-			var score = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
-				? scene.emotions_en[optionIndex].score
-				: scene.emotions_id[optionIndex].score;
-
-			setEmotionScore(MainSceneController.instance.gameData.scores.emotion + score);
+			MainSceneController.instance.AddEmotionScore(score);
 
 			currentInteraction = () => {
 				var interaction = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
-				this.shuffleArray(interaction);	
 				this.view.showPrompt(Localizations.text.prompts.response)
-				this.view.AskPlayerForAnswer(interaction);
+				this.view.AskPlayerForAnswer(this.randomize(interaction));
 			}
 			currentInteraction();
 
 			playerAskedForResponse = true;
 		}
 
-		function showNpcResponse(this: VisualNovelController, optionIndex: number) {
+		function showNpcResponse(this: VisualNovelController, optionValue: string) {
 
-			this.parentScene.events.emit(this.onProgress, scene, SceneState.ResponseContext, optionIndex);
+			// Submit scores and then emit progressing event MUST be in this order.
+			// Otherwise score will not be saved.
+			var responseData = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.response_en : scene.response_id;
+			var optionIndex = responseData.findIndex(e => e.text == optionValue);
+			var score = responseData[optionIndex].score;
 
 			var score = MainSceneController.instance.gameData.settings.lang == LanguageEnum.English
 				? scene.response_en[optionIndex].score
 				: scene.response_id[optionIndex].score;
 
-			setResponseScore(MainSceneController.instance.gameData.scores.response + score);
+			MainSceneController.instance.AddRespondScore(score)
+
+			this.parentScene.events.emit(this.onProgress, scene, SceneState.ResponseContext, optionValue);
 
 			this.view.HideOptions();
 
@@ -246,13 +254,17 @@ export default class VisualNovelController
 		}, 100);
 	}
 
-	shuffleArray(array : any[]) {
-		for (var i = array.length - 1; i > 0; i--) {
+	private randomize(array : any[]) {
+		var tempArray = [...array];
+
+		for (var i = tempArray.length - 1; i > 0; i--) {
 			var j = Math.floor(Math.random() * (i + 1));
-			var temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
+			var temp = tempArray[i];
+			tempArray[i] = tempArray[j];
+			tempArray[j] = temp;
 		}
+
+		return tempArray;
 	}
 	
 

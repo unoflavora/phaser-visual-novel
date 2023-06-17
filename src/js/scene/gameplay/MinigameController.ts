@@ -54,6 +54,11 @@ export default class MiniGameController {
 
                 MainSceneController.instance.settings.setBgmSettings(data.music);
 
+                MainSceneController.instance.AddMinigameScore(this.playedMinigames, {
+                    performance: data.score,
+                    accuracy: data.accuracy
+                })
+
                 this.scene.events.emit(this.eventNames.onFinishMiniGame, this.playedMinigames);
                 break;
         }        

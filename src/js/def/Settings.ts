@@ -1,4 +1,5 @@
 import IGameProgress from "./GameProgress"
+import { TotalGameScore } from "./GameScore"
 
 export interface ISettings {
     lang : LanguageEnum,
@@ -6,7 +7,7 @@ export interface ISettings {
     isBgmOn: boolean
 }
 
-export interface IScores {
+export interface IEmotionalUnderstandingScore {
     emotion: number,
     response: number
 }
@@ -27,8 +28,7 @@ export interface IGameData {
     progress: IGameProgress
     sessionId: string
     settings: ISettings,
-    scores: IScores,
-    results: IResults
+    results : TotalGameScore | null,
 }
 
 export enum LanguageEnum { Indonesian, English }
