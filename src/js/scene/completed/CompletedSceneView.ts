@@ -6,12 +6,14 @@ import Image from "Modules/gameobjects/Image"
 import Text from "Modules/gameobjects/Text"
 import Localizations from "Modules/localization/LocalizationHelper"
 import MainSceneController from "Scenes/MainSceneController"
+import ContainerLite from "phaser3-rex-plugins/plugins/containerlite"
 
 export default class CompletedSceneView extends Phaser.GameObjects.Group
 {
     private _userNameText! : Text;
     private _seeAdminBtn! : Button;
     private _backToHomeBtn!: Button;
+    private _dateContainer!: ContainerLite;
 
     constructor(scene : Phaser.Scene)
     {
@@ -62,22 +64,29 @@ export default class CompletedSceneView extends Phaser.GameObjects.Group
         })
         finishedText.gameobject.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .58)
         finishedText.gameobject.setOrigin(.5, 0)
+        var finishedContainer = new ContainerLite(this.scene,this.scene.scale.width * .5, this.scene.scale.height * .7)
 
         var finishedOnText = new Text(this.scene, 0,0, Localizations.text.result.finishedDate, {
             font: "300 Adobe Caslon Pro",
             color: FontColors.darkBrown
         });
-        finishedOnText.gameobject.setOrigin(1, 0)
+        finishedOnText.gameobject.setOrigin(.8, 0)
         finishedOnText.gameobject.setFontSize(this.scene.scale.height * .045)
         finishedOnText.gameobject.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .7)
+        finishedContainer.add(finishedOnText.gameobject)
 
-        var finishedDate = new Text(this.scene, 0,0, this.getCurrentDate.call(this), {
+        var finishedDate = new Text(this.scene, 0,0, " " + this.getCurrentDate.call(this), {
             fontFamily: FontAsset.adobe_caslon_pro_bold.key,
             fontSize: this.scene.scale.height * .04,
             color: FontColors.darkBrown
         })
-        finishedDate.gameobject.setOrigin(0, 0)
-        finishedDate.gameobject.setPosition(this.scene.scale.width * .5, finishedOnText.gameobject.y)
+        finishedDate.gameobject.setOrigin(-.3, 0)
+        finishedDate.gameobject.setPosition(this.scene.scale.width * .5, finishedOnText.gameobject.y * 1.005)
+        finishedContainer.add(finishedDate.gameobject)
+
+        finishedContainer.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .7)
+        finishedContainer.setOrigin(.5)
+        this._dateContainer = finishedContainer;
 
         var seeAdminPanelButton = new Button(this.scene, 0,0, UIAsset.button_frame_secondary.key)
         seeAdminPanelButton.transform.setDisplayWidth(this.scene.scale.width * .15, true)
@@ -112,6 +121,8 @@ export default class CompletedSceneView extends Phaser.GameObjects.Group
     public SetUserNameText(name: string)
     {
         this._userNameText.gameobject.setText(name);
+        this._dateContainer.setOrigin(.5)
+        this._dateContainer.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .7)
     }
 
     public RegisterOnSeeAdminPanelClicked(func : Function)
