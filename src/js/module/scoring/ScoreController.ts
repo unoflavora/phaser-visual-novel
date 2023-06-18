@@ -1,4 +1,4 @@
-import EmotionalUnderstandingScoring, { EmotionalUnderstandingScoreInitData } from "./EmotionalUnderstandingScoreController";
+import EmotionalUnderstandingScoring from "./EmotionalUnderstandingScoreController";
 import IMinigameScore from "Definitions/GameScore";
 import { MinigameTypes } from "Definitions/Minigame";
 import { IEmotionalUnderstandingScore, IGameData } from "Definitions/Settings";

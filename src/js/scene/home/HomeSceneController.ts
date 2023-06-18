@@ -47,21 +47,6 @@ export default class HomeSceneController extends Phaser.Scene {
                 
             },        
             () => {
-                // Open Gamelog
-                if(MainSceneController.instance.initData.hasPlayed)
-                {
-                    MainSceneController.instance.OpenInfoPopup(
-                        Localizations.text.errors.not_taken_assesment.title, 
-                        Localizations.text.errors.not_taken_assesment.desc, 
-                        UIAsset.icon_warning.key, () => {}, 
-                        Localizations.text.interactions.close);
-                    return;
-                }
-                AudioController.instance.play(AudioAsset.main_button_click.key);
-                this.scene.launch(SceneInfo.gamelogScene.key);
-            }, 
-        
-            () => {
                 // Open Settings
                 AudioController.instance.play(AudioAsset.main_button_click.key);
                 MainSceneController.instance.OpenTemplatePopup(PopupType.Settings);

@@ -5,6 +5,8 @@ const IndonesianText : typeof EnglishText = {
     interactions: {
         close: "Tutup",
         back: "Kembali",
+        seeResult: "Lihat Hasil",
+        backToHome: "Ke Beranda"
     },
     prompts:{
         emotion: "Pilih respon Anda",
@@ -12,6 +14,11 @@ const IndonesianText : typeof EnglishText = {
     },
     loading: {
         minigame: "Memuat Minigame...",
+    },
+    result: {
+        thankYou: "Terima kasih telah bermain",
+        finished: "Anda telah menyelesaikan gamenya!",
+        finishedDate: "Selesai pada tanggal: ",
     },
     mainMenu: {
         startGame: "Mulai Test",

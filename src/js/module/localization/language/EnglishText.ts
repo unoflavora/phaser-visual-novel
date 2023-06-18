@@ -4,6 +4,8 @@ const EnglishText = {
     interactions: {
         close: "Close",
         back: "Back",
+        seeResult: "See Admin Panel",
+        backToHome: "Back to Home"
     },
     prompts:{
         emotion: "Choose your response",
@@ -11,6 +13,11 @@ const EnglishText = {
     },
     loading: {
         minigame: "Loading Minigame...",
+    },
+    result: {
+        thankYou: "Thank you for playing",
+        finished: "You have finished the game!",
+        finishedDate: "Finished on: ",
     },
     mainMenu: {
         startGame: "Start Test",

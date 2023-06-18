@@ -6,7 +6,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import Localizations from "Modules/localization/LocalizationHelper";
 import MainSceneController from "Scenes/MainSceneController";
-import ResultBox from "js/components/ResultBox";
+import ResultBox from "Scenes/legacy(unused)/components/ResultBox";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
 
 export default class GamelogSceneView extends Phaser.GameObjects.Group
