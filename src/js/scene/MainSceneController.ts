@@ -81,11 +81,6 @@ export default class MainSceneController extends Phaser.Scene {
     {
         this.InitModules();
 
-        // // TODO DELETE THIS BEFORE GOES INTO PROD
-        // this.startGame();
-        // return;
-        // // FINIDH TODO
-
         window.addEventListener('offline', () => {            
             this.OpenTemplatePopup(PopupType.LostConnection);
         });
@@ -104,13 +99,11 @@ export default class MainSceneController extends Phaser.Scene {
             })
         }
 
-
         this._backendController.token = localStorage.getItem("token");
 
         this._backendController.tokenExpiredDate = localStorage.getItem("tokenExpiredDate");
 
         await this.gameInit();
-        
 
         finishLoading();
 
@@ -377,6 +370,7 @@ export default class MainSceneController extends Phaser.Scene {
 
         console.log("Final score data", scoreData)
 
+
         try {
             var res = await this._backendController.SubmitScore(scoreData);
             console.log(res)
@@ -384,8 +378,9 @@ export default class MainSceneController extends Phaser.Scene {
             {
                 throw new Error(res.error.message);
             }
-            this.scene.remove(SceneInfo.gameplayScene.key)
-            this.scene.launch(SceneInfo.resultScene.key);
+            this.initData.hasPlayed = true;
+            this.scene.stop(SceneInfo.gameplayScene.key)
+            this.scene.launch(SceneInfo.completedScene.key);
         } catch(e)
         {
             console.log(e)

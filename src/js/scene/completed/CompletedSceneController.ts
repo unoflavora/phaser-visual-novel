@@ -1,5 +1,6 @@
 import { SceneInfo } from "Definitions/SceneInfo";
 import CompletedSceneView from "./CompletedSceneView";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class CompleteSceneController extends Phaser.Scene
 {
@@ -11,8 +12,22 @@ export default class CompleteSceneController extends Phaser.Scene
         this.view = new CompletedSceneView(this);
     }
 
-    init()
+    preload()
     {
-        this.view.create();
+        this.view.layout();
+    }
+
+    create()
+    {  
+        if(MainSceneController.instance.initData != null)
+            this.view.SetUserNameText(MainSceneController.instance.initData.fullname)
+
+        this.view.RegisterOnBackToHomeClicked(() => {
+            this.scene.start(SceneInfo.homeScene.key);
+        })
+
+        this.view.RegisterOnSeeAdminPanelClicked(() => {
+            window.open(CONFIG.RESULT_URL, "_blank")
+        })
     }
 }

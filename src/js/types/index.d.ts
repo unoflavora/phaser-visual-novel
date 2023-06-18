@@ -17,4 +17,6 @@ export type Config = {
 	OFFLINE_MODE: boolean;
 	BASE_URL: string;
 	ENVIRONMENT: string;
+	RESULT_URL: string;
+	RESET_PASSWORD_URL: string;
 };
