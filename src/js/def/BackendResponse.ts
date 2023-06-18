@@ -11,7 +11,7 @@ export interface InitData
 {
     sessionId: string,
     savedData: string | null,
-    fullName: string,
+    fullname: string,
     hasPlayed: boolean,
 }
 

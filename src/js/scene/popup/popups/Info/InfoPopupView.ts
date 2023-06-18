@@ -76,15 +76,16 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoDesc = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.1,
+            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.125,
             Localizations.text.mainMenu.auth.forgot_password_desc,
             {
+                font: "300 Adobe Caslon Pro",
                 color: FontColors.darkBrown,
-                fontSize: this.scene.scale.height * .022,
                 wordWrap: { width: this.panel.gameobject.displayWidth * 0.78, useAdvancedWrap: true },
                 align: "center"
             }
         );
+        this.infoDesc.gameobject.setFontSize(this.scene.scale.height * .022)
 
         this.infoDesc.gameobject.setOrigin(0.5);
         this.add(this.infoDesc.gameobject)

@@ -6,6 +6,8 @@
 	"OFFLINE_MODE" : false,
 	"BASE_URL" : "https://staging-lothar-cognitive-api.deusassessment.com",
     "BASE_GAME_URL": "https://hoafl.deusassessment.com/",
-    "ENVIRONMENT": "STAGING"
+    "ENVIRONMENT": "STAGING",
+	"RESULT_URL": "https://staging-lothar-cognitive-dashboard.deusassessment.com",
+	"RESET_PASSWORD_URL": "https://staging-lothar-cognitive-dashboard.deusassessment.com"
 
 }
