@@ -110,19 +110,19 @@
         "response_en":
         [
             {
-                "text": "Don't pay too much attention and continue the journey",
+                "text": "Pomoro does not pay too much attention to the mushroom and decides to continue on the journey",
                 "score": 25
             },
             {
-                "text": "Ask the mushroom for directions",
+                "text": "Greets the mushroom",
                 "score": 50
             },
             {
-                "text": "Greet the mushroom",
+                "text": "Ask for directions",
                 "score": 75
             },
             {
-                "text": "Introduce yourself and ask the mushroom for directions",
+                "text": "Introduce yourself and ask for directions",
                 "score": 100
             }
         ],
@@ -167,7 +167,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Ask for directions.*",
+                        "*Ask for directions*",
                         "Excuse me, am I on the right direction to Prospevil?"
                     ]
                 },
@@ -248,19 +248,19 @@
         "response_id":
         [
             {
-                "text": "Jangan terlalu memperhatikan dan melanjutkan perjalanan",
+                "text": "Pomoro tidak terlalu memperhatikan jamur dan memutuskan untuk melanjutkan perjalanan",
                 "score": 25
             },
             {
-                "text": "Tanyakan arah pada jamur",
+                "text": "Beri salam kepada jamur",
                 "score": 50
             },
             {
-                "text": "Beri salam kepada jamur",
+                "text": "Tanyakan arah pada jamur",
                 "score": 75
             },
             {
-                "text": "Perkenalkan diri Anda dan tanyakan arah pada jamur",
+                "text": "Perkenalkan diri Anda dan tanyakan arah",
                 "score": 100
             }
         ],
@@ -305,7 +305,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Menanyakan arah.*",
+                        "*Tanyakan arah pada jamur.*",
                         "Permisi, apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
@@ -337,7 +337,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Memperkenalkan diri dan menanyakan arah*",
+                        "*Perkenalkan diri Anda dan tanyakan arah*",
                         "Halo, nama saya Pomoro. Apakah saya berada di arah yang benar ke Prospevil?"
                     ]
                 },
@@ -449,15 +449,15 @@
         "response_en":
         [
             {
-                "text": "Feel a bit awkward to ask, decide to continue the journey",
+                "text": "Feels a bit awkward or shy to ask and decides to continue on the journey",
                 "score": 50
             },
             {
-                "text": "Decide to approach and greet the carrot to ask him for inputs",
+                "text": "Feels quite intrigued seeing the carrot and has a desire to start a conversation",
                 "score": 75
             },
             {
-                "text": "Feel quite intrigued, feels a desire to start a convo",
+                "text": "Decide to approach and greet the carrot to ask him for his inputs",
                 "score": 100
             }
         ],
@@ -572,15 +572,15 @@
         "response_id":
         [
             {
-                "text": "Merasa agak canggung untuk bertanya, memutuskan untuk melanjutkan perjalanan",
+                "text": "Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan",
                 "score": 50
             },
             {
-                "text": "Putuskan untuk mendekati dan menyapa wortel untuk meminta masukan darinya",
+                "text": "Merasa cukup penasaran melihat wortel tersebut dan memiliki keinginan untuk memulai percakapan",
                 "score": 75
             },
             {
-                "text": "Merasa cukup penasaran, merasakan keinginan untuk memulai obrolan",
+                "text": "Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya",
                 "score": 100
             }
         ],
@@ -591,7 +591,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.*"
+                        "*Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan*"
                     ]
                 },
                 {
@@ -607,7 +607,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa cukup tertarik melihat wortel dan memiliki keinginan untuk memulai percakapan*",
+                        "*Merasa cukup penasaran melihat wortel tersebut dan memiliki keinginan untuk memulai percakapan*",
                         "Hari yang begitu baik bukan."
                     ]
                 },
@@ -626,7 +626,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya.*",
+                        "*Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya*",
                         "Halo, ini hari yang baik bukan."
                     ]
                 },
@@ -762,11 +762,11 @@
         "response_en":
         [
             {
-                "text": "Quickly go up to the three of them to ask them questions",
+                "text": "Quickly go up to the three of them to ask them if they are related to Ifuly",
                 "score": 50
             },
             {
-                "text": "Wants to approach them modestly, wondering if they are Ifuly's sisters",
+                "text": "Wants to approach them modestly, wondering if they are Ifuly’s younger sisters",
                 "score": 100
             }
         ],
@@ -915,11 +915,11 @@
         "response_id":
         [
             {
-                "text": "Cepat pergi ke mereka bertiga untuk mengajukan pertanyaan kepada mereka",
+                "text": "Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka mempunyai hubungan dengan Ifuly",
                 "score": 50
             },
             {
-                "text": "Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah saudara perempuan Ifuly",
+                "text": "Ingin mendekati mereka dengan rendah hati, bertanya-tanya apakah mereka adalah adik perempuan Ifuly",
                 "score": 100
             }
         ],
@@ -930,7 +930,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka berhubungan dengan Ifuly.*",
+                        "*Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka mempunyai hubungan dengan Ifuly.*",
                         "Hei, kalian terlihat akrab!"
                     ]
                 },
@@ -977,7 +977,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Ingin mendekati mereka dengan sopan, bertanya-tanya apakah mereka adalah adik perempuan Ifuly.*",
+                        "*Ingin mendekati mereka dengan rendah hati, bertanya-tanya apakah mereka adalah adik perempuan Ifuly.*",
                         "Permisi, bolehkah saya tahu jika kalian bertiga adalah saudara perempuan Ifuly?"
                     ]
                 },
@@ -1135,15 +1135,15 @@
         "response_en":
         [
             {
-                "text": "Not sure whether to be afraid or not, maybe it's not the best idea to approach",
+                "text": "Not sure whether to be afraid or not, partly thinking that it may not be the best idea to approach",
                 "score": 50
             },
             {
-                "text": "Feel surprised seeing him on the high incline, decides to approach",
+                "text": "Feel surprised seeing him on the high incline, decides to approach the turnip warrior",
                 "score": 75
             },
             {
-                "text": "Feel concerned and want to offer him help",
+                "text": "Sees the turnip on a high incline, feel concerned and want to offer him help",
                 "score": 100
             }
         ],
@@ -1286,15 +1286,15 @@
         "response_id":
         [
             {
-                "text": "Tidak yakin apakah harus takut atau tidak, mungkin itu bukan ide terbaik untuk didekati",
+                "text": "Tidak yakin apakah harus takut atau tidak, berpikir bahwa itu mungkin bukan ide terbaik untuk didekati",
                 "score": 50
             },
             {
-                "text": "Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekat",
+                "text": "Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati prajurit lobak",
                 "score": 75
             },
             {
-                "text": "Merasa prihatin dan ingin menawarkan bantuan kepadanya",
+                "text": "Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan kepadanya",
                 "score": 100
             }
         ],
@@ -1305,7 +1305,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Tidak yakin apakah harus takut atau tidak, sebagian berpikir bahwa itu mungkin bukan ide terbaik untuk didekati*",
+                        "*Tidak yakin apakah harus takut atau tidak, berpikir bahwa itu mungkin bukan ide terbaik untuk didekati*",
                         "*Pomoro pergi dengan segera*"
                     ]
                 },
@@ -1322,7 +1322,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati pendekar lobak.*",
+                        "*Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati prajurit lobak.*",
                         "Wow, apa yang kamu lakukan di sini? Anda tampak bermasalah?"
                     ]
                 },
@@ -1377,7 +1377,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan*",
+                        "*Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan kepadanya*",
                         "Anda tampak bermasalah. Bisakah saya bantu?"
                     ]
                 },
@@ -1500,11 +1500,11 @@
         "response_en":
         [
             {
-                "text": "Take notice at these two carrot humanoids, they seem related to Ota",
+                "text": "They seem familiar. Try and figure out who these two are",
                 "score": 50
             },
             {
-                "text": "They seem familiar. Try and figure out who they are",
+                "text": "Notice these two carrot humanoids, they seem to be related with Ota",
                 "score": 100
             }
         ],
@@ -1681,11 +1681,11 @@
         "response_id":
         [
             {
-                "text": "Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota",
+                "text": "Mereka tampak akrab. Coba dan cari tahu siapa keduanya",
                 "score": 50
             },
             {
-                "text": "Mereka tampak akrab. Coba dan cari tahu siapa mereka",
+                "text": "Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota",
                 "score": 100
             }
         ],
@@ -1696,7 +1696,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Mereka tampak akrab. Coba cari tahu siapa mereka berdua*",
+                        "*Mereka tampak akrab. Coba dan cari tahu siapa keduanya*",
                         "Woah, apa aku mengenal kalian berdua?"
                     ]
                 },
@@ -1925,11 +1925,11 @@
         "response_en":
         [
             {
-                "text": "Call the three of them from afar",
+                "text": "Call on the three of them from afar",
                 "score": 50
             },
             {
-                "text": "Come to them to inquire further",
+                "text": "Come up to them to inquire further",
                 "score": 100
             }
         ],
@@ -2078,7 +2078,7 @@
                 "score": 50
             },
             {
-                "text": "Datanglah ke mereka untuk bertanya lebih lanjut",
+                "text": "Datangi mereka untuk bertanya lebih lanjut",
                 "score": 100
             }
         ],
@@ -2156,7 +2156,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Datanglah ke mereka untuk bertanya lebih lanjut*",
+                        "*Datangi mereka untuk bertanya lebih lanjut*",
                         "Halo, saya Pomoro. Apakah Anda mengenal Rapa? Saya pikir Anda mengenal Rapa."
                     ]
                 },
@@ -2284,7 +2284,7 @@
         "response_en":
         [
             {
-                "text": "Approach him and tell him to come down from the pretty high boulder",
+                "text": "Approach him and tell him to get down from the high boulder",
                 "score": 50
             },
             {
@@ -2404,7 +2404,7 @@
         "response_id":
         [
             {
-                "text": "Dekati dia dan suruh dia turun dari batu yang cukup tinggi",
+                "text": "Dekati dia dan katakan padanya untuk turun dari batu besar",
                 "score": 50
             },
             {
@@ -2419,7 +2419,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Dekati dia dan suruh dia turun dari batu besar*",
+                        "*Dekati dia dan katakan padanya untuk turun dari batu besar*",
                         "Hei! Turun, berbahaya di atas sana!"
                     ]
                 },
@@ -2471,7 +2471,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Dengan lembut dekati dia dan bujuk dia untuk berhati-hati dan turun*",
+                        "*Dekati dia dengan lembut dan bujuk dia untuk berhati-hati dan turun*",
                         "Hei, hei. Apakah kamu Mupo atau Mupi. Kata Mupa kita harus turun. Rapa juga mencarimu."
                     ]
                 },
@@ -2587,11 +2587,11 @@
         "response_en":
         [
             {
-                "text": "Tell Mupi to be careful and warn him of the dangers",
+                "text": "Talk to Mupo and order him to come down",
                 "score": 50
             },
             {
-                "text": "Talk to Mupi and order him to come down",
+                "text": "Tell Mupo to be careful and warn him of the dangers of standing on top of that boulder",
                 "score": 100
             }
         ],
@@ -2695,11 +2695,11 @@
         "response_id":
         [
             {
-                "text": "Beri tahu Mupi untuk berhati-hati dan peringatkan dia tentang bahayanya",
+                "text": "Bicaralah dengan Mupo dan perintahkan dia untuk turun",
                 "score": 50
             },
             {
-                "text": "Bicaralah dengan Mupi dan perintahkan dia untuk turun",
+                "text": "Beritahu Mupo untuk berhati-hati dan peringatkan dia tentang bahaya berdiri di atas batu itu",
                 "score": 100
             }
         ],
@@ -2756,7 +2756,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Katakan pada Mupo untuk berhati-hati dan peringatkan dia akan bahaya berdiri di atas batu besar itu.*",
+                        "*Beritahu Mupo untuk berhati-hati dan peringatkan dia tentang bahaya berdiri di atas batu itu.*",
                         "Mupo, hati-hati di sana, berbahaya. Kamu berdiri di atas batu besar yang ceroboh."
                     ]
                 },
