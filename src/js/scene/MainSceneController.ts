@@ -81,6 +81,11 @@ export default class MainSceneController extends Phaser.Scene {
     {
         this.InitModules();
 
+        // // TODO DELETE THIS BEFORE GOES INTO PROD
+        // this.startGame();
+        // return;
+        // // FINIDH TODO
+
         window.addEventListener('offline', () => {            
             this.OpenTemplatePopup(PopupType.LostConnection);
         });
@@ -372,7 +377,6 @@ export default class MainSceneController extends Phaser.Scene {
 
         console.log("Final score data", scoreData)
 
-        //TODO submit data to BE
         try {
             var res = await this._backendController.SubmitScore(scoreData);
             console.log(res)

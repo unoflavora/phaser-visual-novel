@@ -4,8 +4,8 @@ import { IResults } from "Definitions/Settings";
 import Button from "Modules/gameobjects/Button";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
-import ResultDescDetail from "js/components/ResultDescDetail";
-import ResultScoreDetail from "js/components/ResultScoreDetail";
+import ResultDescDetail from "Scenes/legacy(unused)/components/ResultDescDetail";
+import ResultScoreDetail from "Scenes/legacy(unused)/components/ResultScoreDetail";
 import Container from "phaser3-rex-plugins/templates/ui/container/Container";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
 

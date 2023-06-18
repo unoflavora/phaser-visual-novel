@@ -8,8 +8,9 @@ import HomeSceneController from '../scene/home/HomeSceneController';
 import CreatePasswordController from '../scene/auth/createPassword/CreatePasswordController';
 import LoginSceneController from '../scene/auth/login/LoginSceneController';
 import ForgotPasswordController from '../scene/auth/forgotPassword/ForgotPasswordController';
-import GamelogSceneController from '../scene/logGame/GamelogSceneController';
-import ResultSceneController from '../scene/result/ResultSceneController';
+import GamelogSceneController from '../scene/legacy(unused)/logGame/GamelogSceneController';
+import ResultSceneController from '../scene/legacy(unused)/result/ResultSceneController';
+import CompleteSceneController from 'Scenes/completed/CompletedSceneController';
 
 export const SceneInfo = {
   bootScene: {
@@ -27,10 +28,6 @@ export const SceneInfo = {
   gameplayScene: {
     key: 'GameplayScene',
     module: GameplaySceneController,
-  },
-  debugScene: {
-    key: 'DebugScene',
-    module: DebugSceneController,
   },
   languageSelectorScene : {
     key: 'SelectLanguageScene',
@@ -52,6 +49,19 @@ export const SceneInfo = {
     key: 'ForgotPasswordScene',
     module: ForgotPasswordController
   },
+  completedScene: {
+    key: 'CompletedScene',
+    module: CompleteSceneController
+  },
+
+  // #Region Development Scene
+  debugScene: {
+    key: 'DebugScene',
+    module: DebugSceneController,
+  },
+  // #endregion
+
+  // #Region Legacy Scenes (Unused)
   gamelogScene: {
     key: 'GamelogScene',
     module: GamelogSceneController
@@ -60,5 +70,6 @@ export const SceneInfo = {
     key: 'ResultScene',
     module: ResultSceneController
   }
+  // #endregion
 
 };
