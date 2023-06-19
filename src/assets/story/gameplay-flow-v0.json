@@ -35,8 +35,8 @@
         ],
         "intro_id":
         [
-            "Alkisah, di sebuah kerajaan yang jauh, ada seorang petualang muda bernama Pomoro yang dikenal haus akan petualangan. Ia memulai perjalanannya ke Prospevil, sebuah desa makmur di Kerajaan Vefurata.",
-            "Pomoro memulai perjalanannya, merasa bersemangat untuk memulai petualangan baru ini. Ke hutan Vefurata."
+            "Pada suatu masa, di sebuah kerajaan yang jauh, hiduplah seorang petualang muda bernama Pomoro yang terkenal haus akan petualangan. Ia memulai perjalanannya menuju Prospevil, sebuah desa makmur di Kerajaan Vefurata.",
+            "Pomoro memulai perjalanannya, merasa sangat bersemangat untuk memulai petualangan baru ini. Menuju hutan Vefurata."
         ],
         "emotions_en": [],
         "emotions_id": [],
@@ -56,7 +56,7 @@
         ],
         "intro_id":
         [
-            "Saat berjalan melewati hutan, Pomoro melihat humanoid jamur di depan rumah."
+            "Saat ia berjalan melalui hutan, Pomoro melihat seorang manusia jamur di depan sebuah rumah."
         ],
         "emotions_en":
         [
@@ -248,19 +248,19 @@
         "response_id":
         [
             {
-                "text": "Pomoro tidak terlalu memperhatikan jamur dan memutuskan untuk melanjutkan perjalanan",
+                "text": "Pomoro gak terlalu memperhatikan manusia jamur tersebut dan melanjutkan perjalanan",
                 "score": 25
             },
             {
-                "text": "Beri salam kepada jamur",
+                "text": "Menyapa si manusia jamur",
                 "score": 50
             },
             {
-                "text": "Tanyakan arah pada jamur",
+                "text": "Menanyakan arah jalan",
                 "score": 75
             },
             {
-                "text": "Perkenalkan diri Anda dan tanyakan arah",
+                "text": "Memperkenalkan diri dan menanyakan arah jalan",
                 "score": 100
             }
         ],
@@ -271,14 +271,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro tidak terlalu memperhatikan jamur dan memutuskan untuk melanjutkan perjalanan*"
+                        "*Pomoro gak terlalu memperhatikan manusia jamur tersebut dan melanjutkan perjalanan*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Ifuly memperhatikan bahwa seseorang tampaknya mendekatinya, dan dia berlari ke dalam rumahnya."
+                        "Ifuly menyadari bahwa seseorang nampak mendekatinya, dan ia berlari masuk ke dalam rumahnya."
                     ]
                 }
             ],
@@ -287,15 +287,15 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Beri salam kepada jamur*",
-                        "Hi..."
+                        "*Menyapa si manusia jamur*",
+                        "Hai..."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Ohh, emm.. hai...",
+                        "Ehh, emm.. Halo...",
                         "*Ifuly terlihat sangat malu dan masuk ke dalam rumahnya.*"
                     ]
                 }
@@ -305,30 +305,30 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Tanyakan arah pada jamur.*",
-                        "Permisi, apakah saya berada di arah yang benar ke Prospevil?"
+                        "*Menanyakan arah jalan.*",
+                        "Permisi, apakah benar jalan ini bisa ke arah Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "... Oh hai, maaf. Bisakah Anda mengulangi pertanyaan Anda? Saya tidak sepenuhnya memperhatikan."
+                        "... Halo, maafkan aku. Bisakah kamu ulang pertanyaannya? Barusan aku kurang memperhatikan."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "id tba: Pomoro/You",
                     "text": [
-                        "Tentu, jadi saya ingin pergi ke Prospevil, apakah saya berada di jalur yang benar?"
+                        "Tentu. Jadi aku ingin pergi ke Prospevil, apakah aku ada di jalan yang tepat?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi saya tidak yakin.",
-                        "Mungkin Anda bisa mengecek dengan salah satu saudara perempuan saya, mereka pergi beberapa jam yang lalu."
+                        "Oh, Prospevil. Aku pikir sih sudah benar, tapi aku gak yakin.",
+                        "Mungkin kamu bisa tanya salah satu adikku. Mereka pergi beberapa jam yang lalu."
                     ]
                 }
             ],
@@ -337,46 +337,46 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Perkenalkan diri Anda dan tanyakan arah*",
-                        "Halo, nama saya Pomoro. Apakah saya berada di arah yang benar ke Prospevil?"
+                        "*Memperkenalkan diri dan menanyakan arah jalan*",
+                        "Halo, aku Pomoro. Apakah aku ada di jalur yang benar menuju Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Oh, hi Pomoro.",
-                        "Maaf, saya tidak memperhatikan sepenuhnya. Ngomong-ngomong, di Italia. Apakah Anda keberatan mengulangi pertanyaan Anda?"
+                        "Oh, hai Pomoro.",
+                        "Maaf, aku kurang memperhatikan. Namaku Ifuly. Kalau kamu gak keberatan, boleh ulangi lagi pertanyaannya"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ya, jadi saya ingin pergi ke Prospevil, apakah saya sudah berada di jalur yang benar?"
+                        "Iya. Jadi aku mau ke Prospevil. Apakah aku sudah lewat jalur yang benar?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Ohhh, Prospevil. Saya pikir itu benar, tetapi Anda dapat memeriksa kembali dengan saudara perempuan saya jika Anda bertemu dengan mereka",
-                        "Mereka sudah sering ke sana, saya hanya ke sana beberapa kali"
+                        "Oh, Prospevil. Aku pikir sih sudah benar. Tetapi untuk memastikan, kamu bisa tanya adikku kalau bertemu mereka.",
+                        "Mereka sudah sering ke sana. Kalau aku baru beberapa kali saja."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Emm, bolehkah saya tahu siapa nama saudara perempuan Anda?"
+                        "Emm, boleh aku tahu nama-nama saudarimu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "Mereka terlihat mirip dengan saya dan nama mereka adalah Bolebole, Agari & Imuc.",
-                        "Juga sapa saya jika Anda bertemu mereka, Pomoro!"
+                        "Mereka mirip denganku. Nama mereka Bolebole, Agari, dan Imuc.",
+                        "Jangan lupa sampaikan salam dariku kalau ketemu mereka ya, Pomoro."
                     ]
                 }
             ]
@@ -394,8 +394,8 @@
         ],
         "intro_id":
         [
-            "Saat menjelajah jauh ke dalam hutan Vefurata, Pomoro menemukan rumah wortel di tebing. Dia tampak penasaran dan masuk ke dalam rumah wortel.",
-            "Begitu Pomoro tiba di sana, dia melihat humanoid wortel."
+            "Setelah menjelajah jauh ke dalam hutan Vefurata, Pomoro menemukan sebuah rumah wortel di tebing. Dia tampak penasaran dan masuk ke dalam rumah wortel tersebut.",
+            "Sesampainya Pomoro di sana, dia melihat seorang manusia wortel."
         ],
         "emotions_en":
         [
@@ -572,15 +572,15 @@
         "response_id":
         [
             {
-                "text": "Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan",
+                "text": "Merasa agak canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.",
                 "score": 50
             },
             {
-                "text": "Merasa cukup penasaran melihat wortel tersebut dan memiliki keinginan untuk memulai percakapan",
+                "text": "Merasa cukup tertarik melihat manusia wortel dan berkeinginan untuk memulai percakapan",
                 "score": 75
             },
             {
-                "text": "Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya",
+                "text": "Memutuskan untuk mendekati dan menyapa si manusia wortel dan meminta masukan.",
                 "score": 100
             }
         ],
@@ -591,14 +591,14 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa sedikit canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan*"
+                        "*Merasa agak canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "*Ota terlihat malu dan masuk ke dalam rumahnya.*"
+                        "*Ota terlihat malu dan langsung masuk ke rumahnya.*"
                     ]
                 }
             ],
@@ -607,17 +607,17 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa cukup penasaran melihat wortel tersebut dan memiliki keinginan untuk memulai percakapan*",
-                        "Hari yang begitu baik bukan."
+                        "*Merasa cukup tertarik melihat manusia wortel dan berkeinginan untuk memulai percakapan*",
+                        "Hari yang cerah ya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "Ya! Ini hari yang baik dan saya senang.",
-                        "Baiklah, saatnya bekerja.",
-                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya.*"
+                        "Ya! Hari ini cerah dan aku senang.",
+                        "Baik, waktunya untuk bekerja.",
+                        "*Ota mengayunkan sekop, menaruhnya di atas pundak, dan mulai meninggalkan halamannya.*"
                     ]
                 }
             ],
@@ -626,66 +626,66 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Putuskan untuk mendekati dan menyapa wortel untuk meminta masukannya*",
-                        "Halo, ini hari yang baik bukan."
+                        "*Memutuskan untuk mendekati dan menyapa si manusia wortel dan meminta masukan.*",
+                        "Halo, hari ini indah sekali gak sih?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Ota",
                     "text": [
-                        "Tentunya .. hari seperti ini mengangkat semangat seseorang. Kemana tujuanmu?"
+                        "Benar sekali.. Hari seperti ini bisa bikin orang semangat. Kamu mau ke mana?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Saya menuju ke Prospevil, apakah Anda pernah ke sana sebelumnya?"
+                        "Aku mau pergi ke Prospevil. Kamu pernah pergi ke sana ga?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "Ohh, Prospervil! Benar-benar tempat yang sangat indah yang Anda tuju.",
-                        "Kami semua tinggal di dekat daerah itu saat itu."
+                        "Oh Prospevil! Tempat itu benar-benar indah loh.",
+                        "Dulu kami tinggal di sekitar sana."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Tunggu, 'kita semua'? Apa maksudmu?"
+                        "unggu, “kami”? Apa maksud kamu?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "Ya. Pasti, Naca, Daucu dan aku. Oh dan aku lupa memberitahumu, namaku Ota."
+                        "Yap. Pasti, Naca, Daucu, dan aku. Oh aku lupa memberitahumu, namaku Ota."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ahh, sepertinya menyenangkan memiliki keluarga yang erat. Nama saya Pomoro! Senang bertemu denganmu, Ota."
+                        "Ahh, kamu memiliki keluarga yang erat, terlihat begitu menyenangkan. Namaku Pomoro! Senang bertemu denganmu, Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "Ya, senang bertemu denganmu juga, Pomoro. Semoga harimu menyenangkan! Aku akan pergi bekerja!",
-                        "*Ota mengayunkan sekopnya, meletakkannya di bahu kanannya, dan mulai meninggalkan pekarangannya dengan senyum cerah di wajahnya.*"
+                        "Iya, senang bertemu denganmu juga, Pomoro. Semoga harimu menyenangkan! Aku akan pergi bekerja!",
+                        "*Ota mengayunkan sekop, menaruhnya di atas pundak, dan mulai meninggalkan halamannya dengan senyuman lebar di wajahnya.*"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro pergi dengan gembira dan dengan senyum di wajahnya.*"
+                        "*Pomoro pergi dengan gembira dan sebuah senyuman di wajahnya.*"
                     ]
                 }
             ]
@@ -705,10 +705,10 @@
         ],
         "intro_id":
         [
-            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan mencapai tanjakan, dipenuhi udara lembab.",
-            "Pomoro melihat beberapa gerakan di antara pepohonan, dan memberanikan diri untuk menyelidiki gerakan apa itu.",
-            "Yang mengejutkan, Pomoro melihat pemandangan yang familiar. Dia melihat tiga jamur muda.",
-            "Itu mengingatkannya pada Ifuly."
+            "Setelah mengumpulkan tenaga, Pomoro melanjutkan petualangannya dan sampai di tanjakan yang penuh dengan udara lembab.",
+            "Pomoro melihat ada gerakan di balik pepohonan, lalu dia memberanikan diri untuk menyelidikinya.",
+            "Terkejut, Pomoro melihat sesuatu yang tak asing, tiga manusia jamur.",
+            "Mereka mengingatkannya pada Ifuly."
         ],
         "emotions_en":
         [
@@ -915,11 +915,11 @@
         "response_id":
         [
             {
-                "text": "Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka mempunyai hubungan dengan Ifuly",
+                "text": "Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudari Ifuly.",
                 "score": 50
             },
             {
-                "text": "Ingin mendekati mereka dengan rendah hati, bertanya-tanya apakah mereka adalah adik perempuan Ifuly",
+                "text": "Ingin menghampiri mereka tanpa terlihat mencolok, penasaran apakah mereka adiknya Ifuly atau bukan",
                 "score": 100
             }
         ],
@@ -930,8 +930,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Cepat pergi ke mereka bertiga untuk menanyakan apakah mereka mempunyai hubungan dengan Ifuly.*",
-                        "Hei, kalian terlihat akrab!"
+                        "*Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudari Ifuly..*",
+                        "Hey, kalian seperti tidak asing!"
                     ]
                 },
                 {
@@ -945,22 +945,22 @@
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "Kita semua bersaudaraaa"
+                        "Kami ini saudariiii."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "Kami lebih dari kembar tiga!"
+                        "Kami lebih dari kembar tigaaa!/Kami bukan kembar tiga biasaaa!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
-                        "*Bersama-sama mereka berkumpul dan berteriak*",
-                        "// Kakak bilang kita tidak boleh berbicara dengan orang yang tidak sopan! //",
+                        "*Serentak, mereka berkumpul dan berteriak*",
+                        "// Kakak bilang kami gak boleh bicara dengan orang yang kita tidak kenal //",
                         "*Mereka pergi ke pohon lain beberapa meter dari sana dan mulai bermain bersama lagi....*"
                     ]
                 },
@@ -968,7 +968,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro kaget dan mereka langsung pergi.*"
+                        "*Pomoro kaget dan si kembar tiga langsung pergi.*"
                     ]
                 }
             ],
@@ -977,88 +977,88 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Ingin mendekati mereka dengan rendah hati, bertanya-tanya apakah mereka adalah adik perempuan Ifuly.*",
-                        "Permisi, bolehkah saya tahu jika kalian bertiga adalah saudara perempuan Ifuly?"
+                        "*Ingin menghampiri mereka tanpa terlihat mencolok, penasaran apakah mereka adiknya Ifuly atau bukan.*",
+                        "Permisi. Kalau boleh tahu, apakah kalian bertiga adiknya Ifuly?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "Wooo..?"
+                        "Saapaahh..?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "Anda bertemu kakak perempuan kami?"
+                        "Kamu ketemu kakak kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "Bagaimana kabarnya?"
+                        "Gimana kabarnya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Yah, dia tampak baik-baik saja tetapi sedikit pemalu. Bagaimanapun, dia menyapa kalian semua. Saya pikir dia khawatir."
+                        "Hmm, dia baik-baik aja, tapi agak sedikit pemalu. Ngomong-ngomong, Ifuly titip salam untuk kalian. Sepertinya dia khawatir."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "Tunggu tunggu! Kakak mengkhawatirkan kami?"
+                        "Tunggu, tunggu! Kakak mengkhawatirkan kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "Oh tidak! Aku ingin bermain-main dulu!"
+                        "Oh tidak! Aku ingin bermain dulu!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "Jangan khawatir, kami akan kembali lagi nanti. Terima kasih telah memberi tahu kami!",
-                        "Ya memang dia sedikit pemalu, tapi dia sangat peduli dengan kami"
+                        "Jangan khawatir, kami akan pulang nanti. Makasih sudah memberi tahu kami!",
+                        "Betul dia memang pemali, tapi dia peduli sekali ke kita."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Jadi saya punya pertanyaan untuk kalian semua",
-                        "Kakak bilang kalian tahu arah ke Prospevil?"
+                        "Jadi aku punya pertanyaan untuk kalian",
+                        "Kakak kalian bilang kalau kalian tahu arah jalan ke Prospevil?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Bolebole",
                     "text": [
-                        "Ayy, Prospevil!"
+                        "Yeeyyy, Prospevil!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Agari",
                     "text": [
-                        "Prospevil... Langsung saja!"
+                        "Prospevil... Tinggal lurus aja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "Ya. Jalan lurus saja itu arah yang benar",
-                        "Kami akan kembali ke kakak nanti. Terima kasih!"
+                        "Iyaaa. Tinggal lurus, itu jalan yang benar.",
+                        "Kami akan kembali ke rumah nanti. Makasih!"
                     ]
                 }
             ]
@@ -1078,10 +1078,10 @@
         ],
         "intro_id":
         [
-            "Pomoro memulai perjalanannya lagi. Dia berhasil melewati hutan, melewati berbagai rintangan.",
-            "Ketika Pomoro hampir mencapai tepi hutan, dia mendengar sesuatu. Dia mendengar gemuruh, tapi itu bukan suara binatang buas, bukan pula guntur.",
-            "Pomoro sepertinya tidak yakin tapi penasaran untuk menyelidiki sumber suara itu.",
-            "Suara itu mulai semakin dekat, dan yang mengejutkan, Pomoro melihat seorang Prajurit Lobak."
+            "Pomoro melanjutkan perjalannya. Dia berhasil melintasi hutan dan melewati berbagai rintangan.",
+            "Ketika Pomoro hampir mencapai tepi hutan, dia mendengar sesuatu. Bukan suara binatang maupun guntur, melainkan sebuah gemuruh.",
+            "Pomoro terlihat tidak yakin tapi penasaran untuk menyelidiki sumber suara tersebut.",
+            "Suara itu semakin mendekat, dan terkejut, Pomoro melihat seorang Kesatria Lobak."
         ],
         "emotions_en":
         [
@@ -1286,15 +1286,15 @@
         "response_id":
         [
             {
-                "text": "Tidak yakin apakah harus takut atau tidak, berpikir bahwa itu mungkin bukan ide terbaik untuk didekati",
+                "text": "Tidak yakin apakah harus takut atau tidak. Di satu sisi berfikir bahwa mendekatinya bukanlah ide yang bagus",
                 "score": 50
             },
             {
-                "text": "Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati prajurit lobak",
+                "text": "Merasa terkejut melihat kesatria lobak di tanjakan tinggi, memutuskan mendekatinya",
                 "score": 75
             },
             {
-                "text": "Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan kepadanya",
+                "text": "Melihat lobak di tanjakan yang curam, merasa kasihan dan ingin menawarkan bantuan kepadanya",
                 "score": 100
             }
         ],
@@ -1305,8 +1305,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Tidak yakin apakah harus takut atau tidak, berpikir bahwa itu mungkin bukan ide terbaik untuk didekati*",
-                        "*Pomoro pergi dengan segera*"
+                        "*Tidak yakin apakah harus takut atau tidak. Di satu sisi berfikir bahwa mendekatinya bukanlah ide yang bagus*",
+                        "*Pomoro segera pergi*"
                     ]
                 },
                 {
@@ -1322,53 +1322,53 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Merasa terkejut melihatnya di tanjakan tinggi, memutuskan untuk mendekati prajurit lobak.*",
-                        "Wow, apa yang kamu lakukan di sini? Anda tampak bermasalah?"
+                        "*Merasa terkejut melihat kesatria lobak di tanjakan tinggi, memutuskan mendekatinya.*",
+                        "Wow, kamu sedang apa di sini? Apakah kamu mengalami masalah?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Gila Kesal. Marah! Saya mencari Mupa, Mupo dan Mupi."
+                        "Rapa marahhh. Sebal! Aku mencari Mupa, Mupo, dan Mupi."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Emm, Mu Ma Mo.. haa?!"
+                        "Ehh,Mu Ma Mo.. apa?!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Hah! Tidak ada waktu untuk menjelaskan. Mereka terlihat seperti saya",
-                        "Jika Anda bertemu mereka, suruh mereka pergi ke sini"
+                        "Haa! Tidak ada waktu untuk menjelaskan. Mereka terluhat seperti aku.",
+                        "Jika kamu bertemu mereka. Suruh mereka ke sini!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Tunggu! Saya harus pergi ke Prospevil."
+                        "Tunggu dulu! Aku harus ke Prosvepil."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Ya baik! Jadi Anda bisa melanjutkan ke barat, yaitu arah ke Prospevil.",
-                        "Dan saya menuju ke Timur.",
-                        "*Rapa buru-buru ke Timur*"
+                        "Ya, bagus! Ikuti jalan ke arah Barat, kamu akan tiba di Prosvepil.",
+                        "Dan aku akan pergi ke Timur.",
+                        "Rapa bergegas pergi ke Timur"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "* Pomodoro kaget dan bingung"
+                        "*Pomoro kaget & kebingungan*"
                     ]
                 }
             ],
@@ -1377,39 +1377,39 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Melihat lobak di tanjakan yang tinggi, merasa prihatin dan ingin menawarkan bantuan kepadanya*",
-                        "Anda tampak bermasalah. Bisakah saya bantu?"
+                        "*Melihat lobak di tanjakan yang curam, merasa kasihan dan ingin menawarkan bantuan kepadanya*",
+                        "Kamu sepertinya mengalami kendala. Perlu aku bantu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Argghh.. Mupa, Mupo dan Mupi dimana mereka!?"
+                        "Aarghhh.. Mupa, Mupo, dan Mupi, di mana mereka!?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Mupa, Mupo and Mupi?"
+                        "Mupa, Mupo, dan Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Herrghh, semua saudaraku, aku tidak bisa menemukan mereka",
-                        "Aku mencari mereka, tapi dimana mereka sekarang?",
-                        "Aghh, Jika Anda kebetulan menemukan mereka, saya akan senang jika Anda dapat memberitahu mereka untuk kembali ke sini"
+                        "Huuahhhh, saudara-saudaraku, Aku tidak bisa menemukan mereka.",
+                        "Aku mencari mereka, tapi di mana mereka sekarang?",
+                        "Aahh, kalau kamu bertemu mereka, aku akan senang jika kamu bisa menyuruh mereka ke sini."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Tunggu! Aku harus pergi ke Prospevil.",
-                        "Tapi saya akan memberi tahu mereka jika saya bertemu mereka di sepanjang perjalanan saya."
+                        "Tunggu dulu! Aku harus pergi ke Prospevil.",
+                        "Tapi aku akan beri tahu mereka kalau bertemu mereka di jalan."
                     ]
                 },
                 {
@@ -1417,17 +1417,17 @@
                     "name": "Rapa",
                     "text": [
                         "Oh, jadi kamu ingin pergi ke Prospevil.",
-                        "Anda bisa pergi ke Barat.",
-                        "Dan saya bisa pergi ke Timur.",
-                        "Katakan pada mereka, aku mencari mereka jika kamu bertemu mereka."
+                        "Kamu bisa pergi ke Barat.",
+                        "Dan aku bisa pergi ke timur.",
+                        "Beritahu mereka bahwa aku mencari mereka kalau kamu bertemu mereka"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Tentu saja, saya akan memberi tahu mereka ....",
-                        "*Rapa dan Pomoro pergi ke arah yang berbeda.*"
+                        "Tentu, aku akan memberi tahu mereka......",
+                        "*Rapa dan Pomoro pergi ke arah berlawanan.*"
                     ]
                 }
             ]
@@ -1445,8 +1445,8 @@
         ],
         "intro_id":
         [
-            "Begitu dia kembali berdiri, dia melanjutkan pencariannya dan menuju ke hutan.",
-            "Dia melewati padang rumput hijau yang luas dengan jalan setapak, dan melihat beberapa humanoid wortel sedang beristirahat di bawah pohon di samping jalan setapak."
+            "Setelah istirahat sejenak, dia melanjutkan perjalanan dan pergi ke arah hutan.",
+            "Ia melewati jalan setapak di padang rumput yang hijau dan luas. Pomoro kemudian melihat sepasang manusia wortel beristirahat di bawah pohon di samping jalan setapak tersebut."
         ],
         "emotions_en":
         [
@@ -1681,11 +1681,11 @@
         "response_id":
         [
             {
-                "text": "Mereka tampak akrab. Coba dan cari tahu siapa keduanya",
+                "text": "Mereka terlihat familiar. Mencoba mencari tahu siapakah keduanya",
                 "score": 50
             },
             {
-                "text": "Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota",
+                "text": "Menyadari ada dua manusia wortel yang mirip dengan Ota",
                 "score": 100
             }
         ],
@@ -1696,81 +1696,81 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Mereka tampak akrab. Coba dan cari tahu siapa keduanya*",
-                        "Woah, apa aku mengenal kalian berdua?"
+                        "*Mereka terlihat familiar. Mencoba mencari tahu siapakah keduanya*",
+                        "Wow, apakah kita pernah bertemu?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Kenapa kenapa kenapa? Ini hari yang bagus untuk bersenang-senang, bagaimana kamu mengenal kami?"
+                        "Napa napa napa? Ini hari yang pas untuk bergembira. Bagaimana kamu bisa kenal kami?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Mungkin mungkin mungkin. Tapi bagaimana, kapan? Seru bukan, ya ya ya?"
+                        "Bisa jadi bisa jadi. Tapi gimana? Kapan? Seru gak sih? Ya ya ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ya, tunggu hmm… aku lupa namanya.",
-                         "Erm...uu sesuatu? Oo.. Oott?",
-                         "Ota???"
+                        "Ya, tunggu, hmm... Aku lupa namanya",
+                        "Emm... Uu... Anu... Oo... Ota!",
+                        "Ota???"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Owh owh owh, Ota Ota Ota?"
+                        "Wo o’ ow, Ota Ota Ota?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Kak kak kakak Ota, ya?"
+                        "Kakakaka Ota, ya?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ya, saya pikir. Dia pergi bekerja dengan senyum cerah di wajahnya!"
+                        "Ya! Kalau gak salah sih. Dia pergi kerja dengan senyuman lebar di wajahnya!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Pasti pasti pasti, Kak Ota selalu bergetar dengan senyumnya setiap hari!"
+                        "Pasti pasti pasti. Ka Ota selalu bersemangat dengan senyumannya tiap hari!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Seberat apapun hari ini, kakak Ota selalu selalu menemukan alasan untuk tersenyum."
+                        "Tak peduli sesulit apa, Ka Ota s’lalu s’lalu s’lalu bisa tersenyum."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ya, kepribadian yang periang!",
-                        "Baiklah kalau begitu, aku harus pergi. Semoga harimu menyenangkan."
+                        "Ya, kepribadian yang riang!",
+                        "Baiklah, aku harus pergi. Baik-baik ya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Terima kasih terima kasih terima kasih. Semoga harimu menyenangkan juga! //"
+                        "// Makasi makasi makasi. Baik-baik juga! //"
                     ]
                 }
             ],
@@ -1779,80 +1779,80 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Perhatikan dua humanoid wortel ini, sepertinya mereka berhubungan dengan Ota*",
-                        "Hei! Kalian berdua mirip Ota!"
+                        "*Menyadari ada dua manusia wortel yang mirip dengan Ota*",
+                        "Hey! Kalian berdua mirip Ota!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Owww, Ota Ota Ota? Jadi ketemu dia di suatu tempat, ya ya ya?"
+                        "Owww, Ota Ota Ota? Jadi kamu pernah ketemu, ya ya ya?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Bagaimana kabar kak kak kakak di sana?"
+                        "Bagaimana kabar kakakakak?"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ya, dia terlihat baik-baik saja. Ota juga terlihat sangat senang ketika dia pergi bekerja!"
+                        "Dia sepertinya baik-baik saja. Ota juga terlihat sangat senang ketika pergi bekerja!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Selalu tersenyum dengan murah hati, kakak Ota selalu tersenyum apapun yang terjadi!"
+                        "Selalu tersenyum ramah, Ka Ota selalu tersenyum!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Tidak ada hari buruk yang buruk untuk saudara Ota."
+                        "Tak ada yang namanya hari hari hari buruk untuk Ka Ota."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Sepertinya senang mengenal seseorang seperti dia.",
-                        "Aku ingin sekali bertemu dengannya lagi suatu hari nanti."
+                        "Sepertinya menyenangkan bisa kenal orang seperti Ota.",
+                        "Aku akan senang kalau bisa ketemu lagi dengannya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Pasti pasti pasti, kamu bisa."
+                        "Pasti pasti pasti."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Itu benar benar benar, kamu bisa."
+                        "Betul betul betul."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Baiklah kalau begitu, senang bertemu kalian berdua.",
-                        "Semoga harimu menyenangkan!"
+                        "Baiklah, senang bertemu kalian.",
+                        "Sampai jumpa!"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Ya ya ya. Semoga harimu menyenangkan juga! //"
+                        "// Yaa yaa yaaa. Sampai jumpa! //"
                     ]
                 }
             ]
@@ -1870,8 +1870,8 @@
         ],
         "intro_id":
         [
-            "Saat Pomoro meninggalkan daerah itu, dia melihat batu-batu besar di sepanjang tanjakan kecil beberapa ratus meter di depan.",
-            "Di dekat kelompok batu pertama, Pomoro melihat anak-anak lobak."
+            "Selepas Pomoro meninggalkan area tersebut, dia melihat bebatuan besar di sepanjang lereng kecil beberapa ratus meter di depan.",
+            "Tak jauh dari kumpuan batu terdekat, Pomoro melihat anak lobak."
         ],
         "emotions_en":
         [
@@ -2074,11 +2074,11 @@
         "response_id":
         [
             {
-                "text": "Panggil mereka bertiga dari jauh",
+                "text": "Memanggil ketiganya dari kejauhan",
                 "score": 50
             },
             {
-                "text": "Datangi mereka untuk bertanya lebih lanjut",
+                "text": "Menghampiri mereka untuk bertanya lebih lanjut",
                 "score": 100
             }
         ],
@@ -2089,65 +2089,65 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Panggil mereka bertiga dari jauh*",
-                        "Tunggu, apakah mereka yang dicari Rapa?",
-                        "Hei, apakah kamu Mupa, Mupo, atau Mupi?"
+                        "*Memanggil ketiganya dari kejauhan*",
+                        "Tunggu, apakah yang dicari Rapa adalah mereka ini?",
+                        "Hei, apa kalian Mupa, Mupo, dan Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Oh tidak, tidak, tidak! Seharusnya aku tidak menyuruh mereka naik ke sana, haaa..."
+                        "Oh tidak! Aku harusnya gak memberitahu mereka untuk pergi ke sana, haaa"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Hey apa yang terjadi?"
+                        "Hey, ada apa?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Mupa sangat sangat menyesal"
+                        "Mupa sangat sangat minta maaf"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Di mana Mupi & Mupo?"
+                        "Di mana Mupo dan Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Mereka ada di sana di atas batu besar."
+                        "Mereka di atas batu sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Oke, kamu kembali ke Rapa. Aku akan memeriksa keduanya."
+                        "Oke, kamu pulang ya, temui Rapa. Mereka berdua akan aku periksa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Maafkan aku, terima kasih"
+                        "Maaf sekali. Makasih ya."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro melangkah ke batu lain sambil mendekati Mupo & Mupi.*"
+                        "*Pomoro memanjat batu besar tersebut untuk mendekati Mupo dan Mupi.*"
                     ]
                 }
             ],
@@ -2156,64 +2156,64 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Datangi mereka untuk bertanya lebih lanjut*",
-                        "Halo, saya Pomoro. Apakah Anda mengenal Rapa? Saya pikir Anda mengenal Rapa."
+                        "*Menghampiri mereka untuk bertanya lebih lanjut*",
+                        "Halo, aku Pomoro. Kamu tahu Rapa ga? Sepertinya kamu kenal."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Hah. Seharusnya aku tidak melakukan itu. Oh hai, aku Mupa."
+                        "Hah, harusnya aku gak melakukannya. Oh hai, aku Mupa."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Apa yang telah terjadi?"
+                        "Ada apa?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Seharusnya aku tidak menyuruh mereka mengejar tempat yang lebih tinggi. Dan sekarang mereka ada di atas batu."
+                        "Aku harusnya gak menyuruh mereka untuk ke tempat yang lebih tinggi. Jadinya sekarang mereka ada di atas bebatuan besar itu."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Jadi, mereka Mupo & Mupi, di atas batu yang lain?"
+                        " Jadi mereka yang di atas batuan itu Mupo dan Mupi?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Ya, kita seharusnya tidak bermain sejauh itu sebenarnya."
+                        "Iya. Kami harusnya gak bermain-main sejauh itu."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Oke oke, santai. Aku akan pergi ke mereka berdua. Kamu bisa kembali ke Rapa."
+                        "Oke oke, tenang. Aku akan hampiri mereka berdua. Kamu bisa pulang duluan ke si Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupa",
                     "text": [
-                        "Maaf. Terima kasih Pomoro."
+                        "Maaf sekali. Makasih Pomoro."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Pomoro melangkah ke batu lain sambil mendekati Mupi dan Mupo.*"
+                        "*Pomoro menaiki bebatuan untuk mendekati Mupo dan Mupi.*"
                     ]
                 }
             ]
@@ -2230,7 +2230,7 @@
         ],
         "intro_id":
         [
-            "Pomoro mendaki batu demi batu untuk mencapai Mupi dan akhirnya berdiri di atas batu yang sama dengan Mupi."
+            "Pomoro mendaki batu demi batu untuk mendekati Mupo. Pomoro akhirnya berdiri di atas batu yang sama dengan Mupi."
         ],
         "emotions_en":
         [
@@ -2404,11 +2404,11 @@
         "response_id":
         [
             {
-                "text": "Dekati dia dan katakan padanya untuk turun dari batu besar",
+                "text": "Mendekati Mupo dan menyuruhnya untuk turun dari batuan besar",
                 "score": 50
             },
             {
-                "text": "Dekati dia dengan lembut dan bujuk dia untuk berhati-hati dan turun",
+                "text": "Mendekatinya dengan perlahan, dan membujuknya untuk turun dengan hati-hati",
                 "score": 100
             }
         ],
@@ -2419,50 +2419,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Dekati dia dan katakan padanya untuk turun dari batu besar*",
-                        "Hei! Turun, berbahaya di atas sana!"
+                        "*Mendekati Mupo dan menyuruhnya untuk turun dari batuan besar*",
+                        "Hei! Ayo turun, bahaya kamu."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Huaaa, Mupo tidak mau turun. Mupo tidak bisa turun, Mupi terlalu takut!"
+                        "Huwaa, Mupo gak mau turun. Mupi gak bisa turun, takut!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Oke oke. Gak usah lihat ke bawah, Mupo.. Tunggu, kamu Mupi atau Mupo?"
+                        "Oke oke. Kamu jangan lihat ke bawah, Mupo. Eh tunggu, kamu Mupo atau Mupi, sih?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Ooo, oke. Saya Mupi. Tapi Mupo masih di atas sana."
+                        "Ooo, oke. Aku Mupi. Tapi Mupo masih di atas sana."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Jadi sekarang kita akan turun dari bongkahan batu ini, oke? Dan pergi ke Rapa setelah kita mendarat."
+                        "Kita turun dari batu ini lalu pulang kembali ke Rapa ya.."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Tte, ttt.. tentuu..."
+                        "I i i, iyaa..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Bimbing Mupi turun lalu kembali menghampiri Mupo.*"
+                        "*Memandu Mupi untuk turun, lalu kembali lagi ke atas menghampiri Mupo.*"
                     ]
                 }
             ],
@@ -2471,50 +2471,50 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Dekati dia dengan lembut dan bujuk dia untuk berhati-hati dan turun*",
-                        "Hei, hei. Apakah kamu Mupo atau Mupi. Kata Mupa kita harus turun. Rapa juga mencarimu."
+                        "*Mendekatinya dengan perlahan, dan membujuknya untuk turun dengan hati-hati*",
+                        "Hei, hei. Kamu Mupo atau Mupi? Mupa bilang kita perlu turun. Rapi juga sedang mencari kalian."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Huaaa, Mupo tidak mau turun. Mupi tidak bisa turun, terlalu tinggi, terlalu takut.."
+                        "Huwaaa, Mupo gak mau turun. Mupi gak bisa turun, terlalu tinggi, takut."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Oke oke. Nggak usah lihat ke bawah, Mupi. Jadi kamu Mupi? Betul?"
+                        "Oke oke. Kamu jangan lihat ke bawah, Mupo. Eh kamu Mupo ya kan?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Ooo, ookayy.. Ya, aku Mupi. Tapi Mupo masih di atas sana."
+                        "Ooo, okee.. Iya, aku Mupi. Tapi Mupi masih di atas sana.."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "So now we will go down from this boulder, okay? And go to Rapa after we landed."
+                        "Ayo kita turun dulu. Lalu kamu pulang ke si Rapa ya."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Tte, ttt.. tentuu..."
+                        "Bbb ba, baiik..."
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Membantu Mupi turun lalu kembali membantu Mupo.*"
+                        "*Membantu Mupi turun dan kembali ke atas untuk menolong Mupo.*"
                     ]
                 }
             ]
@@ -2532,8 +2532,8 @@
         ],
         "intro_id":
         [
-            "Setelah Mupi berhasil turun, Pomoro terus mendaki bongkahan batu tertinggi, akhirnya sampai di Mupo.",
-            "Mupo berdiri dengan bangga dengan percaya diri di mana dia terlihat begitu bermartabat di permukaan batu yang tidak rapi."
+            "Setelah Mupi turun, Pomoro kembali memanjat batuan tertinggi dan akhirnya sampai di tempat Mupo.",
+            "Mupo berdiri dengan bangga dan percaya diri di mana dia tampak begitu berwibawa di permukaan batu yang berantakan."
         ],
         "emotions_en":
         [
@@ -2695,11 +2695,11 @@
         "response_id":
         [
             {
-                "text": "Bicaralah dengan Mupo dan perintahkan dia untuk turun",
+                "text": "Bicara pada Mupo dan menyuruhnya untuk turun",
                 "score": 50
             },
             {
-                "text": "Beritahu Mupo untuk berhati-hati dan peringatkan dia tentang bahaya berdiri di atas batu itu",
+                "text": "Beritahu Mupo untuk berhati-hati dan memperingatkannya akan bahaya berdiri di atas batu besar tersebut",
                 "score": 100
             }
         ],
@@ -2710,44 +2710,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Bicaralah dengan Mupo dan perintahkan dia untuk turun*",
-                        "Mupo, bisakah kamu turun, sangat berbahaya disini! Kamu harus benar-benar berhati-hati."
+                        "*Bicara pada Mupo dan menyuruhnya untuk turun*",
+                        "Mupo, tolong turun ya, ini bahaya sekali. Kamu harus sangat berhati-hati."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Mupo ada di puncak dunia! Tidak ada yang bisa menghentikan Mupooo!"
+                        "Mupo ada di atas dunia! Tidak ada yang bisa menghentikan Mupooo!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Mupo, kamu berada di atas batu yang tinggi dan licin, bisakah kamu turun sekarang?"
+                        "Mupo, kamu ada di atas batu tinggi yang berantakan. Ayo tolong segera turun."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Aku di puncak tertinggi!"
+                        "Aku sedang berada di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Mupa dan Mupi menunggumu datang ke Rapa."
+                        "Mupa dan Mupi sedang menunggu kamu untuk pulang ke Rapa loh."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Uhhh Rapa? Yess protecta family bolak-balik.",
-                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
+                        "Haa Rapa? Uhhh Rapa? Yaa dia pelindung keluarga.",
+                        "Oke, aku akan kembali ke tempat Rapa. Pastinya aku bisa pergi ke tempat-tempat tinggi lainnya lain kali, terima kasih!"
                     ]
                 }
             ],
@@ -2756,44 +2756,44 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Beritahu Mupo untuk berhati-hati dan peringatkan dia tentang bahaya berdiri di atas batu itu.*",
-                        "Mupo, hati-hati di sana, berbahaya. Kamu berdiri di atas batu besar yang ceroboh."
+                        "*Beritahu Mupo untuk berhati-hati dan memperingatkannya akan bahaya berdiri di atas batu besar tersebut.*",
+                        "Mupo, hati-hati, bahaya. Kamu berdiri di atas batu yang licin."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Mupo ada di puncak dunia, tidak ada yang bisa menghentikan Mupooo!"
+                        "Mupo berada di atas dunia! Tidak ada yang bisa menghentikan Mupo!!!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Mupo, bisakah kamu turun sekarang?"
+                        "Mupo, bisa tolong turun sekarang?"
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Aku di puncak tertinggi!"
+                        "Aku berada di puncak tertinggi!"
                     ]
                 },
                 {
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Mupa dan Mupi menunggumu datang ke Rapa."
+                        "Mupa dan Mupi sedang menunggu kamu untuk pulang ke Rapa."
                     ]
                 },
                 {
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "Uhhh Rapa? Ya bolak-balik lindungi keluarga.",
-                        "Oke, aku akan kembali ke tempat Rapa. Tentu aku pergi ke tempat tinggi lainnya, terima kasih!"
+                        "Hah Rapa? Iya, dia pelindung keluarga.",
+                        "Oke, aku akan kembali ke tempat Rapa. Pastinya aku pergi ke tempat-tempat tinggi lainnya, terima kasih!"
                     ]
                 }
             ]
@@ -2814,11 +2814,10 @@
         ],
         "intro_id":
         [
-            "Setelah beberapa waktu, Pomoro melanjutkan perjalanannya, dan melanjutkan petualangannya.",
-            "Beberapa mil setelah meninggalkan batu besar di sepanjang jalan setapak, Pomoro melihat sebuah desa besar yang dikelilingi oleh sungai, padang rumput hijau, dan tembok yang kokoh.",
-            "Beberapa mil setelah meninggalkan batu besar di sepanjang jalan setapak, Pomoro melihat sebuah desa besar yang dikelilingi oleh sungai, padang rumput hijau, dan tembok yang kokoh.",
-            "Setelah itu, Pomoro berdiri di bawah gerbang desa. Dia menyadari bahwa perjalanannya memberinya begitu banyak pengalaman dan memungkinkan dia untuk bertemu dengan banyak orang berbeda dalam situasi unik yang berbeda.",
-            "Sejak saat itu, Pomoro terus mempelajari banyak hal sepanjang perjalanannya, didorong oleh rasa ingin tahu dan keberanian."
+            "Setelah beberapa lama, Pomoro melanjutkan perjalanannya.",
+            "Beberapa kilometer setelah melewati jalan dengan batu-batu besar, Pomoro melihat desa yang besar dikelilingi sungai, ladang rumput yang hijau, dan benteng yang kokoh.",
+            "Lalu, Pomoro berdiri di bawah gerbang desa. Dia menyadari bahwa perjalanan yang ia lalui telah memberikannya banyak pengalaman menemui berbagai orang di berbagai situasi yang unik.",
+            "Sejak saat itu, Pomoro lanjut mempelajari berbagai hal selama perjalanan yang didorong oleh rasa penasaran dan keberanian."
         ],
         "emotions_en": [],
         "emotions_id": [],
