@@ -26,7 +26,7 @@ export const AudioAsset = {
 	"bgm-emotion_understanding-sc_03_04_05":
 	{
 		key: "bgm-emotion_understanding-sc_03_04_05",
-		path: "/audio/bgm-emotion_understanding-sc_03_04_05.wav",
+		path: "/audio/bgm-emotion_understanding-sc_09.wav", // previous: bgm-emotion_understanding-sc_03_04_05.wav
 		type: AssetType.AUDIO,
 	},
 	"bgm-emotion_understanding-sc_06_07_08":
