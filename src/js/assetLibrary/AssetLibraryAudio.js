@@ -40,6 +40,12 @@ export const AudioAsset = {
 		key: "bgm-emotion_understanding-sc_09",
 		path: "/audio/bgm-emotion_understanding-sc_09.wav",
 		type: AssetType.AUDIO,
+	},
+	"bgm-emotion_understanding-sc_04":
+	{
+		key: "bgm-emotion_understanding-sc_04",
+		path: "/audio/bgm-emotion_understanding-sc_04.wav",
+		type: AssetType.AUDIO,
 	}
 
 };
