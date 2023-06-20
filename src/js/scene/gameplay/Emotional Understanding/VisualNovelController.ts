@@ -249,7 +249,17 @@ export default class VisualNovelController
 		
 				this.view.SetBackground(scene.background);
 
-				this.audioController.playBGM(scene.audio);
+                /**
+                 * scene 4 required different audio from audio index & asset it self
+                */
+                if (scene.scene === 4)
+                {
+                    this.audioController.playBGM("bgm-emotion_understanding-sc_04");
+                }
+                else
+                {
+                    this.audioController.playBGM(scene.audio);
+                }
 		
 				currentInteraction = () => this.view.ShowIntroText(scene.background, MainSceneController.instance.gameData.settings.lang == LanguageEnum.English ? scene.intro_en : scene.intro_id);
 				
