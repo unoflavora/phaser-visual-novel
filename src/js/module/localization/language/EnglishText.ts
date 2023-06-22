@@ -8,7 +8,7 @@ const EnglishText = {
         backToHome: "Back to Home"
     },
     prompts:{
-        emotion: "Choose your response",
+        emotion: "Guess the emotion",
         response: "Choose your response",
     },
     loading: {
