@@ -8,12 +8,14 @@
             "You will start a role play in this visual novel style journey as the character 'Pomoro' in the fictional land of Prospevil.",
             "In each of your steps going forward, you will meet another character and will guess their emotion from first glance.",
             "After guessing their emotion from their facial expression and body language, the next step is to select the option that YOU would actually choose if you were in this story.",
+            "There will be an “information” button on the left side of each emotion option that will explain the meaning of the emotion",
             "Enjoy the game, good luck, and have fun!`"
         ],
         "intro_id": [
             "Anda akan memulai permainan peran dalam perjalanan gaya novel visual ini sebagai karakter 'Pomoro' di negeri fiksi Prospevil.",
             "Dalam setiap langkahmu ke depan, kamu akan bertemu karakter lain dan akan menebak emosi mereka dari pandangan pertama.",
             "Setelah menebak emosi mereka dari ekspresi wajah dan bahasa tubuh mereka, langkah selanjutnya adalah memilih opsi yang benar-benar ANDA pilih jika Anda berada di cerita ini.",
+            "Akan ada tombol “informasi” di sisi kiri setiap opsi emosi yang akan menjelaskan arti emosi tersebut",
             "Nikmati permainannya, semoga berhasil, dan bersenang-senanglah!`"
         ],
         "emotions_en": [],
