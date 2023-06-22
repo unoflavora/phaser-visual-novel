@@ -56,6 +56,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
         this.add(this._nextButton.gameobject)
 
+
         this._prevButton = new Text(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
 			this._nextButton.gameobject.y, "Previous", {
@@ -68,9 +69,31 @@ export class StoryTextController extends Phaser.GameObjects.Group {
                 useAdvancedWrap: true
             }
 		});
+
+        
 		this._prevButton.gameobject.setOrigin(0, 1);
-		this._prevButton.gameobject.setInteractive({ useHandCursor: true })
+		this._prevButton.gameobject.setInteractive({useHandCursor: true})
         this._prevButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
+
+        var prevButtonClickArea = scene.add.image(this._prevButton.gameobject.x, this._prevButton.gameobject.y, "");
+        prevButtonClickArea.setDisplaySize(this._prevButton.gameobject.displayWidth * 3, this._prevButton.gameobject.displayHeight * 3);
+        prevButtonClickArea.setOrigin(0, 1);
+        prevButtonClickArea.setInteractive({useHandCursor: true});
+        prevButtonClickArea.setAlpha(0.00000000000000000000000001);
+        prevButtonClickArea.on("pointerdown", () => {
+            this._prevButton.gameobject.emit("pointerdown");
+        })
+
+        
+        var nextButtonClickArea = scene.add.image(this._nextButton.gameobject.x, this._nextButton.gameobject.y, "");
+        nextButtonClickArea.setDisplaySize(this._prevButton.gameobject.displayWidth * 3, this._prevButton.gameobject.displayHeight * 3);
+        nextButtonClickArea.setOrigin(1);
+        nextButtonClickArea.setInteractive({useHandCursor: true});
+        nextButtonClickArea.setAlpha(0.00000000000000000000000001);
+        nextButtonClickArea.on("pointerdown", () => {
+            this._nextButton.gameobject.emit("pointerdown");
+        })
+
 
         this.add(this._prevButton.gameobject);
 
