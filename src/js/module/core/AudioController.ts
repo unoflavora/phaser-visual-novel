@@ -7,6 +7,7 @@ const fadeConfiguration = {
  */
 export default class AudioController
 {
+
     scene! : Phaser.Scene;
     bgmFadeTween : Phaser.Tweens.Tween | undefined;
     onMute = false;
@@ -16,6 +17,7 @@ export default class AudioController
     private _sfxOn: boolean = true;
     
     private static _instance : AudioController;
+    private _volume: number = 1;
 
     static get instance() : AudioController
     {
@@ -57,7 +59,14 @@ export default class AudioController
         return this._sfxOn;
     }
 
+    public set volume(value: number) {
+        this._volume = value;
+        this.scene.sound.setVolume(value);
+    }
 
+    public get volume() {
+        return this._volume;
+    }
     
     /**
      * Function to Initialize Screen Utility
@@ -127,7 +136,7 @@ export default class AudioController
         this.scene.tweens.add({
             ...fadeConfiguration,
             targets: this.bgm,
-            volume: 1,
+            volume: this._volume,
         });
 
     };
