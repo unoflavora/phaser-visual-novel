@@ -140,7 +140,7 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
             this.onOptionClicked(optionValue);
         });
         optionValueObject.gameobject.setWordWrapWidth(optionBg.transform.displayWidth * .75);
-        optionValueObject.gameobject.handleTextSize(optionBg.gameobject, optionBg.gameobject.displayHeight * .2, optionBg.gameobject.displayHeight * .1);
+        optionValueObject.gameobject.handleTextSize(optionBg.gameobject, optionBg.gameobject.displayHeight * .2, optionBg.gameobject.displayHeight * .18);
     }
 
   }

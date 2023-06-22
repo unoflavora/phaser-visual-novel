@@ -54,6 +54,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 		this._nextButton.gameobject.setOrigin(1);
 		this._nextButton.gameobject.setInteractive({ useHandCursor: true })
         this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
+        this.add(this._nextButton.gameobject)
 
         this._prevButton = new Text(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
@@ -115,7 +116,63 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this.nextButtonVisible = false;
 
         this._onTypingComplete();
+	}
 
+    public LoadTextResponse(response : ResponseContext[], monologue : boolean = false, responseIndex: number = 0, paragraphIndex: number = 0) {
+        this.clearIntervals();
+        this._text.setFontStyle(monologue ? "italic" : "")
+        this._textBox.gameobject.removeAllListeners();
+
+        var paragraphs = response[responseIndex].text;
+
+        this._nextButton.gameobject.removeAllListeners();
+		this._nextButton.gameobject.once("pointerdown", () => {
+            paragraphIndex += 1;
+            this.LoadTextResponse(response, monologue, responseIndex, paragraphIndex);
+        });
+
+        this._prevButton.gameobject.removeAllListeners();
+        this._previousAvailable = responseIndex > 0 || (responseIndex == 0 && paragraphIndex > 0);
+        if(this._previousAvailable) {
+            this._prevButton.gameobject.once("pointerdown", () => {
+                paragraphIndex -= 1;
+                this.LoadTextResponse(response, monologue, responseIndex, paragraphIndex);
+            });
+        }    
+        this._prevButton.gameobject.visible = this._previousAvailable;
+
+        if(!this._textBox.gameobject.listenerCount("pointerdown")) {
+            this._textBox.gameobject.setInteractive({ useHandCursor: true });
+            this._textBox.gameobject.on("pointerdown", () => this.handleTextBoxClick(response[responseIndex].text[paragraphIndex]));
+        }   
+
+        if(paragraphIndex < 0)
+        {
+            responseIndex--;
+            paragraphIndex = response[responseIndex].text.length - 1;
+            this.LoadTextResponse(response, monologue, responseIndex, paragraphIndex);
+            return;
+        }
+
+        else if (paragraphIndex < paragraphs.length) 
+		{
+			this.Type(paragraphs[paragraphIndex]);
+            return;
+		}
+        else
+        {
+            responseIndex++;
+            paragraphIndex = 0;
+            if(responseIndex < response.length)
+            {
+                this.LoadTextResponse(response, monologue, responseIndex, paragraphIndex);
+                return;
+            }
+        }
+
+        this.nextButtonVisible = false;
+
+        this._onTypingComplete();
 	}
   
     private Type = (textToType : string): void => {

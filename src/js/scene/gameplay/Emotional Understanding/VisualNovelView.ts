@@ -119,22 +119,11 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 
 		this.storyOptions.setVisible(false);
 
-		this.storyText.LoadText(responses[currentResponseIndex].text);
+		this.storyText.LoadTextResponse(responses);
 
 		this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
 
 		this.storyText.OnTextComplete = () => {
-			currentResponseIndex++;
-
-			if(currentResponseIndex < responses.length)
-			{
-				this.storyText.LoadText(responses[currentResponseIndex].text);
-
-				this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
-
-				return;
-			}
-
 			this.emit(this.eventKeys.OnResponseFinished);
 
 			this.characterController.FinishTween();

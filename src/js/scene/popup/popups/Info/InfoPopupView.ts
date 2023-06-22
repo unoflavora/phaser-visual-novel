@@ -96,7 +96,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.scrollableInfoDesc = new Text(this.scene, 0, 0, "",  {
             font: "300 Adobe Caslon Pro",
             color: FontColors.darkBrown,
-            wordWrap: { width: this.panel.gameobject.displayWidth * 0.8, useAdvancedWrap: true },
+            wordWrap: { width: this.panel.gameobject.displayWidth * 0.75, useAdvancedWrap: true },
             align: "center"
         })
         this.scrollableInfoDesc.gameobject.setFontSize(this.scene.scale.height * .022)
@@ -108,12 +108,13 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         )
 
         var scrollTrack = this.scene.add.image(0,0, UIAsset.brown_bg.key);
-        scrollTrack.setDisplaySize(this.panel.gameobject.displayWidth * .05, this.panel.gameobject.displayHeight * .3)
+        scrollTrack.setDisplaySize(this.panel.gameobject.displayWidth * .05, scrollTrack.displayHeight)
+        var scrollThumb = this.scene.add.image(0,0, UIAsset.ui_slider_thumb.key);
 
         this.scrollablePanel = this.rexUi.add.scrollablePanel({
             x: this.panel.gameobject.x,
             y: this.infoTitle.gameobject.y + this.infoTitle.gameobject.displayHeight,
-            width: this.panel.gameobject.displayWidth * .78,
+            width: this.panel.gameobject.displayWidth * .65,
             height: this.panel.gameobject.displayHeight * .35,
 
             scrollMode: 0,
@@ -129,7 +130,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
 
             slider: {
                 track: scrollTrack,
-                thumb: new Image(this.scene, 0,0, UIAsset.icon_arrow_down.key).gameobject
+                thumb: scrollThumb
             },
       
             // scroller: true,
@@ -153,6 +154,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             }
         })
         this.scrollablePanel.setOrigin(0.5, 0)
+        
         this.add(this.scrollableInfoDesc.gameobject)
         this.add(this.scrollablePanel)
 
@@ -212,7 +214,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             this.infoDesc.gameobject.setOrigin(.5,0)
         }
 
-        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .3)
+        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .35)
         {
             this.infoDesc.gameobject.setVisible(true)
             this.scrollablePanel.setVisible(false)
