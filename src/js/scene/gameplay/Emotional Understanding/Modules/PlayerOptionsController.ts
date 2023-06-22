@@ -81,8 +81,6 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 
         var info = new Image(scene, 0, 0, UIAsset.icon_info.key);
         info.gameobject.setOrigin(1, 0);
-        info.gameobject.setPosition(bg.gameobject.x - bg.gameobject.displayWidth * .4, bg.gameobject.y - bg.gameobject.displayHeight * .45);
-        info.transform.setDisplayWidth(bg.gameobject.displayWidth * .15, true);
         info.gameobject.setInteractive({ useHandCursor: true });
 
 		// Add UI to container
@@ -98,6 +96,8 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 		text.gameobject.setPosition(bg.gameobject.x, bg.gameobject.y);
 		text.gameobject.setOrigin(0.5);
 		bg.gameobject.setDisplaySize(container.width, container.height);
+        info.transform.setDisplayWidth(bg.gameobject.displayWidth * .01, true);
+        info.gameobject.setPosition(bg.gameobject.x - bg.gameobject.displayWidth * .4, bg.gameobject.y - bg.gameobject.displayHeight * .45);
 
         var optionData : optionData = {
             container,
@@ -130,6 +130,9 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
         });
 
         optionBg.transform.setDisplaySize(option.container.displayWidth, option.container.displayHeight)
+        optionInfo.transform.setDisplayWidth(optionBg.gameobject.displayWidth * .15, true);
+        optionInfo.gameobject.setPosition(optionBg.gameobject.x - optionBg.gameobject.displayWidth * .4, optionBg.gameobject.y - optionBg.gameobject.displayHeight * .45);
+
         optionBg.gameobject.removeAllListeners()
 
         // Set Interactive

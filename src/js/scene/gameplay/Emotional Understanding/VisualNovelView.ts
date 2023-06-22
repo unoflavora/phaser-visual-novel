@@ -152,7 +152,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 			try {
 				this.storyOptions.setOptionValue(i, respond[i].text, respond[i].info);
 			} catch {
-				this.storyOptions.setOptionValue(i, "", respond[i].info);
+				this.storyOptions.setOptionValue(i, "", null);
 			}
 		}
 	}
