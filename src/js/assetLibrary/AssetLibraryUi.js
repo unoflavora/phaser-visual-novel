@@ -88,6 +88,21 @@ export const UIAsset = {
 	},
 
   	// #region General
+	ui_slider_indicator: {
+		key: "ui_slider_indicator",
+		path: "/img/ui/general/ui-slider-indicator.png",
+		type: AssetType.STATIC,
+	},
+	ui_slider_thumb: {
+		key: "ui_slider_thumb",
+		path: "/img/ui/general/ui-slider-thumb.png",
+		type: AssetType.STATIC,
+	},
+	ui_slider_track: {
+		key: "ui_slider_track",
+		path: "/img/ui/general/ui-slider-track.png",
+		type: AssetType.STATIC,
+	},
 	bg_text_box: {
 		key: "red_text_box",
 		path: "/img/ui/general/ui-textbox.png",
