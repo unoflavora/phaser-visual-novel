@@ -23,6 +23,8 @@ export default class ForgotPasswordController extends Phaser.Scene {
     this.view = new ForgotPasswordView(this);
     this.view.create();
     this.view.addOnConfirmPasswordListeners((email) => {
+
+      window.open(CONFIG.RESET_PASSWORD_URL, "_blank")
       AudioController.instance.play("main_button_click");
     })
 

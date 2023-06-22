@@ -17,6 +17,9 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     private _prevButton: Text;
     private _previousAvailable: boolean = false;
 
+    private nextbuttonclickArea: Phaser.GameObjects.Image;
+    private prevButtonClickArea: Phaser.GameObjects.Image;
+
 
 
     public get IsTyping() : boolean { return this._isTyping; }
@@ -56,6 +59,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
         this.add(this._nextButton.gameobject)
 
+
         this._prevButton = new Text(scene, 
 			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
 			this._nextButton.gameobject.y, "Previous", {
@@ -68,9 +72,34 @@ export class StoryTextController extends Phaser.GameObjects.Group {
                 useAdvancedWrap: true
             }
 		});
+
+        
 		this._prevButton.gameobject.setOrigin(0, 1);
-		this._prevButton.gameobject.setInteractive({ useHandCursor: true })
+		this._prevButton.gameobject.setInteractive({useHandCursor: true})
         this._prevButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
+
+        var prevButtonClickArea = scene.add.image(this._prevButton.gameobject.x, this._prevButton.gameobject.y, "");
+        prevButtonClickArea.setDisplaySize(this._prevButton.gameobject.displayWidth * 3, this._prevButton.gameobject.displayHeight * 1.8);
+        prevButtonClickArea.setOrigin(0, 1);
+        prevButtonClickArea.setInteractive({useHandCursor: true});
+        prevButtonClickArea.setAlpha(0.00000000000000000000000001);
+        prevButtonClickArea.on("pointerdown", () => {
+            this._prevButton.gameobject.emit("pointerdown");
+        })
+        this.prevButtonClickArea = prevButtonClickArea;
+
+        
+        var nextButtonClickArea = scene.add.image(this._nextButton.gameobject.x, this._nextButton.gameobject.y, "");
+        nextButtonClickArea.setDisplaySize(this._prevButton.gameobject.displayWidth * 3, this._prevButton.gameobject.displayHeight * 1.8);
+        nextButtonClickArea.setOrigin(1);
+        nextButtonClickArea.setInteractive({useHandCursor: true});
+        nextButtonClickArea.setAlpha(0.00000000000000000000000001);
+        nextButtonClickArea.on("pointerdown", () => {
+            this._nextButton.gameobject.emit("pointerdown");
+        })
+
+        this.nextbuttonclickArea = nextButtonClickArea;
+
 
         this.add(this._prevButton.gameobject);
 
@@ -166,6 +195,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
             if(responseIndex < response.length)
             {
                 this.LoadTextResponse(response, monologue, responseIndex, paragraphIndex);
+                this.scene.events.emit("responseChanged", response[responseIndex]);
                 return;
             }
         }
@@ -214,6 +244,9 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     private set nextButtonVisible(value: boolean) {
       this._nextButton.gameobject.visible = value;
       this._prevButton.gameobject.visible = value && this._previousAvailable;
+
+      this.nextbuttonclickArea.visible = value;
+      this.prevButtonClickArea.visible = value && this._previousAvailable;
     }
 
     public set OnTextComplete(callback : Function)
@@ -224,6 +257,12 @@ export class StoryTextController extends Phaser.GameObjects.Group {
             this._textBox.gameobject.disableInteractive();
             callback();
         };
+    }
+
+    public set OnNextResponseCharacter(callback : (res : ResponseContext) => void)
+    {
+        this.scene.events.removeListener("responseChanged");
+        this.scene.events.on("responseChanged", callback);
     }
 
     private handleTextBoxClick = (text: string) => {

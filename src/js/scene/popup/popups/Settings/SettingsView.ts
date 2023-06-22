@@ -34,7 +34,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
     private logoutButton : Image;
     private logoutText : Text;
-    private userId : Text;
 
     private slider! : Slider;
     volumeLabel!: Text;
@@ -128,13 +127,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
         });
         this.add(this.logoutText.gameobject);
 
-        this.userId = new Text(scene, 0, 0, "User ID: 123456789", {
-            fontSize: this.bg.transform.displayHeight * .04,
-            color: FontColors.darkBrown,
-            fontFamily: FontAsset.adobe_caslon_pro_bold.key
-        });
-        this.add(this.userId.gameobject);
-
     }
 
     public create()
@@ -154,13 +146,11 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.layoutLanguages();
 
-        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .27);
+        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .35);
         
         this.logoutText.transform.setPosition(this.logoutButton.gameobject.x, this.logoutButton.gameobject.y);
         this.logoutText.gameobject.setOrigin(.5);
 
-        this.userId.transform.setPosition(this.logoutButton.gameobject.x, this.bg.gameobject.displayHeight * .4);
-        this.userId.gameobject.setOrigin(.5)
 
         var track = this.scene.add.image(0, 0, UIAsset.ui_slider_track.key);
         track.setDisplaySize(this.bg.transform.displayWidth * .8, this.bg.transform.displayHeight * .05);
@@ -288,11 +278,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
             callback()
             this.closeBtn.gameobject.emit("pointerup");
         });
-    }
-
-    public setUserId(userId : string)
-    {
-        this.userId.gameobject.setText("User ID: " + userId);
     }
 
     public setBgmButtonsState(isOn : boolean)
