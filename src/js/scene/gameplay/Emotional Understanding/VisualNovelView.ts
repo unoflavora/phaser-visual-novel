@@ -111,9 +111,9 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 	public ShowCharacterResponses(responses: ResponseContext[])
 	{
 		if (this.storyText.IsTyping) return;
+
 		this.prompt.setVisible(false);
 
-		var currentResponseIndex = 0;
 
 		this.storyText.setVisible(true);
 
@@ -121,7 +121,11 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 
 		this.storyText.LoadTextResponse(responses);
 
-		this.characterNames.LoadCharacterName(responses[currentResponseIndex]);
+		this.characterNames.LoadCharacterName(responses[0]);
+
+		this.storyText.OnNextResponseCharacter = (res : ResponseContext) => {
+			this.characterNames.LoadCharacterName(res);
+		}
 
 		this.storyText.OnTextComplete = () => {
 			this.emit(this.eventKeys.OnResponseFinished);
@@ -135,6 +139,8 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.storyText.setVisible(false);
 
 		this.storyOptions.setVisible(true);
+
+		console.log(respond)
 
 		for(var i = 0; i < 4; i++)
 		{
