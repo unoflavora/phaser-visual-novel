@@ -14,6 +14,8 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 	private _padding: number = 10;
     private _isTyping : boolean = false;
     private _typingEffect : NodeJS.Timer | undefined;
+    private _prevButton: Text;
+    private _previousAvailable: boolean = false;
 
 
 
@@ -53,7 +55,23 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 		this._nextButton.gameobject.setInteractive({ useHandCursor: true })
         this._nextButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
 
-        this.add(this._nextButton.gameobject);
+        this._prevButton = new Text(scene, 
+			this._textBox.gameobject.x - this._textBox.gameobject.displayWidth * this._textBox.gameobject.originX + this._padding, 
+			this._nextButton.gameobject.y, "Previous", {
+			fontFamily: FontAsset.adobe_caslon_pro_bold.key,
+			fontSize: "24px",
+			color: FontColors.darkBrown,
+			align: "right",
+            wordWrap: {
+                width: this._textBox.gameobject.displayWidth - 20,
+                useAdvancedWrap: true
+            }
+		});
+		this._prevButton.gameobject.setOrigin(0, 1);
+		this._prevButton.gameobject.setInteractive({ useHandCursor: true })
+        this._prevButton.gameobject.setFontSize(textBox.gameobject.displayHeight * .09);
+
+        this.add(this._prevButton.gameobject);
 
         this._onTypingComplete = onCurrentTextComplete;
 
@@ -66,19 +84,28 @@ export class StoryTextController extends Phaser.GameObjects.Group {
         
         this._text.setFontStyle(monologue ? "italic" : "")
         this._textBox.gameobject.removeAllListeners();
-        this._nextButton.gameobject.removeAllListeners();
 
+        this._nextButton.gameobject.removeAllListeners();
 		this._nextButton.gameobject.once("pointerdown", () => {
             paragraphIndex += 1;
             this.LoadText(paragraphs, monologue, paragraphIndex);
         });
+
+        this._prevButton.gameobject.removeAllListeners();
+        if(paragraphIndex > 0) {
+            this._prevButton.gameobject.once("pointerdown", () => {
+                paragraphIndex -= 1;
+                this.LoadText(paragraphs, monologue, paragraphIndex);
+            });
+        }    
+        this._previousAvailable = paragraphIndex > 0;
 
         if(!this._textBox.gameobject.listenerCount("pointerdown")) {
             this._textBox.gameobject.setInteractive({ useHandCursor: true });
             this._textBox.gameobject.on("pointerdown", () => this.handleTextBoxClick(paragraphs[paragraphIndex]));
         }   
 
-		
+
         if (paragraphIndex < paragraphs.length) 
 		{
 			this.Type(paragraphs[paragraphIndex]);
@@ -129,6 +156,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
 
     private set nextButtonVisible(value: boolean) {
       this._nextButton.gameobject.visible = value;
+      this._prevButton.gameobject.visible = value && this._previousAvailable;
     }
 
     public set OnTextComplete(callback : Function)
@@ -148,8 +176,5 @@ export class StoryTextController extends Phaser.GameObjects.Group {
             this.stopTyping(text);
         }
     }
-
-    
-
   }
    
