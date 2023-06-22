@@ -58,13 +58,13 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoTitle = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.1,
+            this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.15,
             Localizations.text.mainMenu.auth.forgot_password_title,
             {
                 color: FontColors.darkBrown,
                 fontStyle: "bold",
                 fontSize: this.scene.scale.height * .035,
-                wordWrap: { width: this.panel.gameobject.displayWidth * 0.6, useAdvancedWrap: true },
+                wordWrap: { width: this.panel.gameobject.displayWidth * 0.8, useAdvancedWrap: true },
                 align: "center"
 
             }
@@ -76,18 +76,18 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoDesc = new Text(
             this.scene,
             this.panel.gameobject.x,
-            this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.125,
+            this.infoTitle.gameobject.y + this.infoTitle.gameobject.displayHeight * .8,
             Localizations.text.mainMenu.auth.forgot_password_desc,
             {
                 font: "300 Adobe Caslon Pro",
                 color: FontColors.darkBrown,
-                wordWrap: { width: this.panel.gameobject.displayWidth * 0.78, useAdvancedWrap: true },
+                wordWrap: { width: this.panel.gameobject.displayWidth * 0.8, useAdvancedWrap: true },
                 align: "center"
             }
         );
         this.infoDesc.gameobject.setFontSize(this.scene.scale.height * .022)
 
-        this.infoDesc.gameobject.setOrigin(0.5);
+        this.infoDesc.gameobject.setOrigin(0.5, 0);
         this.add(this.infoDesc.gameobject)
     }
 
@@ -123,6 +123,24 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
     {
         this.infoTitle.gameobject.setText(title);
         this.infoDesc.gameobject.setText(message);
+
+        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .3)
+        {
+            this.infoDesc.gameobject.setPosition(
+                this.panel.gameobject.x,
+                this.panel.gameobject.y + this.panel.gameobject.displayHeight * .05,  
+            )
+            this.infoDesc.gameobject.setOrigin(.5);
+        }
+        else
+        {
+            this.infoDesc.gameobject.setPosition(
+                this.panel.gameobject.x,
+                this.infoTitle.gameobject.y + this.infoTitle.gameobject.displayHeight * .8,
+            )
+            this.infoDesc.gameobject.setOrigin(.5, 0);
+        }
+
         this.infoIcon.gameobject.setTexture(iconKey);
 
         this.infoIcon.transform.setDisplayHeight(this.panel.gameobject.displayHeight * .15, true)

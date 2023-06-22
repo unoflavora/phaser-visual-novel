@@ -8,6 +8,7 @@ import ContainerLite from "phaser3-rex-plugins/plugins/containerlite";
 import GridSizer from "phaser3-rex-plugins/templates/ui/gridsizer/GridSizer";
 import "Modules/extensions/text_sizer";
 import Container from "phaser3-rex-plugins/templates/ui/container/Container";
+import MainSceneController from "Scenes/MainSceneController";
 
 export class PlayerOptionsController extends Phaser.GameObjects.Group
 {
@@ -74,12 +75,18 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
     
         // Create UI within container
 		var bg = new Image(scene, 0, 0, UIAsset.bg_story_options.key);
-		var text = new Text(scene, 0, 0, optionText, optionTextStyle);
-
         bg.gameobject.setInteractive({ useHandCursor: true });
 
+		var text = new Text(scene, 0, 0, optionText, optionTextStyle);
+
+        var info = new Image(scene, 0, 0, UIAsset.icon_info.key);
+        info.gameobject.setOrigin(1, 0);
+        info.gameobject.setPosition(bg.gameobject.x - bg.gameobject.displayWidth * .4, bg.gameobject.y - bg.gameobject.displayHeight * .45);
+        info.transform.setDisplayWidth(bg.gameobject.displayWidth * .15, true);
+        info.gameobject.setInteractive({ useHandCursor: true });
+
 		// Add UI to container
-		container.add([bg.gameobject, text.gameobject]);
+		container.add([bg.gameobject, text.gameobject, info.gameobject]);
 
 		// Add container to grid
 		grid.add(container, {
@@ -93,15 +100,16 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 		bg.gameobject.setDisplaySize(container.width, container.height);
 
         var optionData : optionData = {
-            container : container,
-            image : bg,
-            text : text
+            container,
+            bg,
+            text,
+            info
         }
 
         return optionData;
 	}
   
-    public setOptionValue(optionIndex : number, optionValue : string) {
+    public setOptionValue(optionIndex : number, optionValue : string, optionDescription : string | null) {
         var option = this.optionData[optionIndex];
         
         option.container.setVisible(optionValue.length > 0)
@@ -109,10 +117,17 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
         if(optionValue.length < 1) return;
 
         var optionValueObject = option.text;
-        var optionBg = option.image
+        var optionBg = option.bg
+        var optionInfo = option.info;
 
   
 		optionValueObject.gameobject.setText(optionValue);
+
+        optionInfo.gameobject.setVisible(optionDescription != null && optionDescription.length > 0);
+        optionInfo.gameobject.removeAllListeners();
+        optionInfo.gameobject.on("pointerdown", () => {
+            MainSceneController.instance.OpenInfoPopup(optionValue, optionDescription ?? "", UIAsset.icon_info.key, () => {}, "OK");
+        });
 
         optionBg.transform.setDisplaySize(option.container.displayWidth, option.container.displayHeight)
         optionBg.gameobject.removeAllListeners()
@@ -129,7 +144,8 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
 
   type optionData = {
     container : ContainerLite,
-    image : Image,
-    text : Text
+    bg : Image,
+    text : Text,
+    info: Image;
   }
   

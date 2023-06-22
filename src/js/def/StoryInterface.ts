@@ -9,10 +9,11 @@
     text: string[];
   }
   
-  interface Response {
+  interface StoryResponse {
     index: number;
     text: string;
     score: number;
+    info: string;
   }
   
   interface Scene {
@@ -25,10 +26,10 @@
     intro_en: string[];
     intro_id: string[];
     intro_character: CharacterDisplay[];
-    emotions_en: Response[];
-    emotions_id: Response[];
-    response_en: Response[];
-    response_id: Response[];
+    emotions_en: StoryResponse[];
+    emotions_id: StoryResponse[];
+    response_en: StoryResponse[];
+    response_id: StoryResponse[];
     response_en_contexts: ResponseContext[][];
     response_id_contexts: ResponseContext[][];
   }  

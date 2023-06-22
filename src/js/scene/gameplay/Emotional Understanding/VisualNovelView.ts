@@ -71,6 +71,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		this.setupPromptText(scene);
 
 
+
 	}
 
 	create = (depth = 0) => {
@@ -140,7 +141,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		}
 	}
 
-	public AskPlayerForAnswer(respond: Response[]) 
+	public AskPlayerForAnswer(respond: StoryResponse[]) 
 	{
 		this.storyText.setVisible(false);
 
@@ -149,9 +150,9 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 		for(var i = 0; i < 4; i++)
 		{
 			try {
-				this.storyOptions.setOptionValue(i, respond[i].text);
+				this.storyOptions.setOptionValue(i, respond[i].text, respond[i].info);
 			} catch {
-				this.storyOptions.setOptionValue(i, "");
+				this.storyOptions.setOptionValue(i, "", respond[i].info);
 			}
 		}
 	}
