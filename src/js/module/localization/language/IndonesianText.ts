@@ -9,7 +9,7 @@ const IndonesianText : typeof EnglishText = {
         backToHome: "Ke Beranda"
     },
     prompts:{
-        emotion: "Pilih respon Anda",
+        emotion: "Tebak emosi",
         response: "Pilih respon Anda",
     },
     loading: {

@@ -8,6 +8,7 @@ import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
 import Localizations from "Modules/localization/LocalizationHelper";
 import MainSceneController from "Scenes/MainSceneController";
+import Slider from "phaser3-rex-plugins/templates/ui/slider/Slider";
 
 export default class SettingsView extends Phaser.GameObjects.Container
 {
@@ -33,7 +34,9 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
     private logoutButton : Image;
     private logoutText : Text;
-    private userId : Text;
+
+    private slider! : Slider;
+    volumeLabel!: Text;
 
     constructor(scene: Phaser.Scene)
     {
@@ -124,13 +127,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
         });
         this.add(this.logoutText.gameobject);
 
-        this.userId = new Text(scene, 0, 0, "User ID: 123456789", {
-            fontSize: this.bg.transform.displayHeight * .04,
-            color: FontColors.darkBrown,
-            fontFamily: FontAsset.adobe_caslon_pro_bold.key
-        });
-        this.add(this.userId.gameobject);
-
     }
 
     public create()
@@ -150,13 +146,45 @@ export default class SettingsView extends Phaser.GameObjects.Container
 
         this.layoutLanguages();
 
-        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .27);
+        this.logoutButton.transform.setPosition(this.bg.gameobject.x, this.bg.gameobject.y + this.bg.gameobject.displayHeight * .35);
         
         this.logoutText.transform.setPosition(this.logoutButton.gameobject.x, this.logoutButton.gameobject.y);
         this.logoutText.gameobject.setOrigin(.5);
 
-        this.userId.transform.setPosition(this.logoutButton.gameobject.x, this.bg.gameobject.displayHeight * .4);
-        this.userId.gameobject.setOrigin(.5)
+
+        var track = this.scene.add.image(0, 0, UIAsset.ui_slider_track.key);
+        track.setDisplaySize(this.bg.transform.displayWidth * .8, this.bg.transform.displayHeight * .05);
+
+        var indicator = this.scene.add.image(0, 0, UIAsset.ui_slider_indicator.key);
+        indicator.setDisplaySize(track.displayWidth, track.displayHeight);
+
+        var thumb = new Image(this.scene, 0, 0, UIAsset.ui_slider_thumb.key);
+        thumb.transform.setDisplayHeight(this.bg.transform.displayHeight * .065, true);
+
+        this.slider = new Slider(this.scene,{
+            x: this.currentLanguage.gameobject.x + this.currentLanguage.gameobject.displayWidth * .5,
+            y: this.currentLanguage.gameobject.y - this.currentLanguage.transform.displayHeight * 1.5,
+            width: this.currentLanguage.gameobject.displayWidth,
+            height: this.bg.transform.displayHeight * .05,
+            orientation: 'x',
+            track: track,
+            thumb: thumb.gameobject,
+            indicator: indicator,
+            valuechangeCallback: (value : number) => { 
+                AudioController.instance.volume = value;
+            },
+            value: AudioController.instance.volume
+        });
+        this.slider.layout()
+        this.add(this.slider)
+
+        this.volumeLabel = new Text(this.scene, 0, 0, "Volume", {
+            fontSize: this.bg.transform.displayHeight * .04,
+            color: FontColors.darkBrown,
+            fontFamily: FontAsset.adobe_caslon_pro_bold.key
+        });
+        this.add(this.volumeLabel.gameobject);
+        this.volumeLabel.transform.setPosition(this.languagesTitle.gameobject.x, this.slider.y - this.slider.displayHeight * .35);
     }
 
     
@@ -182,7 +210,7 @@ export default class SettingsView extends Phaser.GameObjects.Container
     }
 
     private layoutLanguages() {
-        this.languagesTitle.transform.setPosition(this.sfxTitle.gameobject.x, this.sfxTitle.gameobject.y + this.bg.gameobject.displayHeight * .25);
+        this.languagesTitle.transform.setPosition(this.sfxTitle.gameobject.x, this.sfxTitle.gameobject.y + this.bg.gameobject.displayHeight * .32);
         this.languagesTitle.gameobject.setOrigin(0, .5);
 
         this.currentLanguage.transform.setPosition(this.languagesTitle.gameobject.x + this.languagesTitle.gameobject.displayWidth * 1.25, this.languagesTitle.gameobject.y);
@@ -250,11 +278,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
             callback()
             this.closeBtn.gameobject.emit("pointerup");
         });
-    }
-
-    public setUserId(userId : string)
-    {
-        this.userId.gameobject.setText("User ID: " + userId);
     }
 
     public setBgmButtonsState(isOn : boolean)

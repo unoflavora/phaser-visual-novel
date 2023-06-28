@@ -20,17 +20,17 @@ export default class LoadingSceneView extends Phaser.GameObjects.Container {
 	logo: Image;
 	loadingText: Text;
 
-	constructor(scene : Phaser.Scene, logo : string | null = null, loadingText : string | null = null) {
+	constructor(scene : Phaser.Scene, loadingText : string | null = null, displayLogo : boolean = true) {
 		super(scene);
 		scene.add.existing(this);
 
 		this.background = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, LoadingAsset.background_main.key);
 		this.background.transform.setMinPreferredDisplaySize(scene.scale.width, scene.scale.height);
 		this.add(this.background.gameobject);
-
-		this.logo = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, logo ? logo : LoadingAsset.corporate_logo.key);
+		this.logo = new Image(scene, scene.scale.width * 0.5, scene.scale.height * 0.5, LoadingAsset.corporate_logo.key);
 		this.logo.transform.setDisplayWidth(scene.scale.width * 0.25, true);
-		this.add(this.logo.gameobject)
+		this.add(this.logo.gameobject);
+		this.logo.gameobject.setVisible(displayLogo);
 
 
 		this.frame = new Image(scene, 0, 0, LoadingAsset.loading_frame.key);
