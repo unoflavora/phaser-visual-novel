@@ -106,22 +106,41 @@
             {
                 "text": "Gelisah",
                 "score": 25,
-                "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil."
+                "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil.",
+                "bullet_list": [
+                    "Merasakan ancaman atau potensi bahaya",
+                    "Kekhawatiran kecil biasanya karena situasiyang tidak biasa"
+                ]
             },
             {
                 "text": "Sikap Introvert",
                 "score": 50,
-                "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal."
+                "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal.",
+                "bullet_list": [
+                    "Interaksi sosial biasa terasa menantang atau menguras tenaga",
+                    "Kadang tidak mau terlalu diganggu kalau lagi mau menyendiri",
+                    "Tidak terlalu suka kepada simulasi eksternal"
+                ]
             },
             {
                 "text": "Kurang Percaya Diri",
                 "score": 75,
-                "info": "Mengalami tingkat rasa malu yang nyata yang dapat memengaruhi interaksi dan ekspresi diri. Tingkat rasa malu ini melibatkan kecenderungan yang lebih besar untuk menghindari perhatian atau mencari kesendirian, dan mungkin melibatkan perasaan ragu-ragu, gugup, atau kesulitan memulai percakapan atau menegaskan diri sendiri."
+                "info": "Mengalami tingkat rasa malu yang nyata yang dapat memengaruhi interaksi dan ekspresi diri. Tingkat rasa malu ini melibatkan kecenderungan yang lebih besar untuk menghindari perhatian atau mencari kesendirian, dan mungkin melibatkan perasaan ragu-ragu, gugup, atau kesulitan memulai percakapan atau menegaskan diri sendiri.",
+                "bullet_list": [
+                    "Rasa malu yang dapat mempengaruhi interaksi dengan orang lain",
+                    "Lebih memilih untuk menghindari perhatian atau menyendiri",
+                    "Sulit memulai percakapan"
+                ]
             },
             {
                 "text": "Agak Malu-Malu",
                 "score": 100,
-                "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif."
+                "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif.",
+                "bullet_list": [
+                    "Sedikit ketidaknyamanan dalam situasi sosial",
+                    "Rasa malu tapi dengan intensitas rendah",
+                    "Lebih suka mengamati orang daripada berbicara"
+                ]
             }    
         ],
 
@@ -461,22 +480,38 @@
             {
                 "text": "Kebahagiaan yang Mendalam",
                 "score": 25,
-                "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan."
+                "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan.",
+                "bullet_list": [
+                    "Kebahagiaan yang sangat besar",
+                    "Merasa ekstasi dalam kebahagiaannya"
+                ]
             },
             {
                 "text": "Merasa Terpenuhi",
                 "score": 50,
-                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka.",
+                "bullet_list": [
+                    "Mengerti tujuan atau makna hidup dengan jelas",
+                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan seseorang"
+                ]
             },
             {
                 "text": "Rasa Kepuasan",
                 "score": 75,
-                "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri."
+                "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri.",
+                "bullet_list": [
+                    "Puas dengan keadaan saat ini",
+                    "Rasa terima kasih dan penerimaan atas keadaan"
+                ]
             },
             {
                 "text": "Kegembiraan",
                 "score": 100,
-                "info": "Keadaan antisipasi dan antusiasme tinggi yang muncul dari prospek akan sesuatu yang baru, mendebarkan, atau menarik. Ini ditandai dengan gelombang energi dan rasa antisipasi yang bersemangat, sering kali disertai dengan perasaan senang atau gembira. Kegembiraan dapat dipicu oleh berbagai pengalaman, seperti peristiwa yang akan datang, petualangan, pencapaian, atau bahkan hal yang tidak diketahui, dan itu menyegarkan individu dengan memicu rasa ingin tahu, semangat, dan antisipasi positif."
+                "info": "Keadaan antisipasi dan antusiasme tinggi yang muncul dari prospek akan sesuatu yang baru, mendebarkan, atau menarik. Ini ditandai dengan gelombang energi dan rasa antisipasi yang bersemangat, sering kali disertai dengan perasaan senang atau gembira. Kegembiraan dapat dipicu oleh berbagai pengalaman, seperti peristiwa yang akan datang, petualangan, pencapaian, atau bahkan hal yang tidak diketahui, dan itu menyegarkan individu dengan memicu rasa ingin tahu, semangat, dan antisipasi positif.",
+                "bullet_list": [
+                    "Kegembiraan dan antusiasme yang cukup tinggi",
+                    "Rasa senang atau sukacita"
+                ]
             }    
         ],
 
@@ -792,22 +827,40 @@
             {
                 "text": "Kegembiraan Imaginatif",
                 "score": 25,
-                "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang."
+                "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang.",
+                "bullet_list": [
+                    "Bermain menggunakan kretifitas dan imajinasi",
+                    "Menjelajahi dunia imajiner menggunakan cerita-cerita imaginatif"
+                ]
             },
             {
                 "text": "Keinginan untuk Berpetualang",
                 "score": 50,
-                "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang."
+                "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang.",
+                "bullet_list": [
+                    "Eksplorasi dan pengambilan risiko selama bermain",
+                    "Kegiatan yang menantang dan berisiko",
+                    "Melangkah keluar dari zona nyaman"
+                ]
             },
             {
                 "text": "Keceriaan Ringan",
                 "score": 75,
-                "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini."
+                "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini.",
+                "bullet_list": [
+                    "Menikmati humor yang ringan dan menyenangkan",
+                    "Menikmati waktu bermain dengan santai dan rileks"
+                ]
             },
             {
                 "text": "Kegembiraan Energetik",
                 "score": 100,
-                "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas."
+                "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas.",
+                "bullet_list": [
+                    "Energik dan bersemangat",
+                    "Terlibat dalam aktivitas fisik",
+                    "Banyak gerakan aktifitas dan kegembiraan"
+                ]
             }  
         ],
 
@@ -1173,7 +1226,7 @@
                 "info": "Experiencing a more pronounced emotional state of displeasure, often triggered by perceived injustices, conflicts, or violations of personal boundaries. This level of anger involves a stronger emotional response, including feelings of resentment, indignation, or frustration.",
                 "bullet_list": [
                     "Stronger emotional response",
-                    "Feeling of frustation and resentment"
+                    "Feeling of frustration and resentment"
                 ]
             }
 
@@ -1181,24 +1234,42 @@
         "emotions_id":
         [
             {
-                "text": "Amukan",
-                "score": 25,
-                "info": "Menghadapi kemarahan yang intens dan tak terkendali yang dapat menyebabkan hilangnya kendali diri. Tingkat kemarahan ini ditandai dengan ledakan emosi yang meledak-ledak, disertai dengan peningkatan gairah fisik dan psikologis. Kemarahan dapat mengakibatkan perilaku agresif atau destruktif."
-            },
-            {
-                "text": "Kejengkelan",
-                "score": 50,
-                "info": "Merasakan gangguan atau frustrasi ringan sebagai tanggapan atas ketidaknyamanan atau gangguan kecil. Tingkat kemarahan ini relatif rendah intensitasnya dan dapat timbul dari iritasi atau ketidaknyamanan sehari-hari."
-            },
-            {
                 "text": "Permusuhan",
-                "score": 75,
-                "info": "Menunjukkan sikap antagonis yang kuat atau perilaku agresif terhadap seseorang atau sesuatu. Tingkat permusuhan ini memerlukan sikap yang lebih terbuka dan konfrontatif, dengan maksud yang signifikan untuk menyakiti, menghalangi, atau merusak target."
+                "score": 25,
+                "info": "Menghadapi kemarahan yang intens dan tak terkendali yang dapat menyebabkan hilangnya kendali diri. Tingkat kemarahan ini ditandai dengan ledakan emosi yang meledak-ledak, disertai dengan peningkatan gairah fisik dan psikologis. Kemarahan dapat mengakibatkan perilaku agresif atau destruktif.",
+                "bullet_list": [
+                    "Perilaku agresif terhadap seseorang atau sesuatu",
+                    "Sikap konfrontatif",
+                    "Bermaksud untuk menyakiti target"
+                ]
             },
             {
-                "text": "Amarah",
+                "text": "Mengamuk",
+                "score": 50,
+                "info": "Merasakan gangguan atau frustrasi ringan sebagai tanggapan atas ketidaknyamanan atau gangguan kecil. Tingkat kemarahan ini relatif rendah intensitasnya dan dapat timbul dari iritasi atau ketidaknyamanan sehari-hari.",
+                "bullet_list": [
+                    "Kemarahan yang intens menyebabkan hilangnya kontrol terhadap diri sendiri",
+                    "Ledakan emosi yang meluap-luap",
+                    "Dapat menimbulkan perilaku destruktif"
+                ]
+            },
+            {
+                "text": "Iritasi",
+                "score": 75,
+                "info": "Menunjukkan sikap antagonis yang kuat atau perilaku agresif terhadap seseorang atau sesuatu. Tingkat permusuhan ini memerlukan sikap yang lebih terbuka dan konfrontatif, dengan maksud yang signifikan untuk menyakiti, menghalangi, atau merusak target.",
+                "bullet_list": [
+                    "Agak kesal karena ketidaknyamanan kecil",
+                    "Intensitas kemarahan yang rendah"
+                ]
+            },
+            {
+                "text": "Kemarahan",
                 "score": 100,
-                "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi."
+                "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi.",
+                "bullet_list": [
+                    "Respons emosional yang lebih kuat",
+                    "Perasaan frustasi dan dendam"
+                ]
             } 
         ],
 
@@ -1564,24 +1635,42 @@
         "emotions_id":
         [
             {
-                "text": "Pemenuhan",
+                "text": "Merasa Terpenuhi",
                 "score": 25,
-                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
+                "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka.",
+                "bullet_list": [
+                    "Mengerti tujuan atau makna hidup dengan jelas",
+                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan seseorang"
+                ]
             },
             {
-                "text": "Gairah yang Tak Terbendung",
+                "text": "Gairah yang Sangat Kuat",
                 "score": 50,
-                "info": "Mengacu pada dorongan atau antusiasme yang kuat dan tak tergoyahkan terhadap pengejaran atau tujuan tertentu. Ini ditandai dengan tekad yang tak kenal lelah, hasrat yang membara, dan komitmen yang teguh untuk mengatasi rintangan dan mencapai kesuksesan. Gairah yang tak terbendung memberdayakan individu untuk bertahan melalui tantangan, memicu tindakan mereka dengan dedikasi yang tak tergoyahkan dan penolakan untuk terhalang, yang pada akhirnya mengarah pada pemenuhan ambisi mereka."
+                "info": "Mengacu pada dorongan atau antusiasme yang kuat dan tak tergoyahkan terhadap pengejaran atau tujuan tertentu. Ini ditandai dengan tekad yang tak kenal lelah, hasrat yang membara, dan komitmen yang teguh untuk mengatasi rintangan dan mencapai kesuksesan. Gairah yang tak terbendung memberdayakan individu untuk bertahan melalui tantangan, memicu tindakan mereka dengan dedikasi yang tak tergoyahkan dan penolakan untuk terhalang, yang pada akhirnya mengarah pada pemenuhan ambisi mereka.",
+                "bullet_list": [
+                    "Tingkat dedikasi dan motivasi yang tinggi",
+                    "Penuh gairah untuk mencapai tujuan tertentu",
+                    "Mengejar keunggulan dan motivasi diri"
+                ]
             },
             {
-                "text": "Kegembiraan Sedang",
+                "text": "Dorongan Diri yang Cukup Kuat",
                 "score": 75,
-                "info": "Mengalami peningkatan motivasi dan tekad yang nyata. Tingkat insentif ini melibatkan rasa tujuan dan fokus yang lebih kuat, sering didorong oleh penghargaan eksternal, pengakuan, atau rasa kemajuan yang jelas menuju hasil yang diinginkan."
+                "info": "Mengalami peningkatan motivasi dan tekad yang nyata. Tingkat insentif ini melibatkan rasa tujuan dan fokus yang lebih kuat, sering didorong oleh penghargaan eksternal, pengakuan, atau rasa kemajuan yang jelas menuju hasil yang diinginkan.",
+                "bullet_list": [
+                    "Peningkatan dari segi motivasi dan tekad",
+                    "Rasa tujuan dan fokus yang kuat",
+                    "Dipicu oleh target kepada suatu hasil"
+                ]
             },
             {
                 "text": "Kegembiraan",
                 "score": 100,
-                "info": "Mengalami keadaan kegembiraan dan antusiasme yang tinggi. Tingkat kebahagiaan ini ditandai dengan rasa antisipasi, sensasi, atau kegembiraan."
+                "info": "Mengalami keadaan kegembiraan dan antusiasme yang tinggi. Tingkat kebahagiaan ini ditandai dengan rasa antisipasi, sensasi, atau kegembiraan.",
+                "bullet_list": [
+                    "Kegembiraan dan antusiasme yang cukup tinggi",
+                    "Rasa senang atau sukacita"
+                ]
             }
         ],
 
@@ -2006,24 +2095,41 @@
         "emotions_id":
         [
             {
-                "text": "Duka",
+                "text": "Pilu Hati",
                 "score": 25,
-                "info": "Mengalami kesedihan yang mendalam dan bertahan lama yang menembus berbagai aspek kehidupan. Tingkat kesedihan ini dapat dikaitkan dengan kesedihan yang berkepanjangan, trauma yang signifikan, atau rasa sakit emosional. Ini dapat memengaruhi kemampuan seseorang untuk berfungsi dan membutuhkan dukungan untuk mengatasi dan mengelolanya."
+                "info": "Mengalami kesedihan yang mendalam dan bertahan lama yang menembus berbagai aspek kehidupan. Tingkat kesedihan ini dapat dikaitkan dengan kesedihan yang berkepanjangan, trauma yang signifikan, atau rasa sakit emosional. Ini dapat memengaruhi kemampuan seseorang untuk berfungsi dan membutuhkan dukungan untuk mengatasi dan mengelolanya.",
+                "bullet_list": [
+                    "Kesedihan yang bertahan lama yang mempengaruhi hidup seseorang",
+                    "Rasa sakit dan kesedihan emosional kronis"
+                ]
             },
             {
-                "text": "Penyesalan ringan",
+                "text": "Rasa Sedikit Menyesal",
                 "score": 50,
-                "info": "Merasakan sedikit rasa bersalah atau penyesalan sebagai tanggapan atas kesalahan kecil atau pelanggaran nilai-nilai pribadi yang dirasakan. Tingkat rasa bersalah ini relatif rendah dan mungkin melibatkan rasa tidak nyaman, refleksi diri, atau pengakuan kesalahan kecil ."
+                "info": "Merasakan sedikit rasa bersalah atau penyesalan sebagai tanggapan atas kesalahan kecil atau pelanggaran nilai-nilai pribadi yang dirasakan. Tingkat rasa bersalah ini relatif rendah dan mungkin melibatkan rasa tidak nyaman, refleksi diri, atau pengakuan kesalahan kecil .",
+                "bullet_list": [
+                    "Merasa sedikit bersalah karena kesalahan kecil",
+                    "Penyesalan yang intensitas nya lebih rendah, kadang melibatkan refleksi diri juga"
+                ]
             },
             {
                 "text": "Kekecewaan",
                 "score": 75,
-                "info": "Merasa kecewa atau tidak puas karena harapan yang tidak terpenuhi atau hasil yang tidak diinginkan. Tingkat kesedihan ini biasanya lebih ringan dan sementara, seringkali terkait dengan kejadian atau keadaan tertentu."
+                "info": "Merasa kecewa atau tidak puas karena harapan yang tidak terpenuhi atau hasil yang tidak diinginkan. Tingkat kesedihan ini biasanya lebih ringan dan sementara, seringkali terkait dengan kejadian atau keadaan tertentu.",
+                "bullet_list": [
+                    "Merasa kecewa karena hasil yang buruk",
+                    "Kesedihan sementara karena keadaan tertentu"
+                ]
             },
             {
-                "text": "Kesalahan sedang",
+                "text": "Merasa Cukup Bersalah",
                 "score": 100,
-                "info": "Mengalami tingkat rasa bersalah yang lebih jelas, seringkali disertai dengan rasa tanggung jawab yang lebih kuat atas kesalahan yang dirasakan. Tingkat rasa bersalah ini melibatkan respons yang lebih dalam, seperti perasaan menyesal, malu, atau menyalahkan diri sendiri, dan dapat memotivasi upaya untuk membuat memperbaiki atau meminta pengampunan."
+                "info": "Mengalami tingkat rasa bersalah yang lebih jelas, seringkali disertai dengan rasa tanggung jawab yang lebih kuat atas kesalahan yang dirasakan. Tingkat rasa bersalah ini melibatkan respons yang lebih dalam, seperti perasaan menyesal, malu, atau menyalahkan diri sendiri, dan dapat memotivasi upaya untuk membuat memperbaiki atau meminta pengampunan.",
+                "bullet_list": [
+                    "Ada rasa penyesalan",
+                    "Ingin melakukan beberapa upaya untuk menebus kesalahan",
+                    "Tanggung jawab yang lebih kuat untuk aksi kesalahan"
+                ]
             }
         ],
 
@@ -2381,24 +2487,40 @@
         "emotions_id":
         [
             {
-                "text": "Penyesalan yang melumpuhkan",
+                "text": "Penyesalan Ekstrim",
                 "score": 25,
-                "info": "Mengalami tingkat rasa bersalah yang ekstrem dan melemahkan yang secara signifikan memengaruhi kesejahteraan emosional dan fungsi sehari-hari seseorang. Tingkat rasa bersalah ini dikaitkan dengan menyalahkan diri sendiri yang intens dan terus-menerus, rasa malu yang berlebihan, atau rasa tidak berharga yang mendalam. Ini dapat menyebabkan hilangnya harga diri, penarikan diri dari interaksi sosial."
+                "info": "Mengalami tingkat rasa bersalah yang ekstrem dan melemahkan yang secara signifikan memengaruhi kesejahteraan emosional dan fungsi sehari-hari seseorang. Tingkat rasa bersalah ini dikaitkan dengan menyalahkan diri sendiri yang intens dan terus-menerus, rasa malu yang berlebihan, atau rasa tidak berharga yang mendalam. Ini dapat menyebabkan hilangnya harga diri, penarikan diri dari interaksi sosial.",
+                "bullet_list": [
+                    "Tingkat rasa bersalah yang ekstrem yang mempengaruhi fungsi sehari-hari",
+                    "Banyak menyalahkan diri sendiri atau bisa rasa seperti orang yang tidak berharga"
+                ]
             },
             {
-                "text": "Teror",
+                "text": "Rasa Teror",
                 "score": 50,
-                "info": "Mengalami tingkat ketakutan yang ekstrim dan melumpuhkan yang menguasai kemampuan individu untuk berpikir atau bertindak secara rasional. Tingkat ketakutan ini dikaitkan dengan situasi yang mengancam jiwa yang akan segera terjadi atau dirasakan dan dapat disertai dengan kehilangan kendali sepenuhnya atau rasa bahaya yang ekstrim. Ini sering memicu respons melawan-atau-lari."
+                "info": "Mengalami tingkat ketakutan yang ekstrim dan melumpuhkan yang menguasai kemampuan individu untuk berpikir atau bertindak secara rasional. Tingkat ketakutan ini dikaitkan dengan situasi yang mengancam jiwa yang akan segera terjadi atau dirasakan dan dapat disertai dengan kehilangan kendali sepenuhnya atau rasa bahaya yang ekstrim. Ini sering memicu respons melawan-atau-lari.",
+                "bullet_list": [
+                    "Ketakutan ekstrim yang membuat orang tidak bisa berpikir secara rasional",
+                    "Benar-benar kehilangan kendali dalam situasi bahaya"
+                ]
+            },
+            {
+                "text": "Kepanikan",
+                "score": 75,
+                "info": "Mengalami ketakutan yang meningkat, kegelisahan, atau kekhawatiran tentang potensi kejadian di masa depan atau hasil yang tidak pasti. Tingkat ketakutan ini bisa terus-menerus dan dapat memengaruhi fungsi sehari-hari, menyebabkan perasaan gugup atau tidak nyaman.",
+                "bullet_list": [
+                    "Rasa takut yang cukup intens",
+                    "Kadang bisa sampai menyebabkan detak jantung menjadi lebih cepat atau sesak napas"
+                ]
             },
             {
                 "text": "Kecemasan",
-                "score": 75,
-                "info": "Mengalami ketakutan yang meningkat, kegelisahan, atau kekhawatiran tentang potensi kejadian di masa depan atau hasil yang tidak pasti. Tingkat ketakutan ini bisa terus-menerus dan dapat memengaruhi fungsi sehari-hari, menyebabkan perasaan gugup atau tidak nyaman."
-            },
-            {
-                "text": "Panik",
                 "score": 100,
-                "info": "Menghadapi respons ketakutan yang intens dan luar biasa yang ditandai dengan serangan tiba-tiba dari tekanan ekstrem. Tingkat ketakutan ini sering kali disertai dengan gejala fisik seperti detak jantung yang cepat, sesak napas, atau perasaan akan datangnya malapetaka. Kepanikan dapat merusak penilaian dan mungkin memerlukan perhatian dan intervensi segera."
+                "info": "Menghadapi respons ketakutan yang intens dan luar biasa yang ditandai dengan serangan tiba-tiba dari tekanan ekstrem. Tingkat ketakutan ini sering kali disertai dengan gejala fisik seperti detak jantung yang cepat, sesak napas, atau perasaan akan datangnya malapetaka. Kepanikan dapat merusak penilaian dan mungkin memerlukan perhatian dan intervensi segera.",
+                "bullet_list": [
+                    "Rasa gelisah atau khawatir yang sedang",
+                    "Merasa gugup atau gelisah"
+                ]
             }
         ],
 
@@ -2700,24 +2822,40 @@
         "emotions_id":
         [
             {
-                "text": "Mewariskan",
+                "text": "Peninggalan Dampak Positif",
                 "score": 25,
-                "info": "Menghadapi rasa bangga yang mendalam dan bertahan lama yang berasal dari membuat dampak yang berarti atau meninggalkan jejak positif di dunia. Tingkat kebanggaan ini diasosiasikan dengan kontribusi yang signifikan, tindakan pelayanan, atau pencapaian yang memiliki pengaruh abadi di luar jangkauan langsung seseorang. Itu mencerminkan rasa tujuan, kontribusi, dan keinginan untuk menciptakan warisan abadi"
+                "info": "Menghadapi rasa bangga yang mendalam dan bertahan lama yang berasal dari membuat dampak yang berarti atau meninggalkan jejak positif di dunia. Tingkat kebanggaan ini diasosiasikan dengan kontribusi yang signifikan, tindakan pelayanan, atau pencapaian yang memiliki pengaruh abadi di luar jangkauan langsung seseorang. Itu mencerminkan rasa tujuan, kontribusi, dan keinginan untuk menciptakan warisan abadi",
+                "bullet_list": [
+                    "Kebanggaan setelah meninggalkan jejak positif kepada komunitas sekitar",
+                    "Kontribusi yang bisa diingat oleh orang-orang banyak"
+                ]
             },
             {
-                "text": "Validasi",
+                "text": "Validasi Diri",
                 "score": 50,
-                "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang."
+                "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang.",
+                "bullet_list": [
+                    "Rasa penerimaan diri yang cukup tinggi",
+                    "Merangkul keunikan diri sendiri dan bisa membela hal yang Anda yakini"
+                ]
             },
             {
-                "text": "Prestasi",
+                "text": "Rasa Prestasi",
                 "score": 75,
-                "info": "Merasakan rasa bangga dan puas dalam mencapai tujuan pribadi, menyelesaikan tugas, atau mengatasi tantangan. Tingkat kebanggaan ini dikaitkan dengan pencapaian tertentu dan mencerminkan rasa pemenuhan dan harga diri."
+                "info": "Merasakan rasa bangga dan puas dalam mencapai tujuan pribadi, menyelesaikan tugas, atau mengatasi tantangan. Tingkat kebanggaan ini dikaitkan dengan pencapaian tertentu dan mencerminkan rasa pemenuhan dan harga diri.",
+                "bullet_list": [
+                    "Rasa kebanggaan atau kepuasan dalam mengatasi suatu tangtangan",
+                    "Rasa kepuasan dan harga diri yang cukup oke"
+                ]
             },
             {
-                "text": "Pengakuan",
+                "text": "Rasa Diakui",
                 "score": 100,
-                "info": "Mengalami kebanggaan karena diakui atau diakui atas pencapaian atau kontribusi seseorang. Tingkat kebanggaan ini melibatkan validasi eksternal, seperti menerima penghargaan, pujian, atau pujian dari orang lain, dan ini memperkuat rasa pencapaian dan nilai."
+                "info": "Mengalami kebanggaan karena diakui atau diakui atas pencapaian atau kontribusi seseorang. Tingkat kebanggaan ini melibatkan validasi eksternal, seperti menerima penghargaan, pujian, atau pujian dari orang lain, dan ini memperkuat rasa pencapaian dan nilai.",
+                "bullet_list": [
+                    "Bangga karena prestasinya diakui",
+                    "Suka pujian eksternal dan validasi dari orang lain"
+                ]
             }
         ],
 
