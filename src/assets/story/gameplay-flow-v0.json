@@ -63,22 +63,41 @@
             {
                 "text": "Unease",
                 "score": 25,
-                "info": "Feeling a mild sense of discomfort or concern in response to a perceived threat or potential danger. This level of fear is often fleeting and may arise from unfamiliar situations or minor worries."
+                "info": "Feeling a mild sense of discomfort or concern in response to a perceived threat or potential danger. This level of fear is often fleeting and may arise from unfamiliar situations or minor worries.",
+                "bullet_list": [
+                    "Perceiving a threat or petential danger",
+                    "Minor worry usually due unfamiliar situations"
+                ]
             },
             {
                 "text": "Pronounced Introversion",
                 "score": 50,
-                "info": "Encountering a significant inclination towards introversion, where social interactions can be challenging and draining. This level of shyness is characterized by a preference  solitude or small groups, a need for ample personal space, and a heightened sensitivity to external stimulation."
+                "info": "Encountering a significant inclination towards introversion, where social interactions can be challenging and draining. This level of shyness is characterized by a preference  solitude or small groups, a need for ample personal space, and a heightened sensitivity to external stimulation.",
+                "bullet_list": [
+                    "Social interactions challenging or draining",
+                    "High need for personal space",
+                    "Doesn't always like external simulation"
+                ]
             },
             {
                 "text": "Moderate Timidity",
                 "score": 75,
-                "info": "Experiencing a noticeable level of shyness that can impact interactions and self-expression. This level of shyness involves a greater tendency to avoid attention or seek solitude, and may involve feelings of self-doubt, nervousness, or difficulty initiating conversations or asserting oneself."
+                "info": "Experiencing a noticeable level of shyness that can impact interactions and self-expression. This level of shyness involves a greater tendency to avoid attention or seek solitude, and may involve feelings of self-doubt, nervousness, or difficulty initiating conversations or asserting oneself.",
+                "bullet_list": [
+                    "Shyness that can influence interactions",
+                    "Wanna avoid attention or be alone",
+                    "Find it hard to start conversations"
+                ]
             },
             {
                 "text": "Mild Self Consciousness",
                 "score": 100,
-                "info": "Feeling a slight discomfort or unease in social situations, particularly when meeting new people or being the center of attention. This level of shyness is relatively low intensity and may manifest as hesitation, blushing, or a preference for observing rather than actively participating."
+                "info": "Feeling a slight discomfort or unease in social situations, particularly when meeting new people or being the center of attention. This level of shyness is relatively low intensity and may manifest as hesitation, blushing, or a preference for observing rather than actively participating.",
+                "bullet_list": [
+                    "Slight discomfort in social situations",
+                    "Low intensity shiness",
+                    "Prefer to observe people more than talk"
+                ]
             }
 
         ],
@@ -90,17 +109,17 @@
                 "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil."
             },
             {
-                "text": "Diucapkan Introversi",
+                "text": "Sikap Introvert",
                 "score": 50,
                 "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal."
             },
             {
-                "text": "Ketakutan Sedang",
+                "text": "Kurang Percaya Diri",
                 "score": 75,
                 "info": "Mengalami tingkat rasa malu yang nyata yang dapat memengaruhi interaksi dan ekspresi diri. Tingkat rasa malu ini melibatkan kecenderungan yang lebih besar untuk menghindari perhatian atau mencari kesendirian, dan mungkin melibatkan perasaan ragu-ragu, gugup, atau kesulitan memulai percakapan atau menegaskan diri sendiri."
             },
             {
-                "text": "Kesadaran Diri Ringan",
+                "text": "Agak Malu-Malu",
                 "score": 100,
                 "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif."
             }    
@@ -402,39 +421,55 @@
             {
                 "text": "Bliss",
                 "score": 25,
-                "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of ecstasy and serenity."
+                "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of ecstasy and serenity.",
+                "bullet_list": [
+                    "State of pure happiness",
+                    "True moment of ecstasy"
+                ]
             },
             {
                 "text": "Fulfillment",
                 "score": 50,
-                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments.",
+                "bullet_list": [
+                    "Deep sense of purpose or meaning",
+                    "When values and goals align with accomplishments and actions"
+                ]
             },
             {
                 "text": "Contentment",
                 "score": 75,
-                "info": "State of inner peace and satisfaction that arises from embracing one's current circumstances without longing for more. It involves finding joy and fulfillment in the present moment, appreciating what one has, and letting go of the constant pursuit of external desires. Contentment allows individuals to experience a deep sense of tranquility and well-being, accepting life as it is and finding happiness within themselves."
+                "info": "State of inner peace and satisfaction that arises from embracing one's current circumstances without longing for more. It involves finding joy and fulfillment in the present moment, appreciating what one has, and letting go of the constant pursuit of external desires. Contentment allows individuals to experience a deep sense of tranquility and well-being, accepting life as it is and finding happiness within themselves.",
+                "bullet_list": [
+                    "Satisfied with current circumstances",
+                    "Sense of thankfulness and acceptance"
+                ]
             },
             {
                 "text": "Excitement",
                 "score": 100,
-                "info": "State of heightened anticipation and enthusiasm that arises from the prospect of something new, thrilling, or engaging. It is characterized by a surge of energy and a sense of eager anticipation, often accompanied by feelings of joy or exhilaration. Excitement can be sparked by various experiences, such as upcoming events, adventures, achievements, or even the unknown, and it invigorates individuals by igniting a sense of curiosity, passion, and positive anticipation."
+                "info": "State of heightened anticipation and enthusiasm that arises from the prospect of something new, thrilling, or engaging. It is characterized by a surge of energy and a sense of eager anticipation, often accompanied by feelings of joy or exhilaration. Excitement can be sparked by various experiences, such as upcoming events, adventures, achievements, or even the unknown, and it invigorates individuals by igniting a sense of curiosity, passion, and positive anticipation.",
+                "bullet_list": [
+                    "Heightened state of joy and enthusiasm",
+                    "Sense of thrill or delight"
+                ]
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "Kebahagiaan",
+                "text": "Kebahagiaan yang Mendalam",
                 "score": 25,
                 "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan."
             },
             {
-                "text": "Pemenuhan",
+                "text": "Merasa Terpenuhi",
                 "score": 50,
                 "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka."
             },
             {
-                "text": "Kepuasan",
+                "text": "Rasa Kepuasan",
                 "score": 75,
                 "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri."
             },
@@ -713,46 +748,64 @@
         "emotions_en":
         [
             {
-                "text": "Imaginative playfulness",
+                "text": "Imaginative Playfulness",
                 "score": 25,
-                "info": "Embracing creativity and imagination during play. This level of playfulness involves the exploration of imaginary worlds, storytelling, role-playing, or engaging with toys, props, or artistic activities. It encourages imaginative thinking, problem-solving, and the expression of one's inner world."
+                "info": "Embracing creativity and imagination during play. This level of playfulness involves the exploration of imaginary worlds, storytelling, role-playing, or engaging with toys, props, or artistic activities. It encourages imaginative thinking, problem-solving, and the expression of one's inner world.",
+                "bullet_list": [
+                    "Playing using creativity and imagination",
+                    "Explore imaginary worlds using storytelling"
+                ]
             },
             {
-                "text": "Adventurous playfulness",
+                "text": "Adventurous Playfulness",
                 "score": 50,
-                "info": "Embracing a sense of adventure, exploration, and risk-taking play. This level of playfulness involves seeking new experiences, pushing boundaries, and engaging in challenging or thrilling activities. It often involves a spirit of curiosity, daring, and a willingness to  outside of one's comfort zone."
+                "info": "Embracing a sense of adventure, exploration, and risk-taking play. This level of playfulness involves seeking new experiences, pushing boundaries, and engaging in challenging or thrilling activities. It often involves a spirit of curiosity, daring, and a willingness to  outside of one's comfort zone.",
+                "bullet_list": [
+                    "Exploring and risk-taking during play",
+                    "Challenging and risky activities",
+                    "Stepping out of comfort zone"
+                ]
             },
             {
-                "text": "Light hearted playfulness",
+                "text": "Light Hearted Playfulness",
                 "score": 75,
-                "info": "A carefree and joyful state of being, characterized by a lighthearted attitude and a playful approach to life. It involves engaging in activities or interactions with a sense of spontaneity, humor, and a lack of seriousness. It often brings a sense of levity, laughter, and a refreshing break from the pressures and responsibilities of everyday life, allowing individuals to embrace their inner child and find happiness in the simple joys of the present moment."
+                "info": "A carefree and joyful state of being, characterized by a lighthearted attitude and a playful approach to life. It involves engaging in activities or interactions with a sense of spontaneity, humor, and a lack of seriousness. It often brings a sense of levity, laughter, and a refreshing break from the pressures and responsibilities of everyday life, allowing individuals to embrace their inner child and find happiness in the simple joys of the present moment.",
+                "bullet_list": [
+                    "Light-hearted humor and fun",
+                    "Enjoying playtime in a casual and relaxed manner"
+                ]
             },
             {
-                "text": "Energetic playfulness",
+                "text": "Energetic Playfulness",
                 "score": 100,
-                "info": "Exhibiting a higher level of energy and enthusiasm during play. This level of playfulness involves more active and dynamic participation, such as engaging in physical activities, games, or playful competitions. It often involves a sense of excitement, movement, and vitality."
+                "info": "Exhibiting a higher level of energy and enthusiasm during play. This level of playfulness involves more active and dynamic participation, such as engaging in physical activities, games, or playful competitions. It often involves a sense of excitement, movement, and vitality.",
+                "bullet_list": [
+                    "Energetic and enthusiastic",
+                    "Engaging in physical activity",
+                    "A lot of movement and excitement"
+                ]
             }
 
         ],
         "emotions_id":
         [
             {
-                "text": "Kegembiraan imajinatif",
+                "text": "Kegembiraan Imaginatif",
                 "score": 25,
                 "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang."
             },
             {
-                "text": "Kegembiraan petualang",
+                "text": "Keinginan untuk Berpetualang",
                 "score": 50,
                 "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang."
             },
             {
-                "text": "Keceriaan ringan",
+                "text": "Keceriaan Ringan",
                 "score": 75,
                 "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini."
             },
             {
-                "text": "Kegembiraan yang energik",
+                "text": "Kegembiraan Energetik",
                 "score": 100,
                 "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas."
             }  
@@ -1088,22 +1141,40 @@
             {
                 "text": "Rage",
                 "score": 25,
-                "info": "Encountering an intense and uncontrollable anger that can lead to a loss of self-control. This level of anger is characterized by an explosive emotional outburst, accompanied by a heightened physical and psychological arousal. Rage can result in aggressive or destructive behavior."
+                "info": "Encountering an intense and uncontrollable anger that can lead to a loss of self-control. This level of anger is characterized by an explosive emotional outburst, accompanied by a heightened physical and psychological arousal. Rage can result in aggressive or destructive behavior.",
+                "bullet_list": [
+                    "Intense anger causing a loss of self control",
+                    "Explosive emotional outburst",
+                    "Can cause destructive behaviour"
+                ]
             },
             {
                 "text": "Irritation",
                 "score": 50,
-                "info": "Feeling a mild annoyance or frustration in response to a minor inconvenience or disruption. This level of anger is relatively low intensity and may arise from everyday irritants or inconveniences."
+                "info": "Feeling a mild annoyance or frustration in response to a minor inconvenience or disruption. This level of anger is relatively low intensity and may arise from everyday irritants or inconveniences.",
+                "bullet_list": [
+                    "Mildly annoyed due to minor inconvenience",
+                    "Lower intensity anger"
+                ]
             },
             {
                 "text": "Hostility",
                 "score": 75,
-                "info": "Exhibiting a strong antagonistic attitude or aggressive behavior towards someone or something. This level of animosity entails a more overt and confrontational stance, with a significant intent to harm, obstruct, or undermine the target."
+                "info": "Exhibiting a strong antagonistic attitude or aggressive behavior towards someone or something. This level of animosity entails a more overt and confrontational stance, with a significant intent to harm, obstruct, or undermine the target.",
+                "bullet_list": [
+                    "Aggresive behaviour towards someone or something",
+                    "Confrontational stance",
+                    "Intended to harm the target"
+                ]
             },
             {
                 "text": "Anger",
                 "score": 100,
-                "info": "Experiencing a more pronounced emotional state of displeasure, often triggered by perceived injustices, conflicts, or violations of personal boundaries. This level of anger involves a stronger emotional response, including feelings of resentment, indignation, or frustration."
+                "info": "Experiencing a more pronounced emotional state of displeasure, often triggered by perceived injustices, conflicts, or violations of personal boundaries. This level of anger involves a stronger emotional response, including feelings of resentment, indignation, or frustration.",
+                "bullet_list": [
+                    "Stronger emotional response",
+                    "Feeling of frustation and resentment"
+                ]
             }
 
         ],
@@ -1453,22 +1524,40 @@
             {
                 "text": "Fulfillment",
                 "score": 25,
-                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments."
+                "info": "Achieving a deep sense of purpose and meaning in life. This level of happiness is attained when one's values, and aspirations align with their actions and accomplishments.",
+                "bullet_list": [
+                    "Deep sense of purpose or meaning",
+                    "When values and goals align with accomplishments and actions"
+                ]
             },
             {
                 "text": "Unstoppable Passion",
                 "score": 50,
-                "info": "Refers to an intense and unwavering drive or enthusiasm towards a particular pursuit or goal. It is characterized by a relentless determination, a burning desire, and a steadfast commitment to overcoming obstacles and achieving success. Unstoppable passion empowers individuals to persevere through challenges, fueling their actions with unwavering dedication and a refusal to be deterred, ultimately leading to the fulfillment of their ambitions."
+                "info": "Refers to an intense and unwavering drive or enthusiasm towards a particular pursuit or goal. It is characterized by a relentless determination, a burning desire, and a steadfast commitment to overcoming obstacles and achieving success. Unstoppable passion empowers individuals to persevere through challenges, fueling their actions with unwavering dedication and a refusal to be deterred, ultimately leading to the fulfillment of their ambitions.",
+                "bullet_list": [
+                    "Intense level of dedication and motivation",
+                    "Full-on passion towards particular purpose",
+                    "Pursuit if excellence and self-motivation"
+                ]
             },
             {
                 "text": "Moderate Drive",
                 "score": 75,
-                "info": "Experiencing a noticeable increase in motivation and determination. This level of incentive involves a stronger sense of purpose and focus, often fueled by external rewards, recognition, or a clear sense of progress towards a desired outcome."
+                "info": "Experiencing a noticeable increase in motivation and determination. This level of incentive involves a stronger sense of purpose and focus, often fueled by external rewards, recognition, or a clear sense of progress towards a desired outcome.",
+                "bullet_list": [
+                    "Increase in motivation and determination",
+                    "Strong sense of purpose and focus",
+                    "Fueled by desired outcome"
+                ]
             },
             {
                 "text": "Excitement",
                 "score": 100,
-                "info": "Experiencing a heightened state of joy and enthusiasm. This level of happiness is characterized by a sense of anticipation, thrill, or delight."
+                "info": "Experiencing a heightened state of joy and enthusiasm. This level of happiness is characterized by a sense of anticipation, thrill, or delight.",
+                "bullet_list": [
+                    "Heightened state of joy and enthusiasm",
+                    "Sense of thrill or delight"
+                ]
             }
 
         ],
@@ -1878,22 +1967,39 @@
             {
                 "text": "Sorrow",
                 "score": 25,
-                "info": "Experiencing profound and long-lasting sadness that permeates various aspects of life. This level of sadness can be associated with prolonged grief, significant trauma, or  emotional pain. It may affect one's ability to function and require support to address and manage."
+                "info": "Experiencing profound and long-lasting sadness that permeates various aspects of life. This level of sadness can be associated with prolonged grief, significant trauma, or  emotional pain. It may affect one's ability to function and require support to address and manage.",
+                "bullet_list": [
+                    "Long lasting sadness that affects one's life",
+                    "Chronic emotional pain and grief"
+                ]
             },
             {
-                "text": "Mild remorse",
+                "text": "Mild Remorse",
                 "score": 50,
-                "info": "Feeling a slight sense of guilt or regret in response to a minor wrongdoing or a perceived violation of personal values. This level of guilt is relatively low intensity and may involve a sense of unease, self-reflection, or the recognition of a minor mistake."
+                "info": "Feeling a slight sense of guilt or regret in response to a minor wrongdoing or a perceived violation of personal values. This level of guilt is relatively low intensity and may involve a sense of unease, self-reflection, or the recognition of a minor mistake.",
+                "bullet_list": [
+                    "Slight sense of guilt due to minor wrongdoings",
+                    "Lower intensity, usually involves self-reflection"
+                ]
             },
             {
                 "text": "Disappointment",
                 "score": 75,
-                "info": "Feeling let down or dissatisfied due to unmet expectations or unfavorable outcomes. This level of sadness is typically milder and temporary, often related to specific events or circumstances."
+                "info": "Feeling let down or dissatisfied due to unmet expectations or unfavorable outcomes. This level of sadness is typically milder and temporary, often related to specific events or circumstances.",
+                "bullet_list": [
+                    "Feeling let down due to bad outcomes",
+                    "Temporary sadness due to specific circumstances"
+                ]
             },
             {
-                "text": "Moderate culpability",
+                "text": "Moderate Guilt",
                 "score": 100,
-                "info": "Experiencing a more pronounced level of guilt, often accompanied by a stronger sense of responsibility for a perceived wrongdoing. This level of guilt involves a deeper  response, such as feelings of remorse, shame, or self-blame, and may motivate efforts to make amends or seek forgiveness."
+                "info": "Experiencing a more pronounced level of guilt, often accompanied by a stronger sense of responsibility for a perceived wrongdoing. This level of guilt involves a deeper  response, such as feelings of remorse, shame, or self-blame, and may motivate efforts to make amends or seek forgiveness.",
+                "bullet_list": [
+                    "Feel quite remorseful",
+                    "Wanna make efforts to make amends",
+                    "Stronger responsibility for wrongdoing"
+                ]
             }
 
         ],
@@ -2235,24 +2341,40 @@
         "emotions_en":
         [
             {
-                "text": "Paralyzing remorse",
+                "text": "Paralyzing Remorse",
                 "score": 25,
-                "info": "Experiencing an extreme and debilitating level of guilt that significantly impacts one's emotional well-being and daily functioning. This level of guilt is associated with intense and persistent self-blame, overwhelming shame, or a profound sense of unworthiness. It may lead to a loss of self-esteem, withdrawal from social interactions."
+                "info": "Experiencing an extreme and debilitating level of guilt that significantly impacts one's emotional well-being and daily functioning. This level of guilt is associated with intense and persistent self-blame, overwhelming shame, or a profound sense of unworthiness. It may lead to a loss of self-esteem, withdrawal from social interactions.",
+                "bullet_list": [
+                    "Extreme level of guilt that affects daily functioning",
+                    "Intense self-blame or sense of unworthiness"
+                ]
             },
             {
                 "text": "Terror",
                 "score": 50,
-                "info": "Experiencing an extreme and paralyzing level of fear that overwhelms the individual's ability to think or act rationally. This level of fear is associated with an imminent or perceived life-threatening situation and can be accompanied by a complete loss of control or a sense of extreme danger. It often triggers a fight-or-flight response."
-            },
-            {
-                "text": "Anxiety",
-                "score": 75,
-                "info": "Experiencing heightened apprehension, restlessness, or worry about potential future events or uncertain outcomes. This level of fear can be persistent and may affect daily functioning, leading to feelings of nervousness or uneasiness."
+                "info": "Experiencing an extreme and paralyzing level of fear that overwhelms the individual's ability to think or act rationally. This level of fear is associated with an imminent or perceived life-threatening situation and can be accompanied by a complete loss of control or a sense of extreme danger. It often triggers a fight-or-flight response.",
+                "bullet_list": [
+                    "Extreme fear that makes people unable to think rationally",
+                    "Complete loss of control in a situation of danger"
+                ]
             },
             {
                 "text": "Panic",
+                "score": 75,
+                "info": "Experiencing heightened apprehension, restlessness, or worry about potential future events or uncertain outcomes. This level of fear can be persistent and may affect daily functioning, leading to feelings of nervousness or uneasiness.",
+                "bullet_list": [
+                    "Intense fear response",
+                    "Could usually cause faster heartbeat or shortness of breath"
+                ]
+            },
+            {
+                "text": "Anxiety",
                 "score": 100,
-                "info": "Encountering an intense and overwhelming fear response characterized by a sudden onset of extreme distress. This level of fear is often accompanied by physical symptoms such as rapid heartbeat, shortness of breath, or a sense of impending doom. Panic can impair judgment and may require immediate attention and intervention."
+                "info": "Encountering an intense and overwhelming fear response characterized by a sudden onset of extreme distress. This level of fear is often accompanied by physical symptoms such as rapid heartbeat, shortness of breath, or a sense of impending doom. Panic can impair judgment and may require immediate attention and intervention.",
+                "bullet_list": [
+                    "Heightened sense of restlessness or worry about the future",
+                    "Feeling nervous or uneasy"
+                ]
             }
 
         ],
@@ -2540,22 +2662,38 @@
             {
                 "text": "Legacy",
                 "score": 25,
-                "info": "Encountering a profound and lasting sense of pride derived from making a meaningful impact or leaving a positive mark on the world. This level of pride is associated with significant contributions, acts of service, or accomplishments that have a lasting influence beyond one's immediate sphere. It reflects a sense of purpose, contribution, and a desire to create a lasting legacy"
+                "info": "Encountering a profound and lasting sense of pride derived from making a meaningful impact or leaving a positive mark on the world. This level of pride is associated with significant contributions, acts of service, or accomplishments that have a lasting influence beyond one's immediate sphere. It reflects a sense of purpose, contribution, and a desire to create a lasting legacy",
+                "bullet_list": [
+                    "Pride felt after leaving positive mark on the world",
+                    "Contribution that create a lasting legacy"
+                ]
             },
             {
                 "text": "Validation",
                 "score": 50,
-                "info": "Experiencing a deeper level of pride that arises from the affirmation of one's identity, values, or beliefs. This level of pride reflects a sense of self-acceptance and authenticity, often linked to personal growth, embracing one's uniqueness, or standing up for what one believes in."
+                "info": "Experiencing a deeper level of pride that arises from the affirmation of one's identity, values, or beliefs. This level of pride reflects a sense of self-acceptance and authenticity, often linked to personal growth, embracing one's uniqueness, or standing up for what one believes in.",
+                "bullet_list": [
+                    "Sense of self-acceptance and authenticity",
+                    "External praise and validation from others"
+                ]
             },
             {
                 "text": "Accomplishment",
                 "score": 75,
-                "info": "Feeling a sense of pride and satisfaction in achieving a personal goal, completing a task, or overcoming a challenge. This level of pride is associated with a specific accomplishment and reflects a sense of fulfillment and self-worth."
+                "info": "Feeling a sense of pride and satisfaction in achieving a personal goal, completing a task, or overcoming a challenge. This level of pride is associated with a specific accomplishment and reflects a sense of fulfillment and self-worth.",
+                "bullet_list": [
+                    "Sense of pride or satisfaction in overcoming a challenge",
+                    "Fulfillment and self-worth"
+                ]
             },
             {
                 "text": "Recognition",
                 "score": 100,
-                "info": "Experiencing pride in being acknowledged or recognized for one's achievements or contributions. This level of pride involves external validation, such as receiving awards, accolades, or praise from others, and it reinforces a sense of accomplishment and value."
+                "info": "Experiencing pride in being acknowledged or recognized for one's achievements or contributions. This level of pride involves external validation, such as receiving awards, accolades, or praise from others, and it reinforces a sense of accomplishment and value.",
+                "bullet_list": [
+                    "Pride felt after leaving a positive mark on the world",
+                    "Contribution that creates a lasting legacy"
+                ]
             }
 
         ],
