@@ -25,9 +25,5 @@ export default class CompleteSceneController extends Phaser.Scene
         this.view.RegisterOnBackToHomeClicked(() => {
             this.scene.start(SceneInfo.homeScene.key);
         })
-
-        this.view.RegisterOnSeeAdminPanelClicked(() => {
-            window.open(CONFIG.RESULT_URL, "_blank")
-        })
     }
 }

@@ -11,7 +11,6 @@ import ContainerLite from "phaser3-rex-plugins/plugins/containerlite"
 export default class CompletedSceneView extends Phaser.GameObjects.Group
 {
     private _userNameText! : Text;
-    private _seeAdminBtn! : Button;
     private _backToHomeBtn!: Button;
     private _dateContainer!: ContainerLite;
 
@@ -88,25 +87,11 @@ export default class CompletedSceneView extends Phaser.GameObjects.Group
         finishedContainer.setOrigin(.5)
         this._dateContainer = finishedContainer;
 
-        var seeAdminPanelButton = new Button(this.scene, 0,0, UIAsset.button_frame_secondary.key)
-        seeAdminPanelButton.transform.setDisplayWidth(this.scene.scale.width * .15, true)
-        seeAdminPanelButton.transform.setPosition(this.scene.scale.width * .49, this.scene.scale.height * .8)
-        seeAdminPanelButton.gameobject.setOrigin(1, 0)
-        this._seeAdminBtn = seeAdminPanelButton;
-
-        var seeAdminPanelText = new Text(this.scene, 0, 0, Localizations.text.interactions.seeResult, {
-            font: "300 Adobe Caslon Pro",
-            color: FontColors.white
-        })
-        seeAdminPanelText.gameobject.handleTextSize(seeAdminPanelButton.gameobject, seeAdminPanelButton.gameobject.displayHeight * .2, seeAdminPanelButton.gameobject.displayHeight * .05)
-        seeAdminPanelText.gameobject.setPosition(seeAdminPanelButton.gameobject.x - seeAdminPanelButton.gameobject.displayWidth * .5, seeAdminPanelButton.gameobject.y + seeAdminPanelButton.gameobject.displayHeight * .5)
-        seeAdminPanelText.gameobject.setOrigin(.5)
-
     
         var backToHomeButton = new Button(this.scene, 0,0, UIAsset.button_frame_primary.key)
         backToHomeButton.transform.setDisplayWidth(this.scene.scale.width * .15, true)
-        backToHomeButton.transform.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .8)
-        backToHomeButton.gameobject.setOrigin(0)
+        backToHomeButton.transform.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .85)
+        backToHomeButton.gameobject.setOrigin(0.5)
         this._backToHomeBtn = backToHomeButton;
 
         var backToHomeText = new Text(this.scene, 0, 0, Localizations.text.interactions.backToHome, {
@@ -114,7 +99,7 @@ export default class CompletedSceneView extends Phaser.GameObjects.Group
             color: FontColors.white
         })
         backToHomeText.gameobject.handleTextSize(backToHomeButton.gameobject, backToHomeButton.gameobject.displayHeight * .2, backToHomeButton.gameobject.displayHeight * .05)
-        backToHomeText.gameobject.setPosition(backToHomeButton.gameobject.x + backToHomeButton.gameobject.displayWidth * .5, backToHomeButton.gameobject.y + backToHomeButton.gameobject.displayHeight * .5)
+        backToHomeText.gameobject.setPosition(backToHomeButton.gameobject.x, backToHomeButton.gameobject.y)
         backToHomeText.gameobject.setOrigin(.5)
     }
 
@@ -123,11 +108,6 @@ export default class CompletedSceneView extends Phaser.GameObjects.Group
         this._userNameText.gameobject.setText(name);
         this._dateContainer.setOrigin(.5)
         this._dateContainer.setPosition(this.scene.scale.width * .5, this.scene.scale.height * .7)
-    }
-
-    public RegisterOnSeeAdminPanelClicked(func : Function)
-    {
-        this._seeAdminBtn.gameobject.on("pointerup", func)
     }
 
     public RegisterOnBackToHomeClicked(func : Function)

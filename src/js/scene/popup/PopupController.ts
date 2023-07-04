@@ -60,7 +60,7 @@ export default class PopupController extends Phaser.GameObjects.Container
         this.infoPopup.ClosePopup();
     }
 
-    public openInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function | null, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
+    public openInfoPopup(title: string, message: string | string[], iconKey: string, onConfirm : Function | null, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
     {
         this.background.gameobject.setVisible(true);
 

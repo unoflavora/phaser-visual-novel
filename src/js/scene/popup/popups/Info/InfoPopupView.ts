@@ -110,6 +110,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         var scrollTrack = this.scene.add.image(0,0, UIAsset.brown_bg.key);
         scrollTrack.setDisplaySize(this.panel.gameobject.displayWidth * .05, scrollTrack.displayHeight)
         var scrollThumb = this.scene.add.image(0,0, UIAsset.ui_slider_thumb.key);
+        scrollThumb.setDisplaySize(scrollTrack.displayWidth * 1.5, scrollTrack.displayWidth * 1.5)
 
         this.scrollablePanel = this.rexUi.add.scrollablePanel({
             x: this.panel.gameobject.x,
@@ -144,8 +145,8 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             },
 
             space: {
-                left: 10,
-                right: 10,
+                left: 70,
+                right: 70,
                 top: 10,
                 bottom: 10,
 
@@ -184,19 +185,41 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
 
     setupInfo(
         title: string, 
-        message: string,
+        message: string | string[],
         iconKey: string, 
         OnConfirm : Function, 
         onConfirmText: string, 
         onCancel : Function | null = null, 
         onCancelText: string | null = null)
     {
+        var isMessageIsList = Array.isArray(message);
+
+        if(Array.isArray(message))
+        {
+            let bulletPoint = "\u{2022}"
+            message = message.map((mes) => bulletPoint + " " + mes );
+            this.infoDesc.gameobject.setFontSize(this.scene.scale.height * .025)
+            this.infoDesc.gameobject.setLineSpacing(this.scene.scale.height * .015);
+            this.scrollableInfoDesc.gameobject.setFontSize(this.scene.scale.height * .025)
+            this.scrollableInfoDesc.gameobject.setLineSpacing(this.scene.scale.height * .015);
+        }
+        else
+        {
+            this.infoDesc.gameobject.setFontSize(this.scene.scale.height * .022)
+            this.infoDesc.gameobject.setLineSpacing(0);
+            this.scrollableInfoDesc.gameobject.setFontSize(this.scene.scale.height * .022)
+            this.scrollableInfoDesc.gameobject.setLineSpacing(0);
+
+        }
+
         this.infoTitle.gameobject.setText(title);
         this.infoDesc.gameobject.setText(message);
 
-        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .15)
+        console.log(this.infoDesc.gameobject.displayHeight, this.panel.gameobject.displayHeight * .28)
+
+        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .28)
         {
-            this.infoTitle.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.1,)
+            this.infoTitle.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.15,)
             this.infoDesc.gameobject.setPosition(
                 this.panel.gameobject.x,
                 this.panel.gameobject.y + this.panel.gameobject.displayHeight * 0.1,    
@@ -214,10 +237,11 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             this.infoDesc.gameobject.setOrigin(.5,0)
         }
 
-        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .35)
+        if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .33)
         {
             this.infoDesc.gameobject.setVisible(true)
             this.scrollablePanel.setVisible(false)
+
         }
         else
         {
@@ -225,7 +249,7 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
             this.infoDesc.gameobject.setVisible(false)
             this.scrollablePanel.scrollToTop()
             this.scrollableInfoDesc.gameobject.setText(message)
-            this.scrollableInfoDesc.gameobject.setVisible(true)
+            this.scrollableInfoDesc.gameobject.setVisible(true);
             this.scrollablePanel.setPosition(this.panel.gameobject.x, this.infoTitle.gameobject.y + this.infoTitle.gameobject.displayHeight * .5)
             this.scrollablePanel.setVisible(true)
             this.scrollablePanel.layout();

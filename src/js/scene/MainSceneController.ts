@@ -303,7 +303,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     }
 
-    public OpenInfoPopup(title: string, message: string, iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
+    public OpenInfoPopup(title: string, message: string | string[], iconKey: string, onConfirm : Function, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null = null)
     {
         this.scene.bringToTop();
 
@@ -311,7 +311,6 @@ export default class MainSceneController extends Phaser.Scene {
 
         this._popupController.openInfoPopup(title, message, iconKey, () => this.ClosePopup(), onConfirmText, onCancel, onCancelText);
     }
-
 
     private HideAllDOMElements(hide : boolean = true) {
         var domElements = document.getElementsByClassName("phaser-dom-elements");

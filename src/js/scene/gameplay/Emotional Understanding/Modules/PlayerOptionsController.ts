@@ -109,7 +109,7 @@ export class PlayerOptionsController extends Phaser.GameObjects.Group
         return optionData;
 	}
   
-    public setOptionValue(optionIndex : number, optionValue : string, optionDescription : string | null) {
+    public setOptionValue(optionIndex : number, optionValue : string, optionDescription : string[] | null) {
         var option = this.optionData[optionIndex];
         
         option.container.setVisible(optionValue.length > 0)
