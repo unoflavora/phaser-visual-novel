@@ -11,7 +11,7 @@ export const GameplayAsset = {
 
     story : {
         key: 'story',
-        path: '/story/gameplay-flow-v0.json',
+        path: '/story/story.json',
         type: AssetType.JSON,
     },
     "char-story-sc_01": {
