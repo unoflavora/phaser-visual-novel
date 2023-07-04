@@ -14,6 +14,7 @@
     text: string;
     score: number;
     info: string;
+    bullet_list: string[]
   }
   
   interface Scene {

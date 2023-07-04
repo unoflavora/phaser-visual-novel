@@ -24,7 +24,7 @@ export default class InfoPopupController extends Phaser.GameObjects.Group {
     this.view.setVisible(false);
   }
 
-  OpenPopup(title: string, message: string, iconKey: string, OnConfirm : Function | null, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null) {
+  OpenPopup(title: string, message: string | string[], iconKey: string, OnConfirm : Function | null, onConfirmText: string, onCancel : Function | null = null, onCancelText: string | null) {
     this.view.setVisible(true);
     
     this.view.setupInfo(title, message, iconKey, () => {
@@ -46,8 +46,7 @@ export default class InfoPopupController extends Phaser.GameObjects.Group {
       this._onClosePopup();
       if (onCancel != null) onCancel();
     }, onCancelText);
-  }
-
+  } 
   registerOnClosePopup(onClosePopup: Function) 
   {
     this._onClosePopup = onClosePopup;
