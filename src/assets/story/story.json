@@ -213,7 +213,7 @@
                     "position": 1,
                     "name": "Ifuly",
                     "text": [
-                        "... Oh hi, sorry. Can you repeat your question? I wasn’t fully paying attention."
+                        "... Oh hi, sorry. Can you repeat your question? I wasn't fully paying attention."
                     ]
                 },
                 {
@@ -246,7 +246,7 @@
                     "name": "Ifuly",
                     "text": [
                         "Oh, hi Pomoro.",
-                        "Sorry, I didn’t pay full attention. I'm Ifuly by the way. Do you mind repeating your question?"
+                        "Sorry, I didn't pay full attention. I'm Ifuly by the way. Do you mind repeating your question?"
                     ]
                 },
                 {
@@ -261,7 +261,7 @@
                     "name": "Ifuly",
                     "text": [
                         "Ohhh, Prospevil. I think it's correct, but you can double check with my sisters if you meet them",
-                        "They’ve been there a lot, I’ve only been there few times"
+                        "They've been there a lot, I've only been there few times"
                     ]
                 },
                 {
@@ -574,7 +574,7 @@
                     "name": "Pomoro/You",
                     "text": [
                         "*Decide to approach and greet the carrot to ask him for his inputs.*",
-                        "Hello, it’s such a good day isn't it."
+                        "Hello, it's such a good day isn't it."
                     ]
                 },
                 {
@@ -617,7 +617,7 @@
                     "position": 1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Ahh, seems so nice having a tight-knit family. My name is Pomoro! It’s a pleasure to meet you, Ota."
+                        "Ahh, seems so nice having a tight-knit family. My name is Pomoro! It's a pleasure to meet you, Ota."
                     ]
                 },
                 {
@@ -872,7 +872,7 @@
                 "score": 50
             },
             {
-                "text": "Wants to approach them modestly, wondering if they are Ifuly’s younger sisters",
+                "text": "Wants to approach them modestly, wondering if they are Ifuly's younger sisters",
                 "score": 100
             }
         ],
@@ -930,8 +930,8 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "*Wants to approach them modestly, wondering if they are Ifuly’s younger sisters.*",
-                        "Excuse me, may I know if the three of you are Ifuly’s sisters?"
+                        "*Wants to approach them modestly, wondering if they are Ifuly's younger sisters.*",
+                        "Excuse me, may I know if the three of you are Ifuly's sisters?"
                     ]
                 },
                 {
@@ -980,7 +980,7 @@
                     "position": 1,
                     "name": "Imuc",
                     "text": [
-                        "Don't worry, we’ll be heading back later. Thanksfor letting us know!",
+                        "Don't worry, we'll be heading back later. Thanksfor letting us know!",
                         "Yes indeed she is a little bit shy, but she cares a lot about us"
                     ]
                 },
@@ -1178,7 +1178,7 @@
         "intro_en":
         [
             "Pomoro sets off on his journey again. He managed to go through the forest, passing through various obstacles.",
-            "When Pomoro nearly reached the edge of the forest, he heard something. He heard a rumble, but it’s not the sound of a beast, nor thunder.",
+            "When Pomoro nearly reached the edge of the forest, he heard something. He heard a rumble, but it's not the sound of a beast, nor thunder.",
             "Pomoro seems unsure but is curious to investigate the source of the sound.",
             "The sound is starting to get closer and closer, and to his surprise, Pomoro saw a Turnip Warrior."
         ],
@@ -1335,7 +1335,7 @@
                     "position": 1,
                     "name": "Rapa",
                     "text": [
-                        "Hahh! There’s no time to explain. They look like me",
+                        "Hahh! There's no time to explain. They look like me",
                         "If you meet them, tell them to go here"
                     ]
                 },
@@ -1351,7 +1351,7 @@
                     "name": "Rapa",
                     "text": [
                         "Yes, good! So you can continue heading west, that is the direction to Prospevil.",
-                        "And I’m heading to the East.",
+                        "And I'm heading to the East.",
                         "*Rapa rush to the East*"
                     ]
                 },
@@ -1400,7 +1400,7 @@
                     "name": "Pomoro/You",
                     "text": [
                         "Wait up! I have to go to Prospevil.",
-                        "But I’ll tell them if I meet them along my journey."
+                        "But I'll tell them if I meet them along my journey."
                     ]
                 },
                 {
@@ -1708,7 +1708,7 @@
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Maybe maybe maybe. But how, when? Exciting isn’t it, yes yes yes?"
+                        "Maybe maybe maybe. But how, when? Exciting isn't it, yes yes yes?"
                     ]
                 },
                 {
@@ -1841,7 +1841,7 @@
                     "position": -1,
                     "name": "Pomoro/You",
                     "text": [
-                        "Okay then, it’s a pleasure to meet the both of you.",
+                        "Okay then, it's a pleasure to meet the both of you.",
                         "Have a great day!"
                     ]
                 },
@@ -1905,7 +1905,7 @@
                     "position": 1,
                     "name": "Naca",
                     "text": [
-                        "Wo o’ ow, Ota Ota Ota?"
+                        "Wo o' ow, Ota Ota Ota?"
                     ]
                 },
                 {
@@ -1933,7 +1933,7 @@
                     "position": 1,
                     "name": "Daucu",
                     "text": [
-                        "Tak peduli sesulit apa, Ka Ota s’lalu s’lalu s’lalu bisa tersenyum."
+                        "Tak peduli sesulit apa, Ka Ota s'lalu s'lalu s'lalu bisa tersenyum."
                     ]
                 },
                 {
@@ -2551,7 +2551,7 @@
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Huaaa, Mupo won’t get down. Mupo can't go down, Mupi too scared!"
+                        "Huaaa, Mupo won't get down. Mupo can't go down, Mupi too scared!"
                     ]
                 },
                 {
@@ -2900,7 +2900,7 @@
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "I’m on the highest peak!"
+                        "I'm on the highest peak!"
                     ]
                 },
                 {
@@ -2946,7 +2946,7 @@
                     "position": 1,
                     "name": "Mupo",
                     "text": [
-                        "I’m on the highest peak!"
+                        "I'm on the highest peak!"
                     ]
                 },
                 {
