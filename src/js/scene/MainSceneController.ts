@@ -240,6 +240,10 @@ export default class MainSceneController extends Phaser.Scene {
         try {
 
             localStorage.removeItem("token");
+            this.backend.token = null;
+
+            localStorage.removeItem("tokenExpiredDate");    
+            this.backend.tokenExpiredDate = null;
 
             var scenes = this.scene.manager.getScenes();
     
@@ -259,7 +263,6 @@ export default class MainSceneController extends Phaser.Scene {
             {
                 this.OpenTemplatePopup(PopupType.Error, e.message);
             }
-
         }
 
     }
