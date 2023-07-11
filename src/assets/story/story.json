@@ -109,7 +109,7 @@
                 "info": "Merasakan rasa tidak nyaman atau kekhawatiran ringan sebagai respons terhadap ancaman yang dirasakan atau potensi bahaya. Tingkat ketakutan ini seringkali cepat berlalu dan mungkin timbul dari situasi yang tidak biasa atau kekhawatiran kecil.",
                 "bullet_list": [
                     "Merasakan ancaman atau potensi bahaya",
-                    "Kekhawatiran kecil biasanya karena situasiyang tidak biasa"
+                    "Kekhawatiran kecil biasanya karena situasi yang tidak biasa"
                 ]
             },
             {
@@ -119,7 +119,7 @@
                 "bullet_list": [
                     "Interaksi sosial biasa terasa menantang atau menguras tenaga",
                     "Kadang tidak mau terlalu diganggu kalau lagi mau menyendiri",
-                    "Tidak terlalu suka kepada simulasi eksternal"
+                    "Tidak terlalu suka kepada stimulasi eksternal"
                 ]
             },
             {
@@ -384,7 +384,7 @@
                     "name": "Ifuly",
                     "text": [
                         "Oh, hai Pomoro.",
-                        "Maaf, aku kurang memperhatikan. Namaku Ifuly. Kalau kamu gak keberatan, boleh ulangi lagi pertanyaannya"
+                        "Maaf, aku kurang memperhatikan. Namaku Ifuly. Kalau kamu gak keberatan, boleh ulangi lagi pertanyaannya?"
                     ]
                 },
                 {
@@ -825,12 +825,12 @@
         "emotions_id":
         [
             {
-                "text": "Kegembiraan Imaginatif",
+                "text": "Kegembiraan imajinatif",
                 "score": 25,
                 "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang.",
                 "bullet_list": [
                     "Bermain menggunakan kretifitas dan imajinasi",
-                    "Menjelajahi dunia imajiner menggunakan cerita-cerita imaginatif"
+                    "Menjelajahi dunia imajiner menggunakan cerita-cerita imajinatif"
                 ]
             },
             {
@@ -2369,7 +2369,7 @@
                     "name": "Pomoro/You",
                     "text": [
                         "*Menghampiri mereka untuk bertanya lebih lanjut*",
-                        "Halo, aku Pomoro. Kamu tahu Rapa ga? Sepertinya kamu kenal."
+                        "Halo, aku Pomoro. Kamu tahu Rapa gak? Sepertinya kamu kenal."
                     ]
                 },
                 {
