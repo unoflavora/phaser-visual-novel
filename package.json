@@ -1,10 +1,10 @@
 {
 	"name": "deus-game",
-	"version": "0.0.13.20230712",
+	"version": "0.0.13.20230715",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {
-		"dev": "webpack server --config webpack/webpack.dev.js --env build=prod",
+		"dev": "webpack server --config webpack/webpack.dev.js --env build=dev",
 		"base": "webpack server --config webpack/webpack.dev.js --env build=base",
 		"stag": "webpack server --config webpack/webpack.dev.js --env build=stag",
 		"prod": "webpack server --config webpack/webpack.dev.js --env build=prod",
