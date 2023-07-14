@@ -1,5 +1,6 @@
 import CreatePasswordView from './CreatePasswordView';
 import { SceneInfo } from 'Definitions/SceneInfo';
+import ConsoleHelper from 'Modules/helpers/ConsoleHelper';
 import RexInputText from 'phaser3-rex-plugins/plugins/inputtext';
 
 export default class CreatePasswordController extends Phaser.Scene {
@@ -28,7 +29,7 @@ export default class CreatePasswordController extends Phaser.Scene {
       
       this.view.setErrorConfirmVisible(false);
       this.scene.start(SceneInfo.loginScene.key);
-      console.log("Password: " + pass);
+      ConsoleHelper.Log("Password: " + pass);
     })
 
   }

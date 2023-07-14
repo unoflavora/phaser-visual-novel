@@ -4,6 +4,7 @@ import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import BackendController from 'Modules/core/BackendController';
 import MainSceneController from 'Scenes/MainSceneController';
 import AudioController from 'Modules/core/AudioController';
+import ConsoleHelper from 'Modules/helpers/ConsoleHelper';
 
 export default class LoginSceneController extends Phaser.Scene {
   public rexUI! : RexUIPlugin;
@@ -34,13 +35,13 @@ export default class LoginSceneController extends Phaser.Scene {
       
       this.view.setErrorConfirmVisible(false);
 
-      console.log("Username: " +  username + " Password: " + confPass);
+      ConsoleHelper.Log("Username: " +  username + " Password: " + confPass);
 
       var auth = await MainSceneController.instance.Login(username, confPass, this.view.isRememberMe);
 
       if(auth == null) return;
 
-      console.log(auth)
+      ConsoleHelper.Log(auth)
 
       if (auth.error != null)
       {

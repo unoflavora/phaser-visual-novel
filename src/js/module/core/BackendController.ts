@@ -1,6 +1,7 @@
 import { AuthData, InitData, Response } from "Definitions/BackendResponse";
 import { SubmitScoreData } from "Definitions/GameScore";
 import { IGameData } from "Definitions/Settings";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class BackendController 
 {
@@ -61,7 +62,7 @@ export default class BackendController
             scoreData: scoreData
         }
 
-        console.log(payload)
+        ConsoleHelper.Log(payload)
         return fetch(CONFIG.BASE_URL + "/game/submit-score", {
             method: "POST",
             headers: {

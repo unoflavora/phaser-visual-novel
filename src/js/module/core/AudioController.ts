@@ -1,3 +1,5 @@
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
+
 const fadeConfiguration = {
     duration: 500,
 };
@@ -94,7 +96,7 @@ export default class AudioController
 
         this.scene.game.events.addListener(Phaser.Core.Events.FOCUS,
             () => {
-                console.log("FOCUS")
+                ConsoleHelper.Log("FOCUS")
                 resume();
             }, this);
 
@@ -117,7 +119,7 @@ export default class AudioController
     playBGM = (key:string, fadeIn = false) =>
     {
         if(this.bgm?.key == key) return;
-        console.log("Play BGM", this.bgm, this._bgmOn)
+        ConsoleHelper.Log("Play BGM", this.bgm, this._bgmOn)
         const config = {
             loop: true,
         };

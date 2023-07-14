@@ -215,8 +215,6 @@ export default class InfoPopupView extends Phaser.GameObjects.Group  {
         this.infoTitle.gameobject.setText(title);
         this.infoDesc.gameobject.setText(message);
 
-        console.log(this.infoDesc.gameobject.displayHeight, this.panel.gameobject.displayHeight * .28)
-
         if(this.infoDesc.gameobject.displayHeight <= this.panel.gameobject.displayHeight * .28)
         {
             this.infoTitle.transform.setPosition(this.panel.gameobject.x,this.panel.gameobject.y - this.panel.gameobject.displayHeight * 0.15,)

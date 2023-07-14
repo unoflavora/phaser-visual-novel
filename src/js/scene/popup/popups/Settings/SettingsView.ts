@@ -314,8 +314,6 @@ export default class SettingsView extends Phaser.GameObjects.Container
     public onChangeLanguage()
     {
         // Set all text on this scene to the current language
-        console.log(MainSceneController.instance.gameData.settings.lang)
-
         this.logoutText.gameobject.setText(Localizations.text.mainMenu.auth.logout);
         this.title.gameobject.setText(Localizations.text.mainMenu.settings.title);
         this.sfxTitle.gameobject.setText(Localizations.text.mainMenu.settings.sound);
