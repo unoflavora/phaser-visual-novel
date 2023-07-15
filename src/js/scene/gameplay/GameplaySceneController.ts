@@ -5,6 +5,7 @@ import { SceneInfo } 			from "Definitions/SceneInfo";
 import { MinigameTypes } from "Definitions/Minigame";
 import MainSceneController from "Scenes/MainSceneController";
 import { SceneState } from "Definitions/GameProgress";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class GameplaySceneController extends Phaser.Scene {
 	
@@ -84,9 +85,9 @@ export default class GameplaySceneController extends Phaser.Scene {
 
 
 	private async onFinishEmotionalUnderstanding() {
-		console.log("FINISHED NOVEL");
+		ConsoleHelper.Log("FINISHED NOVEL");
 
-		console.log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
+		ConsoleHelper.Log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
 
 		await MainSceneController.instance.FinishMinigames();
 	}

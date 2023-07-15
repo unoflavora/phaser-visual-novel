@@ -1,5 +1,6 @@
 import { IMinigameData, MinigameTypes } from "Definitions/Minigame";
 import { LanguageEnum } from "Definitions/Settings";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 import MainSceneController from "Scenes/MainSceneController";
 import { EventEmitter }     from "events";
 
@@ -33,7 +34,7 @@ export default class MiniGameController {
             `&sound=${MainSceneController.instance.gameData.settings.isSfxOn}` +
             `&music=${MainSceneController.instance.gameData.settings.isBgmOn}`;
 
-        console.log(url)
+        ConsoleHelper.Log(url)
         this.openWindow(url);
     }
 

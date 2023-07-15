@@ -4,6 +4,7 @@ import { GameResults } from "Definitions/GameResults";
 import Button from "Modules/gameobjects/Button";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 import Localizations from "Modules/localization/LocalizationHelper";
 import MainSceneController from "Scenes/MainSceneController";
 import ResultBox from "Scenes/legacy(unused)/components/ResultBox";
@@ -161,9 +162,7 @@ export default class GamelogSceneView extends Phaser.GameObjects.Group
     }
 
     public updateResults(results: GameResults[])
-    {
-        console.log(this.resultBoxes.length, results.length)
-        // update results
+    {        // update results
         for(var i = 0; i < results.length; i++)
         {
             if(i < this.resultBoxes.length)

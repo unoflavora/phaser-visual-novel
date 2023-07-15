@@ -11,6 +11,7 @@ import { IEmotionalUnderstandingProgress, SceneState } from "Definitions/GamePro
 import LoadingSceneView from "Scenes/loading/LoadingSceneView";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import Localizations from "Modules/localization/LocalizationHelper";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class VisualNovelController
 {
@@ -60,7 +61,7 @@ export default class VisualNovelController
 		var currentSceneIndex : number = progress?.currentSceneIndex ?? -1;
 		var scene = scenes.find(s => s.scene == currentSceneIndex)!;
 
-		console.log(scene, progress)
+		ConsoleHelper.Log(scene, progress)
 
 		startScene.call(this)
 
@@ -174,7 +175,7 @@ export default class VisualNovelController
 		}
 
 		function onPlayerChooseAnswer(this : VisualNovelController, optionValue : string) {
-			console.log("user choosing this response: " + optionValue)
+			ConsoleHelper.Log("user choosing this response: " + optionValue)
 
 			if (!this._playerAskedForResponse)
 			{

@@ -1,6 +1,7 @@
 import AudioController from 'Modules/core/AudioController';
 import ForgotPasswordView from './ForgotPasswordView';
 import { SceneInfo } from 'Definitions/SceneInfo';
+import ConsoleHelper from 'Modules/helpers/ConsoleHelper';
 
 export default class ForgotPasswordController extends Phaser.Scene {
   private view!: ForgotPasswordView;
@@ -30,7 +31,6 @@ export default class ForgotPasswordController extends Phaser.Scene {
 
     this.view.addOnBackButtonListeners(() => {
       AudioController.instance.play("main_button_click");
-      console.log("Back Button Clicked")
       this.onBackButton();
       this.scene.stop();
     })

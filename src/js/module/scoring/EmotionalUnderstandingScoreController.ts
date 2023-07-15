@@ -1,4 +1,5 @@
 import GameScore from "Definitions/GameScore";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class EmotionalUnderstandingScoring {
    
@@ -65,8 +66,8 @@ export default class EmotionalUnderstandingScoring {
         this.score_accuracy = this.AccuracyPercentage();
         this.score_performance = this.PerformancePercentage();
 
-        console.log(`score_accuracy   : ${this.score_accuracy}%`);
-        console.log(`score_performance: ${this.score_performance}%`);
+        ConsoleHelper.Log(`score_accuracy   : ${this.score_accuracy}%`);
+        ConsoleHelper.Log(`score_performance: ${this.score_performance}%`);
 
         return {
             accuracy: this.score_accuracy,

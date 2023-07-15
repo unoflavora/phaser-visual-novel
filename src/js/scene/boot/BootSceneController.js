@@ -9,8 +9,8 @@ export default class BootSceneController extends Phaser.Scene {
   }
 
   create = () => {
-    LogHelper.log('PROJECT NAME', PROJECT_NAME);
-    LogHelper.log('VERSION', PROJECT_VERSION);
+    console.log(PROJECT_NAME);
+    console.log('VERSION', PROJECT_VERSION);
 
     if (CONFIG.DEBUG_MODE) this.scene.launch(SceneInfo.debugScene.key);
 
