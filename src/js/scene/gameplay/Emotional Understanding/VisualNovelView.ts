@@ -11,6 +11,7 @@ import MainSceneController from "Scenes/MainSceneController";
 import Text from "Modules/gameobjects/Text";
 import { FontAsset, FontColors } from "Assets/AssetLibraryFont";
 import Localizations from "Modules/localization/LocalizationHelper";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class VisualNovelView extends Phaser.GameObjects.Group 
 {
@@ -140,7 +141,7 @@ export default class VisualNovelView extends Phaser.GameObjects.Group
 
 		this.storyOptions.setVisible(true);
 
-		console.log(respond)
+		ConsoleHelper.Log(respond)
 
 		for(var i = 0; i < 4; i++)
 		{

@@ -14,9 +14,7 @@ export default class PopupController extends Phaser.GameObjects.Container
     {
         super(scene)
 
-        this.scene.add.existing(this);
-        console.log(scene.scene.key)
-                
+        this.scene.add.existing(this);                
         const background = new Button(this.scene, 0,0, UIAsset.cover_black.key)
         background.transform.setDisplaySize(this.scene.scale.width, this.scene.scale.height);
         background.gameobject.setOrigin(0,0);

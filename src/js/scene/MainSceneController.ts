@@ -10,6 +10,7 @@ import ScoreController from "Modules/scoring/ScoreController";
 import GameScore, { SubmitScoreData } from "Definitions/GameScore";
 import { MinigameTypes } from "Definitions/Minigame";
 import Localizations from "Modules/localization/LocalizationHelper";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 export default class MainSceneController extends Phaser.Scene {    
     private audio! : AudioController;
 
@@ -71,7 +72,7 @@ export default class MainSceneController extends Phaser.Scene {
         
         super({ key: SceneInfo.mainScene.key });
 
-        console.log("Main Scene Constructor")
+        ConsoleHelper.Log("Main Scene Constructor")
 
         MainSceneController._instance = this;
 
@@ -112,7 +113,7 @@ export default class MainSceneController extends Phaser.Scene {
     
 
     private InitModules() {
-        console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT + " URL API: " + CONFIG.BASE_URL);
+        console.log("ENVIRONMENT : " + CONFIG.ENVIRONMENT);
 
         this.audio = AudioController.instance;
 
@@ -134,7 +135,7 @@ export default class MainSceneController extends Phaser.Scene {
     }
 
     async startGame() { 
-        console.log("Starting Game...")      
+        ConsoleHelper.Log("Starting Game...")      
         this.scene.launch(SceneInfo.languageSelectorScene.key);        
     }
 
@@ -163,7 +164,7 @@ export default class MainSceneController extends Phaser.Scene {
             return auth;
         } catch(e)
         {
-            console.log(e)
+            ConsoleHelper.Log(e)
             if (e instanceof Error)
             {
                 this.OpenTemplatePopup(PopupType.Error, e.message);
@@ -175,7 +176,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     private async gameInit() 
     {
-        console.log(this._backendController.token, this.backend.tokenExpiredDate)
+        ConsoleHelper.Log(this._backendController.token, this.backend.tokenExpiredDate)
 
         if (this._backendController.token != null && this.backend.tokenExpiredDate != null)
         {
@@ -183,11 +184,11 @@ export default class MainSceneController extends Phaser.Scene {
 
             var now = new Date();
 
-            console.log(expiredDate, now)
+            ConsoleHelper.Log(expiredDate, now)
 
             if(expiredDate < now)
             {
-                console.log("Expired")
+                ConsoleHelper.Log("Expired")
                 this._backendController.token = null;
                 localStorage.removeItem("token");
                 localStorage.removeItem("tokenExpiredDate");
@@ -202,7 +203,7 @@ export default class MainSceneController extends Phaser.Scene {
                 this._initData = initData.data;
                 this._backendController.sessionId = initData.data.sessionId;
 
-                console.log("INIT DATA", this._initData)
+                ConsoleHelper.Log("INIT DATA", this._initData)
 
                 if(initData.data.savedData != null && initData.data.savedData != "")
                 {
@@ -220,11 +221,11 @@ export default class MainSceneController extends Phaser.Scene {
 
                 this.gameData.results = this._scoringController.Init(this.gameData.results!, this.gameData.progress.emotionalUnderstanding.scores)
 
-                console.log("GAME DATA", this.gameData)
+                ConsoleHelper.Log("GAME DATA", this.gameData)
         
             } catch(e)
             {
-                console.log(e)
+                ConsoleHelper.Log(e)
                 if (e instanceof Error)
                 {
                     this.OpenTemplatePopup(PopupType.Error, e.message);
@@ -279,7 +280,7 @@ export default class MainSceneController extends Phaser.Scene {
 
     private ClosePopup()
     {
-        console.log("Closing Popup")
+        ConsoleHelper.Log("Closing Popup")
 
         this.HideAllDOMElements(false)
 
@@ -294,10 +295,10 @@ export default class MainSceneController extends Phaser.Scene {
             {
                 throw Error(res.error.message);
             }
-            console.log("progress saved")
+            ConsoleHelper.Log("progress saved")
         } catch(e)
         {
-            console.log(e)
+            ConsoleHelper.Log(e)
             if (e instanceof Error)
             {
                 this.OpenTemplatePopup(PopupType.Error, Localizations.text.errors.failed_to_save.desc );
@@ -349,7 +350,7 @@ export default class MainSceneController extends Phaser.Scene {
         await this.SaveGameData();
 
         this.gameData.results = finalScore;
-        console.log(this.gameData.results)
+        ConsoleHelper.Log(this.gameData.results)
 
         var scoreData : SubmitScoreData = {
             wM_Accuracy: finalScore[MinigameTypes.MemoryOfSpades].accuracy,
@@ -370,12 +371,12 @@ export default class MainSceneController extends Phaser.Scene {
             eU_Performance: finalScore[MinigameTypes.EmotionalUnderstanding].performance,
         }
 
-        console.log("Final score data", scoreData)
+        ConsoleHelper.Log("Final score data", scoreData)
 
 
         try {
             var res = await this._backendController.SubmitScore(scoreData);
-            console.log(res)
+            ConsoleHelper.Log(res)
             if(res.error != null)
             {
                 throw new Error(res.error.message);
@@ -385,7 +386,7 @@ export default class MainSceneController extends Phaser.Scene {
             this.scene.launch(SceneInfo.completedScene.key);
         } catch(e)
         {
-            console.log(e)
+            ConsoleHelper.Log(e)
             if (e instanceof Error)
             {
                 this.OpenTemplatePopup(PopupType.Error, e.message);

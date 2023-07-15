@@ -11,6 +11,7 @@ import { BackgroundAsset } from 'Assets/AssetLibraryUi';
 import { createPasswordInput, createTextInput } from 'Modules/extensions/text_input';
 import Buttons from 'phaser3-rex-plugins/templates/ui/buttons/Buttons';
 import LoginSceneController from './LoginSceneController';
+import ConsoleHelper from 'Modules/helpers/ConsoleHelper';
 
 export default class LoginView extends Phaser.GameObjects.Group  {
 
@@ -178,7 +179,6 @@ export default class LoginView extends Phaser.GameObjects.Group  {
     }
     
     onRememberMeClicked(){
-        console.log("remember me clicked")
         this.isRememberMe = !this.isRememberMe;
         
         if (this.isRememberMe) {

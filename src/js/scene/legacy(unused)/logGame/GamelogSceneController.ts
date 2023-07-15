@@ -4,6 +4,7 @@ import { GameResults } from "Definitions/GameResults";
 import AudioController from "Modules/core/AudioController";
 import { AudioAsset } from "Assets/AssetLibraryAudio";
 import MainSceneController from "Scenes/MainSceneController";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class GamelogSceneController extends Phaser.Scene
 {
@@ -18,7 +19,7 @@ export default class GamelogSceneController extends Phaser.Scene
 
     init()
     {
-        console.log("GamelogSceneController init");
+        ConsoleHelper.Log("GamelogSceneController init");
 
         this.view = new GamelogSceneView(this);
 

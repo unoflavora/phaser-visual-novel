@@ -2,6 +2,7 @@ import EmotionalUnderstandingScoring from "./EmotionalUnderstandingScoreControll
 import IMinigameScore from "Definitions/GameScore";
 import { MinigameTypes } from "Definitions/Minigame";
 import { IEmotionalUnderstandingScore, IGameData } from "Definitions/Settings";
+import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class ScoreController
 {
@@ -45,7 +46,7 @@ export default class ScoreController
 
     public addEmotionalScore(emotionScore: number) : number
     {
-        console.log("Added Emotional Score: " + emotionScore);
+        ConsoleHelper.Log("Added Emotional Score: " + emotionScore);
 
         this._emotionalUnderstandingScoring.score_for_emotion += emotionScore;
 
@@ -54,7 +55,7 @@ export default class ScoreController
 
     public addRespondScore(respondScore : number) : number
     {
-        console.log("Added Respond Score: " + respondScore);
+        ConsoleHelper.Log("Added Respond Score: " + respondScore);
 
         this._emotionalUnderstandingScoring.score_for_respond += respondScore;
 
@@ -68,7 +69,7 @@ export default class ScoreController
             throw new Error("You cannot add scores from EU directly, it's should be added through addRespondScore and addEmotionScore Instead")
         }
 
-        console.log("Added Minigame Score: " + minigameScore.performance + " for " + minigameType)
+        ConsoleHelper.Log("Added Minigame Score: " + minigameScore.performance + " for " + minigameType)
 
         this._scores[minigameType] = minigameScore;
 
