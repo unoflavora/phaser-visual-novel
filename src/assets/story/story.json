@@ -117,9 +117,9 @@
                 "score": 50,
                 "info": "Menghadapi kecenderungan yang signifikan terhadap introversi, di mana interaksi sosial dapat menjadi tantangan dan menguras tenaga. Tingkat rasa malu ini dicirikan oleh preferensi kesendirian atau kelompok kecil, kebutuhan akan ruang pribadi yang luas, dan kepekaan yang meningkat terhadap rangsangan eksternal.",
                 "bullet_list": [
-                    "Interaksi sosial biasa terasa menantang atau menguras tenaga",
-                    "Kadang tidak mau terlalu diganggu kalau lagi mau menyendiri",
-                    "Tidak terlalu suka kepada stimulasi eksternal"
+                    "Interaksi sosial terasa menantang atau menguras tenaga",
+                    "Membutuhkan ketenangan dan waktu menyendiri",
+                    "Tidak terlalu suka dengan stimulan eksternal"
                 ]
             },
             {
@@ -138,7 +138,7 @@
                 "info": "Merasa sedikit tidak nyaman atau gelisah dalam situasi sosial, terutama saat bertemu orang baru atau menjadi pusat perhatian. Tingkat rasa malu ini relatif rendah intensitasnya dan dapat bermanifestasi sebagai keragu-raguan, muka memerah, atau preferensi untuk mengamati daripada berpartisipasi secara aktif.",
                 "bullet_list": [
                     "Sedikit ketidaknyamanan dalam situasi sosial",
-                    "Rasa malu tapi dengan intensitas rendah",
+                    "Rasa malu dengan intensitas rendah",
                     "Lebih suka mengamati orang daripada berbicara"
                 ]
             }    
@@ -286,19 +286,19 @@
         "response_id":
         [
             {
-                "text": "Pomoro gak terlalu memperhatikan manusia jamur tersebut dan melanjutkan perjalanan",
+                "text": "Mengabaikan nya dan melanjutkan perjalanan",
                 "score": 25
             },
             {
-                "text": "Menyapa si manusia jamur",
+                "text": "Menanyakan arah ",
                 "score": 50
             },
             {
-                "text": "Menanyakan arah jalan",
+                "text": "Menyapa si jamur",
                 "score": 75
             },
             {
-                "text": "Memperkenalkan diri dan menanyakan arah jalan",
+                "text": "Memperkenalkan diri dan menanyakan arah ",
                 "score": 100
             }
         ],
@@ -478,12 +478,12 @@
         "emotions_id":
         [
             {
-                "text": "Kebahagiaan yang Mendalam",
+                "text": "Bahagia",
                 "score": 25,
                 "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan.",
                 "bullet_list": [
-                    "Kebahagiaan yang sangat besar",
-                    "Merasa ekstasi dalam kebahagiaannya"
+                    "Merasakan Kebahagiaan yang sebenarnya",
+                    "Merasa senang, gembira, riang yang luar biasa"
                 ]
             },
             {
@@ -492,24 +492,24 @@
                 "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka.",
                 "bullet_list": [
                     "Mengerti tujuan atau makna hidup dengan jelas",
-                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan seseorang"
+                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan yang dilakukan"
                 ]
             },
             {
-                "text": "Rasa Kepuasan",
+                "text": "Merasa Bersyukur",
                 "score": 75,
                 "info": "Keadaan kedamaian dan kepuasan batin yang muncul dari merangkul keadaan saat ini tanpa merindukan lebih. Ini melibatkan menemukan kegembiraan dan kepuasan pada saat ini, menghargai apa yang dimiliki seseorang, dan melepaskan pengejaran terus-menerus dari keinginan eksternal. Kepuasan memungkinkan individu untuk mengalami rasa ketenangan dan kesejahteraan yang mendalam, menerima kehidupan apa adanya dan menemukan kebahagiaan dalam diri mereka sendiri.",
                 "bullet_list": [
                     "Puas dengan keadaan saat ini",
-                    "Rasa terima kasih dan penerimaan atas keadaan"
+                    "Perasaan bersyukur dan menerima keadaan"
                 ]
             },
             {
-                "text": "Kegembiraan",
+                "text": "Gembira",
                 "score": 100,
                 "info": "Keadaan antisipasi dan antusiasme tinggi yang muncul dari prospek akan sesuatu yang baru, mendebarkan, atau menarik. Ini ditandai dengan gelombang energi dan rasa antisipasi yang bersemangat, sering kali disertai dengan perasaan senang atau gembira. Kegembiraan dapat dipicu oleh berbagai pengalaman, seperti peristiwa yang akan datang, petualangan, pencapaian, atau bahkan hal yang tidak diketahui, dan itu menyegarkan individu dengan memicu rasa ingin tahu, semangat, dan antisipasi positif.",
                 "bullet_list": [
-                    "Kegembiraan dan antusiasme yang cukup tinggi",
+                    "Kegembiraan dan antusiasme yang tinggi",
                     "Rasa senang atau sukacita"
                 ]
             }    
@@ -642,15 +642,15 @@
         "response_id":
         [
             {
-                "text": "Merasa agak canggung atau malu untuk bertanya dan memutuskan untuk melanjutkan perjalanan.",
+                "text": "Agak canggung untuk bertanya, dan kembali melanjutkan perjalanan",
                 "score": 50
             },
             {
-                "text": "Merasa cukup tertarik melihat manusia wortel dan berkeinginan untuk memulai percakapan",
+                "text": "Memutuskan untuk mendekati dan menyapa si Wortel untuk untuk meminta nasihat/masukan darinya",
                 "score": 75
             },
             {
-                "text": "Memutuskan untuk mendekati dan menyapa si manusia wortel dan meminta masukan.",
+                "text": "Penasaran dengan si wortel dan mencoba memulai percakapan",
                 "score": 100
             }
         ],
@@ -825,26 +825,26 @@
         "emotions_id":
         [
             {
-                "text": "Kegembiraan imajinatif",
+                "text": "Ceria Yang Imajinatif",
                 "score": 25,
                 "info": "Merangkul kreativitas dan imajinasi selama bermain. Tingkat keceriaan ini melibatkan eksplorasi dunia imajiner, mendongeng, bermain peran, atau terlibat dengan mainan, properti, atau aktivitas artistik. Ini mendorong pemikiran imajinatif, pemecahan masalah, dan ekspresi dunia batin seseorang.",
                 "bullet_list": [
-                    "Bermain menggunakan kreativitas dan imajinasi",
-                    "Menjelajahi dunia imajiner menggunakan cerita-cerita imajinatif"
+                    "Bermain menggunakan kreatifitas dan imajinasi",
+                    "Menjelajahi dunia imajiner menggunakan cerita-cerita imaginatif"
                 ]
             },
             {
-                "text": "Keinginan untuk Berpetualang",
+                "text": "Ceria Yang Eksploratif",
                 "score": 50,
                 "info": "Merangkul rasa petualangan, eksplorasi, dan permainan pengambilan risiko. Tingkat keceriaan ini melibatkan pencarian pengalaman baru, mendorong batasan, dan terlibat dalam aktivitas yang menantang atau mendebarkan. Ini sering melibatkan semangat keingintahuan, keberanian, dan kemauan untuk keluar dari zona nyaman seseorang.",
                 "bullet_list": [
-                    "Eksplorasi dan pengambilan risiko selama bermain",
+                    "Bereksplorasi dan mengambil risiko selama bermain",
                     "Kegiatan yang menantang dan berisiko",
                     "Melangkah keluar dari zona nyaman"
                 ]
             },
             {
-                "text": "Keceriaan Ringan",
+                "text": "Riang Tanpa Beban",
                 "score": 75,
                 "info": "Keadaan riang dan gembira, ditandai dengan sikap ringan dan pendekatan hidup yang menyenangkan. Ini melibatkan terlibat dalam kegiatan atau interaksi dengan rasa spontanitas, humor, dan kurangnya keseriusan. Itu sering membawa rasa kesembronoan, tawa, dan istirahat yang menyegarkan dari tekanan dan tanggung jawab kehidupan sehari-hari, memungkinkan individu untuk merangkul anak batin mereka dan menemukan kebahagiaan dalam kegembiraan sederhana saat ini.",
                 "bullet_list": [
@@ -853,13 +853,13 @@
                 ]
             },
             {
-                "text": "Kegembiraan Energetik",
+                "text": "Ceria Yang Aktif",
                 "score": 100,
                 "info": "Menunjukkan tingkat energi dan antusiasme yang lebih tinggi selama bermain. Tingkat keceriaan ini melibatkan partisipasi yang lebih aktif dan dinamis, seperti terlibat dalam aktivitas fisik, permainan, atau kompetisi yang menyenangkan. Ini sering melibatkan rasa kegembiraan, gerakan, dan vitalitas.",
                 "bullet_list": [
                     "Energik dan bersemangat",
                     "Terlibat dalam aktivitas fisik",
-                    "Banyak gerakan aktivitas dan kegembiraan"
+                    "Banyak sekali gerakan dan keceriaan"
                 ]
             }  
         ],
@@ -1021,11 +1021,11 @@
         "response_id":
         [
             {
-                "text": "Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudari Ifuly.",
+                "text": "Bergegas berjalan menuju kepada ketiganya dan bertanya",
                 "score": 50
             },
             {
-                "text": "Ingin menghampiri mereka tanpa terlihat mencolok, penasaran apakah mereka adiknya Ifuly atau bukan",
+                "text": "Menghampiri dengan sopan dan bertanya apakah mereka saudari Ifuly",
                 "score": 100
             }
         ],
@@ -1234,7 +1234,7 @@
         "emotions_id":
         [
             {
-                "text": "Permusuhan",
+                "text": "Agresif",
                 "score": 25,
                 "info": "Menghadapi kemarahan yang intens dan tak terkendali yang dapat menyebabkan hilangnya kendali diri. Tingkat kemarahan ini ditandai dengan ledakan emosi yang meledak-ledak, disertai dengan peningkatan gairah fisik dan psikologis. Kemarahan dapat mengakibatkan perilaku agresif atau destruktif.",
                 "bullet_list": [
@@ -1244,31 +1244,31 @@
                 ]
             },
             {
-                "text": "Mengamuk",
+                "text": "Merasa Terganggu",
                 "score": 50,
                 "info": "Merasakan gangguan atau frustrasi ringan sebagai tanggapan atas ketidaknyamanan atau gangguan kecil. Tingkat kemarahan ini relatif rendah intensitasnya dan dapat timbul dari iritasi atau ketidaknyamanan sehari-hari.",
                 "bullet_list": [
-                    "Kemarahan yang intens menyebabkan hilangnya kontrol terhadap diri sendiri",
-                    "Ledakan emosi yang meluap-luap",
-                    "Dapat menimbulkan perilaku destruktif"
+                    "Merasa terganggu karena merasa kurang nyaman",
+                    "Kemarahan dengan intensitas rendah"
                 ]
             },
             {
-                "text": "Iritasi",
+                "text": "Mengamuk",
                 "score": 75,
                 "info": "Menunjukkan sikap antagonis yang kuat atau perilaku agresif terhadap seseorang atau sesuatu. Tingkat permusuhan ini memerlukan sikap yang lebih terbuka dan konfrontatif, dengan maksud yang signifikan untuk menyakiti, menghalangi, atau merusak target.",
                 "bullet_list": [
-                    "Agak kesal karena ketidaknyamanan kecil",
-                    "Intensitas kemarahan yang rendah"
+                    "Amarah yang kuat karena kehilangan kontrol",
+                    "Ledakan emosi yang tiba-tiba",
+                    "Dapat menyebabkan perilaku destruktif"
                 ]
             },
             {
-                "text": "Kemarahan",
+                "text": "Marah",
                 "score": 100,
                 "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi.",
                 "bullet_list": [
-                    "Respons emosional yang lebih kuat",
-                    "Perasaan frustasi dan dendam"
+                    "Respon emosional yang sangat kuat",
+                    "Rasa frustrasi dan kebencian"
                 ]
             } 
         ],
@@ -1428,15 +1428,15 @@
         "response_id":
         [
             {
-                "text": "Tidak yakin apakah harus takut atau tidak. Di satu sisi berfikir bahwa mendekatinya bukanlah ide yang bagus",
+                "text": "Tidak yakin apakah harus takut atau tidak, dan enggan mendekat",
                 "score": 50
             },
             {
-                "text": "Merasa terkejut melihat kesatria lobak di tanjakan tinggi, memutuskan mendekatinya",
+                "text": "Terkejut melihatnya di tanjakan dan memutuskan untuk menghampiri",
                 "score": 75
             },
             {
-                "text": "Melihat lobak di tanjakan yang curam, merasa kasihan dan ingin menawarkan bantuan kepadanya",
+                "text": "Merasa khawatir dan ingin menawarkan bantuan padanya",
                 "score": 100
             }
         ],
@@ -1640,16 +1640,16 @@
                 "info": "Mencapai tujuan dan makna hidup yang mendalam. Tingkat kebahagiaan ini dicapai ketika nilai dan aspirasi seseorang selaras dengan tindakan dan pencapaian mereka.",
                 "bullet_list": [
                     "Mengerti tujuan atau makna hidup dengan jelas",
-                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan seseorang"
+                    "Ketika nilai dan tujuan selaras dengan pencapaian dan tindakan yang dilakukan"
                 ]
             },
             {
-                "text": "Gairah yang Sangat Kuat",
+                "text": "Semangat Membara",
                 "score": 50,
                 "info": "Mengacu pada dorongan atau antusiasme yang kuat dan tak tergoyahkan terhadap pengejaran atau tujuan tertentu. Ini ditandai dengan tekad yang tak kenal lelah, hasrat yang membara, dan komitmen yang teguh untuk mengatasi rintangan dan mencapai kesuksesan. Gairah yang tak terbendung memberdayakan individu untuk bertahan melalui tantangan, memicu tindakan mereka dengan dedikasi yang tak tergoyahkan dan penolakan untuk terhalang, yang pada akhirnya mengarah pada pemenuhan ambisi mereka.",
                 "bullet_list": [
-                    "Tingkat dedikasi dan motivasi yang tinggi",
-                    "Penuh gairah untuk mencapai tujuan tertentu",
+                    "Dedikasi dan motivasi yang kuat",
+                    "Penuh gairah semangat untuk mencapai tujuan tertentu",
                     "Mengejar keunggulan dan motivasi diri"
                 ]
             },
@@ -1658,17 +1658,17 @@
                 "score": 75,
                 "info": "Mengalami peningkatan motivasi dan tekad yang nyata. Tingkat insentif ini melibatkan rasa tujuan dan fokus yang lebih kuat, sering didorong oleh penghargaan eksternal, pengakuan, atau rasa kemajuan yang jelas menuju hasil yang diinginkan.",
                 "bullet_list": [
-                    "Peningkatan dari segi motivasi dan tekad",
-                    "Rasa tujuan dan fokus yang kuat",
-                    "Dipicu oleh target kepada suatu hasil"
+                    "Motivasi dan tekad yang meningkat",
+                    "Keyakinan akan tujuan dan fokus yang kuat",
+                    "Didorong oleh keinginan mendapatkan hasil"
                 ]
             },
             {
-                "text": "Kegembiraan",
+                "text": "Kegembiraan Yang Meluap-Luap",
                 "score": 100,
                 "info": "Mengalami keadaan kegembiraan dan antusiasme yang tinggi. Tingkat kebahagiaan ini ditandai dengan rasa antisipasi, sensasi, atau kegembiraan.",
                 "bullet_list": [
-                    "Kegembiraan dan antusiasme yang cukup tinggi",
+                    "Kegembiraan dan antusiasme yang tinggi",
                     "Rasa senang atau sukacita"
                 ]
             }
@@ -1859,11 +1859,11 @@
         "response_id":
         [
             {
-                "text": "Mereka terlihat familiar. Mencoba mencari tahu siapakah keduanya",
+                "text": "Mengamati dua manusia wortel ini, mereka terlihat mirip dengan Ota",
                 "score": 50
             },
             {
-                "text": "Menyadari ada dua manusia wortel yang mirip dengan Ota",
+                "text": "Sepertinya tidak asing, coba mencari tahu siapa mereka",
                 "score": 100
             }
         ],
@@ -2095,16 +2095,16 @@
         "emotions_id":
         [
             {
-                "text": "Pilu Hati",
+                "text": "Pilu",
                 "score": 25,
                 "info": "Mengalami kesedihan yang mendalam dan bertahan lama yang menembus berbagai aspek kehidupan. Tingkat kesedihan ini dapat dikaitkan dengan kesedihan yang berkepanjangan, trauma yang signifikan, atau rasa sakit emosional. Ini dapat memengaruhi kemampuan seseorang untuk berfungsi dan membutuhkan dukungan untuk mengatasi dan mengelolanya.",
                 "bullet_list": [
-                    "Kesedihan yang bertahan lama yang mempengaruhi hidup seseorang",
-                    "Rasa sakit dan kesedihan emosional kronis"
+                    "Kesedihan panjang dan lama yang dapat mempengaruhi hidup seseorang",
+                    "Rasa sakit dan kesedihan emosional yang akut"
                 ]
             },
             {
-                "text": "Rasa Sedikit Menyesal",
+                "text": "Sedikit Menyesal",
                 "score": 50,
                 "info": "Merasakan sedikit rasa bersalah atau penyesalan sebagai tanggapan atas kesalahan kecil atau pelanggaran nilai-nilai pribadi yang dirasakan. Tingkat rasa bersalah ini relatif rendah dan mungkin melibatkan rasa tidak nyaman, refleksi diri, atau pengakuan kesalahan kecil .",
                 "bullet_list": [
@@ -2113,7 +2113,7 @@
                 ]
             },
             {
-                "text": "Kekecewaan",
+                "text": "Kecewa",
                 "score": 75,
                 "info": "Merasa kecewa atau tidak puas karena harapan yang tidak terpenuhi atau hasil yang tidak diinginkan. Tingkat kesedihan ini biasanya lebih ringan dan sementara, seringkali terkait dengan kejadian atau keadaan tertentu.",
                 "bullet_list": [
@@ -2122,13 +2122,13 @@
                 ]
             },
             {
-                "text": "Merasa Cukup Bersalah",
+                "text": "Merasa Bersalah",
                 "score": 100,
                 "info": "Mengalami tingkat rasa bersalah yang lebih jelas, seringkali disertai dengan rasa tanggung jawab yang lebih kuat atas kesalahan yang dirasakan. Tingkat rasa bersalah ini melibatkan respons yang lebih dalam, seperti perasaan menyesal, malu, atau menyalahkan diri sendiri, dan dapat memotivasi upaya untuk membuat memperbaiki atau meminta pengampunan.",
                 "bullet_list": [
                     "Ada rasa penyesalan",
                     "Ingin melakukan beberapa upaya untuk menebus kesalahan",
-                    "Tanggung jawab yang lebih kuat untuk aksi kesalahan"
+                    "Rasa tanggung jawab yang besar atas kesalahan"
                 ]
             }
         ],
@@ -2286,11 +2286,11 @@
         "response_id":
         [
             {
-                "text": "Memanggil ketiganya dari kejauhan",
+                "text": "Memanggil mereka dari kejauhan",
                 "score": 50
             },
             {
-                "text": "Menghampiri mereka untuk bertanya lebih lanjut",
+                "text": "Mendatangi mereka untuk bertanya lebih lanjut",
                 "score": 100
             }
         ],
@@ -2487,38 +2487,38 @@
         "emotions_id":
         [
             {
-                "text": "Penyesalan Ekstrim",
+                "text": "Penyesalan Mendalam",
                 "score": 25,
                 "info": "Mengalami tingkat rasa bersalah yang ekstrem dan melemahkan yang secara signifikan memengaruhi kesejahteraan emosional dan fungsi sehari-hari seseorang. Tingkat rasa bersalah ini dikaitkan dengan menyalahkan diri sendiri yang intens dan terus-menerus, rasa malu yang berlebihan, atau rasa tidak berharga yang mendalam. Ini dapat menyebabkan hilangnya harga diri, penarikan diri dari interaksi sosial.",
                 "bullet_list": [
-                    "Tingkat rasa bersalah yang ekstrem yang mempengaruhi fungsi sehari-hari",
-                    "Banyak menyalahkan diri sendiri atau bisa rasa seperti orang yang tidak berharga"
+                    "Rasa bersalah yang ekstrem yang memengaruhi fungsi sehari-hari",
+                    "Menyalahkan diri sendiri atau merasa seperti orang yang tidak berharga"
                 ]
             },
             {
-                "text": "Rasa Teror",
+                "text": "Amat Ketakutan",
                 "score": 50,
                 "info": "Mengalami tingkat ketakutan yang ekstrim dan melumpuhkan yang menguasai kemampuan individu untuk berpikir atau bertindak secara rasional. Tingkat ketakutan ini dikaitkan dengan situasi yang mengancam jiwa yang akan segera terjadi atau dirasakan dan dapat disertai dengan kehilangan kendali sepenuhnya atau rasa bahaya yang ekstrim. Ini sering memicu respons melawan-atau-lari.",
                 "bullet_list": [
-                    "Ketakutan ekstrim yang membuat orang tidak bisa berpikir secara rasional",
-                    "Benar-benar kehilangan kendali dalam situasi bahaya"
+                    "Ketakutan ekstrim yang membuat orang tidak bisa berpikir rasional",
+                    "Benar-benar kehilangan kendali dalam situasi yang berbahaya"
                 ]
             },
             {
-                "text": "Kepanikan",
+                "text": "Panik",
                 "score": 75,
                 "info": "Mengalami ketakutan yang meningkat, kegelisahan, atau kekhawatiran tentang potensi kejadian di masa depan atau hasil yang tidak pasti. Tingkat ketakutan ini bisa terus-menerus dan dapat memengaruhi fungsi sehari-hari, menyebabkan perasaan gugup atau tidak nyaman.",
                 "bullet_list": [
-                    "Rasa takut yang cukup intens",
-                    "Kadang bisa sampai menyebabkan detak jantung menjadi lebih cepat atau sesak napas"
+                    "Rasa takut yang intens",
+                    "Bisa menyebabkan detak jantung menjadi lebih cepat atau sesak napas"
                 ]
             },
             {
-                "text": "Kecemasan",
+                "text": "Cemas",
                 "score": 100,
                 "info": "Menghadapi respons ketakutan yang intens dan luar biasa yang ditandai dengan serangan tiba-tiba dari tekanan ekstrem. Tingkat ketakutan ini sering kali disertai dengan gejala fisik seperti detak jantung yang cepat, sesak napas, atau perasaan akan datangnya malapetaka. Kepanikan dapat merusak penilaian dan mungkin memerlukan perhatian dan intervensi segera.",
                 "bullet_list": [
-                    "Rasa gelisah atau khawatir yang sedang",
+                    "Meningkatnya rasa gelisah atau khawatir tentang masa depan",
                     "Merasa gugup atau gelisah"
                 ]
             }
@@ -2648,11 +2648,11 @@
         "response_id":
         [
             {
-                "text": "Mendekati Mupi dan menyuruhnya untuk turun dari batuan besar",
+                "text": "Mendekati dan memintanya turun dari batu besar yang cukup tinggi",
                 "score": 50
             },
             {
-                "text": "Mendekatinya dengan perlahan, dan membujuknya untuk turun dengan hati-hati",
+                "text": "Mendekatinya dengan lembut dan membujuknya untuk turun dengan hati-hati",
                 "score": 100
             }
         ],
@@ -2822,12 +2822,12 @@
         "emotions_id":
         [
             {
-                "text": "Peninggalan Dampak Positif",
+                "text": "Meninggalkan Warisan Diri",
                 "score": 25,
                 "info": "Menghadapi rasa bangga yang mendalam dan bertahan lama yang berasal dari membuat dampak yang berarti atau meninggalkan jejak positif di dunia. Tingkat kebanggaan ini diasosiasikan dengan kontribusi yang signifikan, tindakan pelayanan, atau pencapaian yang memiliki pengaruh abadi di luar jangkauan langsung seseorang. Itu mencerminkan rasa tujuan, kontribusi, dan keinginan untuk menciptakan warisan abadi",
                 "bullet_list": [
-                    "Kebanggaan setelah meninggalkan jejak positif kepada komunitas sekitar",
-                    "Kontribusi yang bisa diingat oleh orang-orang banyak"
+                    "Perasaan bangga setelah memberikan warisan positif kepada dunia",
+                    "Kontribusi yang akan bermanfaat terus menerus"
                 ]
             },
             {
@@ -2835,26 +2835,26 @@
                 "score": 50,
                 "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang.",
                 "bullet_list": [
-                    "Rasa penerimaan diri yang cukup tinggi",
-                    "Merangkul keunikan diri sendiri dan bisa membela hal yang Anda yakini"
+                    "Penerimaan penuh atas semua yang ada pada dirinya - seperti apa adanya",
+                    "Merangkul keunikan diri sendiri dan membela apa yang diyakininya"
                 ]
             },
             {
-                "text": "Rasa Prestasi",
+                "text": "Merasakan Pencapaian",
                 "score": 75,
                 "info": "Merasakan rasa bangga dan puas dalam mencapai tujuan pribadi, menyelesaikan tugas, atau mengatasi tantangan. Tingkat kebanggaan ini dikaitkan dengan pencapaian tertentu dan mencerminkan rasa pemenuhan dan harga diri.",
                 "bullet_list": [
-                    "Rasa kebanggaan atau kepuasan dalam mengatasi suatu tangtangan",
-                    "Rasa kepuasan dan harga diri yang cukup oke"
+                    "Rasa kebanggaan atau kepuasan dalam mengatasi suatu tantangan",
+                    "Rasa kepuasan dan kebanggaan pada diri sendiri"
                 ]
             },
             {
-                "text": "Rasa Diakui",
+                "text": "Merasa Diakui",
                 "score": 100,
                 "info": "Mengalami kebanggaan karena diakui atau diakui atas pencapaian atau kontribusi seseorang. Tingkat kebanggaan ini melibatkan validasi eksternal, seperti menerima penghargaan, pujian, atau pujian dari orang lain, dan ini memperkuat rasa pencapaian dan nilai.",
                 "bullet_list": [
                     "Bangga karena prestasinya diakui",
-                    "Suka pujian eksternal dan validasi dari orang lain"
+                    "Suka dipuji dan mendapatkan pengakuan dari orang lain"
                 ]
             }
         ],
@@ -2971,11 +2971,11 @@
         "response_id":
         [
             {
-                "text": "Bicara pada Mupo dan menyuruhnya untuk turun",
+                "text": "Memberi tahu Mupi untuk berhati- hati dan memperingatkan tentang bahayanya",
                 "score": 50
             },
             {
-                "text": "Beritahu Mupo untuk berhati-hati dan memperingatkannya akan bahaya berdiri di atas batu besar tersebut",
+                "text": "Berbicara pada Mupi dan memerintahkannya untuk turun",
                 "score": 100
             }
         ],
