@@ -1948,7 +1948,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "*Makasi makasi makasi. Baik-baik juga!*"
+                        "*berbicara bersamaan* Makasi makasi makasi. Baik-baik juga!"
                     ]
                 }
             ],
@@ -2737,7 +2737,7 @@
                     "position": 1,
                     "name": "Mupi",
                     "text": [
-                        "Ooo, okee.. Iya, aku Mupi. Tapi Mupi masih di atas sana.."
+                        "Ooo, okee.. Iya, aku Mupi. Tapi Mupo masih di atas sana.."
                     ]
                 },
                 {
@@ -2971,11 +2971,11 @@
         "response_id":
         [
             {
-                "text": "Memberi tahu Mupi untuk berhati- hati dan memperingatkan tentang bahayanya",
+                "text": "Memberi tahu Mupo untuk berhati- hati dan memperingatkan tentang bahayanya",
                 "score": 50
             },
             {
-                "text": "Berbicara pada Mupi dan memerintahkannya untuk turun",
+                "text": "Berbicara pada Mupo dan memerintahkannya untuk turun",
                 "score": 100
             }
         ],
