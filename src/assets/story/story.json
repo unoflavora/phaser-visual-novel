@@ -8,13 +8,13 @@
             "You will start a role play in this visual novel style journey as the character 'Pomoro' in the fictional land of Prospevil.",
             "In each of your steps going forward, you will meet another character and will guess their emotion from first glance.",
             "After guessing their emotion from their facial expression and body language, the next step is to select the option that YOU would actually choose if you were in this story.",
-            "Enjoy the game, good luck, and have fun!`"
+            "Enjoy the game, good luck, and have fun!"
         ],
         "intro_id": [
             "Anda akan memulai permainan peran dalam perjalanan gaya novel visual ini sebagai karakter 'Pomoro' di negeri fiksi Prospevil.",
             "Dalam setiap langkahmu ke depan, kamu akan bertemu karakter lain dan akan menebak emosi mereka dari pandangan pertama.",
             "Setelah menebak emosi mereka dari ekspresi wajah dan bahasa tubuh mereka, langkah selanjutnya adalah memilih opsi yang benar-benar ANDA pilih jika Anda berada di cerita ini.",
-            "Nikmati permainannya, semoga berhasil, dan bersenang-senanglah!`"
+            "Nikmati permainannya, semoga berhasil, dan bersenang-senanglah!"
         ],
         "emotions_en": [],
         "emotions_id": [],
@@ -610,7 +610,7 @@
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "Yeap. Pasti, Naca, Daucu and I. Oh and I forgot to tell you, my name is Ota."
+                        "Yeap. Naca, Daucu and I. Oh and I forgot to tell you, my name is Ota."
                     ]
                 },
                 {
@@ -733,7 +733,7 @@
                     "position": -1,
                     "name": "Ota",
                     "text": [
-                        "Yap. Pasti, Naca, Daucu, dan aku. Oh aku lupa memberitahumu, namaku Ota."
+                        "Yap. Naca, Daucu, dan aku. Oh aku lupa memberitahumu, namaku Ota."
                     ]
                 },
                 {
@@ -913,7 +913,7 @@
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
                         "*Together they gather and shout*",
-                        "// Sister said we shouldn't talk to impolite people! //",
+                        "*Sister said we shouldn't talk to impolite people!*",
                         "*They go to other trees a few meters from there and start to play together again....*"
                     ]
                 },
@@ -1066,7 +1066,7 @@
                     "name": "Bolebole, Agari, Imuc",
                     "text": [
                         "*Serentak, mereka berkumpul dan berteriak*",
-                        "// Kakak bilang kami gak boleh bicara dengan orang yang kita tidak kenal //",
+                        "*Kakak bilang kami gak boleh bicara dengan orang yang kita tidak kenal*",
                         "*Mereka pergi ke pohon lain beberapa meter dari sana dan mulai bermain bersama lagi....*"
                     ]
                 },
@@ -1134,7 +1134,7 @@
                     "name": "Imuc",
                     "text": [
                         "Jangan khawatir, kami akan pulang nanti. Makasih sudah memberi tahu kami!",
-                        "Betul dia memang pemali, tapi dia peduli sekali ke kita."
+                        "Betul dia memang pemalu, tapi dia peduli sekali ke kita."
                     ]
                 },
                 {
@@ -1767,7 +1767,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Thank you thank you thank you. Have a pleasant day too! //"
+                        "*Thank you thank you thank you. Have a pleasant day too!*"
                     ]
                 }
             ],
@@ -1849,7 +1849,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Yess yess yess. Have a great day too! //"
+                        "*Yess yess yess. Have a great day too!*"
                     ]
                 }
             ]
@@ -1948,7 +1948,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Makasi makasi makasi. Baik-baik juga! //"
+                        "*Makasi makasi makasi. Baik-baik juga!*"
                     ]
                 }
             ],
@@ -2030,7 +2030,7 @@
                     "position": 1,
                     "name": "Naca & Daucu",
                     "text": [
-                        "// Yaa yaa yaaa. Sampai jumpa! //"
+                        "*Yaa yaa yaaa. Sampai jumpa!*"
                     ]
                 }
             ]
@@ -2716,7 +2716,7 @@
                     "name": "Pomoro/You",
                     "text": [
                         "*Mendekatinya dengan perlahan, dan membujuknya untuk turun dengan hati-hati*",
-                        "Hei, hei. Kamu Mupo atau Mupi? Mupa bilang kita perlu turun. Rapi juga sedang mencari kalian."
+                        "Hei, hei. Kamu Mupo atau Mupi? Mupa bilang kita perlu turun. Rapa juga sedang mencari kalian."
                     ]
                 },
                 {
