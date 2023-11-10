@@ -1,10 +1,10 @@
 name: staging ci/cd - deusproject.lothar.phaser
 
 on:
-    pull_request:
-          branches: [ staging ]
-          types:
-              - closed
+    # pull_request:
+    #       branches: [ staging ]
+    #       types:
+    #           - closed
     workflow_dispatch:
 
 jobs:
