@@ -18,6 +18,7 @@ yarn.lock*
 /build/index.html
 /build*
 /build/*
+/package-lock.json
 
 # Editor/IDE
 .idea
