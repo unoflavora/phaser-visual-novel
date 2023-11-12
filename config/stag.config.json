@@ -4,10 +4,10 @@
 	"IS_AUDIO_MUTED": false,
 	"DEBUG_MODE": true,
 	"OFFLINE_MODE" : false,
-	"BASE_URL" : "https://staging-lothar-cognitive-api.deusassessment.com",
-    "BASE_GAME_URL": "https://hoafl.deusassessment.com/",
+	"BASE_URL" : "https://staging-lothar-cognitive-api.skyfystudio.com",
+    "BASE_GAME_URL": "https://game-dev.deusassessment.com/",
     "ENVIRONMENT": "STAGING",
-	"RESULT_URL": "https://staging-lothar-cognitive-dashboard.deusassessment.com",
-	"RESET_PASSWORD_URL": "https://staging-lothar-cognitive-dashboard.deusassessment.com"
+	"RESULT_URL": "https://staging-lothar-cognitive-dashboard.skyfystudio.com",
+	"RESET_PASSWORD_URL": "https://staging-lothar-cognitive-dashboard.skyfystudio.com"
 
 }
