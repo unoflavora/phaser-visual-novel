@@ -16,6 +16,7 @@ export class StoryTextController extends Phaser.GameObjects.Group {
   private _typingEffect: ReturnType<typeof setInterval> | undefined;
   private _prevButton: Text;
   private _previousAvailable: boolean = false;
+  private _displayCharacter: (display: boolean) => void;
 
   private nextbuttonclickArea: Phaser.GameObjects.Image;
   private prevButtonClickArea: Phaser.GameObjects.Image;
@@ -27,7 +28,8 @@ export class StoryTextController extends Phaser.GameObjects.Group {
   constructor(
     scene: Phaser.Scene,
     textBox: Image,
-    onCurrentTextComplete: Function
+    onCurrentTextComplete: Function,
+    onDisplayCharacter: (a: boolean) => void
   ) {
     super(scene);
 
@@ -151,12 +153,13 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     this.add(this._prevButton.gameobject);
 
     this._onTypingComplete = onCurrentTextComplete;
+    this._displayCharacter = onDisplayCharacter;
 
     this.scene.events.on("shutdown", this.clearIntervals, this);
   }
 
   public LoadText(
-    paragraphs: string[],
+    paragraphs: { text: string; displayCharacter?: boolean }[],
     monologue: boolean = false,
     paragraphIndex: number = 0
   ) {
@@ -183,12 +186,19 @@ export class StoryTextController extends Phaser.GameObjects.Group {
     if (!this._textBox.gameobject.listenerCount("pointerdown")) {
       this._textBox.gameobject.setInteractive({ useHandCursor: true });
       this._textBox.gameobject.on("pointerdown", () =>
-        this.handleTextBoxClick(paragraphs[paragraphIndex])
+        this.handleTextBoxClick(paragraphs[paragraphIndex].text)
       );
     }
 
     if (paragraphIndex < paragraphs.length) {
-      this.Type(paragraphs[paragraphIndex]);
+      const { text, displayCharacter } = paragraphs[paragraphIndex];
+      this.Type(text);
+      const displayChar =
+        displayCharacter == null ||
+        (displayCharacter as unknown as string) === "true";
+
+      this._displayCharacter(displayChar);
+
       return;
     }
 
