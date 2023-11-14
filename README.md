@@ -16,11 +16,10 @@ don't forget to change your **project name** and **version** under `package.json
 * [Template Overview](docs/template-overview.md)
 * [Using Config File](docs/config-files.md)
 * [Loading Asset](docs/loading-assets.md)
-* [CI/CD Guideline](docs/ci-cd-guideline.md)
 
 ## Quickstart
 1. Download this repo
-2. Install all your dependencies by run `npm install`
+2. Install all your dependencies by run `npm i`
 3. Run your dev server by `npm run dev`
 4. Add, or Modify project content 
 
@@ -28,11 +27,11 @@ don't forget to change your **project name** and **version** under `package.json
 
 In `package.json` file and section `scripts` listed handy commands to help your development process. You can add more if needed.
 
-| script          | details                                     |
-| --------------- | ------------------------------------------- |
-| `npm run dev`   | Run webpack development server in port 8080 |
-| `npm run build` | Build your project into `dist/` folder      |
-| `npm run dist`  | Run static server from your `dist/` folder  |
+| script                    | details                                                   |
+| ------------------------- | --------------------------------------------------------- |
+| `npm run dev`             | Run webpack development server in port 8080               |
+| `npm run build::prod`     | Build your project into `dist/` folder                    |
+| `npm run server::dist`    | Run static server from your `dist/` folder in port 8007   |
 
 > in the current version, don't use `import Phaser from 'phaser'` in any source files. 
 > 
