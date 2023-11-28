@@ -132,7 +132,7 @@
         "info": "Feeling a slight discomfort or unease in social situations, particularly when meeting new people or being the center of attention. This level of shyness is relatively low intensity and may manifest as hesitation, blushing, or a preference for observing rather than actively participating.",
         "bullet_list": [
           "Slight discomfort in social situations",
-          "Low intensity shiness",
+          "Low intensity shyness",
           "Prefer to observe people more than talk"
         ]
       }
@@ -225,7 +225,7 @@
           "name": "Ifuly",
           "text": [
             "Ohh, emm.. hi there...",
-            "*Ifuly look so embarrassed and goes inside her house.*"
+            "*Ifuly look so embarrassed and goes inside his house.*"
           ]
         }
       ],
@@ -296,7 +296,7 @@
         {
           "position": -1,
           "name": "Pomoro/You",
-          "text": ["Emm, may I know what your sisters names are?"]
+          "text": ["Emm, may I know what your brothers or sisters names are?"]
         },
         {
           "position": 1,
@@ -419,14 +419,14 @@
           "position": 1,
           "name": "Ifuly",
           "text": [
-            "Oh, Prospevil. Aku pikir sih sudah benar. Tetapi untuk memastikan, kamu bisa tanya adikku kalau bertemu mereka.",
+            "Oh, Prospevil. Aku pikir sih sudah benar. Tetapi untuk memastikan, kamu bisa tanya adik-adikku kalau bertemu mereka.",
             "Mereka sudah sering ke sana. Kalau aku baru beberapa kali saja."
           ]
         },
         {
           "position": -1,
           "name": "Pomoro/You",
-          "text": ["Emm, boleh aku tahu nama-nama saudarimu?"]
+          "text": ["Emm, boleh aku tahu nama-nama saudara atau saudarimu?"]
         },
         {
           "position": 1,
@@ -505,7 +505,7 @@
         "score": 25,
         "info": "Mencapai keadaan kebahagiaan yang murni dan mendalam. Tingkat kebahagiaan ini melampaui pengalaman sehari-hari dan sering dikaitkan dengan atau momen transenden ekstasi dan ketenangan.",
         "bullet_list": [
-          "Merasakan Kebahagiaan yang sebenarnya",
+          "Merasakan kebahagiaan yang sebenarnya",
           "Merasa senang, gembira, riang yang luar biasa"
         ]
       },
@@ -564,7 +564,7 @@
         {
           "position": 1,
           "name": "Ota",
-          "text": ["*Ota look sembarrassed and goes inside her house.*"]
+          "text": ["*Ota looks embarrassed and goes inside his house.*"]
         }
       ],
       [
@@ -656,7 +656,7 @@
         "score": 50
       },
       {
-        "text": "Memutuskan untuk mendekati dan menyapa si Wortel untuk untuk meminta nasihat/masukan darinya",
+        "text": "Memutuskan untuk mendekati dan menyapa si ortel untuk meminta nasihat/masukan darinya",
         "score": 75
       },
       {
@@ -819,7 +819,7 @@
         "bullet_list": [
           "Exploring and risk-taking during play",
           "Challenging and risky activities",
-          "Stepping out of comfort zone"
+          "Stepping outside of comfort zone"
         ]
       },
       {
@@ -889,7 +889,7 @@
         "score": 50
       },
       {
-        "text": "Wants to approach them modestly, wondering if they are Ifuly's younger sisters",
+        "text": "Wants to approach them modestly, wondering if they are Ifuly's younger brothers sisters",
         "score": 100
       }
     ],
@@ -899,7 +899,7 @@
           "position": -1,
           "name": "Pomoro/You",
           "text": [
-            "*Quickly go up to the three of them to ask them if they are related to Ifuly.*",
+            "*Quickly go up to the three of them to ask them if they are related to Ifuly's borthers sisters.*",
             "Hey, you guys look familiar!"
           ]
         },
@@ -978,7 +978,7 @@
           "position": 1,
           "name": "Imuc",
           "text": [
-            "Don't worry, we'll be heading back later. Thanksfor letting us know!",
+            "Don't worry, we'll be heading back later. thanks for letting us know!",
             "Yes indeed she is a little bit shy, but she cares a lot about us"
           ]
         },
@@ -1004,7 +1004,7 @@
           "position": 1,
           "name": "Imuc",
           "text": [
-            "Yesss. Just go straight that is the rightdirection",
+            "Yesss. Just go straight that is the right direction",
             "We will head back to big sis later. Thank you!"
           ]
         }
@@ -1017,7 +1017,7 @@
         "score": 50
       },
       {
-        "text": "Menghampiri dengan sopan dan bertanya apakah mereka saudari Ifuly",
+        "text": "Menghampiri dengan sopan dan bertanya apakah mereka saudara saudari Ifuly",
         "score": 100
       }
     ],
@@ -1027,7 +1027,7 @@
           "position": -1,
           "name": "Pomoro/You",
           "text": [
-            "*Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudari Ifuly..*",
+            "*Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudara saudari Ifuly..*",
             "Hey, kalian seperti tidak asing!"
           ]
         },
@@ -1578,7 +1578,7 @@
         "bullet_list": [
           "Intense level of dedication and motivation",
           "Full-on passion towards particular purpose",
-          "Pursuit if excellence and self-motivation"
+          "pursuit of excellence and self-motivation"
         ]
       },
       {
@@ -1848,7 +1848,7 @@
         {
           "position": 1,
           "name": "Naca",
-          "text": ["Wo o' ow, Ota Ota Ota?"]
+          "text": ["Wowww, Ota Ota Ota?"]
         },
         {
           "position": 1,
@@ -2165,13 +2165,13 @@
         {
           "position": 1,
           "name": "Mupa",
-          "text": ["Yeah,. we shouldn't have played that far actually."]
+          "text": ["Yeah, we shouldn't have played that far actually."]
         },
         {
           "position": -1,
           "name": "Pomoro/You",
           "text": [
-            "Okay okay, relax. I'll head over to those two. You can go head back to Rapa."
+            "Okay, okay, relax. I'll head over to those two. You can go head back to Rapa."
           ]
         },
         {
@@ -2693,7 +2693,7 @@
         "score": 50,
         "info": "Mengalami tingkat kebanggaan yang lebih dalam yang muncul dari penegasan identitas, nilai, atau keyakinan seseorang. Tingkat kebanggaan ini mencerminkan rasa penerimaan diri dan keaslian, sering dikaitkan dengan pertumbuhan pribadi, merangkul keunikan seseorang, atau mempertahankan apa yang diyakini seseorang.",
         "bullet_list": [
-          "Penerimaan penuh atas semua yang ada pada dirinya - seperti apa adanya",
+          "Penerimaan penuh atas semua yang ada pada dirinya seperti apa adanya",
           "Merangkul keunikan diri sendiri dan membela apa yang diyakininya"
         ]
       },
@@ -2763,8 +2763,8 @@
           "position": 1,
           "name": "Mupo",
           "text": [
-            "Uhhh Rapa? Yess protecta family back and forth.",
-            "Okay, I'll go back to Rapa's place. Of I go to another high place, thanks!"
+            "Uhhh Rapa? Yess protect family back and forth.",
+            "Okay, I'll go back to Rapa's place. Off I go to another high place, thanks!"
           ]
         }
       ],
@@ -2802,7 +2802,7 @@
           "name": "Mupo",
           "text": [
             "Uhhh Rapa? Yes, protect family back and forth.",
-            "Okay, I'll go back to Rapa's place. Of I go to another high place, thanks!"
+            "Okay, I'll go back to Rapa's place. Off I go to another high place, thanks!"
           ]
         }
       ]

@@ -43,7 +43,8 @@ export default class PopupController extends Phaser.GameObjects.Container
                 this.openSettingsPopup();
                 break;
             case PopupType.Error:
-                this.openInfoPopup("Error", message, UIAsset.icon_error.key, this._onClosePopup, "OK");
+                this.openInfoPopup("", message, UIAsset.icon_error.key, this._onClosePopup, "OK");
+                // this.openInfoPopup("Error", message, UIAsset.icon_error.key, this._onClosePopup, "OK");
                 break;
             case PopupType.LostConnection:
                 this.openLostConnectionPopup();
@@ -91,6 +92,6 @@ export default class PopupController extends Phaser.GameObjects.Container
 
 export enum PopupType {
     Settings = "Settings",
-    Error = "Error",
+    Error = "", // "Error"
     LostConnection = "LostConnection"
 }
