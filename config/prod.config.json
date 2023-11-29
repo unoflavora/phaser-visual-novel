@@ -4,10 +4,10 @@
 	"IS_AUDIO_MUTED": false,
 	"DEBUG_MODE": false,
 	"OFFLINE_MODE" : false,
-	"BASE_URL" : "https://staging-lothar-cognitive-api.skyfystudio.com",
+	"BASE_URL" : "https://asdfgh.skyfystudio.com",
     "BASE_GAME_URL": "https://game-dev.deusassessment.com/",
-	"RESULT_URL": "https://staging-lothar-cognitive-dashboard.skyfystudio.com",
-	"RESET_PASSWORD_URL": "https://staging-lothar-cognitive-dashboard.skyfystudio.com",
+	"RESULT_URL": "https://zxcvbn.skyfystudio.com",
+	"RESET_PASSWORD_URL": "https://zxcvbn.skyfystudio.com",
 	"ENVIRONMENT": "PROD"
 
 }
