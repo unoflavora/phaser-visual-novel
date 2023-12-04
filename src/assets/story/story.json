@@ -447,7 +447,7 @@
     "intro_en": [
       {
         "text": "Upon venturing deep into the Vefurata forest, Pomoro discovers a carrot house on the cliff. He seems curious and went inside the carrot house.",
-        "displayCharacter": "true"
+        "displayCharacter": "false"
       },
       {
         "text": "Once Pomoro arrived there, he saw a carrot humanoid.",
@@ -457,7 +457,7 @@
     "intro_id": [
       {
         "text": "Setelah menjelajah jauh ke dalam hutan Vefurata, Pomoro menemukan sebuah rumah wortel di tebing. Dia tampak penasaran dan masuk ke dalam rumah wortel tersebut.",
-        "displayCharacter": "true"
+        "displayCharacter": "false"
       },
       {
         "text": "Sesampainya Pomoro di sana, dia melihat seorang manusia wortel.",
