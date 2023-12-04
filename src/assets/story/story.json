@@ -426,7 +426,7 @@
         {
           "position": -1,
           "name": "Pomoro/You",
-          "text": ["Emm, boleh aku tahu nama-nama saudara atau saudarimu?"]
+          "text": ["Emm, boleh aku tahu nama-nama saudaramu?"]
         },
         {
           "position": 1,
@@ -468,8 +468,8 @@
       {
         "text": "Bliss",
         "score": 25,
-        "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of ecstasy and serenity.",
-        "bullet_list": ["State of pure happiness", "True moment of ecstasy"]
+        "info": "Reaching a state of pure and profound happiness. This level of happiness transcends daily experiences and is often associated with  or transcendent moments of euphoria and serenity.",
+        "bullet_list": ["State of pure happiness", "True moment of euphoria"]
       },
       {
         "text": "Fulfillment",
@@ -1017,7 +1017,7 @@
         "score": 50
       },
       {
-        "text": "Menghampiri dengan sopan dan bertanya apakah mereka saudara saudari Ifuly",
+        "text": "Menghampiri dengan sopan dan bertanya apakah mereka saudara Ifuly",
         "score": 100
       }
     ],
@@ -1027,7 +1027,7 @@
           "position": -1,
           "name": "Pomoro/You",
           "text": [
-            "*Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudara saudari Ifuly..*",
+            "*Buru-buru mendekati ketiganya untuk bertanya apakah mereka saudara Ifuly..*",
             "Hey, kalian seperti tidak asing!"
           ]
         },
@@ -1039,7 +1039,7 @@
         {
           "position": 1,
           "name": "Agari",
-          "text": ["Kami ini saudariiii."]
+          "text": ["Kami ini saudaraaaa."]
         },
         {
           "position": 1,
@@ -1258,8 +1258,8 @@
         "score": 100,
         "info": "Mengalami ketidaksenangan emosional yang lebih jelas, sering kali dipicu oleh anggapan ketidakadilan, konflik, atau pelanggaran batas-batas pribadi. Tingkat kemarahan ini melibatkan respons emosional yang lebih kuat, termasuk perasaan dendam, marah, atau frustrasi.",
         "bullet_list": [
-          "Respon emosional yang sangat kuat",
-          "Rasa frustrasi dan kebencian"
+          "Respon emosional yang lebih kuat dari biasanya",
+          "Rasa frustrasi yang cukup tinggi"
         ]
       }
     ],
@@ -1308,7 +1308,7 @@
         {
           "position": 1,
           "name": "Rapa",
-          "text": ["Rapa's madd. Angry! I was looking for Mupa, Mupo and Mupi."]
+          "text": ["Rapa's madd. Angry! I was looking for Mupa, Mupi and Mupo."]
         },
         {
           "position": -1,
@@ -1355,12 +1355,12 @@
         {
           "position": 1,
           "name": "Rapa",
-          "text": ["Argghh.. Mupa, Mupo and Mupi where are they!?"]
+          "text": ["Argghh.. Mupa, Mupi and Mupo where are they!?"]
         },
         {
           "position": -1,
           "name": "Pomoro/You",
-          "text": ["Mupa, Mupo and Mupi?"]
+          "text": ["Mupa, Mupi and Mupo?"]
         },
         {
           "position": 1,
