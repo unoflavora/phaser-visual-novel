@@ -1,11 +1,14 @@
-import './css/index.css';
-import Phaser from 'phaser'
-import { SceneInfo } from 'Definitions/SceneInfo';
-import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
+import "./css/index.css";
+import Phaser from "phaser";
+import { SceneInfo } from "Definitions/SceneInfo";
+import RexUIPlugin from "phaser3-rex-plugins/templates/ui/ui-plugin.js";
 
 const isLandscape = window.innerWidth > window.innerHeight;
 
-const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+const isMobileDevice =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    );
 
 function smallResolution() {
     let smallerSide = isLandscape ? window.innerHeight : window.innerWidth;
@@ -27,35 +30,33 @@ function calculateScreen() {
     };
 }
 
-
 // TODO : keep ratio between 4:3 and 16:9
 function ratioConversion(config) {
     let width = config.width;
     let height = config.height;
     let ratio = width / height;
 
-    if (ratio > (16 / 10)) {
+    if (ratio > 16 / 10) {
         width = height * (16 / 10);
-    }
-    else if (ratio < (4 / 3)) {
+    } else if (ratio < 4 / 3) {
         height = width * (3 / 4);
     }
 
     return {
         width: toEven(width),
         height: toEven(height),
-        zoom: config.zoom
+        zoom: config.zoom,
     };
 }
 
 // Set to WebGL in Firefox, using Canvas in Firefox somehow create performance / lagging issues
-const renderType= isMobileDevice? Phaser.CANVAS : Phaser.WEBGL;
+const renderType = Phaser.CANVAS;
 
 const screenProfile = ratioConversion(calculateScreen());
 
 const phaserConfig = {
     type: renderType,
-    parent: 'game',
+    parent: "game",
     fullscreenTarget: "game",
     scene: Object.values(SceneInfo).map((v) => v.module),
     scale: {
@@ -70,10 +71,10 @@ const phaserConfig = {
     },
     input: {
         mouse: {
-            target: "game"
+            target: "game",
         },
         touch: {
-            target: "game"
+            target: "game",
         },
     },
     render: {
@@ -82,11 +83,13 @@ const phaserConfig = {
         roundPixels: false,
     },
     plugins: {
-        scene: [{
-            key: 'rexUI',
-            plugin: RexUIPlugin,
-            mapping: 'rexUI'
-        }],
+        scene: [
+            {
+                key: "rexUI",
+                plugin: RexUIPlugin,
+                mapping: "rexUI",
+            },
+        ],
     },
     autoRound: false,
     // backgroundColor : "#ffffff",
@@ -95,9 +98,9 @@ const game = new Phaser.Game(phaserConfig);
 
 // Bind Resize Event
 if (CONFIG.AUTO_CANVAS_RESIZE) {
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
         const screenProfile = ratioConversion(calculateScreen());
-        console.log(screenProfile.width)
+        console.log(screenProfile.width);
         game.scale.resize(screenProfile.width, screenProfile.height);
         game.scale.setZoom(screenProfile.zoom);
     });
