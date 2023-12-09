@@ -1,40 +1,75 @@
 import { GameplayAsset } from "Assets/AssetLibraryGameplay";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
+import StorageHelper from "Modules/helpers/StorageHelper";
+import { ELocalStorage } from "Modules/helpers/enums/LocalEnums";
 
 export default class CharacterController extends Phaser.GameObjects.Group {
   private character: Image;
 
   private tweens: ((value: void | PromiseLike<void>) => void)[] = [];
 
+  private m_key: string;
+
   constructor(scene: Phaser.Scene) {
     super(scene);
     scene.add.existing(this);
 
-    this.character = new Image(
-      scene,
-      scene.scale.width * 0.5,
-      scene.scale.height * 0.5,
-      GameplayAsset["char-story-sc_01"].key
-    );
+    this.m_key = "";
+
+    /**
+     * @BUG character back to Ifuly when reload the game after enduser reload the browser
+     * @author Prana Ron
+     * @brief
+     * - 4th param of new Image(...) need to be check
+     * - why specify 4th param when object wasn't on the memory?
+     * - using MainSceneController instance for current scene index resulting missing image
+     * @note
+     * - please fixed this later when you found better solution
+     * - current solution may not secure, although the data is not sensitive
+    */
+    if (StorageHelper.GetActiveSceneIndex())
+    {
+        const imgTexture = `char-story-sc_0${StorageHelper.GetActiveSceneIndex()}`.toString();
+
+        this.character = new Image(
+            scene,
+            scene.scale.width * 0.5,
+            scene.scale.height * 0.5,
+            imgTexture
+        );
+    }
+    else
+    {
+        StorageHelper.SetActiveSceneIndex(0);
+
+        this.character = new Image(
+            scene,
+            scene.scale.width * 0.5,
+            scene.scale.height * 0.5,
+            GameplayAsset["char-story-sc_01"].key
+        );
+    }
+
     this.add(this.character.gameobject);
   }
 
   public LoadCharacter = (currentSceneIndex: number) => {
-    var key = "char-story-sc_0" + currentSceneIndex;
+    this.m_key = "char-story-sc_0" + currentSceneIndex;
+
     this.character.transform.setDisplaySize(
       this.scene.scale.width * 1.5,
       this.scene.scale.height * 1.5
     );
-    if (GameplayAsset[key as keyof typeof GameplayAsset] == undefined) {
+    if (GameplayAsset[this.m_key as keyof typeof GameplayAsset] == undefined) {
       this.setVisible(false);
       this.character.gameobject.setTexture(BackgroundAsset.background_main.key);
       return;
     }
 
-    if (this.character.gameobject.texture.key === key) return;
+    if (this.character.gameobject.texture.key === this.m_key) return;
 
-    this.fadeIn(key);
+    this.fadeIn(this.m_key);
   };
 
   private async fadeIn(key: string) {
