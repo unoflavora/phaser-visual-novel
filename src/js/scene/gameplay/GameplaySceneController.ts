@@ -6,7 +6,6 @@ import { MinigameTypes } from "Definitions/Minigame";
 import MainSceneController from "Scenes/MainSceneController";
 import { SceneState } from "Definitions/GameProgress";
 import ConsoleHelper from "Modules/helpers/ConsoleHelper";
-import StorageHelper from "Modules/helpers/StorageHelper";
 
 export default class GameplaySceneController extends Phaser.Scene {
 	
@@ -89,8 +88,6 @@ export default class GameplaySceneController extends Phaser.Scene {
 		ConsoleHelper.Log("FINISHED NOVEL");
 
 		ConsoleHelper.Log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
-
-        StorageHelper.FinishedActiveSceneIndex();
 
 		await MainSceneController.instance.FinishMinigames();
 	}
