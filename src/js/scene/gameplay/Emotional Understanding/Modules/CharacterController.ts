@@ -1,8 +1,6 @@
 import { GameplayAsset } from "Assets/AssetLibraryGameplay";
 import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
-import StorageHelper from "Modules/helpers/StorageHelper";
-import { ELocalStorage } from "Modules/helpers/enums/LocalEnums";
 import MainSceneController from "Scenes/MainSceneController";
 
 export default class CharacterController extends Phaser.GameObjects.Group {
@@ -49,6 +47,8 @@ export default class CharacterController extends Phaser.GameObjects.Group {
         imageChar
     );
 
+    this.initCharacterPosition();
+
     this.add(this.character.gameobject);
   }
 
@@ -75,7 +75,7 @@ export default class CharacterController extends Phaser.GameObjects.Group {
 
     // await this.fadeOut();
 
-    this.character.transform.setPosition(this.scene.scale.width * 0.5, 0);
+    this.initCharacterPosition();
 
     await new Promise<void>((resolve) => {
       this.tweens.push(resolve);
@@ -115,6 +115,14 @@ export default class CharacterController extends Phaser.GameObjects.Group {
         },
       });
     });
+  }
+
+  private initCharacterPosition()
+  {
+    this.character.transform.setPosition(
+        this.scene.scale.width * 0.5,
+        (this.scene.scale.width * 0.5) + 64
+    );
   }
 
   public FinishTween = () => {
