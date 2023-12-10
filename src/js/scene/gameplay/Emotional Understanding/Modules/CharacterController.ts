@@ -3,6 +3,7 @@ import { BackgroundAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
 import StorageHelper from "Modules/helpers/StorageHelper";
 import { ELocalStorage } from "Modules/helpers/enums/LocalEnums";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class CharacterController extends Phaser.GameObjects.Group {
   private character: Image;
@@ -17,6 +18,11 @@ export default class CharacterController extends Phaser.GameObjects.Group {
 
     this.m_key = "";
 
+    const GAME_DATA = MainSceneController.instance.gameData;
+    const SCENE_INDEX = GAME_DATA.progress.emotionalUnderstanding.currentSceneIndex;
+
+    let imageChar = "";
+
     /**
      * @BUG character back to Ifuly when reload the game after enduser reload the browser
      * @author Prana Ron
@@ -28,28 +34,20 @@ export default class CharacterController extends Phaser.GameObjects.Group {
      * - please fixed this later when you found better solution
      * - current solution may not secure, although the data is not sensitive
     */
-    if (StorageHelper.GetActiveSceneIndex())
+    if (SCENE_INDEX <= 1)
     {
-        const imgTexture = `char-story-sc_0${StorageHelper.GetActiveSceneIndex()}`.toString();
-
-        this.character = new Image(
-            scene,
-            scene.scale.width * 0.5,
-            scene.scale.height * 0.5,
-            imgTexture
-        );
+        imageChar = `char-story-sc_01`;
     }
     else
     {
-        StorageHelper.SetActiveSceneIndex(0);
-
-        this.character = new Image(
-            scene,
-            scene.scale.width * 0.5,
-            scene.scale.height * 0.5,
-            GameplayAsset["char-story-sc_01"].key
-        );
+        imageChar = `char-story-sc_0${SCENE_INDEX.toString()}`;
     }
+    this.character = new Image(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.5,
+        imageChar
+    );
 
     this.add(this.character.gameobject);
   }
