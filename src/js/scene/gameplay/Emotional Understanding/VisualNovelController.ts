@@ -118,6 +118,7 @@ export default class VisualNovelController {
             this.randomize(interaction);
             this.view.showPrompt(Localizations.text.prompts.emotion);
             this.view.AskPlayerForAnswer(interaction);
+            this.view.ShowCharacter(scene.scene);
           };
           currentInteraction();
           break;
@@ -132,6 +133,7 @@ export default class VisualNovelController {
             this.randomize(interaction);
             this.view.showPrompt(Localizations.text.prompts.response);
             this.view.AskPlayerForAnswer(interaction);
+            this.view.ShowCharacter(scene.scene);
           };
           currentInteraction();
           break;
@@ -181,6 +183,7 @@ export default class VisualNovelController {
           currentInteraction = () =>
             this.view.ShowCharacterResponses(responseContexts[optionIndex]);
           currentInteraction();
+          this.view.ShowCharacter(scene.scene);
           break;
         default:
           goToNextScene.call(this);
