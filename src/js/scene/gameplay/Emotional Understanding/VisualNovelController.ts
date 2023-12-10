@@ -15,6 +15,7 @@ import LoadingSceneView from "Scenes/loading/LoadingSceneView";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import Localizations from "Modules/localization/LocalizationHelper";
 import ConsoleHelper from "Modules/helpers/ConsoleHelper";
+import CharacterNamesController from "./Modules/CharacterNamesController";
 
 export default class VisualNovelController {
   view: VisualNovelView;
@@ -312,17 +313,35 @@ export default class VisualNovelController {
         scene = scenes.find((s) => s.scene == currentSceneIndex)!;
 
         if (currentSceneIndex > 0)
-          this.parentScene.events.emit(
-            this.onProgress,
-            scene,
-            SceneState.Intro
-          );
+        {
+            this.parentScene.events.emit(
+                this.onProgress,
+                scene,
+                SceneState.Intro
+              );
+        }
+
+        const SCENE_STATE = MainSceneController.instance.gameData.progress.emotionalUnderstanding.currentSceneState;
+        const SCENE_INDEX = MainSceneController.instance.gameData.progress.emotionalUnderstanding.currentSceneIndex;
 
         this.view.ShowCharacter(-1);
 
         this.view.SetCurrentSceneNumber(scene.scene);
 
         this.view.SetBackground(scene.background);
+
+        /**
+         * only show if conversation started
+         * which scene state is 3 or greater
+        */
+        if (SCENE_STATE >= 3)
+        {
+            CharacterNamesController.instance.setVisible(true);
+        }
+        else
+        {
+            CharacterNamesController.instance.setVisible(false);
+        }
 
         /**
          * scene 4 required different audio from audio index & asset it self

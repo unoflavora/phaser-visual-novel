@@ -2,6 +2,7 @@ import { FontAsset } from "Assets/AssetLibraryFont";
 import { UIAsset } from "Assets/AssetLibraryUi";
 import Image from "Modules/gameobjects/Image";
 import Text from "Modules/gameobjects/Text";
+import MainSceneController from "Scenes/MainSceneController";
 
 export default class CharacterNamesController extends Phaser.GameObjects.Group
 {
@@ -10,8 +11,12 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
     private leftCharacterNameContainer : Phaser.GameObjects.Group
     private rightCharacterNameContainer : Phaser.GameObjects.Group
 
+    private static _instance: CharacterNamesController;
+
     constructor(scene: Phaser.Scene, textBox: Image) {
         super(scene);
+
+        CharacterNamesController._instance = this;
 
         var leftCharacterNameBox = new Image(scene, textBox.gameobject.x - textBox.gameobject.displayWidth * .5, textBox.gameobject.y - textBox.gameobject.displayHeight * .55, UIAsset.bg_text_box.key);
         leftCharacterNameBox.gameobject.setOrigin(0, 1)
@@ -60,6 +65,11 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
         this.rightCharacterNameContainer.setVisible(false);
     }
 
+    static get instance()
+    {
+        return this._instance;
+    }
+
     public LoadCharacterName = (currentCharacter: CharacterDisplay) => {
         if (currentCharacter == null)
         {
@@ -72,15 +82,20 @@ export default class CharacterNamesController extends Phaser.GameObjects.Group
         switch(currentCharacter.position)
         {
             case -1:
+            {
                 this.leftCharacterName.gameobject.setText(currentCharacter.name);
                 this.leftCharacterNameContainer.setVisible(true);
                 this.rightCharacterNameContainer.setVisible(false);
-                break;
+            }
+            break;
+
             case 1:
+            {
                 this.rightCharacterName.gameobject.setText(currentCharacter.name);
                 this.rightCharacterNameContainer.setVisible(true);
                 this.leftCharacterNameContainer.setVisible(false);
-                break;
+            }
+            break;
 
         }
     }
