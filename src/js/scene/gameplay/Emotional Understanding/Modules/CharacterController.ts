@@ -47,6 +47,8 @@ export default class CharacterController extends Phaser.GameObjects.Group {
         imageChar
     );
 
+    this.initCharacterPosition();
+
     this.add(this.character.gameobject);
   }
 
@@ -73,7 +75,7 @@ export default class CharacterController extends Phaser.GameObjects.Group {
 
     // await this.fadeOut();
 
-    this.character.transform.setPosition(this.scene.scale.width * 0.5, 0);
+    this.initCharacterPosition();
 
     await new Promise<void>((resolve) => {
       this.tweens.push(resolve);
