@@ -1,113 +1,107 @@
 import MiniGameController from "./MinigameController";
-import AudioController 			from "Modules/core/AudioController";
+import AudioController from "Modules/core/AudioController";
 import VisualNovelController from "./Emotional Understanding/VisualNovelController";
-import { SceneInfo } 			from "Definitions/SceneInfo";
+import { SceneInfo } from "Definitions/SceneInfo";
 import { MinigameTypes } from "Definitions/Minigame";
 import MainSceneController from "Scenes/MainSceneController";
 import { SceneState } from "Definitions/GameProgress";
 import ConsoleHelper from "Modules/helpers/ConsoleHelper";
 
 export default class GameplaySceneController extends Phaser.Scene {
-	
-	// Modules
-	audioController : AudioController;
 
-	minigame! : MiniGameController;
+    // Modules
+    audioController: AudioController;
 
-	emotionalUnderstanding!: VisualNovelController;
+    minigame!: MiniGameController;
 
-	playedMinigames : MinigameTypes[] = [];
+    emotionalUnderstanding!: VisualNovelController;
 
-	// State
-	IsTyping : boolean = false;
+    playedMinigames: MinigameTypes[] = [];
 
-	eventKey: string = ""
+    // State
+    IsTyping: boolean = false;
 
-	constructor() {
-		super({ 
-			key: SceneInfo.gameplayScene.key 
-		});
+    eventKey: string = ""
 
-		this.audioController = AudioController.instance;
+    constructor() {
+        super({
+            key: SceneInfo.gameplayScene.key
+        });
 
-	}	
+        this.audioController = AudioController.instance;
 
-	beforeUnloadListener = (event : Event) => 
-	{		
-		event.preventDefault();
-	};
-	
-	init = async () => 
-	{		
-		window.addEventListener('beforeunload', this.beforeUnloadListener, {capture: true})
-		
-		this.emotionalUnderstanding = new VisualNovelController(this);
+    }
 
-		this.minigame = new MiniGameController(this);
+    beforeUnloadListener = (event: Event) => {
+        event.preventDefault();
+    };
 
-		this.playedMinigames = MainSceneController.instance.gameData.progress.playedMinigames;	
+    init = async () => {
+        window.addEventListener('beforeunload', this.beforeUnloadListener, { capture: true })
 
-		this.events.on(this.emotionalUnderstanding.onFinishNovel, this.onFinishEmotionalUnderstanding.bind(this));
+        this.emotionalUnderstanding = new VisualNovelController(this);
 
-		this.events.on(this.emotionalUnderstanding.onProgress, this.onNovelProgressing.bind(this));
+        this.minigame = new MiniGameController(this);
 
-		this.events.on(this.minigame.eventNames.onFinishMiniGame, this.onFinishMiniGame.bind(this));
+        this.playedMinigames = MainSceneController.instance.gameData.progress.playedMinigames;
 
+        this.events.on(this.emotionalUnderstanding.onFinishNovel, this.onFinishEmotionalUnderstanding.bind(this));
 
-		if (this.playedMinigames.length <= 2)
-		{
-			// the playedMinigames is an enum that is ordered by the order of the minigames
-			this.minigame.loadMiniGame(this.playedMinigames.length);
-		}
-		else
-		{
-			this.emotionalUnderstanding.play(MainSceneController.instance.gameData.progress.emotionalUnderstanding);
-		}
-	}
+        this.events.on(this.emotionalUnderstanding.onProgress, this.onNovelProgressing.bind(this));
 
-	private onNovelProgressing(scene : Scene, state: SceneState, optionValue : string)
-	{
-		if (scene == null) return;
+        this.events.on(this.minigame.eventNames.onFinishMiniGame, this.onFinishMiniGame.bind(this));
 
-		MainSceneController.instance.progress.setProgress({
-			currentSceneIndex : scene.scene, 
-			currentSceneState : state,
-			userEmotions : state == SceneState.AskResponse ?
-				[...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions, optionValue]
-				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions,
-			userResponses : state == SceneState.ResponseContext 
-				? [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses, optionValue]
-				: MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses,
-			scores: MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores
-		})
+        this.emotionalUnderstanding.play(MainSceneController.instance.gameData.progress.emotionalUnderstanding);
+        return
+        if (this.playedMinigames.length <= 2) {
+            // the playedMinigames is an enum that is ordered by the order of the minigames
+            this.minigame.loadMiniGame(this.playedMinigames.length);
+        }
+        else {
+        }
+    }
 
-	}
+    private onNovelProgressing(scene: Scene, state: SceneState, optionValue: string) {
+        if (scene == null) return;
+
+        MainSceneController.instance.progress.setProgress({
+            currentSceneIndex: scene.scene,
+            currentSceneState: state,
+            userEmotions: state == SceneState.AskResponse ?
+                [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions, optionValue]
+                : MainSceneController.instance.gameData.progress.emotionalUnderstanding.userEmotions,
+            userResponses: state == SceneState.ResponseContext
+                ? [...MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses, optionValue]
+                : MainSceneController.instance.gameData.progress.emotionalUnderstanding.userResponses,
+            scores: MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores
+        })
+
+    }
 
 
-	private async onFinishEmotionalUnderstanding() {
-		ConsoleHelper.Log("FINISHED NOVEL");
+    private async onFinishEmotionalUnderstanding() {
+        ConsoleHelper.Log("FINISHED NOVEL");
 
-		ConsoleHelper.Log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
+        ConsoleHelper.Log(MainSceneController.instance.gameData.progress.emotionalUnderstanding.scores);
 
-		await MainSceneController.instance.FinishMinigames();
-	}
+        await MainSceneController.instance.FinishMinigames();
+    }
 
-	private onFinishMiniGame(minigameType : MinigameTypes) 
-	{
-		this.playedMinigames.push(minigameType);
+    private onFinishMiniGame(minigameType: MinigameTypes) {
+        this.playedMinigames.push(minigameType);
 
-		MainSceneController.instance.progress.setProgress(this.playedMinigames)
+        MainSceneController.instance.progress.setProgress(this.playedMinigames)
 
-		switch(minigameType) {
-			case MinigameTypes.MemoryOfSpades:
-				this.minigame.loadMiniGame(MinigameTypes.PuzzleBlock);
-				break;
-			case MinigameTypes.PuzzleBlock:
-				this.minigame.loadMiniGame(MinigameTypes.GuessTheWord);
-				break;
-			case MinigameTypes.GuessTheWord:
-				this.emotionalUnderstanding.play();
-				break;
-		}
-	}	
+        switch (minigameType) {
+            case MinigameTypes.MemoryOfSpades:
+                this.minigame.loadMiniGame(MinigameTypes.PuzzleBlock);
+                break;
+            case MinigameTypes.PuzzleBlock:
+                this.minigame.loadMiniGame(MinigameTypes.GuessTheWord);
+                break;
+            case MinigameTypes.GuessTheWord:
+                this.emotionalUnderstanding.play();
+                break;
+        }
+    }
 }

@@ -7,11 +7,10 @@ import AudioController from 'Modules/core/AudioController';
 import ConsoleHelper from 'Modules/helpers/ConsoleHelper';
 
 export default class LoginSceneController extends Phaser.Scene {
-  public rexUI! : RexUIPlugin;
+  public rexUI!: RexUIPlugin;
   private view!: LoginView;
 
-  constructor() 
-  {
+  constructor() {
 
     super({ key: SceneInfo.loginScene.key });
   }
@@ -23,41 +22,41 @@ export default class LoginSceneController extends Phaser.Scene {
   create() {
     this.view = new LoginView(this);
 
-    this.view.create(); 
+    this.view.create();
 
     this.view.registerOnLoginListener(async (username, confPass) => {
-      AudioController.instance.play("main_button_click");
-      if(username == null || confPass == null)
-      {
-        this.view.setErrorConfirmVisible(true);
-        return;
-      }
-      
-      this.view.setErrorConfirmVisible(false);
-
-      ConsoleHelper.Log("Username: " +  username + " Password: " + confPass);
-
-      var auth = await MainSceneController.instance.Login(username, confPass, this.view.isRememberMe);
-
-      if(auth == null) return;
-
-      ConsoleHelper.Log(auth)
-
-      if (auth.error != null)
-      {
-          this.view.setErrorConfirmVisible(true);
-
-          return;
-      }
-
       this.scene.start(SceneInfo.homeScene.key);
+
+      return
+      // AudioController.instance.play("main_button_click");
+      // if (username == null || confPass == null) {
+      //   this.view.setErrorConfirmVisible(true);
+      //   return;
+      // }
+      //
+      // this.view.setErrorConfirmVisible(false);
+      //
+      // ConsoleHelper.Log("Username: " + username + " Password: " + confPass);
+      //
+      // var auth = await MainSceneController.instance.Login(username, confPass, this.view.isRememberMe);
+      //
+      // if (auth == null) return;
+      //
+      // ConsoleHelper.Log(auth)
+      //
+      // if (auth.error != null) {
+      //   this.view.setErrorConfirmVisible(true);
+      //
+      //   return;
+      // }
+
     })
 
     this.view.registerOnForgotPasswordListener(() => {
       AudioController.instance.play("main_button_click");
       this.view.setInputActive(false);
       this.scene.launch(SceneInfo.forgotPasswordScene.key, {
-        onBackButton: () => { 
+        onBackButton: () => {
           this.view.setInputActive(true);
         }
       });
